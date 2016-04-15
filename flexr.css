@@ -1,0 +1,183 @@
+.row, div[class^="col"], *[class*="logo-"], *[class*="menu-"], nav, section, footer {
+    height: auto;
+    position: relative
+}
+
+nav, .row, *[class*="jus-"], *[class*="logo-"], *[class*="menu-"] {
+    display: flex
+}
+
+nav, section, footer {
+    width: 100%
+}
+
+nav .row {
+    height: 100%;
+    align-items: center;
+    justify-content: space-between
+}
+
+*[class*="menu-"] {
+    justify-content: space-between
+}
+
+.row {
+    width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap
+}
+
+*[class*="jus"] {
+    flex-wrap: wrap
+}
+
+.jus-c {
+    justify-content: center
+}
+
+.jus-r {
+    justify-content: flex-end
+}
+
+.spl-r {
+    margin-left: auto
+}
+
+.spl-l {
+    margin-right: auto
+}
+
+div[class^="col"] {
+    padding: 0 1%;
+    overflow: hidden
+}
+
+div[class^="col"]:first-of-type {
+    padding-left: 0
+}
+
+div[class^="col"]:last-of-type {
+    padding-right: 0
+}
+
+.col-1, .logo-s {
+    width: 6.5%
+}
+
+.col-2, .logo-m {
+    width: 15%
+}
+
+.col-3, .menu-s, .logo-l {
+    width: 23.5%
+}
+
+.col-4, .menu-m {
+    width: 32%
+}
+
+.col-5, .menu-l {
+    width: 40.5%
+}
+
+.col-6, .menu-xl {
+    width: 49%
+}
+
+.col-7 {
+    width: 57.5%
+}
+
+.col-8 {
+    width: 66%
+}
+
+.col-9 {
+    width: 74.5%
+}
+
+.col-10 {
+    width: 83%
+}
+
+.col-11 {
+    width: 91.5%
+}
+
+@media only screen and (max-width : 1180px) {
+
+    .row {
+        width: calc(100% - 80px)
+    }
+
+}
+
+@media only screen and (max-width : 900px) {
+
+    .row {
+        width: calc(100% - 70px)
+    }
+
+    .exp .col-1 {
+        width: 15%
+    }
+
+    .exp .col-2 {
+        width: 32%
+    }
+
+    .exp .col-3 {
+        width: 49%
+    }
+
+    .exp .col-4, .exp .col-5, .exp .col-6, .exp .col-7, .exp .col-8, .exp .col-9, .exp .col-10, .exp .col-11 {
+        width: 100%;
+        padding: 0
+    }
+
+    .exp .col-1:nth-of-type(6), .exp .col-2:nth-of-type(3), .exp .col-3:nth-of-type(2) {
+        padding: 0 0 0 1%
+    }
+
+    .exp .col-1:nth-of-type(7), .exp .col-2:nth-of-type(4), .exp .col-3:nth-of-type(3) {
+        padding: 0 1% 0 0
+    }
+
+}
+
+@media only screen and (max-width : 740px) {
+
+    .row {
+        width: calc(100% - 40px)
+    }
+
+    nav .row-full {
+        width: 100% !important
+    }
+
+    .logo-m {
+        width: 110px
+    }
+
+}
+
+@media only screen and (max-width : 520px) {
+
+    div[class^="col"], .exp div[class^="col"] {
+        width: 100%;
+        padding: 0 !important
+    }
+
+    .exp .col-1 {
+        width: 48% !important;
+    }
+
+    .exp .col-1:nth-of-type(odd) {
+        padding: 0 2% 0 0 !important
+    }
+
+    .exp .col-1:nth-of-type(even) {
+        padding: 0 0 0 2% !important
+    }
+
+}
