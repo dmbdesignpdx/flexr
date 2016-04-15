@@ -1,4 +1,7 @@
-var scrolled, nav = document.getElementById('nav'), menuShowing;
+var scrolled, nav = document.getElementById('nav'), menu = document.getElementById('menu'), menuLinks = document.getElementsByTagName('li'), menuShowing;
+
+
+// scrolling
 
 window.onscroll = function() {
 
@@ -32,17 +35,21 @@ window.onscroll = function() {
 
 }
 
+
+
+// pullout menu
+
 document.getElementById('poma').onclick = function(event) {
 
     event.stopPropagation();
 
     menuShowing = true;
 
-    document.getElementById('menu').classList.add('show-menu')
+    menu.classList.add('show-menu')
 
 }
 
-document.getElementById('menu').onclick = function(event) {
+menu.onclick = function(event) {
 
     event.stopPropagation()
 
@@ -54,7 +61,23 @@ document.body.onclick = function() {
 
         menuShowing = false;
 
-        document.getElementById('menu').classList.remove('show-menu')
+        menu.classList.remove('show-menu')
+
+    }
+
+}
+
+for (var i = 0; i < menuLinks.length; i++) {
+
+    menuLinks[i].onclick = function() {
+
+        if (menuShowing) {
+
+            menuShowing = false;
+
+            menu.classList.remove('show-menu')
+
+        }
 
     }
 

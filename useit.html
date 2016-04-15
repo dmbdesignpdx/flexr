@@ -12,7 +12,7 @@
 
     <meta name="description" content="Flexr is a responsive grid for modern browsers.">
 
-    <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:300,700' rel='stylesheet'> -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,700' rel='stylesheet'>
 
     <link href="flexr.css" rel="stylesheet">
 
@@ -56,9 +56,30 @@
 
         <div class="row">
 
+            <h2>One Class Will Do</h2>
+
+            <p>Creating a column requires only one class. Just decide how big of a column you want (1&ndash;11, no need to create a column for size 12, just use the row parent!), and build:</p>
+
+        </div>
+
+        <div class="row">
+
+            <code>
+
+                &lt;div class="row"&gt;<br><br>
+                &nbsp;&nbsp;&lt;div  class="<span>col-6"</span>&gt;<br><br>
+                &nbsp;&nbsp;&lt;div  class="<span>col-6"</span>"&gt;<br><br>
+                &lt;/div&gt;
+
+            </code>
+
+        </div>
+
+        <div class="row">
+
             <h2>Defining Columns</h2>
 
-            <p><span>Shrinking Columns</span> is the default type of collapsing, so there is no need to declare any class for it.</p>
+            <p><span>Shrinking Columns</span> is the default type of collapsing, so you do not have to declare any class for it.</p>
 
             <p>To set <span>Expanding Columns</span>, all you need to do is declare the expanding class in the row parent:</p>
 
@@ -120,9 +141,13 @@
 
     <section>
 
-        <div class="row jus-c">
+        <div class="row exp jus-c">
 
-            <a class="button" href="flexr.zip" target="_blank">Get Flexr</a>
+            <div class="col-2">
+
+                <a class="button" href="https://github.com/dmbdesignpdx/flexr/archive/master.zip">Get Flexr</a>
+
+            </div>
 
         </div>
 
