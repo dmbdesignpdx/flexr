@@ -21,7 +21,9 @@ nav {
 }
 
 img {
-    outline: none
+    display: block;
+    border: 0 none;
+    outline: 0 none;
 }
 
 section:first-of-type {
@@ -40,7 +42,9 @@ ul, li {
 
 a {
     display: block;
-    text-decoration: none
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0,0,0,.1);
 }
 
 h1, h2, li, a {
@@ -75,6 +79,11 @@ p {
     font-weight: 300;
     line-height: 1.4em;
     color: rgb(223,223,240)
+}
+
+#intro-text {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #menu li {
@@ -136,7 +145,10 @@ p span {
     color: rgb(247,247,255);
     background: rgb(255,102,102);
     cursor: pointer;
-    transition: .3s background, .3s color
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    transition: .3s background, .3s color;
+
 }
 
 .secondary {
@@ -154,7 +166,7 @@ p span {
     background: none
 }
 
-code {
+code, pre {
     width: 100%;
     padding: 22px 26px 24px;
     margin: 10px 0;
@@ -163,7 +175,7 @@ code {
     background: rgb(64,64,88)
 }
 
-code span {
+code span, pre span {
     font-weight: 700;
     color: rgb(255,102,102)
 }
@@ -219,13 +231,20 @@ code span {
         text-align: center
     }
 
-
 }
 
 @media only screen and (max-width : 740px) {
 
     nav {
         height: 60px
+    }
+
+    section:first-of-type {
+        padding: 60px 0 0
+    }
+
+    #flexr-home section:first-of-type {
+        padding: 60px 0 30px
     }
 
     #menu {
@@ -239,11 +258,20 @@ code span {
     }
 
     #menu li {
-        padding: 20px 0 20px 20px
+        padding: 20px 0 20px 30px
+    }
+
+    #menu li:first-of-type {
+        margin-top: 20px
     }
 
     #poma {
         left: 0
+    }
+
+    #split {
+        position: absolute;
+        left: -9999px
     }
 
     .mc {
