@@ -13,8 +13,9 @@ body {
 
 nav {
     height: 110px;
+    padding-top: 1px;
     position: fixed;
-    top:0;
+    top: -1px;
     left: 0;
     z-index: 999;
     background: rgb(46,46,62)

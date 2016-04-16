@@ -82,3 +82,10 @@ for (var i = 0; i < menuLinks.length; i++) {
     }
 
 }
+
+
+// testing
+
+var testing = document.getElementById('testing');
+
+testing.innerHTML = window.innerWidth;
