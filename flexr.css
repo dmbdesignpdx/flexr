@@ -21,6 +21,10 @@ nav .row {
     justify-content: space-between
 }
 
+.row, *[class^="col"] {
+    overflow: hidden
+}
+
 .row {
     width: 1100px;
     margin: 0 auto;
@@ -104,18 +108,25 @@ div[class^="col"]:last-of-type {
     width: 91.5%
 }
 
-@media only screen and (max-width : 1180px) {
+
+/*   Smaller Desktop Screens & Tablet Landscape   */
+
+@media only screen and (max-width : 1160px) {
 
     .row {
-        width: calc(100% - 80px)
+        width: calc(100% - 60px)
     }
 
 }
 
-@media only screen and (max-width : 900px) {
 
-    .row {
-        width: calc(100% - 70px)
+/*    Tablet Portait   */
+
+@media only screen and (max-width : 920px) {
+
+    .m-full {
+        width: 100%;
+        margin: 0
     }
 
     .exp .col-1 {
@@ -145,14 +156,13 @@ div[class^="col"]:last-of-type {
 
 }
 
+
+/*    Phone Landscape & Some Tablet Portrait  */
+
 @media only screen and (max-width : 740px) {
 
     .row {
         width: calc(100% - 40px)
-    }
-
-    nav .row-full {
-        width: 100% !important
     }
 
     .logo-m {
@@ -160,6 +170,9 @@ div[class^="col"]:last-of-type {
     }
 
 }
+
+
+/*    Phone Portrait   */
 
 @media only screen and (max-width : 520px) {
 

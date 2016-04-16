@@ -6,7 +6,7 @@ html, body {
 
 body {
     min-height: 100%;
-    background: rgb(46,46,62);
+    background: #303042;
     font-family: 'Roboto', 'Helvetica', sans-serif;
     -webkit-font-smoothing: antialiased
 }
@@ -18,13 +18,33 @@ nav {
     top: -1px;
     left: 0;
     z-index: 999;
-    background: rgb(46,46,62)
+    background: #303042
+}
+
+footer {
+    background:#223
+}
+
+nav .flexr-logo {
+    fill: #f66
+}
+
+nav #flexr:hover .flexr-logo {
+    fill: #DDE
+}
+
+footer .flexr-logo {
+    margin-top: 60px;
+    fill: #99A
+}
+
+img, svg {
+    display: block
 }
 
 img {
-    display: block;
     border: 0 none;
-    outline: 0 none;
+    outline: 0 none
 }
 
 section:first-of-type {
@@ -45,7 +65,12 @@ a {
     display: block;
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
-    -webkit-tap-highlight-color: rgba(0,0,0,.1);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+ul a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0,0,0,.15);
 }
 
 h1, h2, li, a {
@@ -55,7 +80,7 @@ h1, h2, li, a {
 }
 
 h1, h2 {
-    color: rgb(143,143,178)
+    color: #99B
 }
 
 h1, h2, p {
@@ -79,7 +104,7 @@ p {
     font-size: 19px;
     font-weight: 300;
     line-height: 1.4em;
-    color: rgb(223,223,240)
+    color: #DDE
 }
 
 #intro-text {
@@ -89,21 +114,21 @@ p {
 
 #menu li {
     font-size: 18px;
-    color: rgb(223,223,240);
+    color: #DDE;
 }
 
 #menu li:hover {
-    color: rgb(255,102,102);
+    color: #F66;
     cursor: pointer
 }
 
 #menu {
-    background: rgb(46,46,62);
+    background: #335
     transition: .4s transform
 }
 
 #flexr-grid #grid, #flexr-doc #doc {
-    color: rgb(255,102,102)
+    color: #F66
 }
 
 #intro-text p {
@@ -131,9 +156,7 @@ p span {
     margin: 10px 0;
     font-size: 16px;
     text-align: center;
-    background: rgb(64,64,88);
-
-
+    background: #404058;
     line-height: 1.1em
 }
 
@@ -143,27 +166,26 @@ p span {
     margin: 60px auto;
     font-size: 18px;
     text-align: center;
-    color: rgb(247,247,255);
-    background: rgb(255,102,102);
+    color: #DDE;
+    background: #F66;
     cursor: pointer;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
-    transition: .3s background, .3s color;
-
+    transition: .3s background, .3s color
 }
 
 .secondary {
-    color: rgb(255,153,102);
+    color: #F96;
     background: none
 }
 
 .button:hover {
-    color: rgb(255,102,102);
-    background: rgb(223,223,240)
+    color: #F66;
+    background: #DDE
 }
 
 .secondary:hover {
-    color: rgb(223,223,240);
+    color: #DDE;
     background: none
 }
 
@@ -172,13 +194,19 @@ code, pre {
     padding: 22px 26px 24px;
     margin: 10px 0;
     font-size: 14px;
-    color: rgb(223,223,240);
-    background: rgb(64,64,88)
+    color: #DDE;
+    background: #404058
 }
 
-code span, pre span {
+code span, pre span, footer a {
     font-weight: 700;
-    color: rgb(255,102,102)
+    color: #F66
+}
+
+footer p {
+    padding: 50px 0;
+    font-size: 15px;
+    color: #AAB
 }
 
 #flexr:hover {
@@ -187,16 +215,16 @@ code span, pre span {
 
 .shrink-large {
     height: 80px;
-    box-shadow: 0 2px 4px rgba(0,0,0,.3)
+    box-shadow: 0 2px 5px rgba(0,0,0,.3)
 }
 
 .shrink-small {
-    box-shadow: 0 2px 4px rgba(0,0,0,.3)
+    box-shadow: 0 2px 5px rgba(0,0,0,.3)
 }
 
 .show-menu {
     box-shadow: 3px 0 5px rgba(0,0,0,.3);
-    transform: translateX(210px) !important;
+    transform: translateX(210px) !important
 }
 
 #poma {
@@ -212,7 +240,7 @@ code span, pre span {
 
 #poma svg {
     fill: none;
-    stroke: rgb(223,223,240);
+    stroke: #DDE;
     stroke-width: 6px
 }
 
