@@ -168,6 +168,10 @@ p ~ p {
     margin: 30px 0 10px 0
 }
 
+p ~ .button {
+    margin: 28px auto 60px
+}
+
 p span {
     font-weight: 700;
     letter-spacing: .2pt
@@ -262,6 +266,28 @@ footer p {
     stroke: #DDE;
     stroke-width: 6px
 }
+
+.download-sprite {
+    width: 180px;
+    height: 180px;
+    margin: 30px auto 0;
+    background: url(img/download-sprite.svg) no-repeat;
+    background-size: 200% 100%;
+    background-position: 0 0
+}
+
+#flexr-plus {
+    background-position: 100% 0
+}
+
+#download-section h2, #download-section p {
+    width: 85%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center
+}
+
+
 
 @media only screen and (max-width : 1180px) {
 

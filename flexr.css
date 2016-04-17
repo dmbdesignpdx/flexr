@@ -52,8 +52,7 @@ nav .row {
 }
 
 div[class^="col"] {
-    padding: 0 1%;
-    overflow: hidden
+    padding: 0 1%
 }
 
 div[class^="col"]:first-of-type {
