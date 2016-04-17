@@ -135,9 +135,13 @@ p {
     color: #DDE;
 }
 
-#menu li:hover {
+#menu li:not(.null):hover {
     color: #ff6868;
     cursor: pointer
+}
+
+.null {
+    opacity: .5
 }
 
 #menu {
@@ -190,7 +194,7 @@ p span {
 .button, .secondary {
     width: 150px;
     padding: 20px 0 21px;
-    margin: 60px auto;
+    margin: 50px auto 60px;
     font-size: 18px;
     text-align: center;
     color: #DDE;
@@ -287,6 +291,10 @@ footer p {
     text-align: center
 }
 
+.copy {
+    margin: 20px 0;
+    padding: 0
+}
 
 
 @media only screen and (max-width : 1180px) {
@@ -307,6 +315,11 @@ footer p {
 
     #intro-text p {
         margin: 15px auto
+    }
+
+    #testr {
+        position: absolute;
+        left: -9999px
     }
 
 }
@@ -360,6 +373,12 @@ footer p {
 
 @media only screen and (max-width : 520px) {
 
+    .secondary {
+        margin: 0 auto 60px;
+    }
 
+    footer .flexr-logo {
+        width: 24%
+    }
 
 }
