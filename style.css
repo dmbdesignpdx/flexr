@@ -4,6 +4,23 @@ html, body {
     margin: 0
 }
 
+.flexr-logo {
+    width: 100%;
+    background: url(img/flexr-logo.svg) no-repeat;
+    background-size: 100% 200%;
+    background-position: 0 0;
+}
+
+.flexr-logo::before {
+    content: '';
+    display: block;
+    padding-top: 28%
+}
+
+#flexr-main:hover {
+    background-position: 0 100%;
+}
+
 body {
     min-height: 100%;
     background: #2B2B3F;
@@ -50,30 +67,18 @@ a {
     tap-highlight-color: rgba(0,0,0,0);
 }
 
-nav .flexr-logo {
-    width: 100%;
-    height: auto;
-    fill: #ff6868
-}
-
-nav #flexr:hover .flexr-logo {
-    fill: #DDE
-}
-
 #flexr:hover {
     cursor: pointer
 }
 
 nav #flexr a {
-    width: 100%;
-    height: 100%
+    width: 100%
 }
 
-footer .flexr-logo {
+#flexr-footer {
     width: 48%;
-    height: auto;
     margin-top: 60px;
-    fill: #99A
+    background-position: 0 100%
 }
 
 section:first-of-type {
