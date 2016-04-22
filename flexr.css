@@ -52,7 +52,7 @@ nav .row {
 }
 
 div[class^="col"] {
-    padding: 0 1%
+    padding: 1%
 }
 
 div[class^="col"]:first-of-type {
@@ -142,15 +142,16 @@ div[class^="col"]:last-of-type {
 
     .exp .col-4, .exp .col-5, .exp .col-6, .exp .col-7, .exp .col-8, .exp .col-9, .exp .col-10, .exp .col-11 {
         width: 100%;
-        padding: 0
+        padding-right: 0;
+        padding-left: 0;
     }
 
     .exp .col-1:nth-of-type(6), .exp .col-2:nth-of-type(3), .exp .col-3:nth-of-type(2) {
-        padding: 0 0 0 1%
+        padding-right: 0;
     }
 
     .exp .col-1:nth-of-type(7), .exp .col-2:nth-of-type(4), .exp .col-3:nth-of-type(3) {
-        padding: 0 1% 0 0
+        padding-left: 0;
     }
 
 }
@@ -177,7 +178,8 @@ div[class^="col"]:last-of-type {
 
     div[class^="col"], .exp div[class^="col"] {
         width: 100%;
-        padding: 0 !important
+        padding-right: 0 !important;
+        padding-left: 0 !important
     }
 
     .exp .col-1 {
@@ -185,11 +187,11 @@ div[class^="col"]:last-of-type {
     }
 
     .exp .col-1:nth-of-type(odd) {
-        padding: 0 2% 0 0 !important
+        padding-right: 2% !important
     }
 
     .exp .col-1:nth-of-type(even) {
-        padding: 0 0 0 2% !important
+        padding-left: 2% !important
     }
 
 }

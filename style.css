@@ -5,7 +5,7 @@ html, body {
 }
 
 #flexr-main {
-    fill: #f66;
+    fill: #ff6868;
 }
 
 #flexr:hover #flexr-main {
@@ -146,7 +146,7 @@ p {
     transition: .4s transform
 }
 
-#flexr-grid #grid, #flexr-doc #doc {
+#flexr-grid #grid, #flexr-doc #doc, #flexr-download #dl {
     color: #ff6868
 }
 
@@ -181,7 +181,7 @@ p span {
 .example {
     height: 1em;
     padding: 20px 0 21px;
-    margin: 10px 0;
+    margin: 0;
     font-size: 16px;
     text-align: center;
     background: #42425d;
