@@ -58,13 +58,19 @@
 
         <div class="row">
 
-            <h2>One Class Will Do</h2>
+            <div class="col-12">
 
-            <p>Creating a column requires only one class. Just decide how big of a column you want (1&ndash;11, no need to create a column size 12, just use the row!), and build:</p>
+                <h2>One Class Will Do</h2>
+
+                <p>Creating a column requires only one class <code>col</code> with its size <code>-[num]</code> (total [num] not exceeding 12):</p>
+
+            </div>
 
         </div>
 
         <div class="row">
+
+            <div class="col-12">
 
 <pre>&lt;div class="row"&gt;
 
@@ -74,19 +80,27 @@
 
 &lt;/div&gt;</pre>
 
-        </div>
-
-        <div class="row">
-
-            <h2>Defining Columns</h2>
-
-            <p><span>Shrinking Columns</span> is the default type of collapsing, so you do not have to declare any class for it.</p>
-
-            <p>To set <span>Expanding Columns</span>, all you need to do is declare the expanding class in the row:</p>
+            </div>
 
         </div>
 
         <div class="row">
+
+            <div class="col-12">
+
+                <h2>Defining Columns</h2>
+
+                <p><span>Shrinking Columns</span> is the default type of collapsing, so you do not have to declare any class for it.</p>
+
+                <p>To create <span>Expanding Columns</span>, all you need to do is declare the expanding class <code>exp</code> in the parent row:</p>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-12">
 
 <pre>&lt;div class="row <span>exp</span>"&gt;
 
@@ -98,17 +112,25 @@
 
 &lt;/div&gt;</pre>
 
-        </div>
-
-        <div class="row">
-
-            <h2>Justifying Columns</h2>
-
-            <p>Justifying columns is as easy as declaring what you want in the row. For example, right-justification:</p>
+            </div>
 
         </div>
 
         <div class="row">
+
+            <div class="col-12">
+
+                <h2>Justifying Columns</h2>
+
+                <p>Justifying columns is as easy as declaring what you want in the row. For example, right-justification:</p>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-12">
 
 <pre>&lt;div class="row <span>jus-r</span>"&gt;
 
@@ -116,11 +138,17 @@
 
 &lt;/div&gt;</pre>
 
+            </div>
+
         </div>
 
         <div class="row">
 
-            <p>If you want to <span>split</span> columns for desktop...</p>
+            <div class="col-12">
+
+                <p>If you want to <span>split</span> columns for desktop...</p>
+
+            </div>
 
         </div>
 
@@ -138,23 +166,39 @@
 
             </div>
 
+            <div class="col-2">
+
+                <p class="example">2</p>
+
+            </div>
+
         </div>
 
         <div class="row">
 
-            <p>declare which direction you want to split based on the row's justification (only for left or right justified rows):</p>
+            <div class="col-12">
+
+                <p>declare which column that will split or start the split, and which direction you want to split based on the row's justification (only for left or right justified rows):</p>
+
+            </div>
 
         </div>
 
         <div class="row">
+
+            <div class="col-12">
 
 <pre>&lt;div class="row"&gt;
 
-   &lt;div class="col-x"&gt;
+   &lt;div class="col-2"&gt;
 
-   &lt;div class="col-x <span>spl-r</span>"&gt;
+   &lt;div class="col-2 <span>spl-r</span>"&gt;
+
+   &lt;div class="col-2"&gt;
 
 &lt;/div&gt;</pre>
+
+            </div>
 
         </div>
 

@@ -26,7 +26,7 @@ nav .row {
 }
 
 .row {
-    width: 1100px;
+    width: 1152px;
     margin: 0 auto;
     flex-wrap: wrap
 }
@@ -44,76 +44,78 @@ nav .row {
 }
 
 .spl-r {
-    margin-left: auto
+    margin-left: auto !important
 }
 
 .spl-l {
-    margin-right: auto
+    margin-right: auto !important
 }
 
 div[class^="col"] {
-    padding: 1%
+    padding: 14px;
+    box-sizing: border-box
 }
 
-div[class^="col"]:first-of-type {
-    padding-left: 0
-}
-
-div[class^="col"]:last-of-type {
-    padding-right: 0
+*[class*="logo-"], *[class*="menu-"] {
+    padding: 0 14px;
+    box-sizing: border-box
 }
 
 .col-1, .logo-s {
-    width: 6.5%
+    width: 8.333%
 }
 
 .col-2, .logo-m {
-    width: 15%
+    width: 16.666%
 }
 
 .col-3, .menu-s, .logo-l {
-    width: 23.5%
+    width: 24.999%
 }
 
 .col-4, .menu-m {
-    width: 32%
+    width: 33.332%
 }
 
 .col-5, .menu-l {
-    width: 40.5%
+    width: 41.665%
 }
 
 .col-6, .menu-xl {
-    width: 49%
+    width: 49.998%
 }
 
 .col-7 {
-    width: 57.5%
+    width: 58.331%
 }
 
 .col-8 {
-    width: 66%
+    width: 66.664%
 }
 
 .col-9 {
-    width: 74.5%
+    width: 74.997%
 }
 
 .col-10 {
-    width: 83%
+    width: 83.33%
 }
 
 .col-11 {
-    width: 91.5%
+    width: 91.663%
+}
+
+.col-12 {
+    width: 99.996%
 }
 
 
 /*   Smaller Desktop Screens & Tablet Landscape   */
 
-@media only screen and (max-width : 1160px) {
+@media only screen and (max-width : 1180px) {
 
     .row {
-        width: calc(100% - 60px)
+        width: calc(100% - 28px)
     }
 
 }
@@ -121,7 +123,19 @@ div[class^="col"]:last-of-type {
 
 /*    Tablet Portait   */
 
-@media only screen and (max-width : 920px) {
+@media only screen and (max-width : 940px) {
+
+    .row {
+        width: calc(100% - 24px)
+    }
+
+    div[class^="col"] {
+        padding: 12px
+    }
+
+    *[class*="logo-"], *[class*="menu-"] {
+        padding: 0 12px
+    }
 
     .m-full {
         width: 100%;
@@ -129,29 +143,19 @@ div[class^="col"]:last-of-type {
     }
 
     .exp .col-1 {
-        width: 15%
+        width: 16.666%
     }
 
     .exp .col-2 {
-        width: 32%
+        width: 33.332%
     }
 
     .exp .col-3 {
-        width: 49%
+        width: 49.998%
     }
 
     .exp .col-4, .exp .col-5, .exp .col-6, .exp .col-7, .exp .col-8, .exp .col-9, .exp .col-10, .exp .col-11 {
-        width: 100%;
-        padding-right: 0;
-        padding-left: 0;
-    }
-
-    .exp .col-1:nth-of-type(6), .exp .col-2:nth-of-type(3), .exp .col-3:nth-of-type(2) {
-        padding-right: 0;
-    }
-
-    .exp .col-1:nth-of-type(7), .exp .col-2:nth-of-type(4), .exp .col-3:nth-of-type(3) {
-        padding-left: 0;
+        width: 99.996%
     }
 
 }
@@ -165,8 +169,16 @@ div[class^="col"]:last-of-type {
         width: calc(100% - 40px)
     }
 
+    div[class^="col"] {
+        padding: 10px
+    }
+
+    *[class*="logo-"], *[class*="menu-"] {
+        padding: 0 10px
+    }
+
     .logo-m {
-        width: 100px
+        width: 110px
     }
 
 }
@@ -178,20 +190,19 @@ div[class^="col"]:last-of-type {
 
     div[class^="col"], .exp div[class^="col"] {
         width: 100%;
-        padding-right: 0 !important;
-        padding-left: 0 !important
+        padding: 10px 0;
     }
 
     .exp .col-1 {
-        width: 48% !important;
+        width: 50% !important;
     }
 
     .exp .col-1:nth-of-type(odd) {
-        padding-right: 2% !important
+        padding-right: 10px
     }
 
     .exp .col-1:nth-of-type(even) {
-        padding-left: 2% !important
+        padding-left: 10px
     }
 
 }

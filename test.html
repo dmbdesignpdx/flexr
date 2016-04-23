@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -16,68 +17,164 @@
         }
 
         body {
-            min-height: 100%;
+            min-height: 100%
         }
 
         .row {
             display: flex;
-            width: 1128px;
+            width: 1152px;
             margin: 0 auto;
             flex-wrap: wrap
         }
 
-        div[class^="col"]{
+        div[class^="col"] {
             height: auto;
             padding: 0 14px;
             box-sizing: border-box;
         }
 
-        .col-1 {
+        .col-1-a {
             width: 8.333%
         }
 
-        .col-2 {
+        .col-1-b {
+            width: 8%
+        }
+
+        .col-1-c {
+            width: 8.3%
+        }
+
+        .col-2-a {
             width: 16.666%
         }
 
-        .col-3 {
+        .col-2-b {
+            width: 16%
+        }
+
+        .col-2-c {
+            width: 16.6%
+        }
+
+        .col-3-a {
             width: 24.999%
         }
 
-        .col-4 {
+        .col-3-b {
+            width: 24%
+        }
+
+        .col-3-c {
+            width: 24.9%
+        }
+
+        .col-4-a {
             width: 33.332%
         }
 
-        .col-5 {
+        .col-4-b {
+            width: 32%
+        }
+
+        .col-4-c {
+            width: 33.2%
+        }
+
+        .col-5-a {
             width: 41.665%
         }
 
-        .col-6 {
+        .col-5-b {
+            width: 40%
+        }
+
+        .col-5-c {
+            width: 41.5%
+        }
+
+        .col-6-a {
             width: 49.998%
         }
 
-        .col-7 {
+        .col-6-b {
+            width: 48%
+        }
+
+        .col-6-c {
+            width: 49.8%
+        }
+
+        .col-7-a {
             width: 58.331%
         }
 
-        .col-8 {
+        .col-7-b {
+            width: 56%
+        }
+
+        .col-7-c {
+            width: 58.1%
+        }
+
+        .col-8-a {
             width: 66.664%
         }
 
-        .col-9 {
+        .col-8-b {
+            width: 64%
+        }
+
+        .col-8-c {
+            width: 66.4%
+        }
+
+        .col-9-a {
             width: 74.997%
         }
 
-        .col-10 {
+        .col-9-b {
+            width: 72%
+        }
+
+        .col-9-c {
+            width: 74.7%
+        }
+
+        .col-10-a {
             width: 83.33%
         }
 
-        .col-11 {
+        .col-10-b {
+            width: 80%
+        }
+
+        .col-10-c {
+            width: 83%
+        }
+
+        .col-11-a {
             width: 91.663%
         }
 
-        .col-12 {
+        .col-11-b {
+            width: 88%
+        }
+
+        .col-11-c {
+            width: 91.3%
+        }
+
+        .col-12-a {
             width: 99.996%
+        }
+
+        .col-12-b {
+            width: 96%
+        }
+
+        .col-12-c {
+            width: 99.6%
         }
 
         .col-full {
@@ -90,17 +187,17 @@
             background: gray
         }
 
-        @media only screen and (max-width: 1152px) {
+        @media only screen and (max-width: 1180px) {
 
             .row{
-                width: calc(100% - 32px)
+                width: calc(100% - 28px)
             }
         }
 
         @media only screen and (max-width: 940px) {
 
             div[class^="col"]{
-                padding: 12px;
+                padding: 0 12px;
             }
 
         }
@@ -112,7 +209,7 @@
             }
 
             div[class^="col"]{
-                padding: 10px;
+                padding: 0 10px;
             }
         }
 
@@ -121,75 +218,75 @@
 </head>
 <body>
 
-    <!-- <div class="row">
+    <div class="row">
 
-        <div class="col-1">
-
-            <div class="cont"></div>
-
-        </div>
-
-        <div class="col-1">
+        <div class="col-1-a">
 
             <div class="cont"></div>
 
         </div>
 
-        <div class="col-1">
+        <div class="col-1-a">
 
             <div class="cont"></div>
 
         </div>
 
-        <div class="col-1">
+        <div class="col-1-a">
 
             <div class="cont"></div>
 
         </div>
 
-        <div class="col-1">
+        <div class="col-1-a">
 
             <div class="cont"></div>
 
         </div>
 
-        <div class="col-1">
+        <div class="col-1-a">
 
             <div class="cont"></div>
 
         </div>
 
-        <div class="col-1">
+        <div class="col-1-a">
 
             <div class="cont"></div>
 
         </div>
 
-        <div class="col-1">
+        <div class="col-1-a">
 
             <div class="cont"></div>
 
         </div>
 
-        <div class="col-1">
+        <div class="col-1-a">
 
             <div class="cont"></div>
 
         </div>
 
-        <div class="col-1">
+        <div class="col-1-a">
 
             <div class="cont"></div>
 
         </div>
 
-        <div class="col-1">
+        <div class="col-1-a">
 
             <div class="cont"></div>
 
         </div>
 
-        <div class="col-1">
+        <div class="col-1-a">
+
+            <div class="cont"></div>
+
+        </div>
+
+        <div class="col-1-a">
 
             <div class="cont"></div>
 
@@ -199,65 +296,37 @@
 
     <div class="row">
 
-        <div class="col-2">
+        <div class="col-2-a">
 
             <div class="cont"></div>
 
         </div>
 
-        <div class="col-2">
+        <div class="col-2-a">
 
             <div class="cont"></div>
 
         </div>
 
-        <div class="col-2">
+        <div class="col-2-a">
 
             <div class="cont"></div>
 
         </div>
 
-        <div class="col-2">
+        <div class="col-2-a">
 
             <div class="cont"></div>
 
         </div>
 
-        <div class="col-2">
+        <div class="col-2-a">
 
             <div class="cont"></div>
 
         </div>
 
-        <div class="col-2">
-
-            <div class="cont"></div>
-
-        </div>
-
-    </div>
-
-    <div class="row">
-
-        <div class="col-3">
-
-            <div class="cont"></div>
-
-        </div>
-
-        <div class="col-3">
-
-            <div class="cont"></div>
-
-        </div>
-
-        <div class="col-3">
-
-            <div class="cont"></div>
-
-        </div>
-
-        <div class="col-3">
+        <div class="col-2-a">
 
             <div class="cont"></div>
 
@@ -267,35 +336,25 @@
 
     <div class="row">
 
-        <div class="col-4">
+        <div class="col-3-a">
 
             <div class="cont"></div>
 
         </div>
 
-        <div class="col-4">
+        <div class="col-3-a">
 
             <div class="cont"></div>
 
         </div>
 
-        <div class="col-4">
+        <div class="col-3-a">
 
             <div class="cont"></div>
 
         </div>
 
-    </div> -->
-
-    <div class="row">
-
-        <div class="col-6">
-
-            <div class="cont"></div>
-
-        </div>
-
-        <div class="col-6">
+        <div class="col-3-a">
 
             <div class="cont"></div>
 
@@ -305,7 +364,45 @@
 
     <div class="row">
 
-        <div class="col-12">
+        <div class="col-4-a">
+
+            <div class="cont"></div>
+
+        </div>
+
+        <div class="col-4-a">
+
+            <div class="cont"></div>
+
+        </div>
+
+        <div class="col-4-a">
+
+            <div class="cont"></div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-6-a">
+
+            <div class="cont"></div>
+
+        </div>
+
+        <div class="col-6-a">
+
+            <div class="cont"></div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-12-a">
 
             <div class="cont"></div>
 

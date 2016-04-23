@@ -227,6 +227,11 @@ code, pre {
     background: #42425d
 }
 
+p code {
+    padding: 8px 12px 7px;
+    margin: 0 4px
+}
+
 code span, pre span, footer a {
     font-weight: 700;
     color: #ff6868
