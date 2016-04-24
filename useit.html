@@ -92,7 +92,7 @@
 
                 <p><span>Shrinking Columns</span> is the default type of collapsing, so you do not have to declare any class for it.</p>
 
-                <p>To create <span>Expanding Columns</span>, all you need to do is declare the expanding class <code>exp</code> in the parent row:</p>
+                <p>To define <span>Expanding Columns</span>, all you need to do is add the expanding class <code>exp</code> in the parent row:</p>
 
             </div>
 
@@ -122,7 +122,7 @@
 
                 <h2>Justifying Columns</h2>
 
-                <p>To justify columns other than to the left, just add the class <code>jus-[c,r]</code> to the parent row. For example, right-justification:</p>
+                <p>To justify columns other than to the left (default), just add the class <code>jus-[c,r]</code> to the parent row. For example, right-justification:</p>
 
             </div>
 
@@ -144,64 +144,6 @@
 
         <div class="row">
 
-            <div class="col-12">
-
-                <p>If you want to <span>split</span> columns for desktop...</p>
-
-            </div>
-
-        </div>
-
-        <div id="split" class="row">
-
-            <div class="col-2">
-
-                <p class="example">2</p>
-
-            </div>
-
-            <div class="col-2 spl-r">
-
-                <p class="example">2</p>
-
-            </div>
-
-            <div class="col-2">
-
-                <p class="example">2</p>
-
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="col-12">
-
-                <p>declare which column will start the split with the direction you want <code>split-[l,r]</code> based on the row's justification (if your row is left-justified, then you'll want to split to the right; and vice versa):</p>
-
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="col-12">
-
-<pre>&lt;div class="row"&gt;
-
-   &lt;div class="col-2"&gt;
-
-   &lt;div class="col-2 <span>spl-r</span>"&gt;
-
-   &lt;div class="col-2"&gt;
-
-&lt;/div&gt;</pre>
-
-            </div>
-
-        </div>
-
     </section>
 
     <section>
@@ -222,14 +164,14 @@
 
         <div class="row">
 
-            <div class="col-6">
+            <div class="col-8">
 
-                <p>The Flexr Grid, the Flexr logo, and the website were created and designed by Daniel Blake&mdash;Portland, OR.<br><br>
+                <p class="dbdesign">The Flexr Grid, the Flexr logo, and the website were created and designed by Daniel Blake&mdash;Portland, OR.<br><br>
                 <a href="http://www.danielblakedesign.com" target="_blank">danielblakedesign.com</a></p>
 
             </div>
 
-            <div class="col-2 spl-r">
+            <div class="col-4">
 
                 <svg viewBox="0 0 264 74" id="flexr-footer">
 
@@ -237,7 +179,7 @@
 
                 </svg>
 
-                <p class="copy">&copy; 2016 Flexr.</p>
+                <p class="copy">&copy; 2016 Flexr. All rights reserved. All other trademarks are the property of their respective owners.</p>
 
             </div>
 

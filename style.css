@@ -68,7 +68,7 @@ nav #flexr a {
 
 #flexr-footer {
     fill: #aab;
-    width: 48%;
+    width: 27%;
     margin-top: 60px
 }
 
@@ -99,6 +99,7 @@ h1, h2 {
 
 h1, h2, p {
     width: 100%;
+    margin: 0;
     text-align: left
 }
 
@@ -161,10 +162,6 @@ p {
     line-height: 1.5em
 }
 
-h2 ~ p {
-    margin: 0 0 10px 0
-}
-
 p ~ p {
     margin: 30px 0 10px 0
 }
@@ -221,7 +218,8 @@ p span {
 code, pre {
     width: 100%;
     padding: 22px 26px 24px;
-    margin: 10px 0;
+    box-sizing: border-box;
+    margin: 0;
     font-size: 14px;
     color: #DDE;
     background: #42425d
@@ -243,6 +241,16 @@ footer p {
     color: #AAB
 }
 
+.dbdesign {
+    width: 73%
+}
+
+.copy {
+    margin: 20px 0;
+    padding: 0;
+    font-size: 14px
+}
+
 .shrink-large {
     height: 80px;
     box-shadow: 0 2px 5px rgba(0,0,0,.3)
@@ -260,7 +268,7 @@ footer p {
 #poma {
     width: 40px;
     height: 40px;
-    padding: 5px 10px 5px 0;
+    padding: 5px 8px;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -292,11 +300,6 @@ footer p {
     margin-right: auto;
     margin-left: auto;
     text-align: center
-}
-
-.copy {
-    margin: 20px 0;
-    padding: 0
 }
 
 

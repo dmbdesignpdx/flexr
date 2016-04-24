@@ -43,14 +43,6 @@ nav .row {
     justify-content: flex-end
 }
 
-.spl-r {
-    margin-left: auto !important
-}
-
-.spl-l {
-    margin-right: auto !important
-}
-
 div[class^="col"] {
     padding: 14px;
     box-sizing: border-box
@@ -62,51 +54,51 @@ div[class^="col"] {
 }
 
 .col-1, .logo-s {
-    width: 8.333%
+    width: 8.3333%
 }
 
 .col-2, .logo-m {
-    width: 16.666%
+    width: 16.6666%
 }
 
 .col-3, .menu-s, .logo-l {
-    width: 24.999%
+    width: 24.9999%
 }
 
 .col-4, .menu-m {
-    width: 33.332%
+    width: 33.3332%
 }
 
 .col-5, .menu-l {
-    width: 41.665%
+    width: 41.6665%
 }
 
 .col-6, .menu-xl {
-    width: 49.998%
+    width: 49.9998%
 }
 
 .col-7 {
-    width: 58.331%
+    width: 58.3331%
 }
 
 .col-8 {
-    width: 66.664%
+    width: 66.6664%
 }
 
 .col-9 {
-    width: 74.997%
+    width: 74.9997%
 }
 
 .col-10 {
-    width: 83.33%
+    width: 83.333%
 }
 
 .col-11 {
-    width: 91.663%
+    width: 91.6663%
 }
 
 .col-12 {
-    width: 99.996%
+    width: 99.9996%
 }
 
 
@@ -143,19 +135,19 @@ div[class^="col"] {
     }
 
     .exp .col-1 {
-        width: 16.666%
+        width: 16.6666%
     }
 
     .exp .col-2 {
-        width: 33.332%
+        width: 33.3332%
     }
 
     .exp .col-3 {
-        width: 49.998%
+        width: 49.9998%
     }
 
     .exp .col-4, .exp .col-5, .exp .col-6, .exp .col-7, .exp .col-8, .exp .col-9, .exp .col-10, .exp .col-11 {
-        width: 99.996%
+        width: 99.9996%
     }
 
 }
@@ -166,15 +158,15 @@ div[class^="col"] {
 @media only screen and (max-width : 740px) {
 
     .row {
-        width: calc(100% - 40px)
+        width: calc(100% - 16px)
     }
 
     div[class^="col"] {
-        padding: 10px
+        padding: 8px
     }
 
     *[class*="logo-"], *[class*="menu-"] {
-        padding: 0 10px
+        padding: 0 8px
     }
 
     .logo-m {
@@ -188,9 +180,9 @@ div[class^="col"] {
 
 @media only screen and (max-width : 520px) {
 
+
     div[class^="col"], .exp div[class^="col"] {
-        width: 100%;
-        padding: 10px 0;
+        width: 100%
     }
 
     .exp .col-1 {
@@ -198,11 +190,11 @@ div[class^="col"] {
     }
 
     .exp .col-1:nth-of-type(odd) {
-        padding-right: 10px
+        padding-right: 8px
     }
 
     .exp .col-1:nth-of-type(even) {
-        padding-left: 10px
+        padding-left: 8px
     }
 
 }
