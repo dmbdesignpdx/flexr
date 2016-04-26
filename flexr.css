@@ -153,7 +153,7 @@ div[class^="col"] {
 }
 
 
-/*    Phone Landscape & Some Tablet Portrait  */
+/*    Phone Landscape   */
 
 @media only screen and (max-width : 740px) {
 
