@@ -1,15 +1,9 @@
+/*  ---  Global  ---  */
+
 html, body {
     height: 100%;
     padding: 0;
     margin: 0
-}
-
-#flexr-main {
-    fill: #ff6868;
-}
-
-#flexr:hover #flexr-main {
-    fill: #dde
 }
 
 body {
@@ -58,12 +52,8 @@ a {
     tap-highlight-color: rgba(0,0,0,0);
 }
 
-#flexr:hover {
-    cursor: pointer
-}
-
-nav #flexr a {
-    width: 100%
+#flexr-main {
+    fill: #ff6868;
 }
 
 #flexr-footer {
@@ -72,19 +62,65 @@ nav #flexr a {
     margin-top: 60px
 }
 
+#flexr:hover #flexr-main {
+    fill: #dde
+}
+
+#flexr:hover {
+    cursor: pointer
+}
+
+nav {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: .3s
+}
+
+nav #flexr a {
+    width: 100%
+}
+
+#menu li {
+    padding: 10px;
+    font-size: 18px;
+    color: #DDE;
+    letter-spacing: .3pt
+}
+
+#menu li:not(.null):hover {
+    color: #ff6868;
+    cursor: pointer
+}
+
+#menu {
+    background: #2B2B3F;
+    transition: .4s transform
+}
+
+#flexr-grid #grid, #flexr-doc #doc, #flexr-download #dl {
+    color: #ff6868
+}
+
+#poma {
+    width: 40px;
+    height: 40px;
+    padding: 5px 8px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -9999px;
+    margin: auto
+}
+
+#poma svg {
+    fill: none;
+    stroke: #DDE;
+    stroke-width: 5px
+}
+
 section:first-of-type {
     padding: 150px 0 0
-}
-
-#flexr-home section:first-of-type {
-    padding: 150px 0 60px
-}
-
-ul a {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-tap-highlight-color: rgba(0,0,0,.15);
-    tap-highlight-color: transparent;
-    tap-highlight-color: rgba(0,0,0,.15)
 }
 
 h1, h2, li, a {
@@ -122,46 +158,6 @@ p {
     color: #DDE
 }
 
-#intro-text {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-#menu li {
-    font-size: 18px;
-    color: #DDE;
-}
-
-#menu li:not(.null):hover {
-    color: #ff6868;
-    cursor: pointer
-}
-
-.null {
-    opacity: .4;
-    pointer-events: none
-}
-
-#menu {
-    background: #2B2B3F;
-    transition: .4s transform
-}
-
-#flexr-grid #grid, #flexr-doc #doc, #flexr-download #dl {
-    color: #ff6868
-}
-
-#intro-text h1 {
-    margin: auto 0 0;
-}
-
-#intro-text p {
-    width: 96%;
-    padding-bottom: 30px;
-    margin: 15px 0 auto;
-    line-height: 1.5em
-}
-
 p ~ p {
     margin: 30px 0 10px 0
 }
@@ -175,20 +171,10 @@ p span {
     letter-spacing: .2pt
 }
 
-.example {
-    height: 1em;
-    padding: 20px 0 21px;
-    margin: 0;
-    font-size: 16px;
-    text-align: center;
-    background: #42425d;
-    line-height: 1.1em
-}
-
 .button, .secondary {
     width: 150px;
     padding: 20px 0 21px;
-    margin: 50px auto 60px;
+    margin: 60px auto 80px;
     font-size: 18px;
     text-align: center;
     color: #DDE;
@@ -226,7 +212,7 @@ code, pre {
 }
 
 p code {
-    padding: 6px 12px 7px;
+    padding: 7px 12px 6px;
     margin: 0 4px
 }
 
@@ -251,35 +237,59 @@ footer p {
     font-size: 14px
 }
 
-.shrink-large {
-    height: 80px;
-    box-shadow: 0 2px 5px rgba(0,0,0,.3)
+.null {
+    opacity: .4;
+    pointer-events: none
 }
 
-.shrink-small {
-    box-shadow: 0 2px 5px rgba(0,0,0,.3)
+
+/*  ---  Home  ---  */
+
+#flexr-home section:first-of-type {
+    padding: 150px 0 60px
 }
 
-.show-menu {
-    box-shadow: 3px 0 5px rgba(0,0,0,.3);
-    transform: translateX(210px) !important
+#intro-text {
+    display: flex;
+    flex-wrap: wrap
 }
 
-#poma {
-    width: 40px;
-    height: 40px;
-    padding: 5px 8px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -9999px;
-    margin: auto
+#intro-text h1 {
+    margin: auto 0 0
 }
 
-#poma svg {
-    fill: none;
-    stroke: #DDE;
-    stroke-width: 5px
+#intro-text p {
+    width: 96%;
+    padding-bottom: 30px;
+    margin: 15px 0 auto;
+    line-height: 1.5em
+}
+
+
+/*  ---  The Grid  ---  */
+
+.example {
+    height: 1em;
+    padding: 20px 0 21px;
+    margin: 0;
+    font-size: 16px;
+    text-align: center;
+    background: #42425d;
+    line-height: 1.1em
+}
+
+
+/*  ---  Get Flexr  ---  */
+
+#download-section {
+    padding: 180px 0 60px
+}
+
+#download-section h2, #download-section p {
+    width: 85%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center
 }
 
 .download-sprite {
@@ -295,13 +305,28 @@ footer p {
     background-position: 100% 0
 }
 
-#download-section h2, #download-section p {
-    width: 85%;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center
+
+/*  ---  Use It ---  */
+
+
+/*  ---  Actions ---  */
+
+.shrink-large {
+    height: 80px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.3)
 }
 
+.shrink-small {
+    box-shadow: 0 2px 5px rgba(0,0,0,.3)
+}
+
+.show-menu {
+    box-shadow: 3px 0 5px rgba(0,0,0,.3);
+    transform: translateX(210px) !important
+}
+
+
+/*  ---  Responsive ---  */
 
 @media only screen and (max-width : 1180px) {
 
@@ -366,11 +391,6 @@ footer p {
         left: 0
     }
 
-    #split {
-        position: absolute;
-        left: -9999px
-    }
-
     .mc {
         margin: 0 auto
     }
@@ -388,7 +408,14 @@ footer p {
         margin: 0
     }
 
+    .button:not(.secondary) {
+        margin: 50px auto 30px
+    }
+
 }
+
+
+/*  ---  Testing ---  */
 
 .alpha {
     width: auto;
