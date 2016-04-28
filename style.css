@@ -1,3 +1,8 @@
+/*  Version 2.1  */
+
+
+/*  ---  Global  ---  */
+
 html, body {
     height: 100%;
     padding: 0;
@@ -72,12 +77,25 @@ nav #flexr a {
     margin-top: 60px
 }
 
-section:first-of-type {
-    padding: 150px 0 0
+#poma {
+    width: 40px;
+    height: 40px;
+    padding: 5px 8px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -9999px;
+    margin: auto
 }
 
-#flexr-home section:first-of-type {
-    padding: 150px 0 60px
+#poma svg {
+    fill: none;
+    stroke: #DDE;
+    stroke-width: 5px
+}
+
+section:first-of-type {
+    padding: 150px 0 0
 }
 
 h1, h2, li, a {
@@ -115,11 +133,6 @@ p {
     color: #DDE
 }
 
-#intro-text {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 #menu li {
     font-size: 18px;
     color: #DDE;
@@ -130,11 +143,6 @@ p {
     cursor: pointer
 }
 
-.null {
-    opacity: .4;
-    pointer-events: none
-}
-
 #menu {
     background: #2B2B3F;
     transition: .4s transform
@@ -142,17 +150,6 @@ p {
 
 #flexr-grid #grid, #flexr-doc #doc, #flexr-download #dl {
     color: #ff6868
-}
-
-#intro-text h1 {
-    margin: auto 0 0
-}
-
-#intro-text p {
-    width: 96%;
-    padding-bottom: 30px;
-    margin: 15px 0 auto;
-    line-height: 1.5em
 }
 
 p ~ p {
@@ -166,16 +163,6 @@ p ~ .button {
 p span {
     font-weight: 700;
     letter-spacing: .2pt
-}
-
-.example {
-    height: 1em;
-    padding: 20px 0 21px;
-    margin: 0;
-    font-size: 16px;
-    text-align: center;
-    background: #42425d;
-    line-height: 1.1em
 }
 
 .button, .secondary {
@@ -206,6 +193,11 @@ p span {
     color: #DDE;
     background: none;
     cursor: pointer
+}
+
+.null {
+    opacity: .4;
+    pointer-events: none
 }
 
 code, pre {
@@ -245,6 +237,9 @@ footer p {
     font-size: 14px
 }
 
+
+/*  ---  JS Classes  ---  */
+
 .shrink-large {
     height: 80px;
     box-shadow: 0 2px 5px rgba(0,0,0,.3)
@@ -259,21 +254,55 @@ footer p {
     transform: translateX(210px) !important
 }
 
-#poma {
-    width: 40px;
-    height: 40px;
-    padding: 5px 8px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -9999px;
-    margin: auto
+
+
+/*  ---  Home  ---  */
+
+#flexr-home section:first-of-type {
+    padding: 150px 0 60px
 }
 
-#poma svg {
-    fill: none;
-    stroke: #DDE;
-    stroke-width: 5px
+#intro-text {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#intro-text h1 {
+    margin: auto 0 0
+}
+
+#intro-text p {
+    width: 96%;
+    padding-bottom: 30px;
+    margin: 15px 0 auto;
+    line-height: 1.5em
+}
+
+
+/*  ---  The Grid  ---  */
+
+.example {
+    height: 1em;
+    padding: 20px 0 21px;
+    margin: 0;
+    font-size: 16px;
+    text-align: center;
+    background: #42425d;
+    line-height: 1.1em
+}
+
+
+/*  ---  Get Flexr  ---  */
+
+#download-section {
+    padding: 180px 0 60px
+}
+
+#download-section h2, #download-section p {
+    width: 85%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center
 }
 
 .download-sprite {
@@ -289,16 +318,8 @@ footer p {
     background-position: 100% 0
 }
 
-#download-section {
-    padding: 180px 0 60px
-}
+/*  ---  Use It  ---  */
 
-#download-section h2, #download-section p {
-    width: 85%;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center
-}
 
 
 @media only screen and (max-width : 1180px) {
@@ -386,7 +407,7 @@ footer p {
     }
 
     .button:not(.secondary) {
-        margin: 50px auto 30px
+        margin: 50px auto
     }
 
 }
