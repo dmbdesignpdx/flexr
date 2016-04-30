@@ -1,3 +1,9 @@
+/*
+Flexr Grid  ---  Alpha 2.0
+Copyright 2016 Flexr. All rights reserved.
+More info at flexrgrid.com
+*/
+
 .row, div[class^="col"], *[class*="logo-"], *[class*="menu-"], nav, section, footer {
     height: auto;
     position: relative
@@ -11,17 +17,7 @@ nav, section, footer {
     width: 100%
 }
 
-nav .row {
-    height: 100%;
-    align-items: center;
-    justify-content: space-between
-}
-
-*[class*="menu-"] {
-    justify-content: space-between
-}
-
-.row, *[class^="col"] {
+*[class^="col"], section {
     overflow: hidden
 }
 
@@ -31,8 +27,17 @@ nav .row {
     flex-wrap: wrap
 }
 
+.set .row {
+    height: 100%;
+    align-items: center
+}
+
 *[class*="jus"] {
     flex-wrap: wrap
+}
+
+.spc {
+    justify-content: space-between
 }
 
 .jus-c {
@@ -43,13 +48,8 @@ nav .row {
     justify-content: flex-end
 }
 
-div[class^="col"] {
+div[class^="col"], *[class*="logo-"], *[class*="menu-"] {
     padding: 14px;
-    box-sizing: border-box
-}
-
-*[class*="logo-"], *[class*="menu-"] {
-    padding: 0 14px;
     box-sizing: border-box
 }
 
@@ -121,12 +121,8 @@ div[class^="col"] {
         width: calc(100% - 24px)
     }
 
-    div[class^="col"] {
+    div[class^="col"], *[class*="logo-"], *[class*="menu-"] {
         padding: 12px
-    }
-
-    *[class*="logo-"], *[class*="menu-"] {
-        padding: 0 12px
     }
 
     .m-full {
@@ -161,12 +157,8 @@ div[class^="col"] {
         width: calc(100% - 16px)
     }
 
-    div[class^="col"] {
+    div[class^="col"], *[class*="logo-"], *[class*="menu-"] {
         padding: 8px
-    }
-
-    *[class*="logo-"], *[class*="menu-"] {
-        padding: 0 8px
     }
 
     .logo-m {

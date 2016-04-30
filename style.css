@@ -1,5 +1,4 @@
-/*  Version 2.1  */
-
+/*  Alpha 2.0  */
 
 /*  ---  Global  ---  */
 
@@ -51,8 +50,10 @@ a {
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: none;
     tap-highlight-color: transparent;
     tap-highlight-color: rgba(0,0,0,0);
+    tap-highlight-color: none;
 }
 
 #flexr-main {
@@ -67,7 +68,13 @@ a {
     cursor: pointer
 }
 
-nav #flexr a {
+#nav {
+    transition: .3s;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden
+}
+
+#nav #flexr a {
     width: 100%
 }
 
@@ -134,6 +141,7 @@ p {
 }
 
 #menu li {
+    padding: 10px;
     font-size: 18px;
     color: #DDE;
 }
@@ -295,7 +303,7 @@ footer p {
 /*  ---  Get Flexr  ---  */
 
 #download-section {
-    padding: 180px 0 60px
+    padding: 210px 0 90px
 }
 
 #download-section h2, #download-section p {
@@ -309,7 +317,7 @@ footer p {
     width: 180px;
     height: 180px;
     margin: 30px auto 0;
-    background: url(img/download-sprite.svg) no-repeat;
+    background: url(img/flexr-download-sprite.svg) no-repeat;
     background-size: 200% 100%;
     background-position: 0 0
 }
@@ -378,11 +386,11 @@ footer p {
     }
 
     #menu li {
-        padding: 20px 0 20px 30px
+        padding: 18px 0 18px 28px
     }
 
     #menu li:first-of-type {
-        margin-top: 20px
+        margin-top: 18px
     }
 
     #poma {
@@ -415,7 +423,7 @@ footer p {
 .alpha {
     width: auto;
     height: auto;
-    padding: 4px 5px 5px 7px;
+    padding: 5px 6px 6px 8px;
     position: fixed;
     bottom: 0;
     right: 0;
