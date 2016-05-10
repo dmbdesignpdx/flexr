@@ -28,7 +28,7 @@
 
             <div id="flexr" class="logo-m mc">
 
-                <a href="index.html"><svg id="flexr-main" viewBox="0 0 264 74"><g id="logo-def"><title>Flexr Logo</title><path d="M184.05,59.78L175.34,72H149l20.56-27.72L150.42,18H177l7.7,11.29L192.26,18H218L198.84,44.28,219,72H192.26Z"/><rect y="52" width="24" height="20"/><rect y="26" width="40" height="20"/><rect width="58" height="20"/><path d="M245,24.1h0.29a17,17,0,0,1,14.14-7.53,14,14,0,0,1,4.48.51L262.07,37s-0.9-.61-5-0.61C249.57,36.41,246,42.26,246,46V72H223V18h22v6.1Z"/><rect x="64" width="24" height="72"/><path d="M151.63,45c0-13.92-9.13-29-28.17-29C105,16,93.65,29.15,93.65,45c0,16.86,12.54,29,29.8,29C144.25,74,150,61.49,150,61.49L133.32,53a11.26,11.26,0,0,1-8.75,3.76c-5.89,0-9.16-3.49-9.16-6.28h36S151.63,47.75,151.63,45Zm-36.41-7.08s0.85-6.51,8.44-6.51c6,0,7.73,3.9,7.73,6.51H115.21Z"/></g></svg></a>
+                <a href="index.html"><img id="flexr-main" src="img/flexr-logo.svg" alt="Flexr Grid Logo"/></a>
 
             </div>
 
@@ -42,17 +42,31 @@
 
                 <a href="flexr-grid.html"><li id="grid">The Grid</li></a>
 
-                <a href="get-flexr.html"><li id="dl">Get It</li></a>
-
                 <a href="use-flexr.html"><li id="doc">Use It</li></a>
 
                 <li class="null">Donate!</li>
+
+                <a href="get-flexr.html"><li id="dl">Get It</li></a>
 
             </ul>
 
         </div>
 
     </nav>
+
+    <header>
+
+        <div class="row">
+
+            <div class="col-12">
+
+                <h1>Flexr Documentation</h1>
+
+            </div>
+
+        </div>
+
+    </header>
 
     <section>
 
@@ -124,7 +138,7 @@
 
                 <h2>Justifying Columns</h2>
 
-                <p>To justify columns other than to the left (default), just add the class <code>jus-[c,r]</code> to the parent row. For example, right-justification:</p>
+                <p>The default justification is centered. To justify the columns to left or the right, just add the class <code>jus-[l,r]</code> to the parent row. For example, left-justification:</p>
 
             </div>
 
@@ -134,7 +148,7 @@
 
             <div class="col-12">
 
-<pre>&lt;div class="row <span>jus-r</span>"&gt;
+<pre>&lt;div class="row <span>jus-l</span>"&gt;
 
    &lt;div class="col-x"&gt;
 
@@ -146,15 +160,149 @@
 
         <div class="row">
 
+            <div class="col-12">
+
+                <h2>Column/Gutter Widths &amp; Break Points</h2>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-2">
+
+                <p class="cgwbp title"><span>Break Points</span></p>
+
+            </div>
+
+            <div class="col-2">
+
+                <p class="cgwbp">&lt; <span>520px</span></p>
+
+            </div>
+
+            <div class="col-2">
+
+                <p class="cgwbp">520px&ndash;<span>740px</span></p>
+
+            </div>
+
+            <div class="col-2">
+
+                <p class="cgwbp">740px&ndash;<span>940px</span></p>
+
+            </div>
+
+            <div class="col-2">
+
+                <p class="cgwbp">940px&ndash;<span>1180px<span></p>
+
+            </div>
+
+            <div class="col-2">
+
+                <p class="cgwbp">&gt; 1180px</p>
+
+            </div>
+
+            <div class="bkg"></div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-2">
+
+                <p class="cgwbp title"><span>Column Width</span></p>
+
+            </div>
+
+            <div class="col-2">
+
+                <p class="cgwbp">auto</p>
+
+            </div>
+
+            <div class="col-2">
+
+                <p class="cgwbp">~26px&ndash;35px</p>
+
+            </div>
+
+            <div class="col-2">
+
+                <p class="cgwbp">~36px&ndash;51px</p>
+
+            </div>
+
+            <div class="col-2">
+
+                <p class="cgwbp">~52px&ndash;67px</p>
+
+            </div>
+
+            <div class="col-2">
+
+                <p class="cgwbp">~68px</p>
+
+            </div>
+
+            <div class="bkg"></div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-2">
+
+                <p class="cgwbp title"><span>Gutter Width</span></p>
+
+            </div>
+
+            <div class="col-2">
+
+                <p class="cgwbp">16px</p>
+
+            </div>
+
+            <div class="col-2">
+
+                <p class="cgwbp">16px</p>
+
+            </div>
+
+            <div class="col-2">
+
+                <p class="cgwbp">24px</p>
+
+            </div>
+
+            <div class="col-2">
+
+                <p class="cgwbp">28px</p>
+
+            </div>
+
+            <div class="col-2">
+
+                <p class="cgwbp">28px</p>
+
+            </div>
+
+            <div class="bkg"></div>
+
+        </div>
+
     </section>
 
     <section>
 
-        <div class="row exp jus-c">
+        <div class="row exp">
 
             <div class="col-2">
 
-                <a class="button" href="getflexr.html">Get Flexr</a>
+                <a class="button" href="get-flexr.html">Get Flexr</a>
 
             </div>
 
@@ -175,7 +323,7 @@
 
             <div class="col-4">
 
-                <svg viewBox="0 0 264 74" id="flexr-footer"><title>Flexr Logo</title><use xlink:href="#logo-def"></use></svg>
+                <img id="flexr-footer" src="img/flexr-logo.svg" alt="Flexr Grid Logo"/>
 
                 <p class="copy">&copy; 2016 Flexr. All rights reserved. All other trademarks are the property of their respective owners.</p>
 
@@ -185,7 +333,7 @@
 
     </footer>
 
-    <p class="alpha">alpha 2.1</p>
+    <p class="alpha">alpha 3.0</p>
 
     <script src="main.js" type="text/javascript"></script>
 

@@ -1,4 +1,4 @@
-/*  Alpha 2.1  */
+/*  Alpha 3.0  */
 
 /*  ---  Global  ---  */
 
@@ -56,16 +56,30 @@ a {
     tap-highlight-color: none;
 }
 
-#flexr-main {
-    fill: #ff6868;
-}
-
-#flexr:hover #flexr-main {
-    fill: #dde
+li a {
+    color: inherit
 }
 
 #flexr:hover {
     cursor: pointer
+}
+
+#flexr-main {
+    width: 100%;
+    height: auto
+}
+
+#flexr:hover #flexr-main {
+    -webkit-filter: hue-rotate(240deg) saturate(20%) brightness(170%);
+    filter: hue-rotate(240deg) saturate(20%) brightness(170%)
+}
+
+#flexr-footer {
+    width: 27%;
+    height: auto;
+    margin-top: 60px;
+    -webkit-filter: hue-rotate(240deg) saturate(20%) brightness(100%);
+    filter: hue-rotate(240deg) saturate(20%) brightness(100%)
 }
 
 #nav {
@@ -76,12 +90,6 @@ a {
 
 #nav #flexr a {
     width: 100%
-}
-
-#flexr-footer {
-    fill: #aab;
-    width: 27%;
-    margin-top: 60px
 }
 
 #poma {
@@ -101,8 +109,8 @@ a {
     stroke-width: 5px
 }
 
-section:first-of-type {
-    padding: 150px 0 0
+header {
+    padding: 150px 0 60px
 }
 
 h1, h2, li, a {
@@ -127,9 +135,13 @@ h1 {
     font-size: 40px
 }
 
+header h1 {
+    text-align: center
+}
+
 h2 {
     padding: 20px 0;
-    font-size: 26px;
+    font-size: 26px
 }
 
 p {
@@ -140,24 +152,41 @@ p {
     color: #DDE
 }
 
-#menu li {
-    padding: 10px;
-    font-size: 18px;
-    color: #DDE;
-}
-
-#menu li:not(.null):hover {
-    color: #ff6868;
-    cursor: pointer
-}
-
 #menu {
     background: #2B2B3F;
     transition: .4s transform
 }
 
-#flexr-grid #grid, #flexr-doc #doc, #flexr-download #dl {
-    color: #ff6868
+#menu li {
+    padding: 10px;
+    font-size: 18px;
+    color: #DDE
+}
+
+#menu #dl {
+    font-size: 18px;
+    padding: 10px 16px;
+    color: #eef;
+    background: #ff666C
+}
+
+#menu li:not(.null):hover {
+    color: #ff666C;
+    cursor: pointer
+}
+
+#menu #dl:hover {
+    color: #ff666C;
+    background: #eef;
+}
+
+#flexr-grid #grid, #flexr-doc #doc {
+    color: #ff666C
+}
+
+#flexr-download #menu #dl {
+    color: #ff666C;
+    background: #DDE;
 }
 
 p ~ p {
@@ -179,8 +208,9 @@ p span {
     margin: 50px auto 60px;
     font-size: 18px;
     text-align: center;
-    color: #DDE;
-    background: #ff6868;
+    letter-spacing: .3pt;
+    color: #EEF;
+    background: #ff666C;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
     transition: .3s background, .3s color
@@ -192,8 +222,8 @@ p span {
 }
 
 .button:not(.null):hover {
-    color: #ff6868;
-    background: #DDE;
+    color: #ff666C;
+    background: #EEF;
     cursor: pointer
 }
 
@@ -226,7 +256,7 @@ p code {
 
 code span, pre span, footer a {
     font-weight: 700;
-    color: #ff6868
+    color: #ff666C
 }
 
 footer p {
@@ -266,17 +296,18 @@ footer p {
 
 /*  ---  Home  ---  */
 
-#flexr-home section:first-of-type {
+#flexr-home header {
     padding: 150px 0 60px
 }
 
 #intro-text {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap
 }
 
 #intro-text h1 {
-    margin: auto 0 0
+    margin: auto 0 0;
+    text-align: left
 }
 
 #intro-text p {
@@ -303,7 +334,7 @@ footer p {
 /*  ---  Get Flexr  ---  */
 
 #download-section {
-    padding: 210px 0 90px
+    padding: 0 0 90px
 }
 
 #download-section h2, #download-section p {
@@ -326,9 +357,37 @@ footer p {
     background-position: 100% 0
 }
 
+
 /*  ---  Use It  ---  */
 
+.cgwbp {
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 17px;
+}
 
+.cgwbp span {
+    color: #ff666C
+}
+
+.title span {
+    color: #dde
+}
+
+.bkg {
+    width: calc(100% - 28px);
+    height: calc(100% - 28px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: -1;
+    background: #42425d;
+
+}
 
 @media only screen and (max-width : 1180px) {
 
@@ -355,6 +414,10 @@ footer p {
         left: -9999px
     }
 
+    .cgwbp {
+        padding: 18px
+    }
+
 }
 
 @media only screen and (max-width : 740px) {
@@ -367,12 +430,24 @@ footer p {
         padding: 60px 0 0
     }
 
-    #flexr-home section:first-of-type {
-        padding: 60px 0 30px
+    h1 {
+        font-size: 30px
+    }
+
+    h2 {
+        font-size: 22px
+    }
+
+    header {
+        padding: 90px 0 10px
+    }
+
+    #flexr-home header {
+        padding: 70px 0 30px
     }
 
     #download-section {
-        padding: 120px 0 30px
+        padding: 0 0 30px
     }
 
     #menu {
@@ -389,6 +464,11 @@ footer p {
         padding: 18px 0 18px 28px
     }
 
+    #menu #dl {
+        font-size: 18px;
+        padding: 12px 0 12px 28px
+    }
+
     #menu li:first-of-type {
         margin-top: 18px
     }
@@ -399,6 +479,11 @@ footer p {
 
     .mc {
         margin: 0 auto
+    }
+
+    .cgwbp {
+        padding: 14px;
+        font-size: 16px
     }
 
 }
@@ -416,6 +501,10 @@ footer p {
 
     .button:not(.secondary) {
         margin: 50px auto
+    }
+
+    .cgwbp {
+        text-align: center
     }
 
 }

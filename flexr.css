@@ -1,10 +1,10 @@
 /*
-Flexr Grid  ---  Alpha 2.1
+Flexr Grid  ---  Alpha 3.0
 Copyright 2016 Flexr. All rights reserved.
 More info at flexrgrid.com
 */
 
-.row, div[class^="col"], *[class*="logo-"], *[class*="menu-"], nav, section, footer {
+.row, div[class^="col"], *[class*="logo-"], *[class*="menu-"], nav, header, section, footer {
     height: auto;
     position: relative
 }
@@ -13,7 +13,7 @@ nav, .row, *[class*="jus-"], *[class*="logo-"], *[class*="menu-"] {
     display: flex
 }
 
-nav, section, footer {
+nav, section, footer, header {
     width: 100%
 }
 
@@ -25,6 +25,10 @@ nav, section, footer {
     width: 1152px;
     margin: 0 auto;
     flex-wrap: wrap
+}
+
+section .row {
+    justify-content: center
 }
 
 .set .row {
@@ -40,8 +44,8 @@ nav, section, footer {
     justify-content: space-between
 }
 
-.jus-c {
-    justify-content: center
+.jus-l {
+    justify-content: flex-start
 }
 
 .jus-r {
