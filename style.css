@@ -1,4 +1,4 @@
-/*  Alpha 3.0  */
+/*  Alpha 3.1  */
 
 /*  ---  Global  ---  */
 
@@ -48,16 +48,12 @@ ul, li {
 a {
     display: block;
     text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
     -webkit-tap-highlight-color: none;
-    tap-highlight-color: transparent;
     tap-highlight-color: rgba(0,0,0,0);
+    tap-highlight-color: transparent;
     tap-highlight-color: none;
-}
-
-li a {
-    color: inherit
 }
 
 #flexr:hover {
@@ -157,7 +153,8 @@ p {
     transition: .4s transform
 }
 
-#menu li {
+#menu a {
+    display: inline-block;
     padding: 10px;
     font-size: 18px;
     color: #DDE
@@ -165,19 +162,18 @@ p {
 
 #menu #dl {
     font-size: 18px;
-    padding: 10px 16px;
-    color: #eef;
-    background: #ff666C
+    padding: 10px 18px;
+    color: #2B2B3F;
+    background: #4CC
 }
 
-#menu li:not(.null):hover {
-    color: #ff666C;
-    cursor: pointer
+#menu a:not(.null):hover {
+    color: #ff666C
 }
 
 #menu #dl:hover {
-    color: #ff666C;
-    background: #eef;
+    /*color: #ff666C;*/
+    background: #DDE;
 }
 
 #flexr-grid #grid, #flexr-doc #doc {
@@ -185,7 +181,7 @@ p {
 }
 
 #flexr-download #menu #dl {
-    color: #ff666C;
+    /*color: #ff666C;*/
     background: #DDE;
 }
 
@@ -197,13 +193,14 @@ p ~ .button {
     margin: 28px auto 60px
 }
 
-p span {
+p span, p strong {
     font-weight: 700;
     letter-spacing: .2pt
 }
 
 .button, .secondary {
     width: 150px;
+    height: 1.1em;
     padding: 20px 0 21px;
     margin: 50px auto 60px;
     font-size: 18px;
@@ -254,7 +251,7 @@ p code {
     white-space: nowrap;
 }
 
-code span, pre span, footer a {
+code span, pre span, code strong, pre strong, footer a {
     font-weight: 700;
     color: #ff666C
 }
@@ -268,7 +265,7 @@ footer p {
 .dbdesign {
     width: 73%
 }
-
+/**/
 .copy {
     margin: 20px 0;
     padding: 0;
@@ -302,19 +299,24 @@ footer p {
 
 #intro-text {
     display: flex;
-    flex-wrap: wrap
+    flex-direction: column;
+    justify-content: center
 }
 
 #intro-text h1 {
-    margin: auto 0 0;
+    margin: 0;
     text-align: left
 }
 
 #intro-text p {
     width: 96%;
     padding-bottom: 30px;
-    margin: 15px 0 auto;
+    margin: 15px 0 0;
     line-height: 1.5em
+}
+
+#intro-text a {
+    margin: 0 0 30px
 }
 
 
@@ -367,11 +369,11 @@ footer p {
     font-size: 17px;
 }
 
-.cgwbp span {
+.cgwbp span, .cgwbp strong {
     color: #ff666C
 }
 
-.title span {
+.title span, .title strong {
     color: #dde
 }
 
@@ -385,8 +387,7 @@ footer p {
     bottom: 0;
     margin: auto;
     z-index: -1;
-    background: #42425d;
-
+    background: #42425d
 }
 
 @media only screen and (max-width : 1180px) {
@@ -397,7 +398,7 @@ footer p {
 
 @media only screen and (max-width : 940px) {
 
-    #menu li {
+    #menu a {
         font-size: 17px
     }
 
@@ -409,6 +410,10 @@ footer p {
         margin: 15px auto
     }
 
+    #intro-text a {
+        margin: 0 auto 20px
+    }
+
     #testr {
         position: absolute;
         left: -9999px
@@ -416,6 +421,11 @@ footer p {
 
     .cgwbp {
         padding: 18px
+    }
+
+    .bkg {
+        width: calc(100% - 24px);
+        height: calc(100% - 24px)
     }
 
 }
@@ -460,17 +470,21 @@ footer p {
         flex-flow: column
     }
 
-    #menu li {
-        padding: 18px 0 18px 28px
+    #menu a {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 18px 0 18px 28px;
+        margin: 8px 0
     }
 
     #menu #dl {
-        font-size: 18px;
-        padding: 12px 0 12px 28px
+        width: calc(100% - 16px);
+        padding: 12px 0 12px 20px;
+        margin: 10px 8px
     }
 
     #menu li:first-of-type {
-        margin-top: 18px
+        margin-top: 10px
     }
 
     #poma {
@@ -484,6 +498,16 @@ footer p {
     .cgwbp {
         padding: 14px;
         font-size: 16px
+    }
+
+    .download-sprite {
+        width: 150px;
+        height: 150px
+    }
+
+    .bkg {
+        width: calc(100% - 16px);
+        height: calc(100% - 16px)
     }
 
 }
@@ -501,10 +525,6 @@ footer p {
 
     .button:not(.secondary) {
         margin: 50px auto
-    }
-
-    .cgwbp {
-        text-align: center
     }
 
 }
