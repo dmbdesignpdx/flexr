@@ -1,4 +1,4 @@
-/*  Alpha 3.1  */
+/*  For Flexr Alpha 3.2  */
 
 /*  ---  Global  ---  */
 
@@ -35,8 +35,8 @@ img, svg {
 }
 
 img {
-    border: 0 none;
-    outline: 0 none
+    border: none;
+    outline: none
 }
 
 ul, li {
@@ -56,6 +56,10 @@ a {
     tap-highlight-color: none;
 }
 
+a:active {
+    outline: none
+}
+
 #flexr:hover {
     cursor: pointer
 }
@@ -66,16 +70,16 @@ a {
 }
 
 #flexr:hover #flexr-main {
-    -webkit-filter: hue-rotate(240deg) saturate(20%) brightness(170%);
-    filter: hue-rotate(240deg) saturate(20%) brightness(170%)
+    -webkit-filter: hue-rotate(240deg) saturate(10%) brightness(190%);
+    filter: hue-rotate(240deg) saturate(10%) brightness(190%)
 }
 
 #flexr-footer {
     width: 27%;
     height: auto;
     margin-top: 60px;
-    -webkit-filter: hue-rotate(240deg) saturate(20%) brightness(100%);
-    filter: hue-rotate(240deg) saturate(20%) brightness(100%)
+    -webkit-filter: hue-rotate(240deg) saturate(10%) brightness(120%);
+    filter: hue-rotate(240deg) saturate(10%) brightness(120%)
 }
 
 #nav {
@@ -135,6 +139,10 @@ header h1 {
     text-align: center
 }
 
+.with-icon {
+    padding-top: 0
+}
+
 h2 {
     padding: 20px 0;
     font-size: 26px
@@ -164,24 +172,22 @@ p {
     font-size: 18px;
     padding: 10px 18px;
     color: #2B2B3F;
-    background: #4CC
+    background: #4DD
 }
 
 #menu a:not(.null):hover {
-    color: #ff666C
+    color: #F56
 }
 
 #menu #dl:hover {
-    /*color: #ff666C;*/
-    background: #DDE;
+    background: #DDE
 }
 
 #flexr-grid #grid, #flexr-doc #doc {
-    color: #ff666C
+    color: #F56
 }
 
 #flexr-download #menu #dl {
-    /*color: #ff666C;*/
     background: #DDE;
 }
 
@@ -207,7 +213,7 @@ p span, p strong {
     text-align: center;
     letter-spacing: .3pt;
     color: #EEF;
-    background: #ff666C;
+    background: #F56;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
     transition: .3s background, .3s color
@@ -219,7 +225,7 @@ p span, p strong {
 }
 
 .button:not(.null):hover {
-    color: #ff666C;
+    color: #F56;
     background: #EEF;
     cursor: pointer
 }
@@ -253,7 +259,7 @@ p code {
 
 code span, pre span, code strong, pre strong, footer a {
     font-weight: 700;
-    color: #ff666C
+    color: #F56
 }
 
 footer p {
@@ -346,16 +352,30 @@ footer p {
     text-align: center
 }
 
-.download-sprite {
+.with-icon:before {
+    content: '';
+    display: block;
     width: 180px;
     height: 180px;
-    margin: 30px auto 0;
-    background: url(img/flexr-download-sprite.svg) no-repeat;
-    background-size: 200% 100%;
+    margin: 0 auto 30px;
+    background: url(img/flexr-sprite.svg) no-repeat;
+    background-size: 400% 100%;
     background-position: 0 0
 }
 
-#flexr-plus {
+header .with-icon:before {
+    margin: 0 auto
+}
+
+#flexr-plus:before {
+    background-position: 33.333% 0
+}
+
+#flexr-grid .with-icon:before {
+    background-position: 66.666% 0
+}
+
+#flexr-doc .with-icon:before {
     background-position: 100% 0
 }
 
@@ -370,7 +390,7 @@ footer p {
 }
 
 .cgwbp span, .cgwbp strong {
-    color: #ff666C
+    color: #F56
 }
 
 .title span, .title strong {
@@ -500,7 +520,7 @@ footer p {
         font-size: 16px
     }
 
-    .download-sprite {
+    .with-icon:before {
         width: 150px;
         height: 150px
     }
