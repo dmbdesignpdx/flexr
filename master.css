@@ -1,4 +1,24 @@
-/*  For Flexr Alpha 3.2  */
+/*  For Flexr Alpha 4.0
+
+
+Contents
+
+- Global
+  - Navigation
+- JS Classes
+- Home
+- The Grid
+- Use It
+- Get Flexr
+- Small Screens/Tablet Landscape
+- Tablet Portrait
+- Phone Landscape
+- Phone Portrait
+- Version
+
+*/
+
+
 
 /*  ---  Global  ---  */
 
@@ -16,25 +36,11 @@ body {
     font-smoothing: antialiased
 }
 
-nav {
-    height: 110px;
-    padding-top: 1px;
-    position: fixed;
-    top: -1px;
-    left: 0;
-    z-index: 999;
-    background: #2B2B3F
-}
-
-footer {
-    background:#202031
-}
-
 img, svg {
     display: block
 }
 
-img {
+img, a:active {
     border: none;
     outline: none
 }
@@ -56,12 +62,29 @@ a {
     tap-highlight-color: none;
 }
 
-a:active {
-    outline: none
+
+/*    Navigation    */
+
+#nav {
+    height: 110px;
+    padding-top: 1px;
+    position: fixed;
+    top: -1px;
+    left: 0;
+    z-index: 999;
+    background: #2B2B3F;
+    transition: .3s;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden
 }
 
-#flexr:hover {
-    cursor: pointer
+#nav .row {
+    height: 100%;
+    align-items: center
+}
+
+footer {
+    background:#202031
 }
 
 #flexr-main {
@@ -69,12 +92,12 @@ a:active {
     height: auto
 }
 
-#flexr:hover #flexr-main {
+.logo-m:hover img {
     -webkit-filter: hue-rotate(240deg) saturate(10%) brightness(190%);
     filter: hue-rotate(240deg) saturate(10%) brightness(190%)
 }
 
-#flexr-footer {
+footer img {
     width: 27%;
     height: auto;
     margin-top: 60px;
@@ -82,13 +105,7 @@ a:active {
     filter: hue-rotate(240deg) saturate(10%) brightness(120%)
 }
 
-#nav {
-    transition: .3s;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden
-}
-
-#nav #flexr a {
+.logo-m a {
     width: 100%
 }
 
@@ -109,9 +126,40 @@ a:active {
     stroke-width: 5px
 }
 
-header {
-    padding: 150px 0 60px
+#menu a {
+    display: inline-block;
+    padding: 10px;
+    font-size: 18px;
+    color: #DDE
 }
+
+#menu #dl {
+    font-size: 18px;
+    padding: 10px 18px;
+    color: #2B2B3F;
+    background: #3DD
+}
+
+#menu a:not(.null):hover {
+    color: #F56
+}
+
+#menu #dl:hover {
+    background: #DDE
+}
+
+/*    Header    */
+
+
+
+/*    Footer    */
+
+header {
+    padding: 150px 0 90px
+}
+
+
+/*    Text    */
 
 h1, h2, li, a {
     font-weight: 700;
@@ -132,7 +180,7 @@ h1, h2, p {
 h1 {
     padding-top: 30px;
     margin: 0;
-    font-size: 40px
+    font-size: 42px
 }
 
 header h1 {
@@ -156,41 +204,6 @@ p {
     color: #DDE
 }
 
-#menu {
-    background: #2B2B3F;
-    transition: .4s transform
-}
-
-#menu a {
-    display: inline-block;
-    padding: 10px;
-    font-size: 18px;
-    color: #DDE
-}
-
-#menu #dl {
-    font-size: 18px;
-    padding: 10px 18px;
-    color: #2B2B3F;
-    background: #4DD
-}
-
-#menu a:not(.null):hover {
-    color: #F56
-}
-
-#menu #dl:hover {
-    background: #DDE
-}
-
-#flexr-grid #grid, #flexr-doc #doc {
-    color: #F56
-}
-
-#flexr-download #menu #dl {
-    background: #DDE;
-}
-
 p ~ p {
     margin: 30px 0 10px 0
 }
@@ -202,6 +215,19 @@ p ~ .button {
 p span, p strong {
     font-weight: 700;
     letter-spacing: .2pt
+}
+
+#menu {
+    background: #2B2B3F;
+    transition: .4s transform
+}
+
+#the-grid #grid, #how-to #doc {
+    color: #F56
+}
+
+#download #menu #dl {
+    background: #DDE
 }
 
 .button, .secondary {
@@ -216,7 +242,8 @@ p span, p strong {
     background: #F56;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
-    transition: .3s background, .3s color
+    transform: translateZ(0);
+    /*transition: .2s background, .2s color, .2s transform*/
 }
 
 .secondary {
@@ -227,7 +254,8 @@ p span, p strong {
 .button:not(.null):hover {
     color: #F56;
     background: #EEF;
-    cursor: pointer
+    cursor: pointer;
+    transform: scale(1.05)
 }
 
 .secondary:not(.null):hover {
@@ -271,7 +299,7 @@ footer p {
 .dbdesign {
     width: 73%
 }
-/**/
+
 .copy {
     margin: 20px 0;
     padding: 0;
@@ -279,10 +307,11 @@ footer p {
 }
 
 
+
 /*  ---  JS Classes  ---  */
 
 .shrink-large {
-    height: 80px;
+    height: 80px !important;
     box-shadow: 0 2px 5px rgba(0,0,0,.3)
 }
 
@@ -299,7 +328,7 @@ footer p {
 
 /*  ---  Home  ---  */
 
-#flexr-home header {
+#home header {
     padding: 150px 0 60px
 }
 
@@ -326,6 +355,7 @@ footer p {
 }
 
 
+
 /*  ---  The Grid  ---  */
 
 .example {
@@ -338,46 +368,6 @@ footer p {
     line-height: 1.1em
 }
 
-
-/*  ---  Get Flexr  ---  */
-
-#download-section {
-    padding: 0 0 90px
-}
-
-#download-section h2, #download-section p {
-    width: 85%;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center
-}
-
-.with-icon:before {
-    content: '';
-    display: block;
-    width: 180px;
-    height: 180px;
-    margin: 0 auto 30px;
-    background: url(img/flexr-sprite.svg) no-repeat;
-    background-size: 400% 100%;
-    background-position: 0 0
-}
-
-header .with-icon:before {
-    margin: 0 auto
-}
-
-#flexr-plus:before {
-    background-position: 33.333% 0
-}
-
-#flexr-grid .with-icon:before {
-    background-position: 66.666% 0
-}
-
-#flexr-doc .with-icon:before {
-    background-position: 100% 0
-}
 
 
 /*  ---  Use It  ---  */
@@ -410,11 +400,65 @@ header .with-icon:before {
     background: #42425d
 }
 
+
+
+/*  ---  Get Flexr  ---  */
+
+#download-section {
+    padding: 0 0 90px
+}
+
+#download-section h2, #download-section p {
+    width: 85%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center
+}
+
+.with-icon:before {
+    content: '';
+    display: block;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 30px;
+    background: url(img/flexr-sprite.svg) no-repeat;
+    background-size: 500% 100%;
+    background-position: 0 0
+}
+
+header .with-icon:before {
+    margin: 0 auto
+}
+
+#flexr-plus:before {
+    background-position: 25% 0
+}
+
+#grid-title:before {
+    background-position: 50% 0
+}
+
+#doc-title:before {
+    background-position: 75% 0
+}
+
+#download-title:before {
+    background-position: 100% 0
+}
+
+
+
+/*  ---  Small Screens/Tablet Landscape  ---  */
+
 @media only screen and (max-width : 1180px) {
 
 
 
 }
+
+
+
+/*  ---  Tablet Portrait  ---  */
 
 @media only screen and (max-width : 940px) {
 
@@ -450,9 +494,13 @@ header .with-icon:before {
 
 }
 
+
+
+/*  ---  Phone Landscape  ---  */
+
 @media only screen and (max-width : 740px) {
 
-    nav {
+    #nav {
         height: 50px
     }
 
@@ -472,7 +520,7 @@ header .with-icon:before {
         padding: 90px 0 10px
     }
 
-    #flexr-home header {
+    #home header {
         padding: 70px 0 30px
     }
 
@@ -511,10 +559,6 @@ header .with-icon:before {
         left: 0
     }
 
-    .mc {
-        margin: 0 auto
-    }
-
     .cgwbp {
         padding: 14px;
         font-size: 16px
@@ -532,13 +576,17 @@ header .with-icon:before {
 
 }
 
+
+
+/*  ---  Phone Portrait  ---  */
+
 @media only screen and (max-width : 520px) {
 
     .secondary {
         margin: 0 auto 60px;
     }
 
-    #flexr-footer {
+    footer img {
         width: 24%;
         margin: 0
     }
@@ -549,7 +597,11 @@ header .with-icon:before {
 
 }
 
-.alpha {
+
+
+/*  ---  Version  ---  */
+
+.version {
     width: auto;
     height: auto;
     padding: 5px 6px 6px 8px;

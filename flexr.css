@@ -1,15 +1,15 @@
 /*
-Flexr Grid  -  Alpha 3.2
+Flexr Grid  -  Alpha 4.0
 Copyright 2016 Flexr. All rights reserved.
 More info at flexrgrid.com
 */
 
-.row, div[class^="col"], *[class*="logo-"], *[class*="menu-"], nav, header, section, footer {
+.row, div[class*="col"], *[class*="logo-"], *[class*="menu-"], nav, header, section, footer {
     height: auto;
     position: relative
 }
 
-nav, .row, *[class*="jus-"], *[class*="logo-"], *[class*="menu-"] {
+.row, *[class*="jus-"], *[class*="logo-"], *[class*="menu-"] {
     display: flex
 }
 
@@ -17,7 +17,7 @@ nav, section, footer, header {
     width: 100%
 }
 
-*[class^="col"], section {
+*[class*="col"], section, nav, footer {
     overflow: hidden
 }
 
@@ -31,16 +31,11 @@ section .row {
     justify-content: center
 }
 
-.set .row {
-    height: 100%;
-    align-items: center
-}
-
 *[class*="jus"] {
     flex-wrap: wrap
 }
 
-.spc {
+*[class*="menu-"], nav .row {
     justify-content: space-between
 }
 
@@ -52,7 +47,7 @@ section .row {
     justify-content: flex-end
 }
 
-div[class^="col"], *[class*="logo-"], *[class*="menu-"] {
+div[class*="col"], *[class*="logo-"], *[class*="menu-"] {
     padding: 14px;
     box-sizing: border-box
 }
@@ -125,7 +120,7 @@ div[class^="col"], *[class*="logo-"], *[class*="menu-"] {
         width: calc(100% - 24px)
     }
 
-    div[class^="col"], *[class*="logo-"], *[class*="menu-"] {
+    div[class*="col"], *[class*="logo-"], *[class*="menu-"] {
         padding: 12px
     }
 
@@ -161,12 +156,16 @@ div[class^="col"], *[class*="logo-"], *[class*="menu-"] {
         width: calc(100% - 16px)
     }
 
-    div[class^="col"], *[class*="logo-"], *[class*="menu-"] {
+    div[class*="col"], *[class*="logo-"], *[class*="menu-"] {
         padding: 8px
     }
 
     .logo-m {
         width: 110px
+    }
+
+    .mtc {
+        margin: 0 auto
     }
 
 }
@@ -177,7 +176,7 @@ div[class^="col"], *[class*="logo-"], *[class*="menu-"] {
 @media only screen and (max-width : 520px) {
 
 
-    div[class^="col"], .exp div[class^="col"] {
+    div[class*="col"], .exp div[class*="col"] {
         width: 100%
     }
 
