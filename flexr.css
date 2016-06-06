@@ -17,7 +17,7 @@ nav, section, footer, header {
     width: 100%
 }
 
-*[class*="col"], section, nav, footer {
+*[class*="col"], section {
     overflow: hidden
 }
 

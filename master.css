@@ -87,7 +87,11 @@ footer {
     background:#202031
 }
 
-#flexr-main {
+.logo-m {
+    cursor: pointer
+}
+
+.logo-m img, .logo-m a {
     width: 100%;
     height: auto
 }
@@ -103,10 +107,6 @@ footer img {
     margin-top: 60px;
     -webkit-filter: hue-rotate(240deg) saturate(10%) brightness(120%);
     filter: hue-rotate(240deg) saturate(10%) brightness(120%)
-}
-
-.logo-m a {
-    width: 100%
 }
 
 #poma {
@@ -217,6 +217,29 @@ p span, p strong {
     letter-spacing: .2pt
 }
 
+code, pre {
+    width: 100%;
+    padding: 22px 26px 24px;
+    box-sizing: border-box;
+    margin: 0;
+    font-size: 14px;
+    color: #DDE;
+    background: #42425d;
+    overflow-x: scroll;
+    overflow-y: auto
+}
+
+p code {
+    padding: 5px 12px 6px;
+    margin: 0 4px;
+    white-space: nowrap;
+}
+
+code span, pre span, code strong, pre strong, footer a {
+    font-weight: 700;
+    color: #F56
+}
+
 #menu {
     background: #2B2B3F;
     transition: .4s transform
@@ -267,27 +290,6 @@ p span, p strong {
 .null {
     opacity: .4;
     pointer-events: none
-}
-
-code, pre {
-    width: 100%;
-    padding: 22px 26px 24px;
-    box-sizing: border-box;
-    margin: 0;
-    font-size: 14px;
-    color: #DDE;
-    background: #42425d
-}
-
-p code {
-    padding: 7px 12px 6px;
-    margin: 0 4px;
-    white-space: nowrap;
-}
-
-code span, pre span, code strong, pre strong, footer a {
-    font-weight: 700;
-    color: #F56
 }
 
 footer p {

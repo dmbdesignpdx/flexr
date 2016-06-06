@@ -74,9 +74,23 @@
 
             <div class="col-12">
 
-                <h2>One Class Will Do</h2>
+                <h2>First Thing's First</h2>
 
-                <p>Creating a column requires only one class <code>col-</code> defined by its size <code>[1&ndash;12]</code> (total [num] not exceeding 12):</p>
+                <p>You gotta link Flexr CSS. In your HTML:</p>
+
+<pre>&lt;head&gt;
+
+   &lt;link href="path-to/<span>flexr.css</span>" rel="stylesheet"&gt;
+
+   &lt;link href="path-to/your.css" rel="stylesheet"&gt;
+
+&lt;/head&gt;</pre>
+
+                <p>Or in your CSS:</p>
+
+<pre>@import "path-to/<span>flexr.css</span>";
+
+/*  Rest of your CSS  */</pre>
 
             </div>
 
@@ -85,6 +99,10 @@
         <div class="row">
 
             <div class="col-12">
+
+                <h2>One Class Will Do</h2>
+
+                <p>Creating a column requires only one class <code>col-</code> defined by its size <code>[1&ndash;12]</code> (total [num] not exceeding 12):</p>
 
 <pre>&lt;div class="row"&gt;
 
@@ -107,14 +125,6 @@
                 <p><strong>Shrinking Columns</strong> is the default type of collapsing.</p>
 
                 <p>To define <strong>Expanding Columns</strong>, all you need to do is add the expanding class <code>exp</code> in the parent row (note, it is recomended to use this for rows with columns sizes of 1, 2, and 3):</p>
-
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="col-12">
 
 <pre>&lt;div class="row <span>exp</span>"&gt;
 
@@ -140,14 +150,6 @@
 
                 <p>The default justification is centered. To justify the columns to left or the right, just add the class <code>jus-[l,r]</code> to the parent row. For example, left-justification:</p>
 
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="col-12">
-
 <pre>&lt;div class="row <span>jus-l</span>"&gt;
 
    &lt;div class="col-4"&gt;...&lt;/div&gt;
@@ -172,10 +174,6 @@
 
                 <p>Here is an example of a nav utilizing the Flexr options:</p>
 
-            </div>
-
-            <div class="col-12">
-
 <pre>&lt;nav&gt;
 
    &lt;div class="row"&gt;
@@ -187,8 +185,6 @@
    &lt;/div&gt;
 
 &lt;/nav&gt;</pre>
-
-            </div>
 
         </div>
 
