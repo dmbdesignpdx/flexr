@@ -1,5 +1,5 @@
 /*
-Flexr Grid  -  Alpha 4.0
+Flexr Grid  -  Alpha 5.0
 Copyright 2016 Flexr. All rights reserved.
 More info at flexrgrid.com
 */
@@ -160,12 +160,16 @@ div[class*="col"], *[class*="logo-"], *[class*="menu-"] {
         padding: 8px
     }
 
-    .logo-m {
-        width: 110px
+    .logo-l {
+        width: 130px
     }
 
-    .mtc {
-        margin: 0 auto
+    .logo-m {
+        width: 120px
+    }
+
+    .logo-s {
+        width: 110px
     }
 
 }

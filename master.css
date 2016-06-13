@@ -1,10 +1,12 @@
-/*  For Flexr Alpha 4.0
+/*  For Flexr Alpha 5.0
 
 
 Contents
 
 - Global
   - Navigation
+  - Footer
+  - Text
 - JS Classes
 - Home
 - The Grid
@@ -22,6 +24,7 @@ Contents
 
 /*  ---  Global  ---  */
 
+
 html, body {
     height: 100%;
     padding: 0;
@@ -31,7 +34,7 @@ html, body {
 body {
     min-height: 100%;
     background: #2B2B3F;
-    font-family: 'Roboto', 'Helvetica', sans-serif;
+    font: 300 19px 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased
 }
@@ -84,7 +87,7 @@ a {
 }
 
 footer {
-    background:#202031
+    background: #202031
 }
 
 .logo-m {
@@ -126,15 +129,17 @@ footer img {
     stroke-width: 5px
 }
 
+#poma svg:active {
+    stroke: #F56
+}
+
 #menu a {
     display: inline-block;
     padding: 10px;
-    font-size: 18px;
     color: #DDE
 }
 
 #menu #dl {
-    font-size: 18px;
     padding: 10px 18px;
     color: #2B2B3F;
     background: #3DD
@@ -147,6 +152,12 @@ footer img {
 #menu #dl:hover {
     background: #DDE
 }
+
+#menu {
+    background: #2B2B3F;
+    transition: .4s transform
+}
+
 
 /*    Header    */
 
@@ -161,6 +172,10 @@ header {
 
 /*    Text    */
 
+h1, h2, p, li, a, code, pre {
+    margin: 0
+}
+
 h1, h2, li, a {
     font-weight: 700;
     line-height: 1.1em;
@@ -173,13 +188,11 @@ h1, h2 {
 
 h1, h2, p {
     width: 100%;
-    margin: 0;
     text-align: left
 }
 
 h1 {
     padding-top: 30px;
-    margin: 0;
     font-size: 42px
 }
 
@@ -187,29 +200,30 @@ header h1 {
     text-align: center
 }
 
-.with-icon {
-    padding-top: 0
-}
-
 h2 {
-    padding: 20px 0;
+    padding: 30px 0;
     font-size: 26px
 }
 
 p {
-    margin: 10px 0;
-    font-size: 19px;
-    font-weight: 300;
     line-height: 1.4em;
     color: #DDE
 }
 
 p ~ p {
-    margin: 30px 0 10px 0
+    margin: 30px 0
 }
 
 p ~ .button {
     margin: 28px auto 60px
+}
+
+p ~ pre {
+    margin-top: 40px
+}
+
+pre ~ p {
+    margin: 40px 0 30px
 }
 
 p span, p strong {
@@ -221,7 +235,6 @@ code, pre {
     width: 100%;
     padding: 22px 26px 24px;
     box-sizing: border-box;
-    margin: 0;
     font-size: 14px;
     color: #DDE;
     background: #42425d;
@@ -232,17 +245,12 @@ code, pre {
 p code {
     padding: 5px 12px 6px;
     margin: 0 4px;
-    white-space: nowrap;
+    white-space: nowrap
 }
 
 code span, pre span, code strong, pre strong, footer a {
     font-weight: 700;
     color: #F56
-}
-
-#menu {
-    background: #2B2B3F;
-    transition: .4s transform
 }
 
 #the-grid #grid, #how-to #doc {
@@ -253,24 +261,56 @@ code span, pre span, code strong, pre strong, footer a {
     background: #DDE
 }
 
+.with-icon {
+    padding-top: 0
+}
+
+.with-icon:before {
+    content: '';
+    display: block;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 30px;
+    background: url(img/flexr-sprite.svg) no-repeat;
+    background-size: 500% 100%;
+    background-position: 0 0
+}
+
+header .with-icon:before {
+    margin: 0 auto
+}
+
+#flexr-plus:before {
+    background-position: 25% 0
+}
+
+#grid-title:before {
+    background-position: 50% 0
+}
+
+#doc-title:before {
+    background-position: 75% 0
+}
+
+#download-title:before {
+    background-position: 100% 0
+}
+
 .button, .secondary {
     width: 150px;
     height: 1.1em;
     padding: 20px 0 21px;
     margin: 50px auto 60px;
-    font-size: 18px;
     text-align: center;
     letter-spacing: .3pt;
     color: #EEF;
     background: #F56;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-tap-highlight-color: transparent;
-    transform: translateZ(0);
-    /*transition: .2s background, .2s color, .2s transform*/
+    -webkit-tap-highlight-color: transparent
 }
 
 .secondary {
-    color: #F96;
+    color: #FA6;
     background: none
 }
 
@@ -293,19 +333,18 @@ code span, pre span, code strong, pre strong, footer a {
 }
 
 footer p {
-    padding: 50px 0;
     font-size: 15px;
+    line-height: 1.4em;
     color: #AAB
 }
 
 .dbdesign {
-    width: 73%
+    width: 73%;
+    padding: 50px 0
 }
 
 .copy {
-    margin: 20px 0;
-    padding: 0;
-    font-size: 14px
+    margin: 20px 0
 }
 
 
@@ -341,15 +380,13 @@ footer p {
 }
 
 #intro-text h1 {
-    margin: 0;
     text-align: left
 }
 
 #intro-text p {
     width: 96%;
     padding-bottom: 30px;
-    margin: 15px 0 0;
-    line-height: 1.5em
+    margin: 15px 0 0
 }
 
 #intro-text a {
@@ -363,7 +400,6 @@ footer p {
 .example {
     height: 1em;
     padding: 20px 0 21px;
-    margin: 0;
     font-size: 16px;
     text-align: center;
     background: #42425d;
@@ -375,7 +411,6 @@ footer p {
 /*  ---  Use It  ---  */
 
 .cgwbp {
-    margin: 0;
     padding: 20px;
     box-sizing: border-box;
     font-size: 17px;
@@ -415,37 +450,6 @@ footer p {
     margin-right: auto;
     margin-left: auto;
     text-align: center
-}
-
-.with-icon:before {
-    content: '';
-    display: block;
-    width: 180px;
-    height: 180px;
-    margin: 0 auto 30px;
-    background: url(img/flexr-sprite.svg) no-repeat;
-    background-size: 500% 100%;
-    background-position: 0 0
-}
-
-header .with-icon:before {
-    margin: 0 auto
-}
-
-#flexr-plus:before {
-    background-position: 25% 0
-}
-
-#grid-title:before {
-    background-position: 50% 0
-}
-
-#doc-title:before {
-    background-position: 75% 0
-}
-
-#download-title:before {
-    background-position: 100% 0
 }
 
 
@@ -559,6 +563,10 @@ header .with-icon:before {
 
     #poma {
         left: 0
+    }
+
+    .mtc {
+        margin: 0 auto
     }
 
     .cgwbp {
