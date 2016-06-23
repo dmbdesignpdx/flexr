@@ -1,4 +1,4 @@
-/*  For Flexr Alpha 5.0
+/*  For Flexr Alpha 6.0
 
 
 Contents
@@ -161,13 +161,12 @@ footer img {
 
 /*    Header    */
 
-
-
-/*    Footer    */
-
 header {
     padding: 150px 0 90px
 }
+
+/*    Footer    */
+
 
 
 /*    Text    */
@@ -277,7 +276,7 @@ code span, pre span, code strong, pre strong, footer a {
 }
 
 header .with-icon:before {
-    margin: 0 auto
+    margin: 0 auto -10px
 }
 
 #flexr-plus:before {
@@ -369,8 +368,8 @@ footer p {
 
 /*  ---  Home  ---  */
 
-#home header {
-    padding: 150px 0 60px
+#hero-header {
+    padding: 180px 0 90px
 }
 
 #intro-text {
