@@ -30,12 +30,12 @@
 <line class="st4" x1="850" y1="106" x2="900" y2="106"/>
 <line class="st4" x1="850" y1="119" x2="884" y2="119"/>
 <line class="st4" x1="850" y1="132" x2="868" y2="132"/>
-<rect class="sdw" x="571" y="150" width="46" height="33"/>
-<rect class="sdw" x="571" y="108" width="75" height="33"/>
-<rect class="sdw" x="571" y="67" width="108" height="33"/>
-<rect x="571" y="150" class="st1" width="46" height="33"/>
-<rect x="571" y="108" class="st1" width="75" height="33"/>
-<rect x="571" y="67" class="st1" width="108" height="33"/>
+<rect x="578" y="151" class="sdw" width="39" height="32"/>
+<rect x="578" y="109" class="sdw" width="66" height="32"/>
+<rect x="578" y="67" class="sdw" width="95" height="32"/>
+<rect x="578" y="151" class="st1" width="39" height="32"/>
+<rect x="578" y="109" class="st1" width="66" height="32"/>
+<rect x="578" y="67" class="st1" width="95" height="32"/>
 <polygon class="sdw" points="1136,109 1136,74 1114,74 1114,109 1099,109 1125,142 1151,109"/>
 <rect x="1076" y="156" class="sdw" width="98" height="20"/>
 <polygon class="st5" points="1136,109 1136,74 1114,74 1114,109 1099,109 1125,142 1151,109"/>
