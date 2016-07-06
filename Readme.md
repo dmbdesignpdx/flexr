@@ -1,9 +1,9 @@
 # Flexr Grid
 
-Flexr is a responsive grid for modern browsers.
+Flexr is a responsive grid for those who just want a grid. Flexr features two types of column-collapsing: Expanding and Shrinking.
 
 
-### First Thing's First
+## First Thing's First
 
 You gotta link Flexr CSS.
 
