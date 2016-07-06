@@ -1,6 +1,7 @@
 # Flexr Grid
 
-Flexr is a grid, it's badass.
+Flexr is a responsive grid for modern browsers.
+
 
 ## First Thing's First
 
@@ -14,4 +15,15 @@ You gotta link Flexr CSS.
 
 &lt;/head&gt;</pre>
 
-Read more [here](http://dmbdesignpdx.github.io/flexr)
+
+## One Class Will Do
+
+Creating a column requires only one class <code>col-</code> defined by its size <code>[1&ndash;12]</code> (total column size no more than 12 per row):
+
+<pre>&lt;div class="row"&gt;
+
+   &lt;div class="<span>col-6</span>"&gt;...&lt;/div&gt;
+
+   &lt;div class="<span>col-6</span>"&gt;...&lt;/div&gt;
+
+&lt;/div&gt;</pre>
