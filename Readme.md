@@ -1,6 +1,6 @@
 # Flexr Grid
 
-Flexr is a responsive grid for those who just want a grid. Flexr features two types of column-collapsing: Expanding and Shrinking.
+Flexr is a responsive grid for those who just want a grid. It features two types of column-collapsing: Expanding and Shrinking.
 
 
 ## First Thing's First
