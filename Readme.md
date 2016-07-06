@@ -82,4 +82,6 @@ Here is an example of a nav utilizing the Flexr options:
 
 ## Column/Gutter Widths and Break Points
 
-| **Break Points** | <**520px** | 520px - 740px | 740px - 940px | 940px - 1180px | >1180px |
+Break Points|Column Width|Gutter Width
+---|---|---
+1180px|~68px|~28px
