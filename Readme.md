@@ -3,6 +3,23 @@
 Flexr is a responsive grid for those who just want a grid. It features two types of column-collapsing: Expanding and Shrinking.
 
 
+## The Basic Setup
+
+<pre>&lt;nav|header|section|footer&gt;
+
+   &lt;row&gt;
+   
+      &lt;column&gt;
+      
+         **your stuff here!**
+      
+      &lt;/column&gt;
+
+   &lt;/row&gt;
+
+&lt;/nav|header|section|footer&gt;</pre>
+
+
 ## First Thing's First
 
 You gotta link Flexr CSS.
