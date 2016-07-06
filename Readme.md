@@ -3,7 +3,7 @@
 Flexr is a responsive grid for modern browsers.
 
 
-## First Thing's First
+### First Thing's First
 
 You gotta link Flexr CSS.
 
@@ -33,7 +33,7 @@ Creating a column requires only one class <code>col-</code> defined by its size 
 
 **Shrinking Columns** is the default type of collapsing.
 
-To define **Expanding Columns**, all you need to do is add the expanding class <code>exp</code> in the parent row:
+To create **Expanding Columns**, all you need to do is add the expanding class <code>exp</code> in the parent row:
 
 <pre>&lt;div class="row <b>exp</b>"&gt;
 
