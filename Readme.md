@@ -119,11 +119,49 @@ Break Points|Column Width|Gutter Width
       
          <div class="logo">...</div>
          
-         <ul class="menu-xl"></ul>
+         <ul class="menu-xl">...</ul>
       
       </row>
    
    </nav>
+   
+   <header>
+   
+      <div class="row">
+      
+         <div class="col-5">...</div>
+         
+         <div class="col-7">...</div>
+      
+      </div>
+   
+   </header>
+   
+   <section>
+   
+      <div class="row">
+      
+         <div class="col-4">...</div>
+         
+         <div class="col-4">...</div>
+         
+         <div class="col-4">...</div>
+      
+      </div>
+   
+   </section>
+   
+   <footer>
+   
+      <div class="row">
+      
+         <div class="col-8">...</div>
+         
+         <div class="col-3">...</div>
+      
+      </div>
+   
+   </footer>
 
 </body>
 ```
