@@ -110,7 +110,7 @@ Break Points|Column Width|Gutter Width
 
 ## Basic Site Example
 
-```
+```html
 <body>
 
    <nav>
