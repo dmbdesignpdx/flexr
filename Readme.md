@@ -2,7 +2,10 @@
 
 Flexr is a responsive grid for those who just want a grid. Created by a designer with the simple focus on the digital grid layout and its adaptation to different screens. It features two types of column-collapsing: Expanding and Shrinking.
 
-**Please Donate** if you haven't already! You can do that *here*. (Option may not be available yet.)
+
+##Donate to Flexr
+
+Please Donate if you haven't already! You can do that *here*. (Option may not be available yet.)
 
 
 ## The Basic Setup
