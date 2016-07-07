@@ -125,7 +125,8 @@ Break Points|Column Width|Gutter Width
    
    </nav>
 
-</body>```
+</body>
+```
 
 
 More documentation to come.
