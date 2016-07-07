@@ -108,20 +108,20 @@ Break Points|Column Width|Gutter Width
 <520px |auto|16px
 
 
-## Quick Setup
+## Quick Setup Example
 
 ```
 <body>
 
    <nav>
    
-      <row>
+      <div class="row">
       
          <div class="logo">...</div>
          
          <ul class="menu-xl">...</ul>
       
-      </row>
+      </div>
    
    </nav>
    
