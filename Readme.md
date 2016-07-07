@@ -108,7 +108,7 @@ Break Points|Column Width|Gutter Width
 <520px |auto|16px
 
 
-## Quick Setup Example
+## Basic Site Example
 
 ```
 <body>
