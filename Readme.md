@@ -110,7 +110,8 @@ Break Points|Column Width|Gutter Width
 
 ## Quick Setup
 
-```<body>
+```
+<body>
 
    <nav>
    
