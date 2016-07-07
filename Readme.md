@@ -11,7 +11,7 @@ Flexr is a responsive grid for those who just want a grid. Created by a designer
    
       &lt;column&gt;
       
-         **your stuff here!**
+         <b>your stuff here!</b>
       
       &lt;/column&gt;
 
@@ -107,6 +107,24 @@ Break Points|Column Width|Gutter Width
 520px - 740px|~26px - 35px|16px
 <520px |auto|16px
 
+
+## Quick Setup
+
+```<body>
+
+   <nav>
+   
+      <row>
+      
+         <div class="logo">...</div>
+         
+         <ul class="menu-xl"></ul>
+      
+      </row>
+   
+   </nav>
+
+</body>```
 
 
 More documentation to come.
