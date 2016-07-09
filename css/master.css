@@ -352,7 +352,7 @@ footer p {
 }
 
 .copy {
-    margin: 20px 0 0
+    margin: 20px 0
 }
 
 
@@ -410,27 +410,23 @@ object {
     width: 100%;
     height: auto;
     overflow: hidden;
-    transform:translateZ(0);
+    transform: translateZ(0);
 }
 
 #intro-text {
     transform: translateZ(0);
 }
 
-#bottom, #top {
-    transform: translateY(472px);
-    transform-style: preserve-3d;
-    animation: slideUp .6s .5s forwards
+@-webkit-keyframes slideUp {
+    to {
+        transform: translateY(0)
+    }
 }
 
-#top {
-    animation: slideUp .6s .8s forwards
-}
-
-#intro-text * {
-    opacity: 0;
-    transform-style: preserve-3d;
-    animation: slideOver 1s 1.1s forwards
+@-webkit-keyframes slideOver {
+    to {
+        opacity: 1
+    }
 }
 
 @keyframes slideUp {
@@ -443,6 +439,27 @@ object {
     to {
         opacity: 1
     }
+}
+
+#bottom, #top {
+    transform: translateY(472px);
+    transform-style: preserve-3d;
+    -webkit-animation: slideUp .6s forwards;
+    -webkit-animation-delay: .5s;
+    animation: slideUp .6s forwards;
+    animation-delay: .5s
+}
+
+#top {
+    -webkit-animation-delay: .8s;
+    animation-delay: .8s
+}
+
+#intro-text * {
+    opacity: 0;
+    transform-style: preserve-3d;
+    -webkit-animation: slideOver 1s 1.1s forwards;
+    animation: slideOver 1s 1.1s forwards
 }
 
 
@@ -563,7 +580,7 @@ object {
     }
 
     section:first-of-type {
-        padding: 60px 0 0
+        padding: 50px 0 0
     }
 
     h1 {
@@ -575,15 +592,15 @@ object {
     }
 
     header {
-        padding: 90px 0 10px
+        padding: 80px 0 0
     }
 
-    #home header {
-        padding: 70px 0 30px
+    #hero-header {
+        padding: 60px 0 0
     }
 
     #download-section {
-        padding: 0 0 30px
+        padding: 50px 0 30px
     }
 
     #menu {
