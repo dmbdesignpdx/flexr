@@ -251,7 +251,8 @@ p code {
     white-space: nowrap
 }
 
-code span, pre span, code strong, pre strong, footer a {
+code span, pre span, code strong, pre strong, footer a, p a {
+    display: inline-block;
     font-weight: 700;
     color: #F56
 }
@@ -260,7 +261,7 @@ footer a {
     margin-top: 40px
 }
 
-footer a:hover {
+p a:hover {
     color: #DDE
 }
 
