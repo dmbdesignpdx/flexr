@@ -1,7 +1,7 @@
-/* Flexr Grid - Beta 1.1.3
+/* Flexr Grid - Beta 2.0.0
 Copyright 2016 Flexr. All rights reserved. More info at flexrgrid.com */
 
-.row, div[class*="col"], *[class*="logo-"], *[class*="menu-"], nav, header, section, footer {
+.row, *[class*="col-"], *[class*="logo-"], *[class*="menu-"], nav, header, section, footer {
     height: auto;
     position: relative
 }
@@ -14,7 +14,7 @@ nav, section, footer, header {
     width: 100%
 }
 
-*[class*="col"], section {
+*[class*="col-"], section {
     overflow: hidden
 }
 
@@ -44,7 +44,7 @@ section .row {
     justify-content: flex-end
 }
 
-div[class*="col"], *[class*="logo-"], *[class*="menu-"] {
+*[class*="col-"], *[class*="logo-"], *[class*="menu-"] {
     padding: 14px;
     box-sizing: border-box
 }
@@ -117,7 +117,7 @@ div[class*="col"], *[class*="logo-"], *[class*="menu-"] {
         width: calc(100% - 24px)
     }
 
-    div[class*="col"], *[class*="logo-"], *[class*="menu-"] {
+    *[class*="col-"], *[class*="logo-"], *[class*="menu-"] {
         padding: 12px
     }
 
@@ -148,7 +148,7 @@ div[class*="col"], *[class*="logo-"], *[class*="menu-"] {
         width: calc(100% - 16px)
     }
 
-    div[class*="col"], *[class*="logo-"], *[class*="menu-"] {
+    *[class*="col-"], *[class*="logo-"], *[class*="menu-"] {
         padding: 8px
     }
 
@@ -176,7 +176,7 @@ div[class*="col"], *[class*="logo-"], *[class*="menu-"] {
 @media only screen and (max-width : 520px) {
 
 
-    div[class*="col"], .exp div[class*="col"] {
+    *[class*="col-"], .exp *[class*="col-"] {
         width: 100%
     }
 
