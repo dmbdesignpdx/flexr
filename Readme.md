@@ -16,7 +16,7 @@ Please donate if you haven't already! You can do that [here](http://danielblaked
    
       &lt;column&gt;
       
-         <b style="color:red">your stuff here!</b>
+         <b>your stuff here!</b>
       
       &lt;/column&gt;
 
@@ -110,7 +110,7 @@ Break Points|Column Width|Gutter Width
 940px–1180px|~52px–67px|28px
 740px–940px|~36px–51px|24px
 520px–740px|~26px–35px|16px
-<520px|auto|16px
+< 520px|auto|16px
 
 
 ## Basic Site Example
