@@ -1,1 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/css" href="../css/master.css"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 732 470"><defs><filter id="a" name="AI_GaussianBlur_5"><feGaussianBlur stdDeviation="4"/></filter><filter id="b" name="AI_GaussianBlur_7"><feGaussianBlur stdDeviation="7"/></filter></defs><g id="bottom"><rect x="40" y="36" width="504" height="360" style="opacity:0.7;mix-blend-mode:multiply;filter:url(#a)"/><rect x="40" y="36" width="504" height="360" style="fill:#dde"/><rect x="40" y="36" width="504" height="60" style="fill:#668"/><rect x="128" y="250" width="70" height="130" style="fill:#aab"/><rect x="214" y="250" width="70" height="130" style="fill:#aab"/><rect x="300" y="250" width="70" height="130" style="fill:#aab"/><rect x="386" y="250" width="70" height="130" style="fill:#aab"/><rect x="128" y="112" width="328" height="122" style="fill:#bbc"/><rect x="128" y="51" width="70" height="30" style="fill:#F56"/><rect x="300" y="59" width="40" height="14" style="fill:#dde"/><rect x="358" y="59" width="40" height="14" style="fill:#dde"/><rect x="416" y="59" width="40" height="14" style="fill:#dde"/></g><g id="top"><rect x="435" y="85" width="260" height="350" style="opacity:0.6;mix-blend-mode:multiply;filter:url(#b)"/><rect x="435" y="85" width="260" height="350" style="fill:#dde"/><rect x="435" y="85" width="260" height="40" style="fill:#668"/><rect x="445" y="305" width="115" height="120" style="fill:#aab"/><rect x="570" y="305" width="115" height="120" style="fill:#aab"/><rect x="445" y="135" width="240" height="160" style="fill:#bbc"/><rect x="545" y="95" width="40" height="20" style="fill:#F56"/></g></svg>
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/css" href="../css/master.css"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 692 430"><defs><filter id="a" name="AI_GaussianBlur_5"><feGaussianBlur stdDeviation="4"/></filter><filter id="b" name="AI_GaussianBlur_7"><feGaussianBlur stdDeviation="7"/></filter>
+<style>
+.st0{fill:#aab}
+.st1{fill:#dde}
+.st2{fill:#668}
+.st3{fill:#bbc}
+.st4{fill:#F56}
+</style></defs>
+<g id="bottom">
+<rect x="20" y="16" width="504" height="360" style="opacity:0.7;mix-blend-mode:multiply;filter:url(#a)"/>
+<rect x="20" y="16" width="504" height="360" class="st1"/>
+<rect x="20" y="16" width="504" height="60" class="st2"/>
+<rect x="108" y="230" width="70" height="130" class="st0"/>
+<rect x="194" y="230" width="70" height="130" class="st0"/>
+<rect x="280" y="230" width="70" height="130" class="st0"/>
+<rect x="366" y="230" width="70" height="130" class="st0"/>
+<rect x="108" y="92" width="328" height="122" class="st3"/>
+<rect x="108" y="31" width="70" height="30" class="st4"/>
+<rect x="280" y="39" width="40" height="14" class="st1"/>
+<rect x="338" y="39" width="40" height="14" class="st1"/>
+<rect x="396" y="39" width="40" height="14" class="st1"/></g>
+<g id="top">
+<rect x="415" y="65" width="260" height="350" style="opacity:0.6;mix-blend-mode:multiply;filter:url(#b)"/>
+<rect x="415" y="65" width="260" height="350" class="st1"/>
+<rect x="415" y="65" width="260" height="40" class="st2"/>
+<rect x="425" y="285" width="115" height="120" class="st0"/>
+<rect x="550" y="285" width="115" height="120" class="st0"/>
+<rect x="425" y="115" width="240" height="160" class="st3"/>
+<rect x="525" y="75" width="40" height="20" class="st4"/></g></svg>

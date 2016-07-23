@@ -1,10 +1,12 @@
-/*  For Flexr Grid - Beta 2.0.0
+/*  For Flexr Grid - Beta 3.0.0
 
 
 Contents
 
 - Global
   - Navigation
+  - Header
+  - Sections
   - Footer
   - Text
 - JS Classes
@@ -40,12 +42,18 @@ body {
 }
 
 img, svg, object {
-    display: block
+    display: block;
+    box-sizing: border-box
 }
 
 img, a:active {
     border: none;
     outline: none
+}
+
+img {
+    width: 100%;
+    height: auto
 }
 
 ul, li {
@@ -67,6 +75,10 @@ a {
 
 a:focus, a:active {
     outline: 0
+}
+
+#expand-text, #expand-image, .copy, #hero-text, #hero-image {
+    display: flex;
 }
 
 
@@ -107,7 +119,7 @@ a:focus, a:active {
 #poma {
     width: 40px;
     height: 40px;
-    padding: 5px 8px;
+    padding: 5px;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -154,7 +166,23 @@ a:focus, a:active {
 /*    Header    */
 
 header {
-    padding: 150px 0 90px
+    padding: 150px 0 0
+}
+
+
+
+/*    Sections    */
+
+section {
+    padding: 120px 0
+}
+
+.call-to-action {
+    padding: 0 0 130px
+}
+
+#the-grid section:nth-of-type(2) {
+    padding: 0 0 120px
 }
 
 
@@ -167,9 +195,10 @@ footer {
 footer img {
     width: 27%;
     height: auto;
-    margin-top: 60px;
-    -webkit-filter: hue-rotate(240deg) saturate(10%) brightness(120%);
-    filter: hue-rotate(240deg) saturate(10%) brightness(120%)
+    margin-top: 50px;
+    align-self: flex-start;
+    -webkit-filter: hue-rotate(240deg) saturate(10%) brightness(110%);
+    filter: hue-rotate(240deg) saturate(10%) brightness(110%)
 }
 
 
@@ -179,7 +208,7 @@ h1, h2, p, li, a, code, pre {
     margin: 0
 }
 
-h1, h2, li, a {
+h2, li, a {
     font-weight: 700;
     line-height: 1.1em;
     letter-spacing: .2pt
@@ -195,38 +224,39 @@ h1, h2, p {
 }
 
 h1 {
-    padding-top: 30px;
-    font-size: 42px
-}
-
-header h1 {
-    text-align: center
+    font-size: 49px;
+    font-weight: 300;
+    letter-spacing: -.2pt;
 }
 
 h2 {
-    padding: 30px 0;
-    font-size: 26px
+    font-size: 30px
+}
+
+header h1, .call-to-action h1, .call-to-action p {
+    text-align: center
 }
 
 p {
     line-height: 1.4em;
-    color: #DDE
+    color: #DDE;
+    letter-spacing: .1pt
 }
 
-p ~ p {
-    margin: 30px 0
+h1 ~ p {
+    margin: 15px 0 0
+}
+
+h2 ~ p, p ~ p {
+    margin: 20px 0 0
 }
 
 p ~ .button {
-    margin: 28px auto 60px
-}
-
-p ~ pre {
-    margin-top: 40px
+    margin: 28px auto 0
 }
 
 pre ~ p {
-    margin: 40px 0 30px
+    margin: 0 0 30px
 }
 
 p span, p strong {
@@ -237,12 +267,17 @@ p span, p strong {
 code, pre {
     width: 100%;
     padding: 22px 26px 24px;
+    margin: 30px 0;
     box-sizing: border-box;
     font-size: 14px;
     color: #DDE;
     background: #42425d;
     overflow-x: scroll;
     overflow-y: auto
+}
+
+#home pre {
+    margin-bottom: 0
 }
 
 p code {
@@ -255,10 +290,6 @@ code span, pre span, code strong, pre strong, footer a, p a {
     display: inline-block;
     font-weight: 700;
     color: #F56
-}
-
-footer a {
-    margin-top: 40px
 }
 
 p a:hover {
@@ -304,7 +335,7 @@ header .with-icon:before {
     width: 150px;
     height: 1.1em;
     padding: 20px 0 21px;
-    margin: 50px auto 60px;
+    margin: 60px auto 0;
     text-align: center;
     letter-spacing: .3pt;
     color: #EEF;
@@ -341,9 +372,13 @@ header .with-icon:before {
 }
 
 footer p {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.4em;
     color: #AAB
+}
+
+footer a {
+    margin-top: 40px
 }
 
 .dbdesign {
@@ -352,7 +387,12 @@ footer p {
 }
 
 .copy {
-    margin: 20px 0
+    flex-wrap: wrap
+}
+
+.copy p {
+    margin-bottom: 50px;
+    align-self: flex-end;
 }
 
 
@@ -381,29 +421,23 @@ footer p {
     padding: 210px 0 150px
 }
 
-#intro-text {
-    display: flex;
+#hero-text {
     flex-direction: column;
-    justify-content: center
+    justify-content: center;
+    transform: translateZ(0);
 }
 
-#intro-text h1 {
+#hero-text h1 {
     text-align: left
 }
 
-#intro-text p {
+#hero-text p {
     width: 96%;
-    padding-bottom: 30px;
-    margin: 15px 0 0
+    padding-bottom: 30px
 }
 
-#intro-text a {
-    margin: 0 0 30px
-}
-
-#home h2 {
-    padding: 62px 0 30px;
-    border-top: 1px solid #000
+#hero-text a {
+    margin: 0
 }
 
 object {
@@ -411,10 +445,9 @@ object {
     height: auto;
     overflow: hidden;
     transform: translateZ(0);
-}
-
-#intro-text {
-    transform: translateZ(0);
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden
 }
 
 @-webkit-keyframes slideUp {
@@ -423,7 +456,7 @@ object {
     }
 }
 
-@-webkit-keyframes slideOver {
+@-webkit-keyframes fadeIn {
     to {
         opacity: 1
     }
@@ -435,15 +468,14 @@ object {
     }
 }
 
-@keyframes slideOver {
+@keyframes fadeIn {
     to {
         opacity: 1
     }
 }
 
 #bottom, #top {
-    transform: translateY(472px);
-    transform-style: preserve-3d;
+    transform: translateY(520px);
     -webkit-animation: slideUp .6s forwards;
     -webkit-animation-delay: .5s;
     animation: slideUp .6s forwards;
@@ -451,15 +483,25 @@ object {
 }
 
 #top {
+    transform: translateY(480px);
     -webkit-animation-delay: .8s;
     animation-delay: .8s
 }
 
-#intro-text * {
+#hero-text * {
     opacity: 0;
     transform-style: preserve-3d;
-    -webkit-animation: slideOver 1s 1.1s forwards;
-    animation: slideOver 1s 1.1s forwards
+    -webkit-animation: fadeIn 1s 1.1s forwards;
+    animation: fadeIn 1s 1.1s forwards
+}
+
+#home section:first-of-type {
+    background: #242435;
+}
+
+#expand-text {
+    flex-direction: column;
+    justify-content: center
 }
 
 
@@ -510,10 +552,6 @@ object {
 
 /*  ---  Get Flexr  ---  */
 
-#download-section {
-    padding: 0 0 90px
-}
-
 #download-section h2, #download-section p {
     width: 85%;
     margin-right: auto;
@@ -527,7 +565,17 @@ object {
 
 @media only screen and (max-width : 1180px) {
 
+    h1 {
+        font-size: 46px
+    }
 
+    h2 {
+        font-size: 29px
+    }
+
+    p {
+        font-size: 18px
+    }
 
 }
 
@@ -541,19 +589,7 @@ object {
         font-size: 17px
     }
 
-    #intro-text p, #intro-text h1 {
-        text-align: center
-    }
-
-    #intro-text p {
-        margin: 15px auto
-    }
-
-    #intro-text a {
-        margin: 0 auto 20px
-    }
-
-    #testr {
+    .testr {
         position: absolute;
         left: -9999px
     }
@@ -579,28 +615,40 @@ object {
         height: 56px
     }
 
-    section:first-of-type {
-        padding: 50px 0 0
-    }
-
     h1 {
         font-size: 30px
     }
 
     h2 {
-        font-size: 22px
+        font-size: 21px
+    }
+
+    h1 ~ p {
+        margin: 15px 0 0
     }
 
     header {
         padding: 80px 0 0
     }
 
-    #hero-header {
-        padding: 60px 0 0
+    section {
+        padding: 60px 0
     }
 
-    #download-section {
-        padding: 50px 0 30px
+    .call-to-action {
+        padding: 0 0 70px
+    }
+
+    #the-grid section:nth-of-type(2) {
+        padding: 0 0 60px
+    }
+
+    #hero-header {
+        padding: 60px 0 20px
+    }
+
+    #hero-text p {
+        padding-bottom: 30px
     }
 
     #menu {
@@ -631,7 +679,7 @@ object {
     }
 
     #poma {
-        left: 0
+        left: -1px
     }
 
     .mtc {
@@ -661,8 +709,34 @@ object {
 
 @media only screen and (max-width : 520px) {
 
+
+    #hero-text p, #hero-text h1, #expand-text h1, #expand-text p {
+        text-align: center
+    }
+
+    #hero-text p {
+        margin: 20px auto 0
+    }
+
+    #hero-text a {
+        margin: 0 auto 20px
+    }
+
+    #hero-header {
+        padding: 90px 0 30px
+    }
+
+    #expand-image {
+        order: 2
+    }
+
+    .call-to-action p {
+        box-sizing: border-box;
+        padding: 0 15px
+    }
+
     .secondary {
-        margin: 0 auto 60px;
+        margin: 0 auto;
     }
 
     footer img {
@@ -672,6 +746,10 @@ object {
 
     footer a {
         margin-top: 20px
+    }
+
+    .copy p {
+        margin-top: 30px
     }
 
     .button:not(.secondary) {
