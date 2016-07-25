@@ -418,7 +418,8 @@ footer a {
 /*  ---  Home  ---  */
 
 #hero-header {
-    padding: 210px 0 150px
+    padding: 210px 0 150px;
+    overflow: hidden
 }
 
 #hero-text {
