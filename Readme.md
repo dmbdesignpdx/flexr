@@ -5,7 +5,7 @@ Flexr is a responsive grid for those who just want a grid. Created by a graphic 
 
 ##Donate to Flexr
 
-Please donate if you haven't already! You can do that [here](http://danielblakedesign.com/flexr/). (Option may not be available yet.)
+Please donate if you haven't already! You can do that [here](http://danielblakedesign.com/flexr/). (Option may not be available yet)
 
 
 ## The Basic Setup
