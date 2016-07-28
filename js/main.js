@@ -1,4 +1,4 @@
-// For Flexr Grid - Beta 3.0.0
+// For Flexr Grid - Beta 3.2.0
 
 var scrolled,
 nav = document.getElementById('nav'),
@@ -25,7 +25,7 @@ window.onscroll = function() {
 
             scrolled = false;
 
-            nav.classList.remove('shrink-large');
+            nav.classList.remove('shrink-large')
 
         }
 
@@ -76,20 +76,8 @@ window.onresize = function() {
 
 }
 
-// window.onload = function() {
-//
-//     if(window.innerWidth > 740 && window.pageYOffset > 20) {
-//
-//         nav.classList.add('shrink-large');
-//
-//         nav.classList.add('shrink-small')
-//
-//     }
-//
-// }
 
-
-// pullout menu
+// drawer
 
 document.getElementById('poma').onclick = function(event) {
 
@@ -107,7 +95,7 @@ menu.onclick = function(event) {
 
 }
 
-document.body.onclick = function() {
+document.body.onclick = function(e) {
 
     if (menuShowing) {
 

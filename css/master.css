@@ -1,4 +1,4 @@
-/*  For Flexr Grid - Beta 3.1.0
+/*  For Flexr Grid - Beta 3.2.0
 
 
 Contents
@@ -51,9 +51,13 @@ img, a:active {
     outline: none
 }
 
-img {
+img, object {
     width: 100%;
     height: auto
+}
+
+object {
+    pointer-events: none
 }
 
 ul, li {
@@ -77,8 +81,8 @@ a:focus, a:active {
     outline: 0
 }
 
-#expand-text, #expand-image, .copy, #hero-text, #hero-image {
-    display: flex;
+#expand-text, .copy, #hero-text {
+    display: flex
 }
 
 
@@ -418,6 +422,10 @@ footer a {
     overflow: hidden
 }
 
+#hero-row, #expand-row {
+    align-items: center
+}
+
 #hero-text {
     flex-direction: column;
     justify-content: center;
@@ -437,9 +445,7 @@ footer a {
     margin: 0
 }
 
-object {
-    width: 100%;
-    height: auto;
+#hero-image object {
     overflow: hidden;
     transform: translateZ(0);
     transform-style: preserve-3d;
