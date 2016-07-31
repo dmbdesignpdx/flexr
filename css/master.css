@@ -1,4 +1,4 @@
-/*  For Flexr Grid - Beta 3.2.0
+/*  For Flexr Grid - Beta 3.3.0
 
 
 Contents
@@ -524,31 +524,28 @@ footer a {
 
 /*  ---  Use It  ---  */
 
-.cgwbp {
-    padding: 20px;
-    box-sizing: border-box;
+
+table {
+    width: 100%;
     font-size: 17px;
+    color: #dde;
+    background: #42425d;
+    table-layout: fixed;
+    border-collapse: collapse;
 }
 
-.cgwbp span, .cgwbp strong {
-    color: #F56
+tr:nth-of-type(even) {
+    background: #3C3C58;
 }
 
-.title span, .title strong {
-    color: #dde
+td {
+    width: 16.666%;
+    padding: 20px;
+    border-right: 1px solid #2B2B3F
 }
 
-.bkg {
-    width: calc(100% - 28px);
-    height: calc(100% - 28px);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    z-index: -1;
-    background: #42425d
+td:last-of-type {
+    border-right: none
 }
 
 
@@ -597,7 +594,7 @@ footer a {
         left: -9999px
     }
 
-    .cgwbp {
+    td {
         padding: 18px
     }
 
@@ -689,9 +686,15 @@ footer a {
         margin: 0 auto
     }
 
-    .cgwbp {
-        padding: 14px;
-        font-size: 16px
+    table {
+        display: block;
+        overflow-x: scroll;
+        overflow-y: auto;
+        font-size: 16px;
+    }
+
+    td {
+        padding: 14px
     }
 
     .with-icon:before {
@@ -759,23 +762,4 @@ footer a {
         margin: 50px auto
     }
 
-}
-
-
-
-/*  ---  Version  ---  */
-
-.version {
-    width: auto;
-    height: auto;
-    padding: 5px 6px 6px 8px;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    margin: 0;
-    font-size: 13px;
-    color: #aaa;
-    background: black;
-    border-top-left-radius: 10px;
-    z-index: 998
 }
