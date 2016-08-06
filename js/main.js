@@ -1,4 +1,4 @@
-// For Flexr Grid - Beta 3.3.0
+// For Flexr Grid - Beta 3.3.1
 
 var scrolled,
 nav = document.getElementById('nav'),
