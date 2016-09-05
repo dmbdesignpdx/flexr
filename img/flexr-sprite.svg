@@ -1,42 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1250 250">
-<defs><style type="text/css">
-.sdw{opacity:0.6;filter:url(#AI_GaussianBlur_4)}
-.st1{fill:#F56}
-.st2{fill:#EEF}
-.st3{fill:#3DD}
-.st4{stroke:#2B2B3F;stroke-width:6}
-.st5{fill:#5EB}
-</style></defs>
-<filter id="AI_GaussianBlur_4">
-<feGaussianBlur stdDeviation="4"></feGaussianBlur>
-</filter>
-<rect class="sdw" x="270" y="20" width="150" height="150"/>
-<rect x="270" y="20" class="st1" width="150" height="150"/>
-<path class="st2" d="M314.96,95.08c2.45,0,7.21,2.7,7.21,9.42v11.45c0,2.85,1.06,5.09,4.24,5.09h2.89v11.62h-8.14c-8.2,0-12.64-5.75-12.64-14.51v-11.2c0-3.74-1.06-5.94-5.52-5.94V88.98c4.46,0,5.52-2.2,5.52-5.94v-11.2c0-8.76,4.45-14.51,12.64-14.51h8.14v11.62h-2.89c-3.18,0-4.24,2.24-4.24,5.09V85.5c0,6.72-4.76,9.42-7.21,9.42V95.08z"/>
-<path class="st2" d="M375.04,95.08c-2.45,0-7.21,2.7-7.21,9.42v11.45c0,2.85-1.06,5.09-4.24,5.09h-2.89v11.62h8.14c8.2,0,12.64-5.75,12.64-14.51v-11.2c0-3.74,1.06-5.94,5.52-5.94V88.98c-4.46,0-5.52-2.2-5.52-5.94v-11.2c0-8.76-4.45-14.51-12.64-14.51h-8.14v11.62h2.89c3.18,0,4.24,2.24,4.24,5.09V85.5c0,6.72,4.76,9.42,7.21,9.42V95.08z"/>
-<rect class="sdw" x="330" y="80" width="150" height="150"/>
-<rect x="330" y="80" class="st3" width="150" height="150"/>
-<rect x="366" y="119" class="st2" width="18" height="72"/>
-<rect x="396" y="119" class="st2" width="18" height="72"/>
-<rect x="426" y="119" class="st2" width="18" height="72"/>
+<defs>
+<filter id="blur"><feGaussianBlur stdDeviation="4"></feGaussianBlur></filter>
+<style>
+    .sdw {opacity: 0.6; filter:url(#blur); mix-blend-mode: multiply; isolation: isolate}
+    .cls-2 {fill: #f56}
+    .cls-3 {fill: #eef}
+    .cls-4 {fill: #3dd}
+    .cls-5 {fill: none; stroke: #2b2b3f; stroke-width: 6px}
+    .cls-6 {fill: #5eb}
+</style></defs><title>Flexr Grid Sprite</title>
+<g id="code">
 <rect class="sdw" x="50" y="50" width="150" height="150"/>
-<rect x="50" y="50" class="st1" width="150" height="150"/>
-<path class="st2" d="M94.96,125.08c2.45,0,7.21,2.7,7.21,9.42v11.45c0,2.85,1.06,5.09,4.24,5.09h2.89v11.62h-8.14c-8.2,0-12.64-5.75-12.64-14.51v-11.2c0-3.74-1.06-5.94-5.52-5.94v-12.05c4.46,0,5.52-2.2,5.52-5.94v-11.2c0-8.76,4.45-14.51,12.64-14.51h8.14v11.62h-2.89c-3.18,0-4.24,2.24-4.24,5.09v11.45c0,6.72-4.76,9.42-7.21,9.42V125.08z"/>
-<path class="st2" d="M155.04,125.08c-2.45,0-7.21,2.7-7.21,9.42v11.45c0,2.85-1.06,5.09-4.24,5.09h-2.89v11.62h8.14c8.2,0,12.64-5.75,12.64-14.51v-11.2c0-3.74,1.06-5.94,5.52-5.94v-12.05c-4.46,0-5.52-2.2-5.52-5.94v-11.2c0-8.76-4.45-14.51-12.64-14.51h-8.14v11.62h2.89c3.18,0,4.24,2.24,4.24,5.09v11.45c0,6.72,4.76,9.42,7.21,9.42V125.08z"/>
-<polygon class="sdw" points="828,96 828,185 922,185 922,65 859,65"/>
-<polygon class="st3" points="828,96 828,185 922,185 922,65 859,65"/>
-<line class="st4" x1="850" y1="106" x2="900" y2="106"/>
-<line class="st4" x1="850" y1="119" x2="884" y2="119"/>
-<line class="st4" x1="850" y1="132" x2="868" y2="132"/>
-<rect x="578" y="151" class="sdw" width="39" height="32"/>
-<rect x="578" y="109" class="sdw" width="66" height="32"/>
-<rect x="578" y="67" class="sdw" width="95" height="32"/>
-<rect x="578" y="151" class="st1" width="39" height="32"/>
-<rect x="578" y="109" class="st1" width="66" height="32"/>
-<rect x="578" y="67" class="st1" width="95" height="32"/>
-<polygon class="sdw" points="1136,109 1136,74 1114,74 1114,109 1099,109 1125,142 1151,109"/>
-<rect x="1076" y="156" class="sdw" width="98" height="20"/>
-<polygon class="st5" points="1136,109 1136,74 1114,74 1114,109 1099,109 1125,142 1151,109"/>
-<rect x="1076" y="156" class="st5" width="98" height="20"/></svg>
+<rect class="cls-2" x="50" y="50" width="150" height="150"/>
+<polygon class="cls-3" points="82 129 89 136 89 161 109 161 109 150 101 150 101 131 94 125 101 119 101 100 109 100 109 89 89 89 89 114 82 121 82 129"/>
+<polygon class="cls-3" points="168 129 161 136 161 161 141 161 141 150 149 150 149 131 156 125 149 119 149 100 141 100 141 89 161 89 161 114 168 121 168 129"/>
+</g><g id="bundle">
+<rect class="sdw" x="270" y="20" width="150" height="150"/>
+<rect class="cls-2" x="270" y="20" width="150" height="150"/>
+<rect class="sdw" x="330" y="80" width="150" height="150"/>
+<polygon class="cls-3" points="302 99 309 106 309 131 329 131 329 120 321 120 321 101 314 95 321 89 321 70 329 70 329 59 309 59 309 84 302 91 302 99"/>
+<polygon class="cls-3" points="388 99 381 106 381 131 361 131 361 120 369 120 369 101 376 95 369 89 369 70 361 70 361 59 381 59 381 84 388 91 388 99"/>
+<rect class="cls-4" x="330" y="80" width="150" height="150"/>
+<rect class="cls-3" x="366" y="119" width="18" height="72"/>
+<rect class="cls-3" x="396" y="119" width="18" height="72"/>
+<rect class="cls-3" x="426" y="119" width="18" height="72"/>
+</g><g id="grid">
+<rect class="sdw" x="578" y="151" width="39" height="32"/>
+<rect class="sdw" x="578" y="109" width="66" height="32"/>
+<rect class="sdw" x="578" y="67" width="95" height="32"/>
+<rect class="cls-2" x="578" y="151" width="39" height="32"/>
+<rect class="cls-2" x="578" y="109" width="66" height="32"/>
+<rect class="cls-2" x="578" y="67" width="95" height="32"/>
+</g><g id="doc">
+<polygon class="sdw" points="828 96 828 185 922 185 922 65 859 65 828 96"/>
+<polygon class="cls-4" points="828 96 828 185 922 185 922 65 859 65 828 96"/>
+<line class="cls-5" x1="850" y1="106" x2="900" y2="106"/>
+<line class="cls-5" x1="850" y1="119" x2="884" y2="119"/>
+<line class="cls-5" x1="850" y1="132" x2="868" y2="132"/>
+</g><g id="download">
+<polygon class="sdw" points="1136 109 1136 74 1114 74 1114 109 1099 109 1125 142 1151 109 1136 109"/>
+<rect class="sdw" x="1076" y="156" width="98" height="20"/>
+<polygon class="cls-6" points="1136 109 1136 74 1114 74 1114 109 1099 109 1125 142 1151 109 1136 109"/>
+<rect class="cls-6" x="1076" y="156" width="98" height="20"/>
+</g></svg>
