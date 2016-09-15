@@ -13,15 +13,7 @@ window.onscroll = function() {
 
     if (window.innerWidth > 740){
 
-        if (window.pageYOffset >= 60 && !scrolled){
-
-            scrolled = true;
-
-            nav.classList.add('shrink-large')
-
-        }
-
-        else if (window.pageYOffset < 60 && scrolled) {
+        if (window.pageYOffset < 60 && scrolled) {
 
             scrolled = false;
 
@@ -29,23 +21,31 @@ window.onscroll = function() {
 
         }
 
+        else if (window.pageYOffset >= 60 && !scrolled) {
+
+            scrolled = true;
+
+            nav.classList.add('shrink-large')
+
+        }
+
     }
 
     else {
 
-        if (window.pageYOffset >= 20 && !scrolled){
-
-            scrolled = true;
-
-            nav.classList.add('shrink-small')
-
-        }
-
-        else if (window.pageYOffset < 20 && scrolled) {
+        if (window.pageYOffset < 20 && scrolled) {
 
             scrolled = false;
 
             nav.classList.remove('shrink-small')
+
+        }
+
+        else if (window.pageYOffset >= 20 && !scrolled) {
+
+            scrolled = true;
+
+            nav.classList.add('shrink-small')
 
         }
 
