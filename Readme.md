@@ -29,11 +29,11 @@ Here's the basic structure:
 
    &lt;row&gt;
    
-      &lt;column&gt;
+      &lt;column(s)&gt;
       
          <b>your stuff here!</b>
       
-      &lt;/column&gt;
+      &lt;/column(s)&gt;
 
    &lt;/row&gt;
 
