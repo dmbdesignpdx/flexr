@@ -1,39 +1,37 @@
-/* Flexr Grid - Beta 4.0.0
+/* Flexr Grid - Beta 5.0.0
 Copyright 2016 Flexr. All rights reserved. More info at flexrgrid.com */
 
-.row, *[class*="col-"], *[class*="logo-"], *[class*="menu-"], nav, header, section, footer {
+.row, *[class*="col-"], *[class*="logo-"], *[class*="menu-"] {
     height: auto;
     position: relative
 }
 
 .row, *[class*="logo-"], *[class*="menu-"] {
+    display: -webkit-flex;
     display: flex
-}
-
-nav, section, footer, header {
-    width: 100%
-}
-
-*[class*="col-"], section {
-    overflow: hidden
 }
 
 .row {
     width: 1152px;
     margin: 0 auto;
+    -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-justify-content: center;
     justify-content: center
 }
 
 *[class*="menu-"], nav .row {
+    -webkit-justify-content: space-between;
     justify-content: space-between
 }
 
 .jus-l {
+    -webkit-justify-content: flex-start;
     justify-content: flex-start
 }
 
 .jus-r {
+    -webkit-justify-content: flex-end;
     justify-content: flex-end
 }
 

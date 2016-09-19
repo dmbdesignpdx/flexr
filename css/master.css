@@ -1,4 +1,4 @@
-/*  For Flexr Grid - Beta 4.0.0
+/*  For Flexr Grid - Beta
 
 
 Contents
@@ -51,9 +51,10 @@ img, a:active {
     outline: none
 }
 
-img, object {
+nav, section, footer, header, img, object {
     width: 100%;
-    height: auto
+    height: auto;
+    position: relative
 }
 
 object {
@@ -173,6 +174,10 @@ header {
     padding: 150px 0 0
 }
 
+#download header {
+    padding: 150px 0 120px
+}
+
 
 
 /*    Sections    */
@@ -181,7 +186,7 @@ section {
     padding: 120px 0
 }
 
-.call-to-action {
+section:last-of-type {
     padding: 0 0 130px
 }
 
@@ -505,6 +510,50 @@ footer a {
 #expand-text {
     flex-direction: column;
     justify-content: center
+}
+
+.browser {
+    width: 100%;
+    height: auto;
+    background: url(../img/browsers.svg);
+    background-size: 500% 100%;
+}
+
+.firefox {
+    background-position: 0 0
+}
+
+.chrome {
+    background-position: 50% 0
+}
+
+.safari {
+    background-position: 25% 0
+}
+
+.opera {
+    background-position: 75% 0
+}
+
+.edge {
+    background-position: 100% 0
+}
+
+.browser::before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: 100%
+}
+
+#browsers p {
+    text-align: center
+}
+
+.browser + p {
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 1.2em
 }
 
 
