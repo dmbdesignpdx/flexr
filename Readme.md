@@ -8,23 +8,6 @@ Flexr is a responsive grid for those who just want a grid. Created by a graphic 
 Please donate if you haven't already! You can do that [here](http://danielblakedesign.com/flexr/). (Option may not be available yet)
 
 
-## The Basic Setup
-
-<pre>&lt;nav|header|section|footer&gt;
-
-   &lt;row&gt;
-   
-      &lt;column&gt;
-      
-         <b>your stuff here!</b>
-      
-      &lt;/column&gt;
-
-   &lt;/row&gt;
-
-&lt;/nav|header|section|footer&gt;</pre>
-
-
 ## First Thing's First
 
 You gotta link Flexr CSS.
@@ -36,6 +19,27 @@ You gotta link Flexr CSS.
    &lt;link href="path-to/your.css" rel="stylesheet"&gt;
 
 &lt;/head&gt;</pre>
+
+
+## Setting Up
+
+Here's the basic structure:
+
+<pre>&lt;nav | header | section | footer&gt;
+
+   &lt;row&gt;
+   
+      &lt;column&gt;
+      
+         <b>your stuff here!</b>
+      
+      &lt;/column&gt;
+
+   &lt;/row&gt;
+
+&lt;/nav |header | section | footer&gt;</pre>
+
+Flexr works best when the row's parent has a width of 100%.
 
 
 ## One Class Will Do
