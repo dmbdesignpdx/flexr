@@ -75,7 +75,7 @@ a {
     -webkit-tap-highlight-color: none;
     tap-highlight-color: rgba(0,0,0,0);
     tap-highlight-color: transparent;
-    tap-highlight-color: none;
+    tap-highlight-color: none
 }
 
 a:focus, a:active {
@@ -97,6 +97,7 @@ a:focus, a:active {
     left: 0;
     z-index: 999;
     background: #2B2B3F;
+    -webkit-transition: .3s;
     transition: .3s;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden
@@ -156,7 +157,10 @@ a:focus, a:active {
 
 #menu {
     background: #2B2B3F;
-    transition: .4s transform
+    -webkit-transition: -webkit-transform .4s;
+    -webkit-transition: transform .4s;
+    transition: -webkit-transform .4s;
+    transition: transform .4s
 }
 
 .links:hover, .links:active, #the-grid #grid, #how-to #doc {
@@ -174,10 +178,6 @@ header {
     padding: 150px 0 0
 }
 
-#download header {
-    padding: 150px 0 120px
-}
-
 
 
 /*    Sections    */
@@ -186,11 +186,7 @@ section {
     padding: 120px 0
 }
 
-section:last-of-type {
-    padding: 0 0 130px
-}
-
-#the-grid section:nth-of-type(2) {
+#the-grid section:nth-of-type(2), section ~ section:last-of-type {
     padding: 0 0 120px
 }
 
@@ -362,6 +358,7 @@ header .with-icon:before {
     color: #F56;
     background: #EEF;
     cursor: pointer;
+    -webkit-transform: scale(1.05);
     transform: scale(1.05)
 }
 
@@ -415,7 +412,15 @@ footer a {
 
 .show-menu {
     box-shadow: 3px 0 5px rgba(0,0,0,.3);
-    transform: translateX(210px) !important
+    -webkit-transform: translateX(0) !important;
+    transform: translateX(0) !important
+}
+
+.show-fader {
+    left: 0 !important;
+    opacity: .4 !important;
+    -webkit-transition: opacity .4s, left 0s 0s !important;
+    transition: opacity .4s, left 0s 0s !important
 }
 
 
@@ -434,7 +439,8 @@ footer a {
 #hero-text {
     flex-direction: column;
     justify-content: center;
-    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0)
 }
 
 #hero-text h1 {
@@ -452,7 +458,9 @@ footer a {
 
 #hero-image object {
     overflow: hidden;
+    -webkit-transform: translateZ(0);
     transform: translateZ(0);
+    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden
@@ -460,6 +468,7 @@ footer a {
 
 @-webkit-keyframes slideUp {
     to {
+        -webkit-transform: translateY(0);
         transform: translateY(0)
     }
 }
@@ -472,6 +481,7 @@ footer a {
 
 @keyframes slideUp {
     to {
+        -webkit-transform: translateY(0);
         transform: translateY(0)
     }
 }
@@ -483,6 +493,7 @@ footer a {
 }
 
 #bottom, #top {
+    -webkit-transform: translateY(520px);
     transform: translateY(520px);
     -webkit-animation: slideUp .6s forwards;
     -webkit-animation-delay: .5s;
@@ -491,6 +502,7 @@ footer a {
 }
 
 #top {
+    -webkit-transform: translateY(480px);
     transform: translateY(480px);
     -webkit-animation-delay: .8s;
     animation-delay: .8s
@@ -498,13 +510,14 @@ footer a {
 
 #hero-text * {
     opacity: 0;
+    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     -webkit-animation: fadeIn 1s 1.1s forwards;
     animation: fadeIn 1s 1.1s forwards
 }
 
 #home section:first-of-type {
-    background: #242435;
+    background: #242435
 }
 
 #expand-text {
@@ -516,7 +529,7 @@ footer a {
     width: 100%;
     height: auto;
     background: url(../img/browsers.svg);
-    background-size: 500% 100%;
+    background-size: 500% 100%
 }
 
 .firefox {
@@ -653,6 +666,11 @@ td:last-of-type {
         height: calc(100% - 24px)
     }
 
+    .browser {
+        width: 65%;
+        margin: 0 auto
+    }
+
 }
 
 
@@ -685,11 +703,7 @@ td:last-of-type {
         padding: 60px 0
     }
 
-    .call-to-action {
-        padding: 0 0 70px
-    }
-
-    #the-grid section:nth-of-type(2) {
+    #the-grid section:nth-of-type(2), section ~ section:last-of-type {
         padding: 0 0 60px
     }
 
@@ -702,13 +716,15 @@ td:last-of-type {
     }
 
     #menu {
-        width: 210px;
+        width: 240px;
         height: 100%;
         position: fixed;
         top: 0;
-        left: -210px;
+        left: 0;
         justify-content: flex-start;
-        flex-flow: column
+        flex-flow: column;
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%)
     }
 
     .links {
@@ -757,6 +773,18 @@ td:last-of-type {
         height: calc(100% - 16px)
     }
 
+    #fader {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: -9999px;
+        background: #000;
+        opacity: 0;
+        -webkit-transition: opacity .4s, left 0s .4s;
+        transition: opacity .4s, left 0s .4s
+    }
+
 }
 
 
@@ -786,6 +814,10 @@ td:last-of-type {
         order: 2
     }
 
+    #menu {
+        width: 66.66%
+    }
+
     .call-to-action p {
         box-sizing: border-box;
         padding: 0 15px
@@ -810,6 +842,10 @@ td:last-of-type {
 
     .button:not(.secondary) {
         margin: 50px auto
+    }
+
+    .browser {
+        width: 40%
     }
 
 }

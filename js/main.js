@@ -4,6 +4,7 @@ var scrolled,
 nav = document.getElementById('nav'),
 menu = document.getElementById('menu'),
 menuLinks = document.getElementsByTagName('li'),
+fader = document.getElementById('fader'),
 menuShowing;
 
 
@@ -85,7 +86,9 @@ document.getElementById('poma').onclick = function(event) {
 
     menuShowing = true;
 
-    menu.classList.add('show-menu')
+    menu.classList.add('show-menu'),
+
+    fader.classList.add('show-fader')
 
 }
 
@@ -101,7 +104,9 @@ document.body.onclick = function(e) {
 
         menuShowing = false;
 
-        menu.classList.remove('show-menu')
+        menu.classList.remove('show-menu'),
+
+        fader.classList.remove('show-fader')
 
     }
 
@@ -115,7 +120,9 @@ for (var i = 0; i < menuLinks.length; i++) {
 
             menuShowing = false;
 
-            menu.classList.remove('show-menu')
+            menu.classList.remove('show-menu'),
+
+            fader.classList.remove('show-fader')
 
         }
 
