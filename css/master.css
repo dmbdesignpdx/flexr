@@ -401,26 +401,22 @@ footer a {
 
 /*  ---  JS Classes  ---  */
 
-.shrink-large {
+.nav-scroll {
     height: 84px !important;
     box-shadow: 0 2px 5px rgba(0,0,0,.3)
 }
 
-.shrink-small {
-    box-shadow: 0 2px 5px rgba(0,0,0,.3)
-}
-
-.show-menu {
+.show-menu #menu {
     box-shadow: 3px 0 5px rgba(0,0,0,.3);
-    -webkit-transform: translateX(0) !important;
-    transform: translateX(0) !important
+    -webkit-transform: translateX(0);
+    transform: translateX(0)
 }
 
-.show-fader {
-    left: 0 !important;
-    opacity: .4 !important;
-    -webkit-transition: opacity .4s, left 0s 0s !important;
-    transition: opacity .4s, left 0s 0s !important
+.show-menu #fader {
+    left: 0;
+    opacity: .4;
+    -webkit-transition: opacity .4s, left 0s 0s;
+    transition: opacity .4s, left 0s 0s
 }
 
 
@@ -683,6 +679,10 @@ td:last-of-type {
         height: 56px
     }
 
+    .nav-scroll {
+        height: 56px !important
+    }
+
     h1 {
         font-size: 30px
     }
@@ -716,7 +716,7 @@ td:last-of-type {
     }
 
     #menu {
-        width: 240px;
+        width: 33.33%;
         height: 100%;
         position: fixed;
         top: 0;

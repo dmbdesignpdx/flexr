@@ -1,56 +1,51 @@
 // For Flexr Grid - Beta
 
-var scrolled,
+var menuShowing,
 nav = document.getElementById('nav'),
 menu = document.getElementById('menu'),
-menuLinks = document.getElementsByTagName('li'),
-fader = document.getElementById('fader'),
-menuShowing;
+menuLinks = document.getElementsByTagName('li');
 
 
 // scrolling
 
-window.onscroll = function() {
+function navSizing() {
 
-    if (window.innerWidth > 740){
+    if (window.innerWidth < 740) {
 
-        if (window.pageYOffset < 60 && scrolled) {
+        if (window.pageYOffset < 20) {
 
-            scrolled = false;
-
-            nav.classList.remove('shrink-large')
+            nav.classList.remove('nav-scroll')
 
         }
 
-        else if (window.pageYOffset >= 60 && !scrolled) {
+        else  {
 
-            scrolled = true;
-
-            nav.classList.add('shrink-large')
+            nav.classList.add('nav-scroll')
 
         }
 
     }
-
     else {
 
-        if (window.pageYOffset < 20 && scrolled) {
+        if (window.pageYOffset < 60) {
 
-            scrolled = false;
-
-            nav.classList.remove('shrink-small')
+            nav.classList.remove('nav-scroll')
 
         }
 
-        else if (window.pageYOffset >= 20 && !scrolled) {
+        else {
 
-            scrolled = true;
-
-            nav.classList.add('shrink-small')
+            nav.classList.add('nav-scroll')
 
         }
 
     }
+
+}
+
+window.onscroll = function() {
+
+    navSizing()
 
 }
 
@@ -59,21 +54,7 @@ window.onscroll = function() {
 
 window.onresize = function() {
 
-    if(window.innerWidth < 740 && scrolled) {
-
-        nav.classList.remove('shrink-large');
-
-        nav.classList.add('shrink-small')
-
-    }
-
-    else if (window.innerWidth > 740 && scrolled) {
-
-        nav.classList.add('shrink-large');
-
-        nav.classList.remove('shrink-small')
-
-    }
+    navSizing()
 
 }
 
@@ -86,9 +67,7 @@ document.getElementById('poma').onclick = function(event) {
 
     menuShowing = true;
 
-    menu.classList.add('show-menu'),
-
-    fader.classList.add('show-fader')
+    nav.children[0].classList.add('show-menu')
 
 }
 
@@ -104,9 +83,7 @@ document.body.onclick = function(e) {
 
         menuShowing = false;
 
-        menu.classList.remove('show-menu'),
-
-        fader.classList.remove('show-fader')
+        nav.children[0].classList.remove('show-menu')
 
     }
 
@@ -120,9 +97,7 @@ for (var i = 0; i < menuLinks.length; i++) {
 
             menuShowing = false;
 
-            menu.classList.remove('show-menu'),
-
-            fader.classList.remove('show-fader')
+            nav.children[0].classList.remove('show-menu')
 
         }
 
