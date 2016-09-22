@@ -117,6 +117,11 @@ a:focus, a:active {
     height: auto
 }
 
+.logo-m img {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden
+}
+
 .logo-m:hover img {
     -webkit-filter: hue-rotate(240deg) saturate(10%) brightness(190%);
     filter: hue-rotate(240deg) saturate(10%) brightness(190%)

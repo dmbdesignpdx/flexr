@@ -10,34 +10,16 @@ menuLinks = document.getElementsByTagName('li');
 
 function navSizing() {
 
-    if (window.innerWidth < 740) {
+    var a = window.innerWidth, b = window.pageYOffset;
 
-        if (window.pageYOffset < 20) {
+    if ((a < 740 && b > 20) || (a > 740 && b > 60)) {
 
-            nav.classList.remove('nav-scroll')
-
-        }
-
-        else  {
-
-            nav.classList.add('nav-scroll')
-
-        }
+        nav.classList.add('nav-scroll')
 
     }
     else {
 
-        if (window.pageYOffset < 60) {
-
-            nav.classList.remove('nav-scroll')
-
-        }
-
-        else {
-
-            nav.classList.add('nav-scroll')
-
-        }
+        nav.classList.remove('nav-scroll')
 
     }
 
