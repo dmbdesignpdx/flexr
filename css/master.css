@@ -419,7 +419,7 @@ footer a {
 
 .show-menu #fader {
     left: 0;
-    opacity: .4;
+    opacity: .5;
     -webkit-transition: opacity .4s, left 0s 0s;
     transition: opacity .4s, left 0s 0s
 }
@@ -721,7 +721,7 @@ td:last-of-type {
     }
 
     #menu {
-        width: 33.33%;
+        width: 35%;
         height: 100%;
         position: fixed;
         top: 0;
@@ -820,7 +820,7 @@ td:last-of-type {
     }
 
     #menu {
-        width: 66.66%
+        width: 67%
     }
 
     .call-to-action p {
