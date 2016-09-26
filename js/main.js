@@ -12,7 +12,7 @@ function navSizing() {
 
     var a = window.innerWidth, b = window.pageYOffset;
 
-    if ((a < 740 && b > 20) || (a > 740 && b > 60)) {
+    if ((740 > a && b > 20) || (a > 740 && b > 60)) {
 
         nav.classList.add('nav-scroll')
 
@@ -71,7 +71,7 @@ document.body.onclick = function(e) {
 
 }
 
-for (var i = 0; i < menuLinks.length; i++) {
+for (var i in menuLinks) {
 
     menuLinks[i].onclick = function() {
 
