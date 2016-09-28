@@ -1,4 +1,4 @@
-/* Flexr Grid - Beta 5.0.0
+/* Flexr Grid - Beta 5.1.0
 Copyright 2016 Flexr. All rights reserved. More info at flexrgrid.com */
 
 .row, *[class*="col-"], *[class*="logo-"], *[class*="menu-"] {
@@ -6,7 +6,7 @@ Copyright 2016 Flexr. All rights reserved. More info at flexrgrid.com */
     position: relative
 }
 
-.row, *[class*="logo-"], *[class*="menu-"] {
+.row, *[class*="menu-"] {
     display: -webkit-flex;
     display: flex
 }
