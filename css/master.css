@@ -458,19 +458,15 @@ footer a {
 }
 
 #hero-image object {
-    overflow: hidden;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden
+    overflow: hidden
 }
 
 @-webkit-keyframes slideUp {
     to {
         -webkit-transform: translateY(0);
-        transform: translateY(0)
+        transform: translateY(0);
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0)
     }
 }
 
@@ -483,7 +479,9 @@ footer a {
 @keyframes slideUp {
     to {
         -webkit-transform: translateY(0);
-        transform: translateY(0)
+        transform: translateY(0);
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0)
     }
 }
 
@@ -496,15 +494,23 @@ footer a {
 #bottom, #top {
     -webkit-transform: translateY(520px);
     transform: translateY(520px);
+    -webkit-transform: translate3d(0,520px,0);
+    transform: translate3d(0,520px,0);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
     -webkit-animation: slideUp .6s forwards;
     -webkit-animation-delay: .5s;
     animation: slideUp .6s forwards;
-    animation-delay: .5s
+    animation-delay: .5s;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden
 }
 
 #top {
     -webkit-transform: translateY(480px);
     transform: translateY(480px);
+    -webkit-transform: translate3d(0,480px,0);
+    transform: translate3d(0,480px,0);
     -webkit-animation-delay: .8s;
     animation-delay: .8s
 }
