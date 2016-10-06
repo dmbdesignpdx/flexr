@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 692 430">
+<defs>
+<filter id="b"><feGaussianBlur stdDeviation="7"/></filter>
+<style>
+.cls-2 {fill: #dde}
+.cls-3 {fill: #668}
+.cls-4 {fill: #aab}
+.cls-5 {fill: #bbc}
+.cls-6 {fill: #f56}
+.cls-7 {opacity: 0.6; filter: url(#b)}
+</style></defs>
+<title>flexr grid hero image top</title>
+<rect class="cls-7" x="415" y="65" width="260" height="350"/>
+<rect class="cls-2" x="415" y="65" width="260" height="350"/>
+<rect class="cls-3" x="415" y="65" width="260" height="40"/>
+<rect class="cls-4" x="425" y="285" width="115" height="120"/>
+<rect class="cls-4" x="550" y="285" width="115" height="120"/>
+<rect class="cls-5" x="425" y="115" width="240" height="160"/>
+<rect class="cls-6" x="525" y="75" width="40" height="20"/>
+</svg>

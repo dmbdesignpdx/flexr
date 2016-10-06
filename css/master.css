@@ -457,16 +457,32 @@ footer a {
     margin: 0
 }
 
-#hero-image object {
+/*#hero-image object {
     overflow: hidden
+}*/
+
+.container {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden
+}
+
+.container::before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: 62.14%
+}
+
+#top, #bottom {
+    z-index: 1
 }
 
 @-webkit-keyframes slideUp {
     to {
         -webkit-transform: translateY(0);
-        transform: translateY(0);
-        -webkit-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0)
+        transform: translateY(0)
     }
 }
 
@@ -479,9 +495,7 @@ footer a {
 @keyframes slideUp {
     to {
         -webkit-transform: translateY(0);
-        transform: translateY(0);
-        -webkit-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0)
+        transform: translateY(0)
     }
 }
 
@@ -492,10 +506,14 @@ footer a {
 }
 
 #bottom, #top {
-    -webkit-transform: translateY(520px);
-    transform: translateY(520px);
-    -webkit-transform: translate3d(0,520px,0);
-    transform: translate3d(0,520px,0);
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     -webkit-animation: slideUp .6s forwards;
@@ -507,10 +525,9 @@ footer a {
 }
 
 #top {
-    -webkit-transform: translateY(480px);
-    transform: translateY(480px);
-    -webkit-transform: translate3d(0,480px,0);
-    transform: translate3d(0,480px,0);
+    z-index: 2;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
     -webkit-animation-delay: .8s;
     animation-delay: .8s
 }
