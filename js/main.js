@@ -86,3 +86,9 @@ for (var i in menuLinks) {
     }
 
 }
+
+window.onload = function() {
+
+    document.getElementById('hero-header').classList.remove('forIntro')
+
+}
