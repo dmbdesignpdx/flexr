@@ -474,6 +474,8 @@ footer a {
 }
 
 #hero-text {
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
     -webkit-transition-delay: 1s;
     transition-delay: 1s
 }
@@ -670,7 +672,7 @@ td:last-of-type {
 
 /*  ---  Phone Landscape  ---  */
 
-@media only screen and (max-width : 740px) {
+@media screen and (max-width : 740px) {
 
     #nav {
         height: 56px
@@ -788,7 +790,7 @@ td:last-of-type {
 
 /*  ---  Phone Portrait  ---  */
 
-@media only screen and (max-width : 520px) {
+@media screen and (max-width : 520px) {
 
 
     #hero-text p, #hero-text h1, #expand-text h1, #expand-text p {
