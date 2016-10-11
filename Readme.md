@@ -1,4 +1,4 @@
-# Flexr Grid - Beta 5.1.0
+# Flexr Grid - Beta 5.2.0
 
 Flexr is a responsive grid for those who just want a grid. Created by a graphic designer with an acute focus on the digital grid layout and its response to different screens. It features two types of column-collapsing: Expanding and Shrinking.
 
