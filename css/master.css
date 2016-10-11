@@ -38,7 +38,9 @@ body {
     background: #2B2B3F;
     font: 300 19px 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased
+    font-smoothing: antialiased;
+    -webkit-font-size-adjust: none;
+    font-size-adjust: none;
 }
 
 img, svg, object {
@@ -591,7 +593,7 @@ td:last-of-type {
 /*  ---  JS Classes  ---  */
 
 .nav-scroll {
-    height: 84px !important;
+    height: 80px !important;
     box-shadow: 0 2px 5px rgba(0,0,0,.3)
 }
 
@@ -672,7 +674,7 @@ td:last-of-type {
 
 /*  ---  Phone Landscape  ---  */
 
-@media screen and (max-width : 740px) {
+@media only screen and (max-width : 740px) {
 
     #nav {
         height: 56px
@@ -790,7 +792,7 @@ td:last-of-type {
 
 /*  ---  Phone Portrait  ---  */
 
-@media screen and (max-width : 520px) {
+@media only screen and (max-width : 520px) {
 
 
     #hero-text p, #hero-text h1, #expand-text h1, #expand-text p {

@@ -1,4 +1,4 @@
-/* Flexr Grid - Beta 5.1.0
+/* Flexr Grid - Beta 5.2.0
 Copyright 2016 Flexr. All rights reserved. More info at flexrgrid.com */
 
 .row, *[class*="col-"], *[class*="logo-"], *[class*="menu-"] {
@@ -172,15 +172,7 @@ Copyright 2016 Flexr. All rights reserved. More info at flexrgrid.com */
     }
 
     .exp .col-1 {
-        width: 50% !important;
-    }
-
-    .exp .col-1:nth-of-type(odd) {
-        padding-right: 8px
-    }
-
-    .exp .col-1:nth-of-type(even) {
-        padding-left: 8px
+        width: 50%
     }
 
 }

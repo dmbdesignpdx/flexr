@@ -89,6 +89,10 @@ for (var i in menuLinks) {
 
 window.onload = function() {
 
-    document.getElementById('hero-header').classList.remove('forIntro')
+    if(document.body.id == "home") {
+
+        document.getElementById('hero-header').classList.remove('forIntro')
+
+    }
 
 }
