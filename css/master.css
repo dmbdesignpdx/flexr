@@ -819,6 +819,10 @@ td:last-of-type {
         width: 67%
     }
 
+    #flexr-plus {
+        margin-top: 30px
+    }
+
     .call-to-action p {
         box-sizing: border-box;
         padding: 0 15px
