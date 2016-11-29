@@ -39,8 +39,8 @@ body {
     font: 300 19px 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
-    -webkit-font-size-adjust: none;
-    font-size-adjust: none
+    -webkit-font-size-adjust: 1;
+    font-size-adjust: 1
 }
 
 img, svg, object {
@@ -107,7 +107,9 @@ a:focus, a:active {
 
 #nav .row {
     height: 100%;
-    align-items: center
+    align-items: center;
+    -webkit-transition: .3s;
+    transition: .3s
 }
 
 .logo-m {
@@ -241,6 +243,11 @@ h1 {
     letter-spacing: -.2pt
 }
 
+h1 sub {
+    vertical-align: baseline;
+    font-size: 50%
+}
+
 h2 {
     font-size: 30px
 }
@@ -263,7 +270,7 @@ h2 ~ p, p ~ p {
     margin: 20px 0 0
 }
 
-p ~ .button {
+p ~ .primary {
     margin: 28px auto 0
 }
 
@@ -339,7 +346,7 @@ header .with-icon:before {
     background-position: 100% 0
 }
 
-.button, .secondary {
+.primary, .secondary {
     width: 150px;
     height: 1.1em;
     padding: 20px 0 21px;
@@ -361,7 +368,7 @@ header .with-icon:before {
     background: none
 }
 
-.button:not(.null):hover {
+.primary:not(.null):hover {
     color: #F56;
     background: #EEF;
     cursor: pointer;
@@ -418,8 +425,7 @@ footer a {
 }
 
 #hero-text {
-    flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
     -webkit-transform: translateZ(0);
     transform: translateZ(0)
 }
@@ -492,8 +498,9 @@ footer a {
 }
 
 .browser {
-    width: 100%;
+    width: 90%;
     height: auto;
+    margin: 0 auto;
     background: url(../img/browsers.svg);
     background-size: 500% 100%
 }
@@ -664,8 +671,7 @@ td:last-of-type {
     }
 
     .browser {
-        width: 65%;
-        margin: 0 auto
+        width: 60%
     }
 
 }
@@ -816,7 +822,7 @@ td:last-of-type {
     }
 
     #menu {
-        width: 67%
+        width: 70%
     }
 
     #flexr-plus {
@@ -845,7 +851,7 @@ td:last-of-type {
         margin-top: 30px
     }
 
-    .button:not(.secondary) {
+    .primary:not(.secondary) {
         margin: 50px auto
     }
 
