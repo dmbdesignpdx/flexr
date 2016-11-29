@@ -443,6 +443,11 @@ footer a {
     margin: 0
 }
 
+#hero-text .secondary {
+    width: 90px;
+    margin-left: 30px
+}
+
 .container {
     width: 100%;
     height: auto;
@@ -722,6 +727,11 @@ td:last-of-type {
         padding-bottom: 30px
     }
 
+    #hero-text .secondary {
+        width: 90px;
+        margin-left: 10px
+    }
+
     #menu {
         width: 35%;
         height: 100%;
@@ -851,7 +861,7 @@ td:last-of-type {
         margin-top: 30px
     }
 
-    .primary:not(.secondary) {
+    .primary {
         margin: 50px auto
     }
 
