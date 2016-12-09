@@ -171,7 +171,7 @@ Break Point|Column Width|Gutter Width
 ```
 
 
-## Current Version of Flexr: 0.6.0
+### Current Version of Flexr: 0.6.0
 
 Version Release: December 8, 2016
 
