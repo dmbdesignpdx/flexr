@@ -245,7 +245,8 @@ h1 {
 
 h1 sub {
     vertical-align: baseline;
-    font-size: 50%
+    font-size: 40%;
+    letter-spacing: .2pt
 }
 
 h2 {
@@ -567,6 +568,7 @@ footer a {
 
 table {
     width: 100%;
+    margin: 30px 0;
     font-size: 17px;
     color: #dde;
     background: #42425d;
@@ -668,11 +670,6 @@ td:last-of-type {
 
     td {
         padding: 18px
-    }
-
-    .bkg {
-        width: calc(100% - 24px);
-        height: calc(100% - 24px)
     }
 
     .browser {
@@ -783,11 +780,6 @@ td:last-of-type {
     .with-icon:before {
         width: 150px;
         height: 150px
-    }
-
-    .bkg {
-        width: calc(100% - 16px);
-        height: calc(100% - 16px)
     }
 
     #fader {
