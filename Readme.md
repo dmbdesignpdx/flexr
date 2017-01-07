@@ -113,13 +113,17 @@ Break Point|Column Width|Gutter Width
 ```html
 <body>
 
-   <nav class="row">
+   <header>
+
+      <nav class="row">
       
-      <div class="logo">...</div>
+         <div class="logo">...</div>
          
-      <ul class="menu-xl">...</ul>
+         <ul class="menu-xl">...</ul>
    
-   </nav>
+      </nav>
+   
+   </header>
    
     <section>
    
