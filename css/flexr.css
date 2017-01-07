@@ -1,4 +1,4 @@
-/* Flexr Grid - 0.6.0
+/* Flexr Grid - 0.7.0
 Copyright 2016 Flexr. All rights reserved. More info at flexrgrid.com */
 
 .row, *[class*="col-"], *[class*="logo-"], *[class*="menu-"] {
@@ -20,7 +20,7 @@ Copyright 2016 Flexr. All rights reserved. More info at flexrgrid.com */
     justify-content: center
 }
 
-*[class*="menu-"], nav .row {
+*[class*="menu-"] {
     -webkit-justify-content: space-between;
     justify-content: space-between
 }
@@ -172,6 +172,18 @@ Copyright 2016 Flexr. All rights reserved. More info at flexrgrid.com */
     }
 
     .exp .col-1 {
+        width: 50%
+    }
+
+    .por .col-1 {
+        width: 24.9999%
+    }
+
+    .por .col-2 {
+        width: 33.3332%
+    }
+
+    .por .col-3 {
         width: 50%
     }
 

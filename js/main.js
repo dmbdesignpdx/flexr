@@ -49,7 +49,7 @@ document.getElementById('poma').onclick = function(event) {
 
     menuShowing = true;
 
-    nav.children[0].classList.add('show-menu')
+    nav.classList.add('show-menu')
 
 }
 
@@ -65,7 +65,7 @@ document.body.onclick = function(e) {
 
         menuShowing = false;
 
-        nav.children[0].classList.remove('show-menu')
+        nav.classList.remove('show-menu')
 
     }
 
@@ -79,7 +79,7 @@ for (var i in menuLinks) {
 
             menuShowing = false;
 
-            nav.children[0].classList.remove('show-menu')
+            nav.classList.remove('show-menu')
 
         }
 
@@ -91,7 +91,7 @@ window.onload = function() {
 
     if(document.body.id == "home") {
 
-        document.getElementById('hero-header').classList.remove('forIntro')
+        document.getElementById('hero').classList.remove('forIntro')
 
     }
 

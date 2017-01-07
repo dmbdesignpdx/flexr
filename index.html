@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Flexr Grid - Beta --><html>
+<!DOCTYPE html><html>
 <head>
 
     <meta charset="utf-8">
@@ -43,23 +43,11 @@
 
 <body id="home">
 
-    <nav id="nav">
+    <header id="nav">
 
-        <div class="row">
+        <nav class="row">
 
-            <div class="logo-m mtc">
-
-                <a href="index.html"><img src="img/flexr-logo.svg" alt="Flexr Grid Logo"/></a>
-
-            </div>
-
-            <div id="fader"></div>
-
-            <div id="poma">
-
-                <svg viewBox="0 0 50 50"><line x1="5" y1="14" x2="45" y2="14"/><line x1="5" y1="26" x2="45" y2="26"/><line x1="5" y1="38" x2="45" y2="38"/></svg>
-
-            </div>
+            <a href="index.html" class="logo-m mtc"><img src="img/flexr-logo.svg" alt="Flexr Grid Logo"/></a>
 
             <ul id="menu" class="menu-l">
 
@@ -71,63 +59,75 @@
 
             </ul>
 
-        </div>
+        </nav>
 
-    </nav>
+        <div id="fader"></div>
 
-    <header id="hero-header" class="forIntro">
+        <div id="poma" role="button">
 
-        <div id="hero-row" class="row">
-
-            <div id="hero-text" class="col-5">
-
-                <h1>Simple &amp; Flexible</h1>
-
-                <p>Flexr is a responsive grid for those who simply want a grid. Using only CSS, columns collapse in two ways: Expanding and Shrinking.</p>
-
-                <a href="flexr-grid.html" class="primary" role="button" title="Flexr Grid">Check It</a>
-
-                <a href="get-flexr.html" class="secondary" role="button" title="Get Flexr">0.6.0</a>
-
-            </div>
-
-            <div id="hero-image" class="col-7">
-
-                <div class="container">
-
-                    <img id="bottom" src="img/flexr-hero-bottom.svg" alt="Flexr"/>
-
-                    <img id="top" src="img/flexr-hero-top.svg" alt="Flexr"/>
-
-                </div>
-
-            </div>
+            <svg viewBox="0 0 50 50"><line x1="5" y1="14" x2="45" y2="14"/><line x1="5" y1="26" x2="45" y2="26"/><line x1="5" y1="38" x2="45" y2="38"/></svg>
 
         </div>
 
     </header>
 
-    <section>
+    <main>
 
-        <div id="expand-row" class="row">
+        <section id="hero" class="forIntro">
 
-            <div id="expand-image" class="col-7">
+            <div id="hero-row" class="row">
 
-                <img src="img/expand.svg" alt="Flexr responsive grid with expanding columns"/>
+                <div id="hero-text" class="col-5">
+
+                    <h1>Simple &amp; Flexible</h1>
+
+                    <p>Flexr is a responsive grid for those who simply want a grid. Using only CSS, columns collapse in two ways: Expanding and Shrinking.</p>
+
+                    <a href="flexr-grid.html" class="primary" title="See the Flexr Grid">Check It</a>
+
+                    <a href="get-flexr.html" class="secondary" title="Download Flexr Grid">0.7.0</a>
+
+                </div>
+
+                <div id="hero-image" class="col-7">
+
+                    <div class="container">
+
+                        <img id="bottom" src="img/flexr-hero-bottom.svg" alt="Flexr"/>
+
+                        <img id="top" src="img/flexr-hero-top.svg" alt="Flexr"/>
+
+                    </div>
+
+                </div>
 
             </div>
 
-            <div id="expand-text" class="col-5">
+        </section>
 
-                <h1>One of a Kind</h1>
+        <section>
 
-                <p>Flexr offers a unique option for your responsive grid layout: <strong>Expanding Columns</strong>. With just one CSS class, the one, two, three, four, and six columns can expand dynamically as the screen size reduces to that of tablets and phones.</p>
+            <div id="expand-row" class="row">
+
+                <div id="expand-image" class="col-7">
+
+                    <img src="img/expand.svg" alt="Flexr responsive grid with expanding columns"/>
+
+                </div>
+
+                <div id="expand-text" class="col-5">
+
+                    <h1>One of a Kind</h1>
+
+                    <p>Flexr offers a unique option for your responsive grid layout: <strong>Expanding Columns</strong>. With just one CSS class, the one, two, three, four, and six columns can expand dynamically as the screen size reduces to that of tablets and phones.</p>
+
+                </div>
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
+    </main>
 
     <section class="call-to-action">
 
@@ -147,13 +147,13 @@
 
             <div class="col-2">
 
-                <a href="get-flexr.html" class="primary" role="button" title="Download Flexr">Get Flexr</a>
+                <a href="get-flexr.html" class="primary" title="Download Flexr Grid">Get Flexr</a>
 
             </div>
 
             <div class="col-2">
 
-                <a href="use-flexr.html" class="secondary" role="button" title="Flexr Documentation">Learn More</a>
+                <a href="use-flexr.html" class="secondary" title="Flexr Grid Documentation">Learn More</a>
 
             </div>
 
@@ -225,8 +225,8 @@
 
             <div class="col-8">
 
-                <p class="dbdesign">The Flexr Grid, the Flexr logo, and the website were created and designed by Daniel Blake&mdash;Portland, OR.<br>
-                <a href="http://danielblake.design" target="_blank">danielblake.design</a></p>
+                <address class="dbdesign">The Flexr Grid, the Flexr logo, and the website were created and designed by Daniel Blake&mdash;Portland, OR.<br>
+                <a href="http://danielblake.design" target="_blank">danielblake.design</a></address>
 
             </div>
 

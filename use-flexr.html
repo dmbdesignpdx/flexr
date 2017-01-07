@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Flexr Grid - Beta --><html>
+<!DOCTYPE html><html>
 <head>
 
     <meta charset="utf-8">
@@ -43,23 +43,11 @@
 
 <body id="how-to">
 
-    <nav id="nav">
+    <header id="nav">
 
-        <div class="row">
+        <nav class="row">
 
-            <div class="logo-m mtc">
-
-                <a href="index.html"><img src="img/flexr-logo.svg" alt="Flexr Grid Logo"/></a>
-
-            </div>
-
-            <div id="fader"></div>
-
-            <div id="poma">
-
-                <svg viewBox="0 0 50 50"><line x1="5" y1="14" x2="45" y2="14"/><line x1="5" y1="26" x2="45" y2="26"/><line x1="5" y1="38" x2="45" y2="38"/></svg>
-
-            </div>
+            <a href="index.html" class="logo-m mtc"><img src="img/flexr-logo.svg" alt="Flexr Grid Logo"/></a>
 
             <ul id="menu" class="menu-l">
 
@@ -71,33 +59,43 @@
 
             </ul>
 
-        </div>
+        </nav>
 
-    </nav>
+        <div id="fader"></div>
 
-    <header>
+        <div id="poma" role="button">
 
-        <div class="row">
-
-            <div class="col-12">
-
-                <h1 id="doc-title" class="with-icon">Flexr Documentation</h1>
-
-            </div>
+            <svg viewBox="0 0 50 50"><line x1="5" y1="14" x2="45" y2="14"/><line x1="5" y1="26" x2="45" y2="26"/><line x1="5" y1="38" x2="45" y2="38"/></svg>
 
         </div>
 
     </header>
 
-    <section>
+    <main>
 
-        <div class="row">
+        <header>
 
-            <div class="col-12">
+            <div class="row">
 
-                <h2>First Thing's First</h2>
+                <div class="col-12">
 
-                <p>You gotta link the Flexr Grid CSS.</p>
+                    <h1 id="doc-title" class="with-icon">Flexr Documentation</h1>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <section>
+
+            <div class="row">
+
+                <div class="col-12">
+
+                    <h2>First Thing's First</h2>
+
+                    <p>You gotta link the Flexr Grid CSS.</p>
 
 <pre>&lt;head&gt;
 
@@ -107,17 +105,18 @@
 
 &lt;/head&gt;</pre>
 
+                </div>
+
             </div>
 
-        </div>
+            <div class="row">
 
-        <div class="row">
+                <div class="col-12">
 
-            <div class="col-12">
+                    <h2>Setting Up</h2>
 
-                <h2>Setting Up</h2>
+                    <p>Here's the basic structure:</p>
 
-                <p>Here's the basic structure:</p>
 <pre>&lt;nav | header | section | footer&gt;
 
     &lt;row&gt;
@@ -132,19 +131,19 @@
 
 &lt;/nav | header | section | footer&gt;</pre>
 
-                <p>Flexr works best when the row's parent has a width set to 100%.</p>
+                    <p>Flexr works best when the row's parent has a width set to 100%.</p>
+
+                </div>
 
             </div>
 
-        </div>
+            <div class="row">
 
-        <div class="row">
+                <div class="col-12">
 
-            <div class="col-12">
+                    <h2>One Class Will Do</h2>
 
-                <h2>One Class Will Do</h2>
-
-                <p>Creating a column requires only one class <code>col-</code> defined by its size <code>[1&ndash;12]</code> (total column size no more than 12 per row):</p>
+                    <p>Creating a column requires only one class <code>col-</code> defined by its size <code>[1&ndash;12]</code> (total column size no more than 12 per row):</p>
 
 <pre>&lt;div class="row"&gt;
 
@@ -154,19 +153,19 @@
 
 &lt;/div&gt;</pre>
 
+                </div>
+
             </div>
 
-        </div>
+            <div class="row">
 
-        <div class="row">
+                <div class="col-12">
 
-            <div class="col-12">
+                    <h2>Defining Columns</h2>
 
-                <h2>Defining Columns</h2>
+                    <p><strong>Shrinking Columns</strong> is the default type of collapsing.</p>
 
-                <p><strong>Shrinking Columns</strong> is the default type of collapsing.</p>
-
-                <p>To define <strong>Expanding Columns</strong>, all you need to do is add the expanding class <code>exp</code> in the parent row:</p>
+                    <p>To define <strong>Expanding Columns</strong>, all you need to do is add the expanding class <code>exp</code> in the parent row:</p>
 
 <pre>&lt;div class="row <span>exp</span>"&gt;
 
@@ -180,19 +179,19 @@
 
 &lt;/div&gt;</pre>
 
-                <p>See the difference in behavior <a href="flexr-grid.html" title="Flexr Grid">here</a>.</p>
+                    <p>See the difference in behavior <a href="flexr-grid.html" title="Flexr Grid">here</a>.</p>
+
+                </div>
 
             </div>
 
-        </div>
+            <div class="row">
 
-        <div class="row">
+                <div class="col-12">
 
-            <div class="col-12">
+                    <h2>Justifying Columns</h2>
 
-                <h2>Justifying Columns</h2>
-
-                <p>The default justification is centered. To justify the columns to left or the right, just add the class <code>jus-[l,r]</code> to the parent row. For example, left-justification:</p>
+                    <p>The default justification is centered. To justify the columns to left or the right, just add the class <code>jus-[l,r]</code> to the parent row. For example, left-justification:</p>
 
 <pre>&lt;div class="row <span>jus-l</span>"&gt;
 
@@ -200,115 +199,113 @@
 
 &lt;/div&gt;</pre>
 
+                </div>
+
             </div>
 
-        </div>
+            <div class="row">
 
-        <div class="row">
+                <div class="col-12">
 
-            <div class="col-12">
+                    <h2>Flexr Nav Objects</h2>
 
-                <h2>Flexr Nav Objects</h2>
+                    <p>You can use <strong>Flexr Nav Objects</strong> to help keep the logo and menu links inline with the Flexr grid. The <code>logo-</code> and <code>menu-</code> objects act just like columns and each object has a size that fits into the grid <code>[s,m,l,xl]</code>.</p>
 
-                <p>You can use <strong>Flexr Nav Objects</strong> to help keep the logo and menu links inline with the Flexr grid. The <code>logo-</code> and <code>menu-</code> objects act just like columns and each object has a size that fits into the grid <code>[s,m,l,xl]</code>.</p>
+                    <p>The contents of the menu object will be automatically spaced evenly. If that's not what you want, you can override that by using the same justification classes previously mentioned.</p>
 
-                <p>The contents of the row child and the menu object in the nav will be automatically spaced evenly. If that's not what you want, you can override that by using the same justification classes previously mentioned.</p>
+                    <p>Here is an example of a nav utilizing the Flexr options:</p>
 
-                <p>Here is an example of a nav utilizing the Flexr options:</p>
+<pre>&lt;nav class="row"&gt;
 
-<pre>&lt;nav&gt;
+    &lt;div class="<span>logo-m</span>"&gt;...&lt;/div&gt;
 
-   &lt;div class="row"&gt;
-
-      &lt;div class="<span>logo-m</span>"&gt;...&lt;/div&gt;
-
-      &lt;ul class="<span>menu-xl</span>"&gt;...&lt;/ul&gt;
-
-   &lt;/div&gt;
+    &lt;ul class="<span>menu-xl</span>"&gt;...&lt;/ul&gt;
 
 &lt;/nav&gt;</pre>
 
-        </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="col-12">
-
-                <h2>Column/Gutter Widths and Break Points</h2>
-
-                <table>
-
-                    <tr>
-
-                        <th>Break Point</th>
-
-                        <td>520px</td>
-
-                        <td>740px</td>
-
-                        <td>940px</td>
-
-                        <td>1180px</td>
-
-                        <td>&gt;1180px</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <th>Column Size</th>
-
-                        <td>auto</td>
-
-                        <td>~31px</td>
-
-                        <td>~44px</td>
-
-                        <td>~60px</td>
-
-                        <td>~68px</td>
-
-                    </tr>
-
-                    <tr>
-
-                        <th>Gutter Size</th>
-
-                        <td>16px</td>
-
-                        <td>16px</td>
-
-                        <td>24px</td>
-
-                        <td>28px</td>
-
-                        <td>28px</td>
-
-                    </tr>
-
-                </table>
+            </div>
 
             </div>
 
-        </div>
+            <div class="row">
 
-        <div class="row">
+                <div class="col-12">
 
-            <div class="col-12">
+                    <h2>Column/Gutter Widths and Break Points</h2>
 
-                <h2>Current Version of Flexr: 0.6.0</h2>
-                <p>Version Release: December 8, 2016<br>
-                File Size: 1.7KB<br><br>
-                Be sure to check back to see if you're using the current version!<br><br>
-                Also, more documentation to come.</p>
+                    <table>
+
+                        <tr>
+
+                            <th>Break Point</th>
+
+                            <td>520px</td>
+
+                            <td>740px</td>
+
+                            <td>940px</td>
+
+                            <td>1180px</td>
+
+                            <td>&gt;1180px</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>Column Size</th>
+
+                            <td>auto</td>
+
+                            <td>~31px</td>
+
+                            <td>~44px</td>
+
+                            <td>~60px</td>
+
+                            <td>~68px</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>Gutter Size</th>
+
+                            <td>16px</td>
+
+                            <td>16px</td>
+
+                            <td>24px</td>
+
+                            <td>30px</td>
+
+                            <td>30px</td>
+
+                        </tr>
+
+                    </table>
+
+                </div>
 
             </div>
 
-        </div>
+            <div class="row">
 
-    </section>
+                <div class="col-12">
+
+                    <h2>Current Version of Flexr: 0.7.0</h2>
+                    <p>Version Release: January 7, 2017<br>
+                    File Size: 1.7KB<br><br>
+                    Be sure to check back to see if you're using the current version!<br><br>
+                    Also, more documentation to come.</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
 
     <section class="call-to-action">
 
@@ -342,8 +339,8 @@
 
             <div class="col-8">
 
-                <p class="dbdesign">The Flexr Grid, the Flexr logo, and the website were created and designed by Daniel Blake&mdash;Portland, OR.<br>
-                <a href="http://danielblake.design" target="_blank">danielblake.design</a></p>
+                <address class="dbdesign">The Flexr Grid, the Flexr logo, and the website were created and designed by Daniel Blake&mdash;Portland, OR.<br>
+                <a href="http://danielblake.design" target="_blank">danielblake.design</a></address>
 
             </div>
 

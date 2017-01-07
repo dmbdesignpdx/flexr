@@ -38,9 +38,7 @@ body {
     background: #2B2B3F;
     font: 300 19px 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
-    -webkit-font-size-adjust: 1;
-    font-size-adjust: 1
+    font-smoothing: antialiased
 }
 
 img, svg, object {
@@ -53,7 +51,7 @@ img, a:active {
     outline: none
 }
 
-nav, section, footer, header, img, object {
+nav, section, header, footer, img, object {
     width: 100%;
     height: auto;
     position: relative
@@ -61,6 +59,10 @@ nav, section, footer, header, img, object {
 
 object {
     pointer-events: none
+}
+
+address {
+    font-style: normal
 }
 
 ul, li {
@@ -92,6 +94,7 @@ a:focus, a:active {
 /*    Navigation    */
 
 #nav {
+    display: block;
     height: 112px;
     padding-top: 1px;
     position: fixed;
@@ -107,18 +110,22 @@ a:focus, a:active {
 
 #nav .row {
     height: 100%;
+    -webkit-align-items: center;
     align-items: center;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
     -webkit-transition: .3s;
     transition: .3s
 }
 
 .logo-m {
-    cursor: pointer
+    cursor: default
 }
 
-.logo-m img, .logo-m a {
+.logo-m img {
     width: 100%;
-    height: auto
+    height: auto;
+    cursor: pointer
 }
 
 .logo-m img {
@@ -126,7 +133,7 @@ a:focus, a:active {
     backface-visibility: hidden
 }
 
-.logo-m:hover img {
+.logo-m img:hover {
     -webkit-filter: hue-rotate(240deg) saturate(10%) brightness(190%);
     filter: hue-rotate(240deg) saturate(10%) brightness(190%)
 }
@@ -134,12 +141,13 @@ a:focus, a:active {
 #poma {
     width: 40px;
     height: 40px;
-    padding: 5px;
+    padding: 5px 12px;
     position: absolute;
     top: 0;
     bottom: 0;
     left: -9999px;
-    margin: auto
+    margin: auto;
+    z-index: 900
 }
 
 #poma svg {
@@ -181,13 +189,6 @@ a:focus, a:active {
 }
 
 
-/*    Header    */
-
-header {
-    padding: 150px 0 0
-}
-
-
 
 /*    Sections    */
 
@@ -195,8 +196,16 @@ section {
     padding: 120px 0
 }
 
-#the-grid section:nth-of-type(2), section ~ section:last-of-type {
-    padding: 0 0 120px
+main header {
+    padding: 150px 0 0
+}
+
+main ~ section:last-of-type {
+    padding: 0 0 130px
+}
+
+.buffer {
+    padding: 90px 0 0
 }
 
 
@@ -210,6 +219,7 @@ footer img {
     width: 27%;
     height: auto;
     margin-top: 50px;
+    -webkit-align-self: flex-start;
     align-self: flex-start;
     -webkit-filter: hue-rotate(240deg) saturate(10%) brightness(110%);
     filter: hue-rotate(240deg) saturate(10%) brightness(110%)
@@ -218,7 +228,7 @@ footer img {
 
 /*    Text    */
 
-h1, h2, p, li, a, code, pre {
+h1, h2, p, li, a, code, pre, address {
     margin: 0
 }
 
@@ -232,7 +242,7 @@ h1, h2 {
     color: #99B
 }
 
-h1, h2, p {
+h1, h2, p, address {
     width: 100%;
     text-align: left
 }
@@ -253,11 +263,11 @@ h2 {
     font-size: 30px
 }
 
-header h1, .call-to-action h1, .call-to-action p {
+main header h1, .call-to-action h1, .call-to-action p {
     text-align: center
 }
 
-p {
+p, address {
     line-height: 1.4em;
     color: #DDE;
     letter-spacing: .1pt
@@ -312,7 +322,7 @@ code span, pre span, code strong, pre strong, footer a, p a {
     color: #F56
 }
 
-p a:hover {
+p a:hover, address a:hover {
     color: #DDE
 }
 
@@ -388,7 +398,7 @@ header .with-icon:before {
     pointer-events: none
 }
 
-footer p {
+footer p, footer address {
     font-size: 14px;
     line-height: 1.4em;
     color: #AAB
@@ -416,7 +426,7 @@ footer a {
 
 /*  ---  Home  ---  */
 
-#hero-header {
+#hero {
     padding: 210px 0 150px;
     overflow: hidden
 }
@@ -494,7 +504,7 @@ footer a {
     transition-delay: 1s
 }
 
-#home section:first-of-type {
+#home main section:nth-of-type(2) {
     background: #242435
 }
 
@@ -704,7 +714,7 @@ td:last-of-type {
         margin: 15px 0 0
     }
 
-    header {
+    main header {
         padding: 80px 0 0
     }
 
@@ -712,11 +722,11 @@ td:last-of-type {
         padding: 60px 0
     }
 
-    #the-grid section:nth-of-type(2), section ~ section:last-of-type {
+    main ~ section:last-of-type {
         padding: 0 0 60px
     }
 
-    #hero-header {
+    #hero {
         padding: 60px 0 20px
     }
 
@@ -737,6 +747,7 @@ td:last-of-type {
         left: 0;
         justify-content: flex-start;
         flex-flow: column;
+        z-index: 901;
         -webkit-transform: translateX(-100%);
         transform: translateX(-100%)
     }
@@ -759,7 +770,7 @@ td:last-of-type {
     }
 
     #poma {
-        left: -1px
+        left: 0
     }
 
     .mtc {
@@ -815,7 +826,7 @@ td:last-of-type {
         margin: 0 auto 20px
     }
 
-    #hero-header {
+    #hero {
         padding: 90px 0 30px
     }
 
