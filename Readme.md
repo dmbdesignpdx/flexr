@@ -84,19 +84,15 @@ The default justification is centered. To justify the columns to left or the rig
 
 You can use **Flexr Nav Objects** to help keep the logo and menu links inline with the Flexr grid. The <code>logo-</code> and <code>menu-</code> objects act just like columns and each object has a size that fits into the grid <code>[s,m,l,xl]</code>.
 
-The contents of the row child and the menu object in the nav will be automatically spaced evenly. If that's not what you want, you can override that by using the same justification classes previously mentioned.
+The contents of the menu object will be automatically spaced evenly. If that's not what you want, you can override that by using the same justification classes previously mentioned.
 
 Here is an example of a nav utilizing the Flexr options:
 
-<pre>&lt;nav&gt;
+<pre>&lt;nav class="row"&gt;
 
-   &lt;div class="row"&gt;
+   &lt;div class="<b>logo-m</b>"&gt;...&lt;/div&gt;
 
-      &lt;div class="<b>logo-m</b>"&gt;...&lt;/div&gt;
-
-      &lt;ul class="<b>menu-xl</b>"&gt;...&lt;/ul&gt;
-
-   &lt;/div&gt;
+   &lt;ul class="<b>menu-xl</b>"&gt;...&lt;/ul&gt;
 
 &lt;/nav&gt;</pre>
 
