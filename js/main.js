@@ -6,7 +6,7 @@ menu = document.getElementById('menu'),
 menuLinks = document.getElementsByTagName('li');
 
 
-// scrolling
+// Scrolling
 
 function navSizing() {
 
@@ -25,41 +25,10 @@ function navSizing() {
 
 }
 
-window.onscroll = function() {
-
-    navSizing()
-
-}
-
-
-// Resizing
-
-window.onresize = function() {
-
-    navSizing()
-
-}
-
 
 // drawer
 
-document.getElementById('poma').onclick = function(event) {
-
-    event.stopPropagation();
-
-    menuShowing = true;
-
-    nav.classList.add('show-menu')
-
-}
-
-menu.onclick = function(event) {
-
-    event.stopPropagation()
-
-}
-
-document.body.onclick = function(e) {
+function drawerAction() {
 
     if (menuShowing) {
 
@@ -68,26 +37,20 @@ document.body.onclick = function(e) {
         nav.classList.remove('show-menu')
 
     }
+    else {
 
-}
+        menuShowing = true;
 
-for (var i in menuLinks) {
-
-    menuLinks[i].onclick = function() {
-
-        if (menuShowing) {
-
-            menuShowing = false;
-
-            nav.classList.remove('show-menu')
-
-        }
+        nav.classList.add('show-menu')
 
     }
 
 }
 
-window.onload = function() {
+
+// Intro
+
+function introAction() {
 
     if(document.body.id == "home") {
 
@@ -96,3 +59,40 @@ window.onload = function() {
     }
 
 }
+
+
+// Call Functions
+
+window.onscroll = function() {
+
+    navSizing()
+
+};
+
+window.onresize = function() {
+
+    navSizing()
+
+};
+
+document.getElementById('poma').onclick = function() {
+
+    drawerAction()
+
+};
+
+for (var i in menuLinks) {
+
+    menuLinks[i].onclick = function() {
+
+        drawerAction()
+
+    }
+
+};
+
+window.onload = function() {
+
+    introAction()
+
+};

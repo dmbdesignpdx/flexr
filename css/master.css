@@ -18,9 +18,7 @@ Contents
 - Tablet Portrait
 - Phone Landscape
 - Phone Portrait
-- Version
-
-*/
+- Version  */
 
 
 
@@ -41,20 +39,23 @@ body {
     font-smoothing: antialiased
 }
 
-img, svg, object {
+nav, main, section, header, footer, img, object, svg, address, a {
     display: block;
-    box-sizing: border-box
-}
-
-img, a:active {
-    border: none;
-    outline: none
+    position: relative
 }
 
 nav, section, header, footer, img, object {
     width: 100%;
     height: auto;
-    position: relative
+}
+
+img, svg, object {
+    box-sizing: border-box
+}
+
+img, a:active, a:focus {
+    border: none;
+    outline: none
 }
 
 object {
@@ -72,7 +73,6 @@ ul, li {
 }
 
 a {
-    display: block;
     text-decoration: none;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
@@ -80,10 +80,6 @@ a {
     tap-highlight-color: rgba(0,0,0,0);
     tap-highlight-color: transparent;
     tap-highlight-color: none
-}
-
-a:focus, a:active {
-    outline: 0
 }
 
 #expand-text, .copy, #hero-text {
@@ -94,7 +90,6 @@ a:focus, a:active {
 /*    Navigation    */
 
 #nav {
-    display: block;
     height: 112px;
     padding-top: 1px;
     position: fixed;
@@ -125,10 +120,7 @@ a:focus, a:active {
 .logo-m img {
     width: 100%;
     height: auto;
-    cursor: pointer
-}
-
-.logo-m img {
+    cursor: pointer;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden
 }
@@ -146,8 +138,7 @@ a:focus, a:active {
     top: 0;
     bottom: 0;
     left: -9999px;
-    margin: auto;
-    z-index: 900
+    margin: auto
 }
 
 #poma svg {
@@ -200,7 +191,7 @@ section {
     padding: 30px 0 120px
 }
 
-main ~ section:last-of-type {
+body section:last-of-type {
     padding: 0 0 130px
 }
 
@@ -217,7 +208,6 @@ footer {
 
 footer img {
     width: 27%;
-    height: auto;
     margin-top: 50px;
     -webkit-align-self: flex-start;
     align-self: flex-start;
@@ -327,11 +317,11 @@ p a:hover, address a:hover {
 }
 
 .with-icon:before {
-    content: '';
     display: block;
     width: 180px;
     height: 180px;
     margin: 0 auto 30px;
+    content: '';
     background: url(../img/flexr-sprite.svg) no-repeat;
     background-size: 500% 100%;
     background-position: 0 0
@@ -468,9 +458,9 @@ footer a {
 
 .container::before {
     display: block;
-    content: '';
     width: 100%;
-    padding-top: 62.14%
+    padding-top: 62.14%;
+    content: '';
 }
 
 #bottom, #top, #hero-text {
@@ -543,9 +533,9 @@ footer a {
 
 .browser::before {
     display: block;
-    content: '';
     width: 100%;
-    padding-top: 100%
+    padding-top: 100%;
+    content: '';
 }
 
 #browsers p {
@@ -627,7 +617,7 @@ td:last-of-type {
     transform: translateX(0)
 }
 
-.show-menu #fader {
+.show-menu #poma::before {
     left: 0;
     opacity: .5;
     -webkit-transition: opacity .4s, left 0s 0s;
@@ -715,7 +705,7 @@ td:last-of-type {
     }
 
     .header {
-        padding: 80px 0 0
+        padding: 30px 0 60px
     }
 
     section {
@@ -745,9 +735,9 @@ td:last-of-type {
         position: fixed;
         top: 0;
         left: 0;
+        z-index: 2;
         justify-content: flex-start;
         flex-flow: column;
-        z-index: 901;
         -webkit-transform: translateX(-100%);
         transform: translateX(-100%)
     }
@@ -793,12 +783,15 @@ td:last-of-type {
         height: 150px
     }
 
-    #fader {
+    #poma::before {
+        display: block;
         width: 100%;
         height: 100%;
         position: fixed;
         top: 0;
         left: -9999px;
+        z-index: 1;
+        content: '';
         background: #000;
         opacity: 0;
         -webkit-transition: opacity .4s, left 0s .4s;
