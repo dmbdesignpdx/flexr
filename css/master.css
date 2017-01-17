@@ -191,7 +191,7 @@ section {
     padding: 30px 0 120px
 }
 
-body section:last-of-type {
+main ~ section:last-of-type {
     padding: 0 0 130px
 }
 
@@ -559,6 +559,10 @@ footer a {
     text-align: center;
     background: #42425d;
     line-height: 1.1em
+}
+
+.fill div[class*="col"]:nth-of-type(even) .example {
+    background: #3C3C58
 }
 
 

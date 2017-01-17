@@ -1,4 +1,4 @@
-/* Flexr Grid - 0.7.0
+/* Flexr Grid - 0.8.0
 Copyright 2016 Flexr. All rights reserved. More info at flexrgrid.com */
 
 .row, *[class*="col-"], *[class*="logo-"], *[class*="menu-"] {
@@ -88,12 +88,20 @@ Copyright 2016 Flexr. All rights reserved. More info at flexrgrid.com */
     width: 99.9996%
 }
 
+.fill {
+    width: 100%
+}
+
+.fill *[class*="col-"] {
+    padding: 0
+}
+
 
 /*   Smaller Desktop Screens & Tablet Landscape   */
 
 @media only screen and (max-width : 1180px) {
 
-    .row {
+    .row:not(.fill) {
         width: calc(100% - 30px)
     }
 
@@ -104,7 +112,7 @@ Copyright 2016 Flexr. All rights reserved. More info at flexrgrid.com */
 
 @media only screen and (max-width : 940px) {
 
-    .row {
+    .row:not(.fill) {
         width: calc(100% - 24px)
     }
 
@@ -135,7 +143,7 @@ Copyright 2016 Flexr. All rights reserved. More info at flexrgrid.com */
 
 @media only screen and (max-width : 740px) {
 
-    .row {
+    .row:not(.fill) {
         width: calc(100% - 18px)
     }
 
