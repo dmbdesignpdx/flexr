@@ -1,4 +1,4 @@
-# Flexr Grid - Beta (0.7.0)
+# Flexr Grid - Beta (0.8.0)
 
 Flexr is a responsive grid for those who just want a grid. Created by a graphic designer with an acute focus on the digital grid layout and its response to different screens. It features two types of column-collapsing: Expanding and Shrinking.
 
@@ -20,7 +20,7 @@ You gotta link Flexr CSS.
 
 Here's the basic structure:
 
-<pre>&lt;nav | header | section | footer&gt;
+<pre>&lt;section | container&gt;
 
    &lt;row&gt;
    
@@ -32,9 +32,9 @@ Here's the basic structure:
 
    &lt;/row&gt;
 
-&lt;/nav |header | section | footer&gt;</pre>
+&lt;/section | container&gt;</pre>
 
-Flexr works best when the row's parent has a width of 100%.
+This structure isn't set in stone, you may choose to use a section or container as row. It's up to you!
 
 
 ## One Class Will Do
@@ -67,6 +67,8 @@ To create **Expanding Columns**, all you need to do is add the expanding class <
    &lt;div class="col-3"&gt;...&lt;/div&gt;
 
 &lt;/div&gt;</pre>
+
+**New!** To define **Filling Columns**, just add the filling class <code>fill</code> in the parent row. Filling Columns make their parent row full width to its parent, and divide the space between themselves equally with no gutters.
 
 
 ## Justifying Columns
@@ -167,14 +169,12 @@ Break Point|Column Width|Gutter Width
 ```
 
 
-### Current Version of Flexr: 0.7.0
+### Current Version of Flexr: 0.8.0
 
-Version Release: January 7, 2017
+Version Release: January 17, 2017
 
-File Size: 1.7KB
+File Size: 1.8KB
 
 
                 
 Be sure to check back to see if you're using the current version!
-
-Also, more documentation to come.
