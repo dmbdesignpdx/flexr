@@ -9,9 +9,9 @@ You gotta link Flexr CSS.
 
 <pre>&lt;head&gt;
 
-   &lt;link href="path-to/<b>flexr.css</b>" rel="stylesheet"&gt;
+   &lt;link rel="stylesheet" href="path-to/<b>flexr.css</b>"&gt;
 
-   &lt;link href="path-to/your.css" rel="stylesheet"&gt;
+   &lt;link rel="stylesheet" href="path-to/your.css"&gt;
 
 &lt;/head&gt;</pre>
 
