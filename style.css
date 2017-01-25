@@ -1,0 +1,259 @@
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0
+}
+
+body {
+    min-height: 100%;
+    background: rgb(46,46,62);
+    font-family: 'Roboto', 'Helvetica', sans-serif;
+    -webkit-font-smoothing: antialiased
+}
+
+nav {
+    height: 110px;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 999;
+    background: rgb(46,46,62)
+}
+
+img {
+    outline: none
+}
+
+section:first-of-type {
+    padding: 150px 0 0
+}
+
+#flexr-home section:first-of-type {
+    padding: 150px 0 60px
+}
+
+ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none
+}
+
+a {
+    display: block;
+    text-decoration: none
+}
+
+h1, h2, li, a {
+    font-weight: 700;
+    line-height: 1.1em;
+    letter-spacing: .2pt
+}
+
+h1, h2 {
+    color: rgb(143,143,178)
+}
+
+h1, h2, p {
+    width: 100%;
+    text-align: left
+}
+
+h1 {
+    padding-top: 30px;
+    margin: 0;
+    font-size: 40px
+}
+
+h2 {
+    padding: 20px 0;
+    font-size: 26px;
+}
+
+p {
+    margin: 10px 0;
+    font-size: 19px;
+    font-weight: 300;
+    line-height: 1.4em;
+    color: rgb(223,223,240)
+}
+
+#menu li {
+    font-size: 18px;
+    color: rgb(223,223,240);
+}
+
+#menu li:hover {
+    color: rgb(255,102,102);
+    cursor: pointer
+}
+
+#menu {
+    background: rgb(46,46,62);
+    transition: .4s transform
+}
+
+#flexr-grid #grid, #flexr-doc #doc {
+    color: rgb(255,102,102)
+}
+
+#intro-text p {
+    padding-bottom: 30px;
+    margin: 15px 0;
+    line-height: 1.5em
+}
+
+h2 ~ p {
+    margin: 0 0 10px 0
+}
+
+p ~ p {
+    margin: 30px 0 10px 0
+}
+
+p span {
+    font-weight: 700;
+    letter-spacing: .2pt
+}
+
+.example {
+    height: 1em;
+    padding: 20px 0 21px;
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: center;
+    background: rgb(64,64,88);
+
+
+    line-height: 1.1em
+}
+
+.button, .secondary {
+    width: 150px;
+    padding: 20px 0 21px;
+    margin: 60px auto;
+    font-size: 18px;
+    text-align: center;
+    color: rgb(247,247,255);
+    background: rgb(255,102,102);
+    cursor: pointer;
+    transition: .3s background, .3s color
+}
+
+.secondary {
+    color: rgb(255,153,102);
+    background: none
+}
+
+.button:hover {
+    color: rgb(255,102,102);
+    background: rgb(223,223,240)
+}
+
+.secondary:hover {
+    color: rgb(223,223,240);
+    background: none
+}
+
+code {
+    width: 100%;
+    padding: 22px 26px 24px;
+    margin: 10px 0;
+    font-size: 14px;
+    color: rgb(223,223,240);
+    background: rgb(64,64,88)
+}
+
+code span {
+    font-weight: 700;
+    color: rgb(255,102,102)
+}
+
+#flexr:hover {
+    cursor: pointer
+}
+
+.shrink-large {
+    height: 80px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.3)
+}
+
+.shrink-small {
+    box-shadow: 0 2px 4px rgba(0,0,0,.3)
+}
+
+.show-menu {
+    box-shadow: 3px 0 5px rgba(0,0,0,.3);
+    transform: translateX(210px) !important;
+}
+
+#poma {
+    width: 40px;
+    height: 40px;
+    padding: 5px 10px 5px 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -9999px;
+    margin: auto
+}
+
+#poma svg {
+    fill: none;
+    stroke: rgb(223,223,240);
+    stroke-width: 6px
+}
+
+@media only screen and (max-width : 1180px) {
+
+
+
+}
+
+@media only screen and (max-width : 900px) {
+
+    #menu li {
+        font-size: 17px
+    }
+
+    #intro-text p, #intro-text h1 {
+        text-align: center
+    }
+
+
+}
+
+@media only screen and (max-width : 740px) {
+
+    nav {
+        height: 60px
+    }
+
+    #menu {
+        width: 210px;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: -210px;
+        justify-content: flex-start;
+        flex-flow: column
+    }
+
+    #menu li {
+        padding: 20px 0 20px 20px
+    }
+
+    #poma {
+        left: 0
+    }
+
+    .mc {
+        margin: 0 auto
+    }
+
+}
+
+@media only screen and (max-width : 520px) {
+
+
+
+}
