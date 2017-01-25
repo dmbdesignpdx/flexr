@@ -243,12 +243,6 @@ h1 {
     letter-spacing: -.2pt
 }
 
-h1 sub {
-    vertical-align: baseline;
-    font-size: 40%;
-    letter-spacing: .2pt
-}
-
 h2 {
     font-size: 30px
 }
@@ -279,9 +273,14 @@ pre ~ p {
     margin: 0 0 30px
 }
 
-p span, p strong {
+p strong, p b {
     font-weight: 700;
     letter-spacing: .2pt
+}
+
+h2 b {
+    font-weight: inherit;
+    color: #F56
 }
 
 code, pre {
@@ -306,7 +305,7 @@ p code {
     white-space: nowrap
 }
 
-code span, pre span, code strong, pre strong, footer a, p a {
+code strong, pre strong, pre b, code b, footer a, p a {
     display: inline-block;
     font-weight: 700;
     color: #F56
@@ -388,7 +387,7 @@ p a:hover, address a:hover {
     pointer-events: none
 }
 
-footer p, footer address {
+footer small, footer address {
     font-size: 14px;
     line-height: 1.4em;
     color: #AAB
@@ -398,7 +397,7 @@ footer a {
     margin-top: 40px
 }
 
-.dbdesign {
+footer address {
     width: 73%;
     padding: 50px 0
 }
@@ -407,7 +406,7 @@ footer a {
     flex-wrap: wrap
 }
 
-.copy p {
+small {
     margin-bottom: 50px;
     align-self: flex-end;
 }
@@ -857,7 +856,7 @@ td:last-of-type {
         margin-top: 20px
     }
 
-    .copy p {
+    small {
         margin-top: 30px
     }
 
