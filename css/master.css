@@ -606,6 +606,22 @@ td:last-of-type {
     text-align: center
 }
 
+#download-section h2 {
+    padding-top: 20px
+}
+
+#download-section p {
+    padding-bottom: 50px
+}
+
+#download-section a {
+    font-weight: 300
+}
+
+#download-section a:hover {
+    background: #34344A
+}
+
 
 
 /*  ---  JS Classes  ---  */
