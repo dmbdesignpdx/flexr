@@ -154,11 +154,12 @@ Break Point|Column Width|Gutter Width
 ```
 
 
-### Current Version of Flexr: 0.8.0
+### Current Version: 0.9.0
 
-Version Release: January 17, 2017
+Release Date: **January 30, 2017**
+Release Notes: *Removed* Flexr Nav Objects. *Added* col-x class.
 
-File Size: 1.8KB
+File Size: 1.6KB
 
 
                 
