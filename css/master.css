@@ -113,19 +113,18 @@ a {
     transition: .3s
 }
 
-.logo-m {
+.col-x {
+    width: 170px;
     cursor: default
 }
 
-.logo-m img {
-    width: 100%;
-    height: auto;
+.col-x img {
     cursor: pointer;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden
 }
 
-.logo-m img:hover {
+.col-x img:hover {
     -webkit-filter: hue-rotate(240deg) saturate(10%) brightness(190%);
     filter: hue-rotate(240deg) saturate(10%) brightness(190%)
 }
@@ -164,6 +163,8 @@ a {
 }
 
 #menu {
+    display: flex;
+    justify-content: space-between;
     background: #2B2B3F;
     -webkit-transition: -webkit-transform .4s;
     -webkit-transition: transform .4s;
@@ -693,6 +694,10 @@ td:last-of-type {
 
     .nav-scroll {
         height: 56px !important
+    }
+
+    .col-x {
+        width: 120px
     }
 
     h1 {
