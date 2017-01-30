@@ -1,4 +1,4 @@
-# Flexr Grid - Beta (0.8.0)
+# Flexr Grid - Beta (0.9.0)
 
 Flexr is a responsive grid for those who just want a grid. Created by a graphic designer with an acute focus on the digital grid layout and its response to different screens. It features two types of column-collapsing: Expanding, Shrinking and Filling.
 
@@ -49,6 +49,8 @@ Creating a column requires only one class <code>col-</code> defined by its size 
 
 &lt;/div&gt;</pre>
 
+**New!** If you'd like to use a column with a width that <i>you</i> define (i.e. a logo), simply give the column the class <code>col-x</code> and define the width in your css.
+
 
 ## Defining Columns
 
@@ -80,23 +82,6 @@ The default justification is centered. To justify the columns to left or the rig
    &lt;div class="col-4"&gt;...&lt;/div&gt;
 
 &lt;/div&gt;</pre>
-
-
-## Flexr Nav Objects
-
-You can use **Flexr Nav Objects** to help keep the logo and menu links inline with the Flexr grid. The <code>logo-</code> and <code>menu-</code> objects act just like columns and each object has a size that fits into the grid <code>[s,m,l,xl]</code>.
-
-The contents of the menu object will be automatically spaced evenly. If that's not what you want, you can override that by using the same justification classes previously mentioned.
-
-Here is an example of a nav utilizing the Flexr options:
-
-<pre>&lt;nav class="row"&gt;
-
-   &lt;div class="<b>logo-m</b>"&gt;...&lt;/div&gt;
-
-   &lt;ul class="<b>menu-xl</b>"&gt;...&lt;/ul&gt;
-
-&lt;/nav&gt;</pre>
 
 
 ## Column/Gutter Widths and Break Points
