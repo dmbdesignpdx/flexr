@@ -1,0 +1,91 @@
+//  Filters
+
+@mixin filter($vars){
+    -webkit-filter: $vars;
+    filter: $filter;
+}
+
+
+//  Transform
+
+@mixin change($vars){
+    -webkit-transform: $vars;
+    transform: $vars;
+}
+
+
+//  Transition
+
+@mixin timing($vars...){
+    -webkit-transition: $vars;
+    transition: $vars;
+}
+
+//  Animations
+
+@mixin animate($vars...){
+    -webkit-animation: $vars;
+    animation: $vars;
+}
+
+//  Keyframes
+
+@mixin frames($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+
+//  Media Queries
+
+@mixin break($var) {
+    @media only screen and (max-width: $var) {
+        @content;
+    }
+}
+
+
+//  Shorthand
+
+
+@mixin size($w:null, $h:null){
+    @if ($h){
+        width: $w;
+        height: $h;
+    }
+    @else {
+        width: $w;
+        height: $w;
+    }
+}
+
+@mixin where($t:null, $r:null, $b:null, $l:null){
+    @if($l){
+        top: $t;
+        right: $r;
+        bottom: $b;
+        left: $l;
+    }
+    @else if($b){
+        top: $t;
+        right: $r;
+        bottom: $b;
+        left: $r;
+    }
+    @else if($r){
+        top: $t;
+        right: $r;
+        bottom: $t;
+        left: $r;
+    }
+    @else {
+        top: $t;
+        right: $t;
+        bottom: $t;
+        left: $t;
+    }
+}

@@ -1,28 +1,10 @@
-/*  For Flexr Grid - Beta
+//  Imports
+
+@import "classes";
+@import "mixins";
 
 
-Contents
-
-- Global
-  - Navigation
-  - Header
-  - Sections
-  - Footer
-  - Text
-- JS Classes
-- Home
-- The Grid
-- Use It
-- Get Flexr
-- Small Screens/Tablet Landscape
-- Tablet Portrait
-- Phone Landscape
-- Phone Portrait
-- Version  */
-
-
-
-/*  ---  Global  ---  */
+//  Global
 
 
 html, body {
@@ -33,10 +15,9 @@ html, body {
 
 body {
     min-height: 100vh;
-    background: #2B2B3F;
+    background: $blueGrayTwo;
     font: 300 19px 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased
+    @extend %smoothFonts;
 }
 
 nav, main, section, header, footer, img, object, svg, address, a {
@@ -45,8 +26,7 @@ nav, main, section, header, footer, img, object, svg, address, a {
 }
 
 nav, section, header, footer, img, object {
-    width: 100%;
-    height: auto;
+    @include size(100%,auto);
 }
 
 img, svg, object {
@@ -74,12 +54,7 @@ ul, li {
 
 a {
     text-decoration: none;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-tap-highlight-color: transparent;
-    -webkit-tap-highlight-color: none;
-    tap-highlight-color: rgba(0,0,0,0);
-    tap-highlight-color: transparent;
-    tap-highlight-color: none
+    @extend %noTap;
 }
 
 #expand-text, .copy, #hero-text {
@@ -87,7 +62,7 @@ a {
 }
 
 
-/*    Navigation    */
+//   Navigation
 
 #nav {
     height: 112px;
@@ -96,11 +71,9 @@ a {
     top: -1px;
     left: 0;
     z-index: 999;
-    background: #2B2B3F;
-    -webkit-transition: .3s;
-    transition: .3s;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden
+    background: $blueGrayTwo;
+    @include timing(.3s);
+    @extend %smoothMove;
 }
 
 #nav .row {
@@ -109,8 +82,7 @@ a {
     align-items: center;
     -webkit-justify-content: space-between;
     justify-content: space-between;
-    -webkit-transition: .3s;
-    transition: .3s
+    @include timing(.3s);
 }
 
 .col-x {
@@ -120,69 +92,62 @@ a {
 
 .col-x img {
     cursor: pointer;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden
+    @extend %smoothMove;
 }
 
 .col-x img:hover {
-    -webkit-filter: hue-rotate(240deg) saturate(10%) brightness(190%);
-    filter: hue-rotate(240deg) saturate(10%) brightness(190%)
+    @include filter(hue-rotate(240deg) saturate(10%) brightness(190%));
 }
 
 #poma {
-    width: 40px;
-    height: 40px;
+    @include size(40px);
     padding: 5px 12px;
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -9999px;
+    @include where(0,auto,0,-9999px);
     margin: auto
 }
 
 #poma svg {
     fill: none;
-    stroke: #DDE;
+    stroke: $blueGraySeven;
     stroke-width: 5px
 }
 
 #poma:active svg {
-    stroke: #F56
+    stroke: $flexrRed
 }
 
 .links {
     display: inline-block;
     padding: 10px;
-    color: #DDE
+    color: $blueGraySeven
 }
 
 #dl {
     padding: 10px 18px;
-    color: #2B2B3F;
-    background: #3DD
+    color: $blueGrayTwo;
+    background: $cyan
 }
 
 #menu {
     display: flex;
     justify-content: space-between;
-    background: #2B2B3F;
+    background: $blueGrayTwo;
     -webkit-transition: -webkit-transform .4s;
-    -webkit-transition: transform .4s;
-    transition: -webkit-transform .4s;
     transition: transform .4s
 }
 
 .links:hover, .links:active, #the-grid #grid, #how-to #doc {
-    color: #F56
+    color: $flexrRed
 }
 
 #dl:hover, #dl:active, #download #dl {
-    background: #DDE
+    background: $blueGraySeven
 }
 
 
 
-/*    Sections    */
+//    Sections
 
 section {
     padding: 120px 0
@@ -201,7 +166,7 @@ main ~ section:last-of-type {
 }
 
 
-/*    Footer    */
+//    Footer
 
 footer {
     background: #202031
@@ -212,12 +177,11 @@ footer img {
     margin-top: 50px;
     -webkit-align-self: flex-start;
     align-self: flex-start;
-    -webkit-filter: hue-rotate(240deg) saturate(10%) brightness(110%);
-    filter: hue-rotate(240deg) saturate(10%) brightness(110%)
+    @include filter(hue-rotate(240deg) saturate(10%) brightness(110%));
 }
 
 
-/*    Text    */
+//    Text
 
 h1, h2, p, li, a, code, pre, address {
     margin: 0
@@ -230,7 +194,7 @@ h2, li, a {
 }
 
 h1, h2 {
-    color: #99B
+    color: $blueGray
 }
 
 h1, h2, p, address {
@@ -254,7 +218,7 @@ h2 {
 
 p, address {
     line-height: 1.4em;
-    color: #DDE;
+    color: $blueGraySeven;
     letter-spacing: .1pt
 }
 
@@ -281,7 +245,7 @@ p strong, p b {
 
 h2 b {
     font-weight: inherit;
-    color: #F56
+    color: $flexrRed
 }
 
 code, pre {
@@ -290,8 +254,8 @@ code, pre {
     margin: 30px 0;
     box-sizing: border-box;
     font-size: 14px;
-    color: #DDE;
-    background: #42425d;
+    color: $blueGraySeven;
+    background: $blueGrayFive;
     overflow-x: scroll;
     overflow-y: auto
 }
@@ -309,11 +273,11 @@ p code {
 code strong, pre strong, pre b, code b, footer a, p a {
     display: inline-block;
     font-weight: 700;
-    color: #F56
+    color: $flexrRed
 }
 
 p a:hover, address a:hover {
-    color: #DDE
+    color: $blueGraySeven
 }
 
 .with-icon:before {
@@ -353,9 +317,9 @@ p a:hover, address a:hover {
     margin: 50px auto 0;
     text-align: center;
     letter-spacing: .3pt;
-    color: #EEF;
+    color: $blueGraySeven;
     line-height: 60px;
-    background: #F56;
+    background: $flexrRed;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
     -webkit-tap-highlight-color: none;
@@ -370,15 +334,15 @@ p a:hover, address a:hover {
 }
 
 .primary:hover {
-    color: #F56;
-    background: #EEF;
+    color: $flexrRed;
+    background: $blueGraySeven;
     cursor: pointer;
     -webkit-transform: scale(1.05);
     transform: scale(1.05)
 }
 
 .secondary:hover {
-    color: #DDE;
+    color: $blueGraySeven;
     background: none;
     cursor: pointer
 }
@@ -391,7 +355,7 @@ p a:hover, address a:hover {
 footer small, footer address {
     font-size: 14px;
     line-height: 1.4em;
-    color: #AAB
+    color: $blueGraySix
 }
 
 footer a {
@@ -414,7 +378,7 @@ small {
 
 
 
-/*  ---  Home  ---  */
+//    Home
 
 #hero {
     padding: 210px 0 150px;
@@ -427,8 +391,7 @@ small {
 
 #hero-text {
     flex-wrap: wrap;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0)
+    @include change(translateZ(0));
 }
 
 #hero-text h1 {
@@ -450,8 +413,7 @@ small {
 }
 
 .container {
-    width: 100%;
-    height: auto;
+    @include size(100%,auto);
     position: relative;
     overflow: hidden
 }
@@ -473,8 +435,7 @@ small {
 }
 
 #bottom, #top {
-    width: 100%;
-    height: auto;
+    @include size(100%,auto);
     position: absolute;
     top: 0;
     left: 0;
@@ -504,8 +465,7 @@ small {
 }
 
 .browser {
-    width: 90%;
-    height: auto;
+    @include size(90%,auto);
     margin: 0 auto;
     background: url(../img/browsers.svg);
     background-size: 500% 100%
@@ -550,44 +510,44 @@ small {
 
 
 
-/*  ---  The Grid  ---  */
+//   The Grid
 
 .example {
     height: 1em;
     padding: 20px 0 21px;
     font-size: 16px;
     text-align: center;
-    background: #42425d;
+    background: $blueGrayFive;
     line-height: 1.1em
 }
 
 .fill div[class*="col"]:nth-of-type(even) .example {
-    background: #3C3C58
+    background: $blueGrayFour
 }
 
 
 
-/*  ---  Use It  ---  */
+//  Use It
 
 
 table {
     width: 100%;
     margin: 30px 0;
     font-size: 17px;
-    color: #dde;
-    background: #42425d;
+    color: $blueGraySeven;
+    background: $blueGrayFive;
     table-layout: fixed;
     border-collapse: collapse;
 }
 
 tr:nth-of-type(even) {
-    background: #3C3C58;
+    background: $blueGrayFour;
 }
 
 td, th {
     width: 16.666%;
     padding: 20px;
-    border-right: 1px solid #2B2B3F;
+    border-right: 1px solid $blueGrayTwo;
     text-align: left;
 }
 
@@ -597,7 +557,7 @@ td:last-of-type {
 
 
 
-/*  ---  Get Flexr  ---  */
+//   Get Flexr
 
 #download-section h2, #download-section p {
     width: 85%;
@@ -619,43 +579,13 @@ td:last-of-type {
 }
 
 #download-section a:hover {
-    background: #34344A
+    background: $blueGrayThree
 }
 
 
 
-/*  ---  JS Classes  ---  */
 
-.nav-scroll {
-    height: 80px !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,.3)
-}
-
-.show-menu #menu {
-    box-shadow: 3px 0 5px rgba(0,0,0,.3);
-    -webkit-transform: translateX(0);
-    transform: translateX(0)
-}
-
-.show-menu #poma::before {
-    left: 0;
-    opacity: .5;
-    -webkit-transition: opacity .4s, left 0s 0s;
-    transition: opacity .4s, left 0s 0s
-}
-
-.forIntro #hero-text {
-    opacity: 0
-}
-
-.forIntro #top, .forIntro #bottom {
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%)
-}
-
-
-
-/*  ---  Small Screens/Tablet Landscape  ---  */
+//   Small Screens/Tablet Landscape
 
 @media only screen and (max-width : 1180px) {
 
@@ -675,7 +605,7 @@ td:last-of-type {
 
 
 
-/*  ---  Tablet Portrait  ---  */
+//   Tablet Portrait
 
 @media only screen and (max-width : 940px) {
 
@@ -700,7 +630,7 @@ td:last-of-type {
 
 
 
-/*  ---  Phone Landscape  ---  */
+//    Phone Landscape
 
 @media only screen and (max-width : 740px) {
 
@@ -754,16 +684,14 @@ td:last-of-type {
     }
 
     #menu {
-        width: 35%;
-        height: 100%;
+        @include size(35%,100%);
         position: fixed;
         top: 0;
         left: 0;
         z-index: 2;
         justify-content: flex-start;
         flex-flow: column;
-        -webkit-transform: translateX(-100%);
-        transform: translateX(-100%)
+        @include change(translateX(-100%));
     }
 
     .links {
@@ -809,8 +737,7 @@ td:last-of-type {
 
     #poma::before {
         display: block;
-        width: 100%;
-        height: 100%;
+        @include size(100%);
         position: fixed;
         top: 0;
         left: -9999px;
@@ -818,15 +745,14 @@ td:last-of-type {
         content: '';
         background: #000;
         opacity: 0;
-        -webkit-transition: opacity .4s, left 0s .4s;
-        transition: opacity .4s, left 0s .4s
+        @include timing(opacity .4s, left 0s .4s);
     }
 
 }
 
 
 
-/*  ---  Phone Portrait  ---  */
+//   Phone Portrait
 
 @media only screen and (max-width : 520px) {
 
