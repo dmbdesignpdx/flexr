@@ -1,8 +1,8 @@
 //  Filters
 
-@mixin filter($vars){
+@mixin filters($vars){
     -webkit-filter: $vars;
-    filter: $filter;
+    filter: $vars;
 }
 
 
@@ -50,7 +50,6 @@
 
 
 //  Shorthand
-
 
 @mixin size($w:null, $h:null){
     @if ($h){

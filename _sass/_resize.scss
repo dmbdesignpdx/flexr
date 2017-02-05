@@ -1,0 +1,235 @@
+//   Small Screens/Tablet Landscape
+
+@media only screen and (max-width : 1180px) {
+
+    h1 {
+        font-size: 46px
+    }
+
+    h2 {
+        font-size: 29px
+    }
+
+    p {
+        font-size: 18px
+    }
+
+}
+
+
+
+//   Tablet Portrait
+
+@media only screen and (max-width : 940px) {
+
+    .links {
+        font-size: 17px
+    }
+
+    .testr {
+        position: absolute;
+        left: -9999px
+    }
+
+    td {
+        padding: 18px
+    }
+
+    .browser {
+        width: 60%
+    }
+
+}
+
+
+
+//    Phone Landscape
+
+@media only screen and (max-width : 740px) {
+
+    #nav {
+        height: 56px
+    }
+
+    .nav-scroll {
+        height: 56px !important
+    }
+
+    #logo {
+        width: 120px
+    }
+
+    h1 {
+        font-size: 30px
+    }
+
+    h2 {
+        font-size: 21px
+    }
+
+    h1 ~ p {
+        margin: 15px 0 0
+    }
+
+    .header {
+        padding: 30px 0 60px
+    }
+
+    section {
+        padding: 60px 0
+    }
+
+    main ~ section:last-of-type {
+        padding: 0 0 60px
+    }
+
+    #hero {
+        padding: 60px 0 20px
+    }
+
+    #hero-text p {
+        padding-bottom: 30px
+    }
+
+    #hero-text .secondary {
+        width: 90px;
+        margin-left: 10px
+    }
+
+    #menu {
+        @include size(35%,100%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        justify-content: flex-start;
+        flex-flow: column;
+        @include change(translateX(-100%));
+    }
+
+    .links {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 18px 0 18px 28px;
+        margin: 8px 0
+    }
+
+    #dl {
+        width: calc(100% - 16px);
+        padding: 12px 0 12px 20px;
+        margin: 10px 8px
+    }
+
+    #menu li:first-of-type {
+        margin-top: 10px
+    }
+
+    #poma {
+        left: 0
+    }
+
+    .mtc {
+        margin: 0 auto
+    }
+
+    table {
+        display: block;
+        overflow-x: scroll;
+        overflow-y: auto;
+        font-size: 16px;
+    }
+
+    td {
+        padding: 14px
+    }
+
+    .with-icon::before {
+        width: 150px;
+        height: 150px
+    }
+
+    #poma::before {
+        display: block;
+        @include size(100%);
+        position: fixed;
+        top: 0;
+        left: -9999px;
+        z-index: 1;
+        content: '';
+        background: #000;
+        opacity: 0;
+        @include timing(opacity .4s, left 0s .4s);
+    }
+
+    textarea {
+        width: 100%
+    }
+
+}
+
+
+
+//   Phone Portrait
+
+@media only screen and (max-width : 520px) {
+
+
+    #hero-text p, #hero-text h1, #expand-text h1, #expand-text p {
+        text-align: center
+    }
+
+    #hero-text p {
+        margin: 20px auto 0
+    }
+
+    #hero-text a {
+        margin: 0 auto 20px
+    }
+
+    #hero {
+        padding: 90px 0 30px
+    }
+
+    #expand-image {
+        order: 2
+    }
+
+    #menu {
+        width: 70%
+    }
+
+    #flexr-plus {
+        margin-top: 30px
+    }
+
+    .call-to-action p {
+        box-sizing: border-box;
+        padding: 0 15px
+    }
+
+    .secondary {
+        margin: 0 auto;
+    }
+
+    footer img {
+        width: 24%;
+        margin: 0
+    }
+
+    footer a {
+        margin-top: 20px
+    }
+
+    small {
+        margin-top: 30px
+    }
+
+    .primary {
+        margin: 50px auto
+    }
+
+    .browser {
+        width: 40%
+    }
+
+}

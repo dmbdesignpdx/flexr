@@ -1,3 +1,4 @@
 .DS_Store
 assets/*
 donate.html
+.sass-cache

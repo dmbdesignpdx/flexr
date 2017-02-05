@@ -3,7 +3,9 @@
 var menuShowing,
 nav = document.getElementById('nav'),
 menu = document.getElementById('menu'),
-menuLinks = document.getElementsByTagName('li');
+menuLinks = document.getElementsByTagName('li'),
+linkButton,
+linkText;
 
 
 // Scrolling
@@ -96,3 +98,44 @@ window.onload = function() {
     introAction()
 
 };
+
+
+
+//  Select Link
+
+
+function selectAndCopy(obj){
+
+        linkText.select();
+
+        var copied = document.execCommand('copy');
+
+        if (copied) {
+            obj.innerHTML = "Copied!"
+        }
+        else {
+            obj.innerHTML = "CMD+C/CTRL+C"
+        }
+
+}
+
+function selectAll(obj) {
+
+    obj.select();
+
+}
+
+function findLinkID(check){
+
+    if (check) {
+        linkButton = check,
+        linkText = document.getElementById('linktext');
+
+        linkButton.onclick = function(){selectAndCopy(this)};
+        linkText.onclick = function(){selectAll(this)};
+
+    }
+
+}
+
+findLinkID(document.getElementById('linkcopy'));

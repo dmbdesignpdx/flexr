@@ -1,10 +1,11 @@
 //  Imports
 
+@import "variables";
 @import "classes";
 @import "mixins";
 
 
-//  Global
+//  Global Values and Resets
 
 
 html, body {
@@ -16,11 +17,11 @@ html, body {
 body {
     min-height: 100vh;
     background: $blueGrayTwo;
-    font: 300 19px 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;
+    font: 300 19px Roboto, 'Helvetica Neue', Helvetica, sans-serif;
     @extend %smoothFonts;
 }
 
-nav, main, section, header, footer, img, object, svg, address, a {
+nav, main, section, header, footer, img, object, svg, address, a, textarea, button {
     display: block;
     position: relative
 }
@@ -31,6 +32,14 @@ nav, section, header, footer, img, object {
 
 img, svg, object {
     box-sizing: border-box
+}
+
+textarea, button {
+    border: none;
+    outline: none;
+    overflow: auto;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 img, a:active, a:focus {
@@ -57,137 +66,14 @@ a {
     @extend %noTap;
 }
 
-#expand-text, .copy, #hero-text {
-    display: flex
-}
-
-
-//   Navigation
-
-#nav {
-    height: 112px;
-    padding-top: 1px;
-    position: fixed;
-    top: -1px;
-    left: 0;
-    z-index: 999;
-    background: $blueGrayTwo;
-    @include timing(.3s);
-    @extend %smoothMove;
-}
-
-#nav .row {
-    height: 100%;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
-    @include timing(.3s);
-}
-
-.col-x {
-    width: 170px;
-    cursor: default
-}
-
-.col-x img {
-    cursor: pointer;
-    @extend %smoothMove;
-}
-
-.col-x img:hover {
-    @include filter(hue-rotate(240deg) saturate(10%) brightness(190%));
-}
-
-#poma {
-    @include size(40px);
-    padding: 5px 12px;
-    position: absolute;
-    @include where(0,auto,0,-9999px);
-    margin: auto
-}
-
-#poma svg {
-    fill: none;
-    stroke: $blueGraySeven;
-    stroke-width: 5px
-}
-
-#poma:active svg {
-    stroke: $flexrRed
-}
-
-.links {
-    display: inline-block;
-    padding: 10px;
-    color: $blueGraySeven
-}
-
-#dl {
-    padding: 10px 18px;
-    color: $blueGrayTwo;
-    background: $cyan
-}
-
-#menu {
-    display: flex;
-    justify-content: space-between;
-    background: $blueGrayTwo;
-    -webkit-transition: -webkit-transform .4s;
-    transition: transform .4s
-}
-
-.links:hover, .links:active, #the-grid #grid, #how-to #doc {
-    color: $flexrRed
-}
-
-#dl:hover, #dl:active, #download #dl {
-    background: $blueGraySeven
-}
-
-
-
-//    Sections
-
-section {
-    padding: 120px 0
-}
-
-.header {
-    padding: 30px 0 120px
-}
-
-main ~ section:last-of-type {
-    padding: 0 0 130px
-}
-
-.buffer {
-    padding: 90px 0 0
-}
-
-
-//    Footer
-
-footer {
-    background: #202031
-}
-
-footer img {
-    width: 27%;
-    margin-top: 50px;
-    -webkit-align-self: flex-start;
-    align-self: flex-start;
-    @include filter(hue-rotate(240deg) saturate(10%) brightness(110%));
-}
-
 
 //    Text
 
-h1, h2, p, li, a, code, pre, address {
+h1, h2, p, li, a, code, pre, address, textarea, button {
     margin: 0
 }
 
-h2, li, a {
+h2, li, a, button {
     font-weight: 700;
     line-height: 1.1em;
     letter-spacing: .2pt
@@ -238,6 +124,10 @@ pre ~ p {
     margin: 0 0 30px
 }
 
+button ~ p {
+    margin-top: 100px
+}
+
 p strong, p b {
     font-weight: 700;
     letter-spacing: .2pt
@@ -248,16 +138,30 @@ h2 b {
     color: $flexrRed
 }
 
-code, pre {
-    width: 100%;
+textarea, code, pre {
     padding: 22px 26px 24px;
-    margin: 30px 0;
     box-sizing: border-box;
     font-size: 14px;
-    color: $blueGraySeven;
-    background: $blueGrayFive;
+    color: #DDE;
+    background: #42425d;
+    font-family: monospace;
+    white-space: nowrap;
+}
+
+textarea {
+    width: 694px;
+    overflow: auto;
+    box-shadow: none;
+    resize: none;
+    margin: 40px auto 0;
+    text-align: center;
+}
+
+code, pre {
+    width: 100%;
+    margin: 30px 0;
     overflow-x: scroll;
-    overflow-y: auto
+    overflow-y: auto;
 }
 
 #home pre {
@@ -278,78 +182,6 @@ code strong, pre strong, pre b, code b, footer a, p a {
 
 p a:hover, address a:hover {
     color: $blueGraySeven
-}
-
-.with-icon:before {
-    display: block;
-    width: 180px;
-    height: 180px;
-    margin: 0 auto 30px;
-    content: '';
-    background: url(../img/flexr-sprite.svg) no-repeat;
-    background-size: 500% 100%;
-    background-position: 0 0
-}
-
-.header .with-icon:before {
-    margin: 0 auto -10px
-}
-
-#flexr-plus:before {
-    background-position: 25% 0
-}
-
-#grid-title:before {
-    background-position: 50% 0
-}
-
-#doc-title:before {
-    background-position: 75% 0
-}
-
-#download-title:before {
-    background-position: 100% 0
-}
-
-.primary, .secondary {
-    width: 150px;
-    height: auto;
-    margin: 50px auto 0;
-    text-align: center;
-    letter-spacing: .3pt;
-    color: $blueGraySeven;
-    line-height: 60px;
-    background: $flexrRed;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-tap-highlight-color: transparent;
-    -webkit-tap-highlight-color: none;
-    tap-highlight-color: rgba(0,0,0,0);
-    tap-highlight-color: transparent;
-    tap-highlight-color: none
-}
-
-.secondary {
-    color: #FA6;
-    background: none
-}
-
-.primary:hover {
-    color: $flexrRed;
-    background: $blueGraySeven;
-    cursor: pointer;
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05)
-}
-
-.secondary:hover {
-    color: $blueGraySeven;
-    background: none;
-    cursor: pointer
-}
-
-.null {
-    opacity: .4;
-    pointer-events: none
 }
 
 footer small, footer address {
@@ -378,441 +210,24 @@ small {
 
 
 
-//    Home
+//   Navigation
 
-#hero {
-    padding: 210px 0 150px;
-    overflow: hidden
-}
+@import "navigation";
 
-#hero-row, #expand-row {
-    align-items: center
-}
 
-#hero-text {
-    flex-wrap: wrap;
-    @include change(translateZ(0));
-}
 
-#hero-text h1 {
-    text-align: left
-}
+//   Main Content for Pages
 
-#hero-text p {
-    width: 96%;
-    padding-bottom: 30px
-}
+@import "main";
 
-#hero-text a {
-    margin: 0
-}
 
-#hero-text .secondary {
-    width: 90px;
-    margin-left: 30px
-}
 
-.container {
-    @include size(100%,auto);
-    position: relative;
-    overflow: hidden
-}
+//    Footer
 
-.container::before {
-    display: block;
-    width: 100%;
-    padding-top: 62.14%;
-    content: '';
-}
+@import "footer";
 
-#bottom, #top, #hero-text {
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transition: .6s;
-    transition: .6s
-}
 
-#bottom, #top {
-    @include size(100%,auto);
-    position: absolute;
-    top: 0;
-    left: 0;
-    -webkit-transition-delay: .3s;
-    transition-delay: .3s
-}
 
-#top {
-    -webkit-transition-delay: .6s;
-    transition-delay: .6s
-}
+//  Resizing
 
-#hero-text {
-    -webkit-transition-property: opacity;
-    transition-property: opacity;
-    -webkit-transition-delay: 1s;
-    transition-delay: 1s
-}
-
-#home main section:nth-of-type(2) {
-    background: #242435
-}
-
-#expand-text {
-    flex-direction: column;
-    justify-content: center
-}
-
-.browser {
-    @include size(90%,auto);
-    margin: 0 auto;
-    background: url(../img/browsers.svg);
-    background-size: 500% 100%
-}
-
-.firefox {
-    background-position: 0 0
-}
-
-.chrome {
-    background-position: 50% 0
-}
-
-.safari {
-    background-position: 25% 0
-}
-
-.opera {
-    background-position: 75% 0
-}
-
-.edge {
-    background-position: 100% 0
-}
-
-.browser::before {
-    display: block;
-    width: 100%;
-    padding-top: 100%;
-    content: '';
-}
-
-#browsers p {
-    text-align: center
-}
-
-.browser + p {
-    margin-top: 10px;
-    font-size: 15px;
-    line-height: 1.2em
-}
-
-
-
-//   The Grid
-
-.example {
-    height: 1em;
-    padding: 20px 0 21px;
-    font-size: 16px;
-    text-align: center;
-    background: $blueGrayFive;
-    line-height: 1.1em
-}
-
-.fill div[class*="col"]:nth-of-type(even) .example {
-    background: $blueGrayFour
-}
-
-
-
-//  Use It
-
-
-table {
-    width: 100%;
-    margin: 30px 0;
-    font-size: 17px;
-    color: $blueGraySeven;
-    background: $blueGrayFive;
-    table-layout: fixed;
-    border-collapse: collapse;
-}
-
-tr:nth-of-type(even) {
-    background: $blueGrayFour;
-}
-
-td, th {
-    width: 16.666%;
-    padding: 20px;
-    border-right: 1px solid $blueGrayTwo;
-    text-align: left;
-}
-
-td:last-of-type {
-    border-right: none
-}
-
-
-
-//   Get Flexr
-
-#download-section h2, #download-section p {
-    width: 85%;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center
-}
-
-#download-section h2 {
-    padding-top: 20px
-}
-
-#download-section p {
-    padding-bottom: 50px
-}
-
-#download-section a {
-    font-weight: 300
-}
-
-#download-section a:hover {
-    background: $blueGrayThree
-}
-
-
-
-
-//   Small Screens/Tablet Landscape
-
-@media only screen and (max-width : 1180px) {
-
-    h1 {
-        font-size: 46px
-    }
-
-    h2 {
-        font-size: 29px
-    }
-
-    p {
-        font-size: 18px
-    }
-
-}
-
-
-
-//   Tablet Portrait
-
-@media only screen and (max-width : 940px) {
-
-    .links {
-        font-size: 17px
-    }
-
-    .testr {
-        position: absolute;
-        left: -9999px
-    }
-
-    td {
-        padding: 18px
-    }
-
-    .browser {
-        width: 60%
-    }
-
-}
-
-
-
-//    Phone Landscape
-
-@media only screen and (max-width : 740px) {
-
-    #nav {
-        height: 56px
-    }
-
-    .nav-scroll {
-        height: 56px !important
-    }
-
-    .col-x {
-        width: 120px
-    }
-
-    h1 {
-        font-size: 30px
-    }
-
-    h2 {
-        font-size: 21px
-    }
-
-    h1 ~ p {
-        margin: 15px 0 0
-    }
-
-    .header {
-        padding: 30px 0 60px
-    }
-
-    section {
-        padding: 60px 0
-    }
-
-    main ~ section:last-of-type {
-        padding: 0 0 60px
-    }
-
-    #hero {
-        padding: 60px 0 20px
-    }
-
-    #hero-text p {
-        padding-bottom: 30px
-    }
-
-    #hero-text .secondary {
-        width: 90px;
-        margin-left: 10px
-    }
-
-    #menu {
-        @include size(35%,100%);
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 2;
-        justify-content: flex-start;
-        flex-flow: column;
-        @include change(translateX(-100%));
-    }
-
-    .links {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 18px 0 18px 28px;
-        margin: 8px 0
-    }
-
-    #dl {
-        width: calc(100% - 16px);
-        padding: 12px 0 12px 20px;
-        margin: 10px 8px
-    }
-
-    #menu li:first-of-type {
-        margin-top: 10px
-    }
-
-    #poma {
-        left: 0
-    }
-
-    .mtc {
-        margin: 0 auto
-    }
-
-    table {
-        display: block;
-        overflow-x: scroll;
-        overflow-y: auto;
-        font-size: 16px;
-    }
-
-    td {
-        padding: 14px
-    }
-
-    .with-icon:before {
-        width: 150px;
-        height: 150px
-    }
-
-    #poma::before {
-        display: block;
-        @include size(100%);
-        position: fixed;
-        top: 0;
-        left: -9999px;
-        z-index: 1;
-        content: '';
-        background: #000;
-        opacity: 0;
-        @include timing(opacity .4s, left 0s .4s);
-    }
-
-}
-
-
-
-//   Phone Portrait
-
-@media only screen and (max-width : 520px) {
-
-
-    #hero-text p, #hero-text h1, #expand-text h1, #expand-text p {
-        text-align: center
-    }
-
-    #hero-text p {
-        margin: 20px auto 0
-    }
-
-    #hero-text a {
-        margin: 0 auto 20px
-    }
-
-    #hero {
-        padding: 90px 0 30px
-    }
-
-    #expand-image {
-        order: 2
-    }
-
-    #menu {
-        width: 70%
-    }
-
-    #flexr-plus {
-        margin-top: 30px
-    }
-
-    .call-to-action p {
-        box-sizing: border-box;
-        padding: 0 15px
-    }
-
-    .secondary {
-        margin: 0 auto;
-    }
-
-    footer img {
-        width: 24%;
-        margin: 0
-    }
-
-    footer a {
-        margin-top: 20px
-    }
-
-    small {
-        margin-top: 30px
-    }
-
-    .primary {
-        margin: 50px auto
-    }
-
-    .browser {
-        width: 40%
-    }
-
-}
+@import "resize";

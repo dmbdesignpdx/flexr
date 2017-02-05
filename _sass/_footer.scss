@@ -1,0 +1,11 @@
+footer {
+    background: #202031
+}
+
+footer img {
+    width: 27%;
+    margin-top: 50px;
+    -webkit-align-self: flex-start;
+    align-self: flex-start;
+    @include filters(hue-rotate(240deg) saturate(10%) brightness(110%));
+}
