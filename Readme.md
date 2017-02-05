@@ -5,13 +5,17 @@ Flexr is a responsive grid for those who just want a grid. Created by a graphic 
 
 ## First Thing's First
 
-You gotta link Flexr CSS.
+You gotta link the Flexr CSS **before** your own CSS:
 
 <pre>&lt;head&gt;
+
+   ...
 
    &lt;link rel="stylesheet" href="path-to/<b>flexr.css</b>"&gt;
 
    &lt;link rel="stylesheet" href="path-to/your.css"&gt;
+   
+   ...
 
 &lt;/head&gt;</pre>
 
@@ -104,9 +108,9 @@ Break Point|Column Width|Gutter Width
 
       <nav class="row">
       
-         <div class="logo">...</div>
+         <div class="col-x">...</div>
          
-         <ul class="menu-xl">...</ul>
+         <ul class="col-5">...</ul>
    
       </nav>
    
