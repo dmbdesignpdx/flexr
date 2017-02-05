@@ -1,6 +1,6 @@
 # Flexr Grid - Beta (0.9.0)
 
-Flexr is a responsive grid for those who just want a grid. Created by a graphic designer with an acute focus on the digital grid layout and its response to different screens. It features two types of column-collapsing: Expanding, Shrinking and Filling.
+Flexr is a responsive grid for those who just want a grid. Created by a graphic designer with an acute focus on the digital grid layout and its response to different screens. It features three types of column-collapsing: Expanding, Shrinking and Filling.
 
 
 ## First Thing's First
@@ -73,6 +73,8 @@ To create **Expanding Columns**, all you need to do is add the expanding class <
    &lt;div class="col-3"&gt;...&lt;/div&gt;
 
 &lt;/div&gt;</pre>
+
+Expanding Columns are columns that instead of shrinking in width along with the screen size (as Shrinking Columns do), they expand to keep their real estate on the screen.
 
 **New!** To define **Filling Columns**, just add the filling class <code>fill</code> in the parent row. Filling Columns make their parent row full width to its parent, and divide the space between themselves equally with no gutters.
 
