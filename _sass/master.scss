@@ -1,9 +1,8 @@
 //  Imports
 
 @import "variables";
-@import "classes";
 @import "mixins";
-
+@import "classes";
 
 //  Global Values and Resets
 
@@ -145,7 +144,6 @@ textarea, code, pre {
     color: #DDE;
     background: #42425d;
     font-family: monospace;
-    white-space: nowrap;
 }
 
 textarea {
@@ -155,6 +153,7 @@ textarea {
     resize: none;
     margin: 40px auto 0;
     text-align: center;
+    white-space: nowrap;
 }
 
 code, pre {
@@ -162,10 +161,6 @@ code, pre {
     margin: 30px 0;
     overflow-x: scroll;
     overflow-y: auto;
-}
-
-#home pre {
-    margin-bottom: 0
 }
 
 p code {
@@ -182,30 +177,6 @@ code strong, pre strong, pre b, code b, footer a, p a {
 
 p a:hover, address a:hover {
     color: $blueGraySeven
-}
-
-footer small, footer address {
-    font-size: 14px;
-    line-height: 1.4em;
-    color: $blueGraySix
-}
-
-footer a {
-    margin-top: 40px
-}
-
-footer address {
-    width: 73%;
-    padding: 50px 0
-}
-
-.copy {
-    flex-wrap: wrap
-}
-
-small {
-    margin-bottom: 50px;
-    align-self: flex-end;
 }
 
 

@@ -8,29 +8,49 @@
     background: $blueGrayTwo;
     @include timing(.3s);
     @extend %smoothMove;
-}
 
-#nav .row {
-    height: 100%;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
-    @include timing(.3s);
+    .row {
+        height: 100%;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        @include timing(.3s);
+    }
+
+    .links {
+        display: inline-block;
+        padding: 10px;
+        color: $blueGraySeven;
+
+        &:hover, &:active {
+            color: $flexrRed
+        }
+    }
+
+    #dl {
+        padding: 10px 18px;
+        color: $blueGrayTwo;
+        background: $cyan;
+
+        &:hover, &:active {
+            background: $blueGraySeven
+        }
+    }
 }
 
 #logo {
     width: 170px;
-    cursor: default
-}
+    cursor: default;
 
-#logo img {
-    cursor: pointer;
-    @extend %smoothMove;
-}
+    img {
+        cursor: pointer;
+        @extend %smoothMove;
 
-#logo img:hover {
-    @include filters(hue-rotate(240deg) saturate(10%) brightness(190%));
+        &:hover {
+            @include filters(hue-rotate(240deg) saturate(10%) brightness(190%));
+        }
+    }
 }
 
 #poma {
@@ -39,42 +59,34 @@
     position: absolute;
     @include where(0,auto,0,-9999px);
     margin: auto;
-}
 
-#poma svg {
-    fill: none;
-    stroke: $blueGraySeven;
-    stroke-width: 5px
-}
+    svg {
+        fill: none;
+        stroke: $blueGraySeven;
+        stroke-width: 5px
+    }
 
-#poma:active svg {
-    stroke: $flexrRed
-}
-
-.links {
-    display: inline-block;
-    padding: 10px;
-    color: $blueGraySeven
-}
-
-#dl {
-    padding: 10px 18px;
-    color: $blueGrayTwo;
-    background: $cyan
+    &:active {
+        stroke: $flexrRed
+    }
 }
 
 #menu {
-    display: flex;
+    @extend %flex;
+    -webkit-justify-content: space-between;
     justify-content: space-between;
     background: $blueGrayTwo;
     -webkit-transition: -webkit-transform .4s;
     transition: transform .4s
 }
 
-.links:hover, .links:active, #the-grid #grid, #how-to #doc {
+
+//  Page Indication
+
+#the-grid #grid, #how-to #doc {
     color: $flexrRed
 }
 
-#dl:hover, #dl:active, #download #dl {
+#download #dl {
     background: $blueGraySeven
 }

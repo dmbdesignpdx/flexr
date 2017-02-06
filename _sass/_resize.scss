@@ -22,8 +22,12 @@
 
 @media only screen and (max-width : 940px) {
 
-    .links {
+    #nav .links {
         font-size: 17px
+    }
+
+    #browsers .browser {
+        width: 60%
     }
 
     .testr {
@@ -35,10 +39,6 @@
         padding: 18px
     }
 
-    .browser {
-        width: 60%
-    }
-
 }
 
 
@@ -46,18 +46,6 @@
 //    Phone Landscape
 
 @media only screen and (max-width : 740px) {
-
-    #nav {
-        height: 56px
-    }
-
-    .nav-scroll {
-        height: 56px !important
-    }
-
-    #logo {
-        width: 120px
-    }
 
     h1 {
         font-size: 30px
@@ -69,6 +57,18 @@
 
     h1 ~ p {
         margin: 15px 0 0
+    }
+
+    #nav {
+        height: 56px
+    }
+
+    .nav-scroll {
+        height: 56px !important
+    }
+
+    #logo {
+        width: 120px
     }
 
     .header {
@@ -87,13 +87,16 @@
         padding: 60px 0 20px
     }
 
-    #hero-text p {
-        padding-bottom: 30px
-    }
+    #hero-text {
 
-    #hero-text .secondary {
-        width: 90px;
-        margin-left: 10px
+        p {
+            padding-bottom: 30px
+        }
+
+        .secondary {
+            width: 90px;
+            margin-left: 10px
+        }
     }
 
     #menu {
@@ -107,17 +110,20 @@
         @include change(translateX(-100%));
     }
 
-    .links {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 18px 0 18px 28px;
-        margin: 8px 0
-    }
+    #nav {
 
-    #dl {
-        width: calc(100% - 16px);
-        padding: 12px 0 12px 20px;
-        margin: 10px 8px
+        .links {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 18px 0 18px 28px;
+            margin: 8px 0
+        }
+
+        #dl {
+            width: calc(100% - 16px);
+            padding: 12px 0 12px 20px;
+            margin: 10px 8px
+        }
     }
 
     #menu li:first-of-type {
@@ -173,29 +179,58 @@
 
 @media only screen and (max-width : 520px) {
 
-
-    #hero-text p, #hero-text h1, #expand-text h1, #expand-text p {
+    %textAlign {
         text-align: center
     }
 
-    #hero-text p {
-        margin: 20px auto 0
+    h1 {
+        font-size: 36px
     }
 
-    #hero-text a {
-        margin: 0 auto 20px
+    #menu {
+        width: 70%
     }
 
     #hero {
         padding: 90px 0 30px
     }
 
+    #hero-text {
+
+        p {
+            margin: 20px auto 0;
+            @extend %textAlign;
+        }
+
+        h1 {
+            @extend %textAlign;
+        }
+
+        a {
+            margin: 0 auto 20px
+        }
+    }
+
+    #expand-text {
+
+        h1 {
+            @extend %textAlign;
+        }
+
+        p {
+            @extend %textAlign;
+        }
+    }
+
     #expand-image {
         order: 2
     }
 
-    #menu {
-        width: 70%
+    #browsers {
+
+        .browser {
+            width: 40%
+        }
     }
 
     #flexr-plus {
@@ -207,29 +242,28 @@
         padding: 0 15px
     }
 
-    .secondary {
-        margin: 0 auto;
-    }
-
-    footer img {
-        width: 24%;
-        margin: 0
-    }
-
-    footer a {
-        margin-top: 20px
-    }
-
-    small {
-        margin-top: 30px
-    }
-
     .primary {
         margin: 50px auto
     }
 
-    .browser {
-        width: 40%
+    .secondary {
+        margin: 0 auto;
+    }
+
+    footer {
+
+        img {
+            width: 24%;
+            margin: 0
+        }
+
+        a {
+            margin-top: 20px
+        }
+
+        small {
+            margin-top: 30px
+        }
     }
 
 }
