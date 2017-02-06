@@ -4,7 +4,7 @@
 <defs>
 <filter id="blur"><feGaussianBlur stdDeviation="4"></feGaussianBlur></filter>
 <style>
-    .sdw {opacity: 0.65; filter:url(#blur); mix-blend-mode: multiply; isolation: isolate}
+    .sdw {opacity: 0.6; filter:url(#blur); mix-blend-mode: multiply; isolation: isolate}
     .cls-2 {fill: #F56}
     .cls-3 {fill: #EEF}
     .cls-4 {fill: #3DD}
