@@ -1,4 +1,4 @@
-/* Flexr Grid - 0.9.0
+/* Flexr Grid - 0.9.1
 Copyright 2016 Flexr. All rights reserved. More info at flexrgrid.com */
 
 .row, *[class*="col-"] {
@@ -36,27 +36,27 @@ Copyright 2016 Flexr. All rights reserved. More info at flexrgrid.com */
     width: auto
 }
 
-.col-1, .logo-s {
+.col-1 {
     width: 8.3333%
 }
 
-.col-2, .logo-m {
+.col-2 {
     width: 16.6666%
 }
 
-.col-3, .menu-s, .logo-l {
+.col-3 {
     width: 24.9999%
 }
 
-.col-4, .menu-m, .logo-xl {
+.col-4 {
     width: 33.3332%
 }
 
-.col-5, .menu-l {
+.col-5 {
     width: 41.6665%
 }
 
-.col-6, .menu-xl {
+.col-6 {
     width: 49.9998%
 }
 
@@ -147,22 +147,6 @@ Copyright 2016 Flexr. All rights reserved. More info at flexrgrid.com */
         padding: 9px
     }
 
-    .logo-xl {
-        width: 140px
-    }
-
-    .logo-l {
-        width: 130px
-    }
-
-    .logo-m {
-        width: 120px
-    }
-
-    .logo-s {
-        width: 110px
-    }
-
 }
 
 
@@ -176,18 +160,6 @@ Copyright 2016 Flexr. All rights reserved. More info at flexrgrid.com */
     }
 
     .exp .col-1 {
-        width: 50%
-    }
-
-    .por .col-1 {
-        width: 24.9999%
-    }
-
-    .por .col-2 {
-        width: 33.3332%
-    }
-
-    .por .col-3 {
         width: 50%
     }
 
