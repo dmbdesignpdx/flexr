@@ -146,12 +146,11 @@ textarea, code, pre {
 }
 
 textarea {
-    width: 702px;
-    padding: 0 26px;
+    @include size(702px,4.9em);
+    padding: 26px;
     box-shadow: none;
     resize: none;
     margin: 40px auto 0;
-    line-height: 60px;
     text-align: center;
     white-space: nowrap;
 }

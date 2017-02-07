@@ -1,9 +1,6 @@
 // For Flexr Grid - Beta
 
-var menuShowing,
-nav = document.getElementById('nav'),
-menu = document.getElementById('menu'),
-menuLinks = document.getElementsByTagName('li'),
+var nav = document.getElementById('nav'),
 linkButton,
 linkText;
 
@@ -27,27 +24,6 @@ function navSizing() {
 
 }
 
-
-// drawer
-
-function drawerAction() {
-
-    if (menuShowing) {
-
-        menuShowing = false;
-
-        nav.classList.remove('show-menu')
-
-    }
-    else {
-
-        menuShowing = true;
-
-        nav.classList.add('show-menu')
-
-    }
-
-}
 
 
 // Intro
@@ -77,21 +53,6 @@ window.onresize = function() {
 
 };
 
-document.getElementById('poma').onclick = function() {
-
-    drawerAction()
-
-};
-
-for (var i in menuLinks) {
-
-    menuLinks[i].onclick = function() {
-
-        drawerAction()
-
-    }
-
-};
 
 window.onload = function() {
 
