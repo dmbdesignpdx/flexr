@@ -1,92 +1,99 @@
 #nav {
-    height: 112px;
+    @include size(100%,112px);
     padding-top: 1px;
+    padding-bottom: 0;
     position: fixed;
     top: -1px;
     left: 0;
+    bottom: auto;
     z-index: 999;
     background: $blueGrayTwo;
+    box-shadow: 0 2px 5px rgba(0,0,30,.3);
     @include timing(.3s);
     @extend %smoothMove;
 
     .row {
         height: 100%;
-        -webkit-align-items: center;
-        align-items: center;
-        -webkit-justify-content: space-between;
-        justify-content: space-between;
         @include timing(.3s);
     }
 
+    .col-x {
+        width: auto
+    }
+
+    a {
+        margin-top: auto;
+        margin-bottom: auto
+    }
+
     .links {
-        display: inline-block;
-        padding: 10px;
+        margin-left: 30px;
         color: $blueGraySeven;
 
         &:hover, &:active {
             color: $flexrRed
         }
+
+        &::before {
+            display: none;
+            width: 28px;
+            height: 28px;
+            content: '';
+            background: url(../img/nav-sprite.svg);
+            background-size: 300% 200%;
+        }
     }
 
-    #dl {
-        padding: 10px 18px;
+    a[href^="get-flexr"] {
         color: $blueGrayTwo;
         background: $cyan;
+        margin-right: 15px;
+        margin-left: 45px;
 
         &:hover, &:active {
+            color: $blueGrayTwo;
             background: $blueGraySeven
         }
     }
-}
 
-#logo {
-    width: 170px;
-    cursor: default;
+    a[href^="flexr-grid"]::before {
+        background-position: 0 0
+    }
 
-    img {
-        cursor: pointer;
-        @extend %smoothMove;
+    a[href^="use-flexr"]::before {
+        background-position: 50% 0
+    }
 
-        &:hover {
-            @include filters(hue-rotate(240deg) saturate(10%) brightness(190%));
+    a[href^="get-flexr"]::before {
+        background-position: 100% 0
+    }
+
+    a[href^="index"] {
+        width: 170px;
+        margin-right: auto;
+        cursor: default;
+
+        img {
+            cursor: pointer;
+            @extend %smoothMove;
+
+            &:hover {
+                @include filters(hue-rotate(240deg) saturate(10%) brightness(190%));
+            }
         }
     }
 }
 
-#poma {
-    @include size(40px);
-    padding: 5px 12px;
-    position: absolute;
-    @include where(0,auto,0,-9999px);
-    margin: auto;
-
-    svg {
-        fill: none;
-        stroke: $blueGraySeven;
-        stroke-width: 5px
-    }
-
-    &:active {
-        stroke: $flexrRed
-    }
-}
-
-#menu {
-    @extend %flex;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
-    background: $blueGrayTwo;
-    -webkit-transition: -webkit-transform .4s;
-    transition: transform .4s
-}
-
-
 //  Page Indication
 
-#the-grid #grid, #how-to #doc {
+#the-grid #nav a[href^="flexr-grid"], #how-to #nav a[href^="use-flexr"] {
     color: $flexrRed
 }
 
-#download #dl {
+#download #nav a[href^="get-flexr"] {
     background: $blueGraySeven
+}
+
+#the-grid #nav a[href^="flexr-grid"]::before, #how-to #nav a[href^="use-flexr"]::before, #download #nav a[href^="get-flexr"]::before {
+    background-position-y: 100%
 }

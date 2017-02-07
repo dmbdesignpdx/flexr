@@ -2,7 +2,7 @@
 
 var menuShowing,
 nav = document.getElementById('nav'),
-menu = document.getElementById('menu'),
+// menu = document.getElementById('menu'),
 menuLinks = document.getElementsByTagName('li'),
 linkButton,
 linkText;
@@ -30,24 +30,24 @@ function navSizing() {
 
 // drawer
 
-function drawerAction() {
-
-    if (menuShowing) {
-
-        menuShowing = false;
-
-        nav.classList.remove('show-menu')
-
-    }
-    else {
-
-        menuShowing = true;
-
-        nav.classList.add('show-menu')
-
-    }
-
-}
+// function drawerAction() {
+//
+//     if (menuShowing) {
+//
+//         menuShowing = false;
+//
+//         nav.classList.remove('show-menu')
+//
+//     }
+//     else {
+//
+//         menuShowing = true;
+//
+//         nav.classList.add('show-menu')
+//
+//     }
+//
+// }
 
 
 // Intro
@@ -77,21 +77,21 @@ window.onresize = function() {
 
 };
 
-document.getElementById('poma').onclick = function() {
+// document.getElementById('poma').onclick = function() {
+//
+//     drawerAction()
+//
+// };
 
-    drawerAction()
-
-};
-
-for (var i in menuLinks) {
-
-    menuLinks[i].onclick = function() {
-
-        drawerAction()
-
-    }
-
-};
+// for (var i in menuLinks) {
+//
+//     menuLinks[i].onclick = function() {
+//
+//         drawerAction()
+//
+//     }
+//
+// };
 
 window.onload = function() {
 
