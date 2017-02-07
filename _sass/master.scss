@@ -146,7 +146,7 @@ textarea, code, pre {
 }
 
 textarea {
-    width: 702px;
+    @include size(702px,4.9em);
     padding: 26px;
     box-shadow: none;
     resize: none;
