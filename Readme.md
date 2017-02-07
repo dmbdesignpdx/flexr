@@ -1,4 +1,4 @@
-# Flexr Grid - Beta (0.9.0)
+# Flexr Grid - Beta (0.9.1)
 
 Flexr is a responsive grid for those who just want a grid. Created by a graphic designer with an acute focus on the digital grid layout and its response to different screens. It features three types of column-collapsing: Expanding, Shrinking and Filling.
 
@@ -160,12 +160,12 @@ Break Point|Column Width|Gutter Width
 ```
 
 
-### Current Version: 0.9.0
+### Current Version: 0.9.1
 
-Release Date: **January 30, 2017**
-Release Notes: *Removed* Flexr Nav Objects. *Added* col-x class.
+Release Date: **February 7, 2017**
+Release Notes: Removed deprecated menu and logo classes.
 
-File Size: 1.6KB
+File Size: 1.4KB
 
 
                 
