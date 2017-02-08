@@ -39,8 +39,7 @@
             width: 28px;
             height: 28px;
             content: '';
-            background: url(../img/nav-sprite.svg);
-            background-size: 300% 200%;
+            @extend %useSprite;
         }
     }
 
@@ -57,15 +56,15 @@
     }
 
     a[href^="flexr-grid"]::before {
-        background-position: 0 0
+        background-position: 0 66.666%
     }
 
     a[href^="use-flexr"]::before {
-        background-position: 50% 0
+        background-position: 20% 66.666%
     }
 
     a[href^="get-flexr"]::before {
-        background-position: 100% 0
+        background-position: 40% 66.666%
     }
 
     a[href^="index"] {

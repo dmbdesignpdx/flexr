@@ -27,6 +27,11 @@
     display: flex;
 }
 
+%useSprite {
+    background: url(../img/master-sprite.svg) no-repeat;
+    background-size: 600% 400%
+}
+
 
 //  Icons
 
@@ -36,8 +41,7 @@
     height: 180px;
     margin: 0 auto 26px;
     content: '';
-    background: url(../img/flexr-sprite.svg) no-repeat;
-    background-size: 600% 100%;
+    @extend %useSprite;
     background-position: 0 0
 }
 
@@ -99,19 +103,6 @@
 .nav-scroll {
     height: 80px !important;
     box-shadow: 0 2px 5px rgba(0,0,30,.3)
-}
-
-.show-menu #menu {
-    box-shadow: 3px 0 5px rgba(0,0,30,.3);
-    -webkit-transform: translateX(0);
-    transform: translateX(0)
-}
-
-.show-menu #poma::before {
-    left: 0;
-    opacity: .5;
-    -webkit-transition: opacity .4s, left 0s 0s;
-    transition: opacity .4s, left 0s 0s
 }
 
 .forIntro #hero-text {

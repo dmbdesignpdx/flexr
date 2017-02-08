@@ -125,8 +125,7 @@ main ~ section:last-of-type {
     .browser {
         @include size(90%,auto);
         margin: 0 auto;
-        background: url(../img/browsers.svg);
-        background-size: 500% 100%;
+        @extend %useSprite;
 
         &::before {
             display: block;
@@ -143,23 +142,23 @@ main ~ section:last-of-type {
     }
 
     .firefox {
-        background-position: 0 0
+        background-position: 0 33.333%
     }
 
     .chrome {
-        background-position: 50% 0
+        background-position: 20% 33.333%
     }
 
     .safari {
-        background-position: 25% 0
+        background-position: 40% 33.333%
     }
 
     .opera {
-        background-position: 75% 0
+        background-position: 60% 33.333%
     }
 
     .edge {
-        background-position: 100% 0
+        background-position: 80% 33.333%
     }
 }
 
