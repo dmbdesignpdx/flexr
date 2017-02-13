@@ -163,6 +163,7 @@ Break Point|Column Width|Gutter Width
 ### Current Version: 0.9.1
 
 Release Date: **February 7, 2017**
+
 Release Notes: Removed deprecated menu and logo classes.
 
 File Size: 1.4KB
