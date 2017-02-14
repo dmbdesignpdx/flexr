@@ -1,6 +1,6 @@
 # Flexr Grid - Beta (0.9.1)
 
-Flexr is a responsive grid for those who just want a grid. Created by a graphic designer with an acute focus on the digital grid layout and its response to different screens. It features three types of column-collapsing: Expanding, Shrinking and Filling.
+Flexr is a responsive grid for those who just want a grid. Created by a web designer with an acute focus on the digital grid layout and its response to different screens. It features three types of column-collapsing: Expanding, Shrinking and Filling.
 
 
 ## First Thing's First
