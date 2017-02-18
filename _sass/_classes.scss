@@ -110,6 +110,5 @@
 }
 
 .forIntro #top, .forIntro #bottom {
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%)
+    @include change(translateY(100%))
 }

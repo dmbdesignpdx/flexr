@@ -20,10 +20,6 @@ main ~ section:last-of-type {
 //  Home
 
 %animationStyle {
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
     -webkit-transition: .6s;
     transition: .6s
 }
@@ -48,7 +44,7 @@ main ~ section:last-of-type {
         &::before {
             display: block;
             width: 100%;
-            padding-top: 62.14%;
+            padding-top: 62.15%;
             content: '';
         }
     }
@@ -63,6 +59,7 @@ main ~ section:last-of-type {
     -webkit-transition-delay: 1s;
     transition-delay: 1s;
     @extend %animationStyle;
+    @extend %smoothMove;
     @include change(translateZ(0));
 
     h1 {
@@ -107,6 +104,7 @@ main ~ section:last-of-type {
     top: 0;
     left: 0;
     @extend %animationStyle;
+    @extend %smoothMove;
     -webkit-transition-delay: .3s;
     transition-delay: .3s
 }

@@ -8,7 +8,6 @@
     bottom: auto;
     z-index: 999;
     background: $blueGrayTwo;
-    box-shadow: 0 2px 5px rgba(0,0,30,.3);
     @include timing(.3s);
     @extend %smoothMove;
 
@@ -17,9 +16,9 @@
         @include timing(.3s);
     }
 
-    .col-x {
-        width: auto
-    }
+    // .col-x {
+    //     width: auto
+    // }
 
     a {
         margin-top: auto;
