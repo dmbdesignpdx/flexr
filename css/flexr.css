@@ -155,7 +155,7 @@ Copyright 2016 Flexr. All rights reserved. More info at flexrgrid.com */
 @media only screen and (max-width : 520px) {
 
 
-    *[class*="col-"], .exp *[class*="col-"] {
+    *[class*="col-"]:not(.col-x), .exp *[class*="col-"]:not(.col-x) {
         width: 100%
     }
 
