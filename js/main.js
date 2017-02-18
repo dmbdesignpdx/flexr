@@ -1,5 +1,3 @@
-// For Flexr Grid - Beta
-
 var nav = document.getElementById('nav'),
 linkButton,
 linkText;
@@ -55,6 +53,8 @@ window.onresize = function() {
 
 
 window.onload = function() {
+
+    navSizing();
 
     introAction()
 
