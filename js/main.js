@@ -37,30 +37,6 @@ function introAction() {
 }
 
 
-// Call Functions
-
-window.onscroll = function() {
-
-    navSizing()
-
-};
-
-window.onresize = function() {
-
-    navSizing()
-
-};
-
-
-window.onload = function() {
-
-    navSizing();
-
-    introAction()
-
-};
-
-
 
 //  Select Link
 
@@ -100,3 +76,28 @@ function findLinkID(check){
 }
 
 findLinkID(document.getElementById('linkcopy'));
+
+
+
+// Call Functions
+
+window.onscroll = function() {
+
+    navSizing()
+
+};
+
+window.onresize = function() {
+
+    navSizing()
+
+};
+
+
+window.onload = function() {
+
+    navSizing();
+
+    introAction()
+
+};
