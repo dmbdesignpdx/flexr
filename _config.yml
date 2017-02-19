@@ -1,0 +1,11 @@
+title: Flexr Grid
+description: Flexr is a responsive grid for modern browsers.
+email: dmblakedesign@gmail.com
+
+baseurl: http://flexrgrid.com
+url: http://flexrgrid.com
+
+markdown: kramdown
+
+sass:
+    style: compressed
