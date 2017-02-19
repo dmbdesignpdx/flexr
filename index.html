@@ -1,147 +1,36 @@
-<!DOCTYPE html><html>
-<head>
+---
+layout: base
+sibling: false
+bodyID: home
+---
 
-    <meta charset="utf-8">
+<main>
 
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-
-    <title>Flexr Grid</title>
-
-    <meta name="description" content="Flexr is a responsive grid for modern browsers.">
-
-    <meta name="theme-color" content="#2B2B3F">
-
-    <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-precomposed.png">
-
-    <link rel="icon" sizes="192x192" href="img/touch-icon.png">
-
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
-    <meta property="og:title" content="Flexr Grid">
-
-    <meta property="og:description" content="Flexr is a responsive grid for modern browsers.">
-
-    <meta property="og:image" content="http://flexrgrid.com/img/flexr-og.png">
-
-    <meta property="og:image:width" content="526">
-
-    <meta property="og:image:height" content="275">
-
-    <meta property="og:url" content="http://flexrgrid.com/">
-
-    <meta property="og:type" content="website">
-
-    <link href='https://fonts.googleapis.com/css?family=Roboto:300,700' rel='stylesheet'>
-
-    <link href="css/flexr.css" rel="stylesheet">
-
-    <link href="css/master.css" rel="stylesheet">
-
-    <script src="js/google-analytics.js" type="text/javascript"></script>
-
-</head>
-
-<body id="home">
-
-    <header id="nav">
-
-        <nav class="row">
-
-            <a class="col-x" href="index.html"><img src="img/flexr-logo.svg" alt="Flexr Grid Logo"/></a>
-
-            <a class="col-x links" href="flexr-grid.html">The Grid</a>
-
-            <a class="col-x links" href="use-flexr.html">Use It</a>
-
-            <a class="col-x links" href="get-flexr.html">Get It</a>
-
-        </nav>
-
-    </header>
-
-    <main>
-
-        <section id="hero" class="forIntro">
-
-            <div class="row">
-
-                <div id="hero-text" class="col-5">
-
-                    <h1>Simple &amp; Flexible</h1>
-
-                    <p>Flexr is a responsive grid for those who simply want a grid. Using only CSS, columns collapse in three ways: Expanding, Shrinking, and Filling.</p>
-
-                    <a href="flexr-grid.html" class="primary" title="See the Flexr Grid">Flexr Grid</a>
-
-                    <a href="get-flexr.html" class="secondary" title="Download Flexr Grid">v0.9.1</a>
-
-                </div>
-
-                <div id="hero-image" class="col-7">
-
-                    <div class="container">
-
-                        <img id="bottom" src="img/flexr-hero-bottom.svg" alt="Flexr"/>
-
-                        <img id="top" src="img/flexr-hero-top.svg" alt="Flexr"/>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <section id="expand">
-
-            <div class="row">
-
-                <div id="expand-image" class="col-7">
-
-                    <img src="img/expand.svg" alt="Flexr responsive grid with expanding columns"/>
-
-                </div>
-
-                <div id="expand-text" class="col-5">
-
-                    <h1>One of a Kind</h1>
-
-                    <p>Flexr offers a unique option for your responsive grid layout: <strong>Expanding Columns</strong>. With just one CSS class, the one, two, three, four, and six columns can expand dynamically as the screen size reduces to that of tablets and phones.</p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <section class="call-to-action">
+    <section id="hero" class="forIntro">
 
         <div class="row">
 
-            <div class="col-12">
+            <div id="hero-text" class="col-5">
 
-                <h1>Flexr Grid</h1>
+                <h1>Simple &amp; Flexible</h1>
 
-                <p>A responsive grid for modern browsers. Try&nbsp;it!</p>
+                <p>Flexr is a responsive grid for those who simply want a grid. Using only CSS, columns collapse in three ways: Expanding, Shrinking, and Filling.</p>
 
-            </div>
+                <a href="flexr-grid.html" class="primary" title="See the Flexr Grid">Flexr Grid</a>
 
-        </div>
-
-        <div class="row exp">
-
-            <div class="col-2">
-
-                <a href="get-flexr.html" class="primary" title="Download Flexr Grid">Get Flexr</a>
+                <a href="get-flexr.html" class="secondary" title="Download Flexr Grid">v0.9.1</a>
 
             </div>
 
-            <div class="col-2">
+            <div id="hero-image" class="col-7">
 
-                <a href="use-flexr.html" class="secondary" title="Flexr Grid Documentation">Learn More</a>
+                <div class="container">
+
+                    <img id="bottom" src="img/flexr-hero-bottom.svg" alt="Flexr"/>
+
+                    <img id="top" src="img/flexr-hero-top.svg" alt="Flexr"/>
+
+                </div>
 
             </div>
 
@@ -149,57 +38,21 @@
 
     </section>
 
-    <section id="browsers">
+    <section id="expand">
 
         <div class="row">
 
-            <div class="col-12">
+            <div id="expand-image" class="col-7">
 
-                <p>Compatible with</p>
-
-            </div>
-
-        </div>
-
-        <div class="row exp">
-
-            <div class="col-1">
-
-                <div class="browser chrome"></div>
-
-                <p>Chrome<br>26+</p>
+                <img src="img/expand.svg" alt="Flexr responsive grid with expanding columns"/>
 
             </div>
 
-            <div class="col-1">
+            <div id="expand-text" class="col-5">
 
-                <div class="browser firefox"></div>
+                <h1>One of a Kind</h1>
 
-                <p>Firefox<br>28+</p>
-
-            </div>
-
-            <div class="col-1">
-
-                <div class="browser safari"></div>
-
-                <p>Safari<br>6.1+</p>
-
-            </div>
-
-            <div class="col-1">
-
-                <div class="browser opera"></div>
-
-                <p>Opera<br>15+</p>
-
-            </div>
-
-            <div class="col-1">
-
-                <div class="browser edge"></div>
-
-                <p>Edge<br>10+</p>
+                <p>Flexr offers a unique option for your responsive grid layout: <strong>Expanding Columns</strong>. With just one CSS class, the one, two, three, four, and six columns can expand dynamically as the screen size reduces to that of tablets and phones.</p>
 
             </div>
 
@@ -207,29 +60,64 @@
 
     </section>
 
-    <footer>
+</main>
 
-        <div class="row">
+{% include call-to-action.html %}
 
-            <div class="col-8">
+<section id="browsers">
 
-                <address>The Flexr Grid, the Flexr logo, and website were created and designed by Daniel&nbsp;Blake&mdash;Portland, OR.<br>
-                <a href="http://danielblake.design" target="_blank" rel="author">danielblake.design</a></address>
+    <div class="row">
 
-            </div>
+        <div class="col-12">
 
-            <div class="col-4">
-
-                <img src="img/flexr-logo.svg" alt="Flexr Grid Logo"/>
-
-                <small>&copy; 2016 Flexr. All rights reserved. All other trademarks are the property of their respective owners.</small>
-
-            </div>
+            <p>Compatible with</p>
 
         </div>
 
-    </footer>
+    </div>
 
-    <script src="js/main.js" type="text/javascript"></script>
+    <div class="row exp">
 
-</body></html>
+        <div class="col-1">
+
+            <div class="browser chrome"></div>
+
+            <p>Chrome<br>26+</p>
+
+        </div>
+
+        <div class="col-1">
+
+            <div class="browser firefox"></div>
+
+            <p>Firefox<br>28+</p>
+
+        </div>
+
+        <div class="col-1">
+
+            <div class="browser safari"></div>
+
+            <p>Safari<br>6.1+</p>
+
+        </div>
+
+        <div class="col-1">
+
+            <div class="browser opera"></div>
+
+            <p>Opera<br>15+</p>
+
+        </div>
+
+        <div class="col-1">
+
+            <div class="browser edge"></div>
+
+            <p>Edge<br>10+</p>
+
+        </div>
+
+    </div>
+
+</section>
