@@ -1,0 +1,18 @@
+//   The Grid
+
+#grid-title::before {
+    background-position: 40% 0
+}
+
+.example {
+    height: 1em;
+    padding: 20px 0 21px;
+    font-size: 16px;
+    text-align: center;
+    background: $blueGrayFive;
+    line-height: 1.1em
+}
+
+.fill div[class*="col"]:nth-of-type(even) .example {
+    background: $blueGrayFour
+}

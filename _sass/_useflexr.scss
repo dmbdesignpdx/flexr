@@ -1,0 +1,30 @@
+//  Use It
+
+#doc-title::before {
+    background-position: 60% 0
+}
+
+table {
+    width: 100%;
+    margin: 30px 0;
+    font-size: 17px;
+    color: $blueGraySeven;
+    background: $blueGrayFive;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+tr:nth-of-type(even) {
+    background: $blueGrayFour;
+}
+
+td, th {
+    width: 16.666%;
+    padding: 20px;
+    border-right: 1px solid $blueGrayTwo;
+    text-align: left;
+}
+
+td:last-of-type {
+    border-right: none
+}

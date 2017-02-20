@@ -1,270 +1,139 @@
-//    Sections
+//  Navigation
 
-section {
-    padding: 120px 0
-}
-
-.header {
-    padding: 30px 0 120px
-}
-
-main ~ section:last-of-type {
-    padding: 0 0 130px
-}
-
-.buffer {
-    padding: 90px 0 0
-}
-
-
-//  Home
-
-%animationStyle {
-    -webkit-transition: .6s;
-    transition: .6s
-}
-
-#hero {
-    padding: 210px 0 150px;
-    overflow: hidden;
-
-    .row {
-        align-items: center
-    }
-
-    pre {
-        margin-bottom: 0
-    }
-
-    .container {
-        @include size(100%,auto);
-        position: relative;
-        overflow: hidden;
-
-        &::before {
-            display: block;
-            width: 100%;
-            padding-top: 62.15%;
-            content: '';
-        }
-    }
-}
-
-#hero-text {
-    @extend %flex;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-transition-property: opacity;
-    transition-property: opacity;
-    -webkit-transition-delay: 1s;
-    transition-delay: 1s;
-    @extend %animationStyle;
-    @extend %smoothMove;
-    @include change(translateZ(0));
-
-    h1 {
-        text-align: left
-    }
-
-    p {
-        width: 96%;
-        padding-bottom: 30px
-    }
-
-    a {
-        margin: 0
-    }
-
-    .secondary {
-        width: 90px;
-        margin-left: 30px
-    }
-}
-
-#expand {
-    background: darken($blueGrayTwo,2);
-
-    .row {
-        align-items: center;
-
-    }
-}
-
-#expand-text {
-    @extend %flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-justify-content: center;
-    justify-content: center
-}
-
-#bottom, #top {
-    @include size(100%,auto);
-    position: absolute;
-    top: 0;
+#nav {
+    @include size(100%,112px);
+    padding-top: 1px;
+    padding-bottom: 0;
+    position: fixed;
+    top: -1px;
     left: 0;
-    @extend %animationStyle;
+    bottom: auto;
+    z-index: 999;
+    background: $blueGrayTwo;
+    @include timing(.3s);
     @extend %smoothMove;
-    -webkit-transition-delay: .3s;
-    transition-delay: .3s
-}
 
-#top {
-    -webkit-transition-delay: .6s;
-    transition-delay: .6s
-}
-
-#browsers {
-
-    p {
-        text-align: center
-    }
-
-    .browser {
-        @include size(90%,auto);
-        margin: 0 auto;
-        @extend %useSprite;
-
-        &::before {
-            display: block;
-            width: 100%;
-            padding-top: 100%;
-            content: '';
-        }
-
-        & + p {
-            margin-top: 10px;
-            font-size: 15px;
-            line-height: 1.2em
-        }
-    }
-
-    .firefox {
-        background-position: 0 33.333%
-    }
-
-    .chrome {
-        background-position: 20% 33.333%
-    }
-
-    .safari {
-        background-position: 40% 33.333%
-    }
-
-    .opera {
-        background-position: 60% 33.333%
-    }
-
-    .edge {
-        background-position: 80% 33.333%
-    }
-}
-
-
-
-//   The Grid
-
-#grid-title::before {
-    background-position: 40% 0
-}
-
-.example {
-    height: 1em;
-    padding: 20px 0 21px;
-    font-size: 16px;
-    text-align: center;
-    background: $blueGrayFive;
-    line-height: 1.1em
-}
-
-.fill div[class*="col"]:nth-of-type(even) .example {
-    background: $blueGrayFour
-}
-
-
-
-//  Use It
-
-
-#doc-title::before {
-    background-position: 60% 0
-}
-
-table {
-    width: 100%;
-    margin: 30px 0;
-    font-size: 17px;
-    color: $blueGraySeven;
-    background: $blueGrayFive;
-    table-layout: fixed;
-    border-collapse: collapse;
-}
-
-tr:nth-of-type(even) {
-    background: $blueGrayFour;
-}
-
-td, th {
-    width: 16.666%;
-    padding: 20px;
-    border-right: 1px solid $blueGrayTwo;
-    text-align: left;
-}
-
-td:last-of-type {
-    border-right: none
-}
-
-
-
-//   Get Flexr
-
-
-%downloadText {
-    width: 85%;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center
-}
-
-#download .header {
-    padding: 30px 0 80px
-}
-
-#download-title::before {
-    background-position: 80% 0
-}
-
-#flexr-plus::before {
-    background-position: 20% 0
-}
-
-#host-title::before {
-    background-position: 100% 0
-}
-
-#download-section {
-
-    h2 {
-        padding-top: 20px;
-        @extend %downloadText;
-    }
-
-    p {
-        padding-bottom: 50px;
-        @extend %downloadText;
+    .row {
+        height: 100%;
+        @include timing(.3s);
     }
 
     a {
-        font-weight: 300;
+        margin-top: auto;
+        margin-bottom: auto
+    }
 
-        &:hover {
-            background: $blueGrayThree
+    .links {
+        margin-left: 30px;
+        color: $blueGraySeven;
+
+        &:hover, &:active {
+            color: $flexrRed
+        }
+
+        &::before {
+            display: none;
+            width: 28px;
+            height: 28px;
+            content: '';
+            @extend %useSprite;
         }
     }
 
+    a[href^="get-flexr"] {
+        color: $blueGrayTwo;
+        background: $cyan;
+        margin-right: 15px;
+        margin-left: 45px;
+
+        &:hover, &:active {
+            color: $blueGrayTwo;
+            background: $blueGraySeven
+        }
+    }
+
+    a[href^="flexr-grid"]::before {
+        background-position: 0 66.666%
+    }
+
+    a[href^="use-flexr"]::before {
+        background-position: 20% 66.666%
+    }
+
+    a[href^="get-flexr"]::before {
+        background-position: 40% 66.666%
+    }
+
+    a[href^="index"] {
+        width: 170px;
+        margin-right: auto;
+        cursor: default;
+
+        img {
+            cursor: pointer;
+            @extend %smoothMove;
+
+            &:hover {
+                @include filters(hue-rotate(240deg) saturate(10%) brightness(190%));
+            }
+        }
+    }
 }
 
-#linkcopy {
-    width: 160px
+//  Page Indication
+
+#the-grid #nav a[href^="flexr-grid"], #how-to #nav a[href^="use-flexr"] {
+    color: $flexrRed
+}
+
+#download #nav a[href^="get-flexr"] {
+    background: $blueGraySeven
+}
+
+#the-grid #nav a[href^="flexr-grid"]::before, #how-to #nav a[href^="use-flexr"]::before, #download #nav a[href^="get-flexr"]::before {
+    background-position-y: 100%
+}
+
+
+
+//  Footer
+
+%footerText{
+    font-size: 14px;
+    line-height: 1.4em;
+    color: $blueGraySix
+}
+
+footer {
+    background: $blueGrayOne;
+
+    .row div:last-child {
+        @extend %flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    img {
+        width: 27%;
+        margin-top: 50px;
+        -webkit-align-self: flex-start;
+        align-self: flex-start;
+        @include filters(hue-rotate(240deg) saturate(10%) brightness(110%));
+    }
+
+    address {
+        width: 73%;
+        padding: 50px 0;
+        @extend %footerText;
+    }
+
+    small {
+        margin-bottom: 50px;
+        align-self: flex-end;
+        @extend %footerText;
+    }
+
+    a {
+        margin-top: 40px
+    }
 }

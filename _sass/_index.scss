@@ -1,0 +1,142 @@
+//  Home
+
+%animationStyle {
+    -webkit-transition: .6s;
+    transition: .6s
+}
+
+#hero {
+    padding: 210px 0 150px;
+    overflow: hidden;
+
+    .row {
+        align-items: center
+    }
+
+    pre {
+        margin-bottom: 0
+    }
+
+    .container {
+        @include size(100%,auto);
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            display: block;
+            width: 100%;
+            padding-top: 62.15%;
+            content: '';
+        }
+    }
+}
+
+#hero-text {
+    @extend %flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-delay: 1s;
+    transition-delay: 1s;
+    @extend %animationStyle;
+    @extend %smoothMove;
+    @include change(translateZ(0));
+
+    h1 {
+        text-align: left
+    }
+
+    p {
+        width: 96%;
+        padding-bottom: 30px
+    }
+
+    a {
+        margin: 0
+    }
+
+    .secondary {
+        width: 90px;
+        margin-left: 30px
+    }
+}
+
+#expand {
+    background: darken($blueGrayTwo,2);
+
+    .row {
+        align-items: center;
+
+    }
+}
+
+#expand-text {
+    @extend %flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    justify-content: center
+}
+
+#bottom, #top {
+    @include size(100%,auto);
+    position: absolute;
+    top: 0;
+    left: 0;
+    @extend %animationStyle;
+    @extend %smoothMove;
+    -webkit-transition-delay: .3s;
+    transition-delay: .3s
+}
+
+#top {
+    -webkit-transition-delay: .6s;
+    transition-delay: .6s
+}
+
+#browsers {
+
+    p {
+        text-align: center
+    }
+
+    .browser {
+        @include size(90%,auto);
+        margin: 0 auto;
+        @extend %useSprite;
+
+        &::before {
+            display: block;
+            width: 100%;
+            padding-top: 100%;
+            content: '';
+        }
+
+        & + p {
+            margin-top: 10px;
+            font-size: 15px;
+            line-height: 1.2em
+        }
+    }
+
+    .firefox {
+        background-position: 0 33.333%
+    }
+
+    .chrome {
+        background-position: 20% 33.333%
+    }
+
+    .safari {
+        background-position: 40% 33.333%
+    }
+
+    .opera {
+        background-position: 60% 33.333%
+    }
+
+    .edge {
+        background-position: 80% 33.333%
+    }
+}

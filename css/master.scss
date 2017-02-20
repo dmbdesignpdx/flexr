@@ -69,6 +69,14 @@ a {
     @extend %noTap;
 }
 
+section {
+    padding: 120px 0
+}
+
+main ~ section:last-of-type {
+    padding: 0 0 130px
+}
+
 
 //    Text
 
@@ -101,7 +109,7 @@ h2 {
     font-size: 30px
 }
 
-.header h1, .call-to-action h1, .call-to-action p {
+.header h1 {
     text-align: center
 }
 
@@ -189,21 +197,18 @@ sup {
 
 
 
-//   Navigation
+//   Layouts
 
-@import "navigation";
-
-
-
-//   Main Content for Pages
-
-@import "base";
+@import "base",
+        "index",
+        "flexrgrid",
+        "useflexr",
+        "getflexr";
 
 
+//  Includes
 
-//    Footer
-
-@import "footer";
+@import "calltoaction";
 
 
 
