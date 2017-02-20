@@ -1,34 +1,8 @@
-var nav = document.getElementById('nav'),
-linkButton,
-linkText;
-
-
-// Scrolling
-
-function navSizing() {
-
-    var a = window.innerWidth, b = window.pageYOffset;
-
-    if ((740 > a && b > 20) || (a > 740 && b > 60)) {
-
-        nav.classList.add('nav-scroll')
-
-    }
-    else {
-
-        nav.classList.remove('nav-scroll')
-
-    }
-
-}
-
-
-
 // Intro
 
 function introAction() {
 
-    if(document.body.id == "home") {
+    if (document.body.id == "home") {
 
         document.getElementById('hero').classList.remove('forIntro')
 
@@ -38,12 +12,31 @@ function introAction() {
 
 
 
+// Scrolling
+
+function navSizing() {
+
+    var a = window.innerWidth, b = window.pageYOffset, nav = document.getElementById('nav');
+
+    if ((740 > a && b > 20) || (a > 740 && b > 60)) {
+
+        nav.classList.add('nav-scroll')
+
+    } else {
+
+        nav.classList.remove('nav-scroll')
+
+    }
+
+}
+
+
+
 //  Select Link
 
+function selectAndCopy(obj,text) {
 
-function selectAndCopy(obj){
-
-        linkText.select();
+        text.select();
 
         var copied = document.execCommand('copy');
 
@@ -51,7 +44,7 @@ function selectAndCopy(obj){
             obj.innerHTML = "Copied!"
         }
         else {
-            obj.innerHTML = "CMD+C/CTRL+C"
+            obj.innerHTML = "Didn't Copy"
         }
 
 }
@@ -62,42 +55,28 @@ function selectAll(obj) {
 
 }
 
-function findLinkID(check){
+function findLinkID(check) {
 
     if (check) {
-        linkButton = check,
+        var linkButton = check,
         linkText = document.getElementById('linktext');
 
-        linkButton.onclick = function(){selectAndCopy(this)};
+        linkButton.onclick = function(){selectAndCopy(this,linkText)};
+
         linkText.onclick = function(){selectAll(this)};
 
     }
 
 }
 
-findLinkID(document.getElementById('linkcopy'));
-
 
 
 // Call Functions
 
-window.onscroll = function() {
+findLinkID(document.getElementById('linkcopy'));
 
-    navSizing()
+window.onscroll = navSizing;
 
-};
+window.onresize = navSizing;
 
-window.onresize = function() {
-
-    navSizing()
-
-};
-
-
-window.onload = function() {
-
-    navSizing();
-
-    introAction()
-
-};
+window.onload = introAction;
