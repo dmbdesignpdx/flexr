@@ -11,7 +11,7 @@ You gotta link the Flexr CSS **before** your own CSS:
 
    ...
 
-   &lt;link rel="stylesheet" href="path-to/<b>flexr.css</b>"&gt;
+   &lt;link rel="stylesheet" href=".../<b>flexr.css</b>"&gt;
 
    &lt;link rel="stylesheet" href="path-to/your.css"&gt;
    
@@ -53,7 +53,7 @@ Creating a column requires only one class <code>col-</code> defined by its size 
 
 &lt;/div&gt;</pre>
 
-**New!** If you'd like to use a column with a width that <i>you</i> define (i.e. a logo), simply give the column the class <code>col-x</code> and define the width in your css.
+If you'd like to use a column with a width that <i>you</i> define (i.e. a logo), simply give the column the class <code>col-x</code> and define the width in your css.
 
 
 ## Defining Columns
@@ -76,7 +76,7 @@ To create **Expanding Columns**, all you need to do is add the expanding class <
 
 Expanding Columns are columns that instead of shrinking in width along with the screen size (as Shrinking Columns do), they expand to keep their real estate on the screen.
 
-**New!** To define **Filling Columns**, just add the filling class <code>fill</code> in the parent row. Filling Columns make their parent row full width to its parent, and divide the space between themselves equally with no gutters.
+To define **Filling Columns**, just add the filling class <code>fill</code> in the parent row. Filling Columns make their parent row full width to its parent, and divide the space between themselves equally with no gutters.
 
 
 ## Justifying Columns
