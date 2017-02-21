@@ -41,7 +41,7 @@
     transition-delay: 1s;
     @extend %animationStyle;
     @extend %smoothMove;
-    @include change(translateZ(0));
+    @include trasnform(translateZ(0));
 
     h1 {
         text-align: left

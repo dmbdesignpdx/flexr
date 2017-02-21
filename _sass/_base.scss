@@ -10,12 +10,12 @@
     bottom: auto;
     z-index: 999;
     background: $blueGrayTwo;
-    @include timing(.3s);
+    @include transition(.3s);
     @extend %smoothMove;
 
     .row {
         height: 100%;
-        @include timing(.3s);
+        @include transition(.3s);
     }
 
     a {
@@ -74,7 +74,7 @@
             @extend %smoothMove;
 
             &:hover {
-                @include filters(hue-rotate(240deg) saturate(10%) brightness(190%));
+                @include filter(hue-rotate(240deg) saturate(10%) brightness(190%));
             }
         }
     }
@@ -118,7 +118,7 @@ footer {
         margin-top: 50px;
         -webkit-align-self: flex-start;
         align-self: flex-start;
-        @include filters(hue-rotate(240deg) saturate(10%) brightness(110%));
+        @include filter(hue-rotate(240deg) saturate(10%) brightness(110%));
     }
 
     address {

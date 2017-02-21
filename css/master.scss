@@ -4,12 +4,12 @@
 
 //  Imports
 
-@import "variables";
-@import "mixins";
-@import "classes";
+@import "variables",
+        "mixins",
+        "classes";
+
 
 //  Global Values and Resets
-
 
 html, body {
     height: 100vh;

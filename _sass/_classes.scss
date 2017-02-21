@@ -74,7 +74,7 @@
         color: $flexrRed;
         background: $blueGraySeven;
         cursor: pointer;
-        @include change(scale(1.05));
+        @include trasnform(scale(1.05));
     }
 }
 
@@ -118,5 +118,5 @@
 }
 
 .forIntro #top, .forIntro #bottom {
-    @include change(translateY(100%))
+    @include trasnform(translateY(100%))
 }

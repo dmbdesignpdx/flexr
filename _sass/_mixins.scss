@@ -1,6 +1,6 @@
-//  Filters
+//  Filter
 
-@mixin filters($vars){
+@mixin filter($vars){
     -webkit-filter: $vars;
     filter: $vars;
 }
@@ -8,7 +8,7 @@
 
 //  Transform
 
-@mixin change($vars){
+@mixin trasnform($vars){
     -webkit-transform: $vars;
     transform: $vars;
 }
@@ -16,21 +16,21 @@
 
 //  Transition
 
-@mixin timing($vars...){
+@mixin transition($vars...){
     -webkit-transition: $vars;
     transition: $vars;
 }
 
-//  Animations
+//  Animation
 
-@mixin animate($vars...){
+@mixin animation($vars...){
     -webkit-animation: $vars;
     animation: $vars;
 }
 
 //  Keyframes
 
-@mixin frames($name) {
+@mixin keyframes($name) {
     @-webkit-keyframes #{$name} {
         @content;
     }

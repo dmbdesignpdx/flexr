@@ -66,17 +66,17 @@
             width: 110px;
 
             img {
-                @include filters(hue-rotate(240deg) saturate(10%) brightness(190%));
+                @include filter(hue-rotate(240deg) saturate(10%) brightness(190%));
 
                 &:active {
-                    @include filters(none);
+                    @include filter(none);
                 }
             }
         }
     }
 
     #home #nav a[href^="index"] img {
-        @include filters(none);
+        @include filter(none);
     }
 
     .nav-scroll {
