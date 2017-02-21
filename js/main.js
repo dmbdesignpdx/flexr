@@ -49,31 +49,24 @@ function selectAndCopy(obj,text) {
 
 }
 
-function selectAll(obj) {
+(function(){
 
-    obj.select();
+    if (document.body.id == "download") {
 
-}
-
-function findLinkID(check) {
-
-    if (check) {
-        var linkButton = check,
+        var linkButton = document.getElementById('linkcopy'),
         linkText = document.getElementById('linktext');
 
         linkButton.onclick = function(){selectAndCopy(this,linkText)};
 
-        linkText.onclick = function(){selectAll(this)};
+        linkText.onclick = function(){this.select()};
 
     }
 
-}
+})();
 
 
 
 // Call Functions
-
-findLinkID(document.getElementById('linkcopy'));
 
 window.onscroll = navSizing;
 
