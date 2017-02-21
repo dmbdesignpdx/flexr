@@ -8,7 +8,7 @@
 
 //  Transform
 
-@mixin trasnform($vars){
+@mixin transform($vars){
     -webkit-transform: $vars;
     transform: $vars;
 }
