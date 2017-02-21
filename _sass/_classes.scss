@@ -74,7 +74,10 @@
         color: $flexrRed;
         background: $blueGraySeven;
         cursor: pointer;
-        @include transform(scale(1.05));
+    }
+    &:active {
+        color: $flexrRed;
+        background: $blueGraySeven;
     }
 }
 
@@ -85,8 +88,10 @@
 
     &:hover {
         color: $blueGraySeven;
-        background: none;
         cursor: pointer
+    }
+    &:active {
+        color: $blueGraySeven;
     }
 }
 
