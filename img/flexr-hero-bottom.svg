@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 692 430">
-  <defs>
-    <filter id="a"><feGaussianBlur stdDeviation="5"/></filter>
+<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="title" viewBox="0 0 692 430">
+<title id="title">Flat illustration of a laptop with a minimalistic-styled website</title>
+<defs><filter id="a"><feGaussianBlur stdDeviation="5"/></filter>
     <style>
 
       .sdw {fill: #000010; opacity: 0.7; filter: url(#a)}
@@ -47,9 +47,7 @@
       .k {
         fill: #f56;
       }
-    </style>
-  </defs>
-  <title>flexr grid hero image bottom</title>
+    </style></defs>
   <path class="sdw" d="M596.6,361.4a17.2,17.2,0,0,0,.9-5.6V19.3A17.3,17.3,0,0,0,580.3,2H81.7A17.3,17.3,0,0,0,64.5,19.3V355.9a17.2,17.2,0,0,0,.9,5.6H1v11.7a156.8,156.8,0,0,0,52.8,9.6H608.2a156.8,156.8,0,0,0,52.8-9.6V361.4Z"/>
   <g>
     <rect class="b" x="64.5" y="2" width="533.1" height="371.12" rx="17.3" ry="17.3"/>

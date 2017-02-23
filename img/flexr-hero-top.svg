@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 692 430">
+<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="title" viewBox="0 0 692 430">
+<title id="title">Flat illustration of a smart phone with a minimalistic-styled website</title>
 <defs><filter id="a"><feGaussianBlur stdDeviation="7"/></filter>
     <style><![CDATA[
       .sdw {fill: #000010; opacity: 0.7; filter: url(#a)}
@@ -57,7 +58,6 @@
       }
     ]]></style>
   </defs>
-  <title>flexr grid hero image top</title>
   <rect class="sdw" x="496.6" y="55" width="174.4" height="360" rx="23" ry="23"/>
   <g>
     <path class="b" d="M672.3,180.5h1.3a1.3,1.3,0,0,1,1.3,1.3v22.2a1.3,1.3,0,0,1-1.3,1.3h-1.3a0,0,0,0,1,0,0V180.5A0,0,0,0,1,672.3,180.5Z"/>
