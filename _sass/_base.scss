@@ -13,18 +13,29 @@
     @include transition(.3s);
     @extend %smoothMove;
 
-    .row {
-        height: 100%;
-        @include transition(.3s);
+    ul, .row {
+        height: 100%
     }
 
-    a {
+    ul {
+        @extend %flex;
+        width: 100%;
+    }
+
+    li {
         margin-top: auto;
         margin-bottom: auto
     }
 
+    li:first-of-type {
+        margin-right: auto;
+    }
+
+    li:nth-of-type(1n+2) {
+        margin-left: 30px
+    }
+
     .links {
-        margin-left: 30px;
         color: $blueGraySeven;
 
         &:hover, &:active {
@@ -44,11 +55,15 @@
         color: $blueGrayTwo;
         background: $cyan;
         margin-right: 15px;
-        margin-left: 45px;
+        margin-left: 15px;
 
         &:hover, &:active {
             color: $blueGrayTwo;
             background: $blueGraySeven
+        }
+
+        &::before {
+            background-position: 40% 66.666%
         }
     }
 
@@ -60,18 +75,13 @@
         background-position: 20% 66.666%
     }
 
-    a[href^="get-flexr"]::before {
-        background-position: 40% 66.666%
-    }
-
     a[href^="index"] {
         width: 170px;
-        margin-right: auto;
         cursor: default;
 
         img {
+            padding-top: 1px;
             cursor: pointer;
-            @extend %smoothMove;
 
             &:hover {
                 @include filter(hue-rotate(240deg) saturate(10%) brightness(190%));
@@ -134,6 +144,7 @@ footer {
     }
 
     a {
+        width: auto;
         margin-top: 40px
     }
 }

@@ -157,7 +157,7 @@
         background: lighten($blueGrayTwo,2);
         box-shadow: 0 -1px 4px rgba(0,0,30,.3);
 
-        .row a {
+        .row ul li {
             margin: auto
         }
 
@@ -174,7 +174,8 @@
             }
         }
 
-        .links {
+        ul .links {
+            margin: 0;
             font-size: 0
         }
 
@@ -182,7 +183,7 @@
             display: block
         }
 
-        .row .links:active::before {
+        ul .links:active::before {
             background-position-y: 100%
         }
     }

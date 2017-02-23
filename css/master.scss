@@ -24,7 +24,7 @@ body {
     @extend %smoothFonts;
 }
 
-nav, main, section, header, footer, img, object, svg, address, a, textarea, button {
+nav, main, section, header, footer, img, object, svg, address, textarea, pre, button, figure {
     display: block;
     position: relative
 }
@@ -41,8 +41,7 @@ textarea, button {
     border: none;
     outline: none;
     overflow: auto;
-    -webkit-appearance: none;
-    appearance: none;
+    @include appearance(none)
 }
 
 img, a:active, a:focus {
@@ -60,13 +59,23 @@ address {
 
 ul, li {
     padding: 0;
+    position: relative;
     margin: 0;
     list-style: none
 }
 
+nav a, a[role=button] {
+    display: block
+}
+
+address a {
+    display: inline-block
+}
+
 a {
+    position: relative;
     text-decoration: none;
-    @extend %noTap;
+    @extend %noTap
 }
 
 section {
@@ -78,9 +87,10 @@ main ~ section:last-of-type {
 }
 
 
+
 //    Text
 
-h1, h2, p, li, a, code, pre, address, textarea, button {
+h1, h2, p, a, code, pre, address, textarea, button, figure {
     margin: 0
 }
 
@@ -182,7 +192,6 @@ p code {
 }
 
 code strong, pre strong, pre b, code b, footer a, p a {
-    display: inline-block;
     font-weight: 700;
     color: $flexrRed
 }
