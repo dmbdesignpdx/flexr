@@ -11,7 +11,7 @@
 @mixin appearance($var){
     -webkit-appearance: $var;
     -moz-appearance: $var;
-    appearance: $var
+    appearance: $var;
 }
 
 

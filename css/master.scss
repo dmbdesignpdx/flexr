@@ -2,11 +2,10 @@
 # Master
 ---
 
+
 //  Imports
 
-@import "variables",
-        "mixins",
-        "classes";
+@import "variables", "mixins", "classes";
 
 
 //  Global Values and Resets
@@ -27,7 +26,7 @@ html, body, nav, main, section, header, footer, img, object, svg, address, texta
     margin: 0
 }
 
-nav, main, section, header, footer, img, object, svg, address, textarea, pre, button, figure, nav a, a[role=button] {
+nav, main, section, header, footer, img, object, svg, address, textarea, pre, button, figure, nav a, [role=button] {
     display: block;
     position: relative;
 }
@@ -201,11 +200,7 @@ sup {
 
 //   Layouts
 
-@import "base",
-        "index",
-        "flexrgrid",
-        "useflexr",
-        "getflexr";
+@import "base", "index", "flexrgrid", "useflexr", "getflexr";
 
 
 //  Includes
