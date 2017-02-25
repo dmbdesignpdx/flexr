@@ -1,72 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="title" viewBox="0 0 692 430">
-<title id="title">Flat illustration of a laptop with a minimalistic-styled website</title>
-<defs><filter id="a"><feGaussianBlur stdDeviation="5"/></filter>
-    <style>
-
-      .sdw {fill: #000010; opacity: 0.7; filter: url(#a)}
-
-      .b {
-        fill: none;
-        stroke: #b3b4b6;
-        stroke-width: 3px;
+<title id="title">Illustration of a laptop with a minimalistic-styled website</title>
+<defs><style><![CDATA[
+      * {
+        stroke: #1c1c2d;
+        stroke-width: 3px
       }
 
-      .c {
-        fill: #1a1b1d;
+      .cls-1 {
+        fill: #363647
       }
 
-      .d {
-        fill: #b3b4b6;
+      .cls-2 {
+        fill: #dde
       }
 
-      .e {
-        fill: #808183;
+      .cls-4 {
+        fill: #eef
       }
 
-      .f {
-        fill: #999a9c;
+      .cls-5 {
+        fill: #668
       }
 
-      .g {
-        fill: #dde;
+      .cls-6, .cls-3 {
+        fill: #aab
       }
 
-      .h {
-        fill: #668;
+      .cls-7 {
+        fill: #bbc
       }
 
-      .i {
-        fill: #aab;
+      .cls-8 {
+        fill: #f56
       }
-
-      .j {
-        fill: #bbc;
-      }
-
-      .k {
-        fill: #f56;
-      }
-    </style></defs>
-  <path class="sdw" d="M596.6,361.4a17.2,17.2,0,0,0,.9-5.6V19.3A17.3,17.3,0,0,0,580.3,2H81.7A17.3,17.3,0,0,0,64.5,19.3V355.9a17.2,17.2,0,0,0,.9,5.6H1v11.7a156.8,156.8,0,0,0,52.8,9.6H608.2a156.8,156.8,0,0,0,52.8-9.6V361.4Z"/>
-  <g>
-    <rect class="b" x="64.5" y="2" width="533.1" height="371.12" rx="17.3" ry="17.3"/>
-    <rect class="c" x="64.5" y="2" width="533.1" height="371.12" rx="17.3" ry="17.3"/>
-    <rect class="d" x="1" y="361.4" width="660" height="11.68"/>
-    <path class="e" d="M1,373.1a156.8,156.8,0,0,0,52.8,9.6H608.2a156.8,156.8,0,0,0,52.8-9.6Z"/>
-    <path class="f" d="M384.8,361.4a8.6,8.6,0,0,1-8.6,8.6H285.8a8.6,8.6,0,0,1-8.6-8.6Z"/>
-  </g>
-  <g>
-    <rect class="g" x="78.7" y="26" width="504.6" height="314.65"/>
-    <rect class="h" x="78.7" y="26" width="504.6" height="57.56"/>
-    <rect class="i" x="166.8" y="242.8" width="70.1" height="97.85"/>
-    <rect class="i" x="252.9" y="242.8" width="70.1" height="97.85"/>
-    <rect class="i" x="339" y="242.8" width="70.1" height="97.85"/>
-    <rect class="i" x="425.1" y="242.8" width="70.1" height="97.85"/>
-    <rect class="j" x="166.8" y="98.9" width="328.4" height="128.55"/>
-    <rect class="k" x="166.8" y="40.4" width="70.1" height="28.78"/>
-    <rect class="g" x="339" y="48" width="40" height="13.43"/>
-    <rect class="g" x="397.1" y="48" width="40" height="13.43"/>
-    <rect class="g" x="455.1" y="48" width="40" height="13.43"/>
-  </g>
-</svg>
+]]></style></defs>
+<g>
+<rect class="cls-1" x="67" y="2" width="534" height="371" rx="17" ry="17"/>
+<path class="cls-2" d="M3,361H663a0,0,0,0,1,0,0v9a12,12,0,0,1-12,12H15a12,12,0,0,1-12-12v-9.3a0,0,0,0,1,0,0Z"/>
+<path class="cls-3" d="M387,361.4a9,9,0,0,1-9,9H288a9,9,0,0,1-9-9Z"/>
+</g>
+<g>
+<rect class="cls-4" x="82" y="26" width="504" height="315"/>
+<rect class="cls-5" x="82" y="26" width="504" height="58"/>
+<rect class="cls-6" x="170" y="243" width="70" height="98"/>
+<rect class="cls-6" x="256" y="243" width="70" height="98"/>
+<rect class="cls-6" x="342" y="243" width="70" height="98"/>
+<rect class="cls-6" x="428" y="243" width="70" height="98"/>
+<rect class="cls-7" x="170" y="99" width="328" height="129"/>
+<rect class="cls-8" x="170" y="40" width="70" height="29"/>
+<rect class="cls-2" x="342" y="48" width="40" height="13"/>
+<rect class="cls-2" x="400" y="48" width="40" height="13"/>
+<rect class="cls-2" x="458" y="48" width="40" height="13"/>
+</g></svg>

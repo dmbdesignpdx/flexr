@@ -1,80 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="title" viewBox="0 0 692 430">
-<title id="title">Flat illustration of a smart phone with a minimalistic-styled website</title>
-<defs><filter id="a"><feGaussianBlur stdDeviation="7"/></filter>
-    <style><![CDATA[
-      .sdw {fill: #000010; opacity: 0.7; filter: url(#a)}
-
-      .b {
-        fill: #a6a8ab;
-      }
-
-      .c, .e, .f {
-        fill: none
-      }
-
-      .c {
-        stroke: #bbbdbf;
+<title id="title">Illustration of a smart phone with a minimalistic-styled website</title>
+<defs><style><![CDATA[
+      * {
+        stroke: #1c1c2d;
         stroke-width: 3px;
       }
 
-      .d {
-        fill: #1f2034;
+      .cls-2 {
+        fill: #363647;
       }
 
-      .e {
-        stroke: #111;
-        stroke-linecap: round;
-        stroke-width: 4px;
+      .cls-3 {
+        fill: none;
       }
 
-      .f {
-        stroke: #112;
-        stroke-width: 2px;
+      .cls-4 {
+        opacity: 0.6;
+        isolation: isolate;
       }
 
-      .g {
-        opacity: 0.6
-      }
-
-      .h {
+      .cls-5 {
         fill: #dde;
       }
 
-      .i {
+      .cls-6 {
         fill: #668;
       }
 
-      .j {
+      .cls-7 {
         fill: #aab;
       }
 
-      .k {
+      .cls-8 {
         fill: #bbc;
       }
 
-      .l {
+      .cls-9 {
         fill: #f56;
       }
-    ]]></style>
-  </defs>
-  <rect class="sdw" x="496.6" y="55" width="174.4" height="360" rx="23" ry="23"/>
-  <g>
-    <path class="b" d="M672.3,180.5h1.3a1.3,1.3,0,0,1,1.3,1.3v22.2a1.3,1.3,0,0,1-1.3,1.3h-1.3a0,0,0,0,1,0,0V180.5A0,0,0,0,1,672.3,180.5Z"/>
-    <path class="b" d="M493.9,140.9h1.3a0,0,0,0,1,0,0v24.9a0,0,0,0,1,0,0h-1.3a1.3,1.3,0,0,1-1.3-1.3V142.2A1.3,1.3,0,0,1,493.9,140.9Z"/>
-    <path class="b" d="M493.9,103.5h1.3a0,0,0,0,1,0,0v24.9a0,0,0,0,1,0,0h-1.3a1.3,1.3,0,0,1-1.3-1.3V104.8A1.3,1.3,0,0,1,493.9,103.5Z"/>
-    <rect class="c" x="496.6" y="55" width="174.4" height="360" rx="23.1" ry="23.1"/>
-    <rect class="d" x="496.6" y="55" width="174.4" height="360" rx="23.1" ry="23.1"/>
-    <!-- <line class="e" x1="566.9" y1="67.2" x2="600.7" y2="67.2"/> -->
-    <rect class="f" x="564.6" y="389.6" width="38.3" height="15.13" rx="7.6" ry="7.6"/>
-  </g>
-  <g>
-    <rect class="g" x="501.8" y="89.7" width="164" height="292"/>
-    <rect class="h" x="501.8" y="89.7" width="164" height="292"/>
-    <rect class="i" x="501.8" y="89.7" width="164" height="32"/>
-    <rect class="j" x="511.8" y="291.7" width="68" height="80"/>
-    <rect class="j" x="587.8" y="291.7" width="68" height="80"/>
-    <rect class="k" x="511.8" y="131.7" width="144" height="150"/>
-    <rect class="l" x="563.8" y="97.7" width="40" height="16"/>
-  </g>
-</svg>
+]]></style></defs>
+<g>
+<rect class="cls-2" x="497" y="55" width="174" height="360" rx="23" ry="23"/>
+<rect class="cls-3" x="565" y="390" width="38" height="16" rx="8" ry="8"/>
+</g>
+<g>
+<rect class="cls-4" x="504" y="90" width="160" height="292"/>
+<rect class="cls-5" x="504" y="90" width="160" height="292"/>
+<rect class="cls-6" x="504" y="90" width="160" height="32"/>
+<rect class="cls-7" x="514" y="292" width="66" height="80"/>
+<rect class="cls-7" x="589" y="292" width="66" height="80"/>
+<rect class="cls-8" x="514" y="132" width="140" height="150"/>
+<rect class="cls-9" x="564" y="98" width="39" height="16"/>
+</g></svg>
