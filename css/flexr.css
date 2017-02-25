@@ -1,4 +1,4 @@
-/* Flexr Grid - 1.0.0
+/* Flexr Grid - Preview
 Copyright 2016 Flexr. All rights reserved. More info at flexrgrid.com */
 
 .row, *[class*="col-"] {
@@ -159,7 +159,7 @@ Copyright 2016 Flexr. All rights reserved. More info at flexrgrid.com */
         width: 100%
     }
 
-    .exp .col-1 {
+    .row.exp .col-1 {
         width: 50%
     }
 
