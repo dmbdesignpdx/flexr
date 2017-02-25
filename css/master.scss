@@ -12,9 +12,7 @@
 //  Global Values and Resets
 
 html, body {
-    height: 100vh;
-    padding: 0;
-    margin: 0
+    height: 100vh
 }
 
 body {
@@ -24,9 +22,14 @@ body {
     @extend %smoothFonts;
 }
 
-nav, main, section, header, footer, img, object, svg, address, textarea, pre, button, figure {
+html, body, nav, main, section, header, footer, img, object, svg, address, textarea, button, figure, h1, h2, h3, p, ul, li, a, code, pre {
+    padding: 0;
+    margin: 0
+}
+
+nav, main, section, header, footer, img, object, svg, address, textarea, pre, button, figure, nav a, a[role=button] {
     display: block;
-    position: relative
+    position: relative;
 }
 
 nav, section, header, footer, img, object {
@@ -58,14 +61,8 @@ address {
 }
 
 ul, li {
-    padding: 0;
     position: relative;
-    margin: 0;
     list-style: none
-}
-
-nav a, a[role=button] {
-    display: block
 }
 
 address a {
@@ -75,24 +72,20 @@ address a {
 a {
     position: relative;
     text-decoration: none;
-    @extend %noTap
+    @extend %noTap;
 }
 
 section {
-    padding: 120px 0
+    padding: 120px 0;
 }
 
 main ~ section:last-of-type {
-    padding: 0 0 130px
+    padding: 0 0 130px;
 }
 
 
 
 //    Text
-
-h1, h2, p, a, code, pre, address, textarea, button, figure {
-    margin: 0
-}
 
 h2, li, a, button {
     font-weight: 700;

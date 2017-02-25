@@ -36,16 +36,12 @@
 
 .with-icon::before {
     display: block;
-    width: 180px;
-    height: 180px;
-    margin: 0 auto 26px;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
     content: '';
     @extend %useSprite;
     background-position: 0 0
-}
-
-.header .with-icon::before {
-    margin: 0 auto -10px
 }
 
 

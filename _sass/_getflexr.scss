@@ -26,16 +26,16 @@
 #download-section {
 
     h2 {
-        padding-top: 20px;
+        margin-top: 10px;
         @extend %downloadText;
     }
 
     p {
-        padding-bottom: 50px;
         @extend %downloadText;
     }
 
     a {
+        padding: 50px 0;
         font-weight: 300;
 
         &:hover {
