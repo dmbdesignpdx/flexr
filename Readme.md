@@ -1,4 +1,4 @@
-# Flexr Grid - Version 1.0.0
+# Flexr Grid - Version 1.1.0
 
 Flexr is a responsive grid for those who just want a grid. Created by a web designer with an acute focus on the digital grid layout and its response to different screens. It features three types of column-collapsing: Expanding, Shrinking and Filling.
 
@@ -160,11 +160,11 @@ Break Point|Column Width|Gutter Width
 ```
 
 
-### Current Version: 1.0.0
+### Current Version: 1.1.0
 
-Release Date: **February 19, 2017**
+Release Date: **February 25, 2017**
 
-Release Notes: Stable version release!
+Release Notes: Fixes width issue with .exp .col-1
 
 File Size: 1.4KB
 
