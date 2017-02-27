@@ -2,54 +2,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="title" viewBox="0 0 692 430">
 <title id="title">Illustration of a smart phone with a minimalistic-styled website</title>
 <defs><style><![CDATA[
-      * {
-        stroke: #1c1c2d;
-        stroke-width: 3px;
-      }
+      * { stroke: #1c1c2d; stroke-width: 2px }
 
-      .cls-2 {
-        fill: #363647;
-      }
+      .cls-2 { fill: #363647 }
 
-      .cls-3 {
-        fill: none;
-      }
+      .cls-3 { fill: none }
 
-      .cls-4 {
-        opacity: 0.6;
-        isolation: isolate;
-      }
+      .cls-5 { fill: #dde }
 
-      .cls-5 {
-        fill: #dde;
-      }
+      .cls-6 { fill: #668 }
 
-      .cls-6 {
-        fill: #668;
-      }
+      .cls-7 { fill: #aab }
 
-      .cls-7 {
-        fill: #aab;
-      }
+      .cls-8 { fill: #bbc }
 
-      .cls-8 {
-        fill: #bbc;
-      }
-
-      .cls-9 {
-        fill: #f56;
-      }
+      .cls-9 { fill: #f56 }
 ]]></style></defs>
-<g>
 <rect class="cls-2" x="497" y="55" width="174" height="360" rx="23" ry="23"/>
 <rect class="cls-3" x="565" y="390" width="38" height="16" rx="8" ry="8"/>
-</g>
-<g>
-<rect class="cls-4" x="504" y="90" width="160" height="292"/>
 <rect class="cls-5" x="504" y="90" width="160" height="292"/>
 <rect class="cls-6" x="504" y="90" width="160" height="32"/>
 <rect class="cls-7" x="514" y="292" width="66" height="80"/>
 <rect class="cls-7" x="589" y="292" width="66" height="80"/>
 <rect class="cls-8" x="514" y="132" width="140" height="150"/>
-<rect class="cls-9" x="564" y="98" width="39" height="16"/>
-</g></svg>
+<rect class="cls-9" x="564" y="98" width="39" height="16"/></svg>
