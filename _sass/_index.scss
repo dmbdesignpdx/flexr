@@ -103,7 +103,7 @@
     }
 
     .browser {
-        @include size(90%,auto);
+        @include size(92%,auto);
         margin: 0 auto;
         @extend %useSprite;
 
