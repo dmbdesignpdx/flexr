@@ -66,6 +66,7 @@
     background: darken($blueGrayTwo,2);
 
     .row {
+        -webkit-align-items: center;
         align-items: center;
 
     }
@@ -125,11 +126,11 @@
     }
 
     .chrome {
-        background-position: 20% 33.333%
+        background-position: 40% 33.333%
     }
 
     .safari {
-        background-position: 40% 33.333%
+        background-position: 20% 33.333%
     }
 
     .opera {
