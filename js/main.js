@@ -4,7 +4,7 @@ function introAction() {
 
     if (document.body.id == "home") {
 
-        document.getElementById('hero').classList.remove('forIntro')
+        setTimeout(function(){document.getElementById('hero').classList.remove('forIntro')},100);
 
     }
 
