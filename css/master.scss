@@ -75,11 +75,11 @@ a {
 }
 
 section {
-    padding: 120px 0;
+    padding: 120px 0
 }
 
 main ~ section:last-of-type {
-    padding: 0 0 130px;
+    padding: 0 0 130px
 }
 
 
@@ -144,11 +144,6 @@ button ~ p {
 p strong, p b {
     font-weight: 700;
     letter-spacing: .2pt
-}
-
-h2 b {
-    font-weight: inherit;
-    color: $flexrRed
 }
 
 textarea, code, pre {

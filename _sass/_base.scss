@@ -108,13 +108,10 @@
 
 //  Footer
 
-%footerText{
-    font-size: 14px;
-    line-height: 1.4em;
-    color: $blueGraySix
-}
-
 footer {
+    font-size: 15px;
+    line-height: 1.4em;
+    color: $blueGraySix;
     background: $blueGrayOne;
 
     .row div:last-child {
@@ -132,19 +129,20 @@ footer {
     }
 
     address {
-        width: 73%;
-        padding: 50px 0;
-        @extend %footerText;
+        width: 100%;
+        margin: 50px 0 25px;
+        line-height: 1.5em
     }
 
     small {
-        margin-bottom: 106px;
+        margin-bottom: 50px;
         align-self: flex-end;
-        @extend %footerText;
+        line-height: 1.3em
     }
 
-    a {
-        width: auto;
-        margin-top: 40px
+    p {
+        font-size: inherit;
+        margin-bottom: 50px
     }
+
 }
