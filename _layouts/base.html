@@ -7,50 +7,10 @@
 
 <body id="{{ page.bodyID }}">
 
-    <header id="nav">
-
-        <nav class="row">
-
-            <ul>
-
-                <li><a class="col-x" href="/"><img src="/img/flexr-logo.svg" alt="Flexr Grid logotype"/></a></li>
-
-                <li><a class="col-x links" href="/flexr-grid/">The Grid</a></li>
-
-                <li><a class="col-x links" href="/use-flexr/">Use It</a></li>
-
-                <li><a class="col-x links" href="/get-flexr/">Get It</a></li>
-
-            </ul>
-
-        </nav>
-
-    </header>
+    {% include nav.html %}
 
     {{ content }}
 
-    <footer>
-
-        <div class="row">
-
-            <div class="col-8">
-
-                <address>The Flexr grid, logo, and website were created and designed by: <br><a href="http://danielblake.design" target="_blank" rel="author">danielblake.design</a></address>
-
-                <p>This site is made with <a href="https://jekyllrb.com" target="_blank">Jekyll</a> and is hosted on <a href="https://github.com">GitHub</a>.</a></p>
-
-            </div>
-
-            <div class="col-4">
-
-                <img src="/img/flexr-logo.svg" alt="Flexr Grid logotype"/>
-
-                <small>&copy; 2016 Flexr. All rights reserved. All other trademarks are the property of their respective owners.</small>
-
-            </div>
-
-        </div>
-
-    </footer>
+    {% include footer.html %}
 
 </body></html>
