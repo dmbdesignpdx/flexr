@@ -1,0 +1,192 @@
+html, body {
+    height: 100vh
+}
+
+body {
+    min-height: 100vh;
+    background: $blueGrayTwo;
+    font: 300 20px Roboto, 'Helvetica Neue', Helvetica, sans-serif;
+    @extend %smoothFonts;
+}
+
+html, body, nav, main, section, header, footer, img, object, svg, address, textarea, button, figure, h1, h2, h3, p, ul, li, a, code, pre {
+    padding: 0;
+    margin: 0
+}
+
+nav, main, section, header, footer, img, object, svg, address, textarea, pre, button, figure, nav a, [role=button] {
+    display: block;
+    position: relative
+}
+
+nav, section, header, footer, img, object {
+    @include size(100%,auto)
+}
+
+img, svg, object {
+    box-sizing: border-box
+}
+
+textarea, button {
+    border: none;
+    outline: none;
+    overflow: auto;
+    @include appearance(none)
+}
+
+img, a:active, a:focus {
+    border: none;
+    outline: none
+}
+
+object {
+    pointer-events: none
+}
+
+address {
+    font-style: normal
+}
+
+ul, li {
+    position: relative;
+    list-style: none
+}
+
+address a {
+    display: inline-block
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    @extend %noTap;
+}
+
+section {
+    padding: 120px 0
+}
+
+main ~ section:last-of-type {
+    padding: 0 0 130px
+}
+
+
+
+//    Text
+
+h2, li, a, button {
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: .2pt
+}
+
+h1, h2 {
+    color: $blueGray
+}
+
+h1, h2, p, address {
+    width: 100%;
+    text-align: left
+}
+
+h1 {
+    font-size: 49px;
+    font-weight: 300;
+    letter-spacing: -.2pt
+}
+
+h2 {
+    font-size: 30px
+}
+
+.header h1 {
+    text-align: center
+}
+
+p, address {
+    line-height: 1.5;
+    color: $blueGraySeven;
+    letter-spacing: .1pt
+}
+
+h1 + p {
+    margin: 15px 0 0
+}
+
+p + .primary {
+    margin: 28px auto 0
+}
+
+h2:not(:first-of-type) {
+   margin-top: 60px
+}
+
+h2 + p {
+   margin-top: 30px
+}
+
+p + p {
+   margin-top: 30px
+}
+
+
+pre + p {
+    margin-top: 30px
+}
+
+button + p {
+    margin-top: 100px
+}
+
+p strong, p b {
+    font-weight: 700;
+    letter-spacing: .2pt
+}
+
+textarea, code, pre {
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #DDE;
+    background: #42425d;
+    font-family: monospace;
+}
+
+textarea {
+    @include size(702px,4.9em);
+    padding: 26px;
+    box-shadow: none;
+    resize: none;
+    margin: 40px auto 0;
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+code, pre {
+    width: 100%;
+    padding: 1.6em 2em 1.8em;
+    margin: 30px 0;
+    overflow-x: scroll;
+    overflow-y: auto;
+}
+
+p code {
+    padding: 5px 12px 6px;
+    padding: .2em .7em .3em;
+    margin: 0 4px;
+    white-space: nowrap
+}
+
+code strong, pre strong, pre b, code b, footer a, p a {
+    font-weight: 700;
+    color: $flexrRed
+}
+
+p a:hover, address a:hover {
+    color: $blueGraySeven
+}
+
+sup {
+    vertical-align: top
+}
