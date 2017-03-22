@@ -11,3 +11,14 @@ sass:
     style: compressed
 
 creator: Daniel Blake
+
+include: ["_pages"]
+
+#Defaults
+defaults:
+   -
+      scope:
+         path: ""
+         type: pages
+      values:
+         layout: "base"

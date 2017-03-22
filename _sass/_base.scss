@@ -51,7 +51,7 @@
         }
     }
 
-    a[href^="get-flexr"] {
+    a[href="/get-flexr/"] {
         color: $blueGrayTwo;
         background: $cyan;
         margin-right: 15px;
@@ -67,15 +67,15 @@
         }
     }
 
-    a[href^="flexr-grid"]::before {
+    a[href="/flexr-grid/"]::before {
         background-position: 0 66.666%
     }
 
-    a[href^="use-flexr"]::before {
+    a[href="/use-flexr/"]::before {
         background-position: 20% 66.666%
     }
 
-    a[href^="index"] {
+    a[href="/"] {
         width: 170px;
         cursor: default;
 
@@ -92,15 +92,15 @@
 
 //  Page Indication
 
-#the-grid #nav a[href^="flexr-grid"], #how-to #nav a[href^="use-flexr"] {
+#the-grid #nav a[href="/flexr-grid/"], #how-to #nav a[href="/use-flexr/"] {
     color: $flexrRed
 }
 
-#download #nav a[href^="get-flexr"] {
+#download #nav a[href="/get-flexr/"] {
     background: $blueGraySeven
 }
 
-#the-grid #nav a[href^="flexr-grid"]::before, #how-to #nav a[href^="use-flexr"]::before, #download #nav a[href^="get-flexr"]::before {
+#the-grid #nav a[href="/flexr-grid/"]::before, #how-to #nav a[href="/use-flexr/"]::before, #download #nav a[href="/get-flexr/"]::before {
     background-position-y: 100%
 }
 
@@ -110,7 +110,7 @@
 
 footer {
     font-size: 15px;
-    line-height: 1.4em;
+    line-height: 1.4;
     color: $blueGraySix;
     background: $blueGrayOne;
 
@@ -131,13 +131,13 @@ footer {
     address {
         width: 100%;
         margin: 50px 0 25px;
-        line-height: 1.5em
+        line-height: 1.5
     }
 
     small {
         margin-bottom: 50px;
         align-self: flex-end;
-        line-height: 1.3em
+        line-height: 1.3
     }
 
     p {
