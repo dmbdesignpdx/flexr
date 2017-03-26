@@ -1,0 +1,958 @@
+/* Turntable i8.0 by Daniel Blake -- danielblake.design */
+
+// Create some fresh and sassy beats on the fly with presets and custom mixins!
+
+
+// Turntable Variables
+
+$prefix: -o-, -ms-, -moz-, -webkit-, null;
+
+
+// --- Platter (Mixins with Arguments) --- //
+
+// --- i. Prefix Mixins --- //
+
+// Flexbox:
+
+@mixin box($var) {
+   display: -ms-#{$var}box;
+   display: -webkit-#{$var};
+   display: $var;
+}
+
+
+// 1. Flex Direction
+
+@mixin boxDirection($var) {
+   @for $i from 2 through 5 {
+      @if (nth($prefix,$i) != -moz-) {
+         #{nth($prefix,$i)}flex-direction: $var
+      }
+   }
+}
+
+
+// 2. Flex Wrap
+
+@mixin boxWrap($var) {
+   @if ($var == nowrap) {
+      -ms-flex-wrap: none;
+   } @else {
+      -ms-flex-wrap: $var;
+   }
+   -webkit-flex-wrap: $var;
+   flex-wrap: $var;
+}
+
+
+// 3. Justify Content
+
+@mixin boxHorizontal($var) {
+   @if ($var == flex-start) {
+      -ms-flex-pack: start;
+   } @else if ($var == flex-end) {
+      -ms-flex-pack: end;
+   } @else if ($var == space-between) {
+      -ms-flex-pack: justify;
+   } @else if ($var == space-around) {
+      -ms-flex-pack: distribute;
+   } @else {
+      -ms-flex-pack: $var;
+   }
+   -webkit-justify-content: $var;
+   justify-content: $var;
+}
+
+
+// 4. Align Content
+
+@mixin boxVertical($var) {
+   @if ($var == flex-start) {
+      -ms-flex-line-pack: start;
+   } @else if ($var == flex-end) {
+      -ms-flex-line-pack: end;
+   } @else if ($var == space-between) {
+      -ms-flex-line-pack: justify;
+   } @else if ($var == space-around) {
+      -ms-flex-line-pack: distribute;
+   } @else {
+      -ms-flex-line-pack: $var;
+   }
+   -webkit-align-content: $var;
+   align-content: $var;
+}
+
+
+// 5. Align Items
+
+@mixin boxItems($var) {
+   @if ($var == flex-start) {
+      -ms-flex-align: start;
+   } @else if ($var == flex-end) {
+      -ms-flex-align: end;
+   } @else {
+      -ms-flex-align: $var;
+   }
+   -webkit-align-items: $var;
+   align-items: $var;
+}
+
+
+// 6. Align Self
+
+@mixin boxSelf($var) {
+   @if ($var == flex-start) {
+      -ms-flex-item-align: start;
+   } @else if ($var == flex-end) {
+      -ms-flex-item-align: end;
+   } @else {
+      -ms-flex-item-align: $var;
+   }
+   -webkit-align-self: $var;
+   align-self: $var;
+}
+
+
+// 7. Order
+
+@mixin boxOrder($var) {
+   -ms-flex-order: $var;
+   -webkit-order: $var;
+   order: $var;
+}
+
+
+// 8. Grow
+
+@mixin boxGrow($var) {
+   -ms-flex-positive: $var;
+   -webkit-flex-grow: $var;
+   flex-grow: $var;
+}
+
+
+// 9. Shrink
+
+@mixin boxShrink($var) {
+   -ms-flex-negative: $var;
+   -webkit-flex-shrink: $var;
+   flex-shrink: $var;
+}
+
+
+// 9. Basis
+
+@mixin boxBasis($var) {
+   -ms-flex-preferred-size: $var;
+   -webkit-flex-basis: $var;
+   flex-basis: $var;
+}
+
+
+//  Filter
+
+@mixin mix($vars){
+   @for $i from 4 through 5 {
+      #{nth($prefix,$i)}filter: $vars;
+   }
+}
+
+
+//  Appearance
+
+@mixin looks($var){
+   @for $i from 3 through 5 {
+      #{nth($prefix,$i)}appearance: $var;
+   }
+}
+
+
+//  Transform
+
+@mixin change($what, $xy:null) {
+   @each $item in $prefix {
+      #{$item}transform: $what;
+   }
+   @if ($xy) {
+      @each $item in $prefix {
+         #{$item}transform-origin: $xy;
+      }
+   }
+}
+
+@mixin changeOrigin($var) {
+   @each $item in $prefix {
+      #{$item}transform-origin: $var;
+   }
+}
+
+@mixin changeStyle($var){
+   @each $item in $prefix {
+      #{$item}transform-style: $var;
+   }
+}
+
+
+//  Transition
+
+@mixin time($vars...) {
+   @each $item in $prefix {
+      $list: ();
+      @each $var in $vars {
+         @if index($var,transform) {
+            $var: set-nth($var,1,#{$item}transform);
+         }
+         @if index($var,filter) {
+            $var: set-nth($var,1,#{$item}filter);
+         }
+         $list: append($list,$var,comma);
+      }
+      #{$item}transition: $list;
+   }
+}
+
+@mixin timeDelay($var) {
+   @each $item in $prefix {
+      #{$item}transition-delay: $var;
+   }
+}
+
+@mixin timeDuration($var) {
+   @each $item in $prefix {
+      #{$item}transition-duration: $var;
+   }
+}
+
+@mixin timeProperty($var) {
+   @each $item in $prefix {
+      @if ($var == transform or $var == filter) {
+         #{$item}transition-property: #{$item}#{$var};
+      } @else {
+         #{$item}transition-property: $var;
+      }
+   }
+}
+
+
+//  Animation
+
+@mixin animate($vars...){
+   @for $i from 3 through 5 {
+      #{nth($prefix,$i)}animation: $vars;
+   }
+}
+
+@mixin animateDelay($var){
+   @for $i from 3 through 5 {
+      #{nth($prefix,$i)}animation-delay: $vars;
+   }
+}
+
+
+//  Keyframes
+
+@mixin frames($name) {
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+
+// Perspective
+
+@mixin view($depth, $xy:null) {
+   @for $i from 4 through 5 {
+      #{nth($prefix,$i)}perspective: $depth;
+   }
+   @if ($xy) {
+      @for $i from 4 through 5 {
+         #{nth($prefix,$i)}perspective-origin: $xy;
+      }
+   }
+}
+
+@mixin viewOrigin($var) {
+   @for $i from 4 through 5 {
+      #{nth($prefix,$i)}perspective-origin: $var;
+   }
+}
+
+
+// Text Size Adjust
+
+@mixin textAdjust($var) {
+   @for $i from 2 through 5 {
+      @if (nth($prefix,$i) != -moz-) {
+         #{nth($prefix,$i)}text-size-adjust: $var;
+      }
+   }
+}
+
+
+// User Select
+
+@mixin select($var) {
+   @for $i from 2 through 5 {
+      #{nth($prefix,$i)}user-select: $var;
+   }
+}
+
+
+// Box Sizing
+
+@mixin actualSize($arg) {
+   -moz-box-sizing: $arg;
+   box-sizing: $arg
+}
+
+
+// Backface Visibility
+
+@mixin otherSide($arg) {
+   @for $i from 3 through 5 {
+      #{nth($prefix,$i)}backface-visibility: $arg;
+   }
+}
+
+
+// Tap Highlight Color
+
+@mixin tapColor($arg) {
+   @for $i from 4 through 5 {
+      #{nth($prefix,$i)}tap-highlight-color: $arg;
+   }
+}
+
+
+// Font Smoothing
+@mixin textSmooth($arg) {
+   @if($arg == antialiased) {
+      -moz-osx-font-smoothing: grayscale;
+   }
+   @for $i from 4 through 5 {
+      #{nth($prefix,$i)}font-smoothing: $arg;
+   }
+}
+
+
+
+// --- ii. Custom Mixins --- //
+
+//  Media Queries:
+
+// 1. Max Screen Width
+
+@mixin maxwidth($var) {
+    @media only screen and (max-width: $var) {
+        @content;
+    }
+}
+
+
+// 2. Min Screen Width
+
+@mixin minwidth($var) {
+    @media only screen and (max-width: $var) {
+        @content;
+    }
+}
+
+
+// 3. Min and Max Screen Width
+
+@mixin between($min, $max) {
+    @media only screen and (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
+
+
+// Width and Height Shorthand
+
+@mixin size($vars) {
+    width: nth($vars,1);
+    @if length($vars) > 1 {
+        height: nth($vars,2);
+    }
+    @else {
+        height: nth($vars,1);
+    }
+}
+
+
+// Positioning shorthand like margin and padding
+
+@mixin where($vars) {
+   top: nth($vars,1);
+   @if length($vars) > 3 {
+      right: nth($vars,2);
+      bottom: nth($vars,3);
+      left: nth($vars,4);
+   }
+   @else if length($vars) > 2 {
+      right: nth($vars,2);
+      bottom: nth($vars,3);
+      left: nth($vars,2);
+   }
+   @else if length($vars) > 1 {
+      right: nth($vars,2);
+      bottom: nth($vars,1);
+      left: nth($vars,2);
+   }
+   @else {
+      right: nth($vars,1);
+      bottom: nth($vars,1);
+      left: nth($vars,1);
+   }
+}
+
+
+// SVG Stroke shorthand like border
+
+@mixin stroke($vars) {
+   stroke: nth($vars,2);
+   stroke-width: nth($vars,1);
+   @if length($vars) > 2 {
+      @if nth($vars,3) == dashed {
+         stroke-dasharray: 10,10
+      } @else if nth($vars,3) == dotted {
+         stroke-dasharray: 0,10;
+         stroke-linecap: round;
+      }
+   }
+}
+
+
+// Create Classes/IDs with name and number
+
+@mixin numSelector($name, $a, $b) {
+   @for $i from $a to $b {
+      #{$name}-#{$i} {
+         @content;
+      }
+   }
+}
+
+
+// Create Classes/IDs with custom prefix
+
+@mixin preName($pre, $list...) {
+   @each $item in $list {
+      #{$pre}-#{$item} {
+         @content;
+      }
+   }
+}
+
+
+// Create Classes/IDs with custom postfix
+
+@mixin postName($post, $list...) {
+   @each $item in $list {
+      #{$item}-#{$post} {
+         @content;
+      }
+   }
+}
+
+
+// Opacity with Blend Mode
+
+@mixin opaque($amt, $type) {
+   opacity: $amt;
+   mix-blend-mode: $type;
+}
+
+
+// Circle
+
+@mixin circle($var) {
+   width: $var;
+   height: $var;
+   border-radius: 50%;
+}
+
+
+// Oval
+
+@mixin oval($vars) {
+   width: nth($vars,1);
+   height: nth($vars,2);
+   border-radius: 50%;
+}
+
+
+// Triangle
+
+@mixin triangle($vars, $c, $r:null) {
+   $nw: nth($vars,1)/2;
+   width: 0;
+   height: 0;
+   border-left: $nw solid transparent;
+   border-right: $nw solid transparent;
+   border-bottom: nth($vars,2) solid $c;
+   @if ($r) {
+      @include change(rotate($r));
+   }
+}
+
+
+// Parallelogram
+
+@mixin parallelogram($vars, $s) {
+   @include change(skew($s));
+   width: nth($vars,1);
+   height: nth($vars,2);
+}
+
+
+// Heart
+// Nicolas Gallagher -- nicolasgallagher.com
+
+@mixin heart($w, $c) {
+   $nw: $w / 2;
+   width: $w;
+   height: $w * .9;
+
+   &::before, &::after {
+      position: absolute;
+      top: 0;
+      width: $nw;
+      height: $w * .8;
+      content: '';
+      background: $c;
+      border-radius: $nw $nw 0 0;
+   }
+
+   &::before {
+      @include change(rotate(-45deg, 0 100%));
+      left: $nw;
+   }
+
+   &::after {
+      @include change(rotate(45deg, 100% 100%));
+      left: 0;
+   }
+}
+
+
+// Mantain a ratio
+
+@mixin ratio($w, $l:$w) {
+   height: auto;
+
+   &::before {
+      display: block;
+      max-width: 100%;
+      padding-top: ($l/$w)*100%;
+      content: '';
+   }
+}
+
+
+// Buttons:
+
+// 1. with Absolute Width
+
+@mixin btnRel($vars, $r:null) {
+   display: inline-block;
+   width: auto;
+   height: nth($vars,2);
+   padding: 0 nth($vars,1);
+   line-height: nth($vars,2);
+   text-decoration: none;
+   letter-spacing: .1pt;
+   @if $r {
+      border-radius: $r;
+   }
+}
+
+// 2. with Relative Width
+
+@mixin btnAbs($vars, $r:null) {
+   display: block;
+   width: nth($vars,1);
+   height: nth($vars,2);
+   line-height: nth($vars,2);
+   text-decoration: none;
+   text-align: center;
+   letter-spacing: .2pt;
+   @if $r {
+      border-radius: $r;
+   }
+}
+
+
+// Box Shadow
+
+@mixin shadow($var) {
+   @for $i from 4 through 5 {
+      #{nth($prefix,$i)}box-shadow: $var;
+   }
+};
+
+
+// Overflow X and Y Shorthand
+
+@mixin flowage($var) {
+   @if length($var) > 1 {
+      overflow-x: nth($var,1);
+      overflow-y: nth($var,2);
+   } @else {
+      overflow: $var
+   }
+}
+
+
+
+// --- PRESETS (Predefined Mixins and Placeholders) --- //
+
+// --- i. Based on Prev Mixins --- //
+
+// No highlight tap on mobile
+
+@mixin noTap {
+   @include tapColor(transparent);
+   @include tapColor(none);
+}
+
+%noTap {
+   @include noTap;
+}
+
+
+// For smoother 2D transforms:
+
+// 1. This one goes on the thing being transformed
+
+@mixin smoothMover {
+   @include otherSide(hidden);
+}
+
+%smoothMover {
+   @include smoothMover;
+}
+
+
+// 2. This goes on the parent
+
+@mixin smoothParent {
+   @include changeStyle(preserve-3d);
+}
+
+%smoothParent {
+   @include smoothParent;
+}
+
+
+// Font Antialiasing on OSX
+
+@mixin smoothFonts {
+   @include textSmooth(antialiased);
+}
+
+%smoothFonts {
+   @include smoothFonts;
+}
+
+
+// No Text Size Adjusting;
+
+@mixin noTextAdjust {
+   @include textAdjust(100%);
+}
+
+%noTextAdjust {
+   @include noTextAdjust;
+}
+
+
+// Use Flexbox
+
+@mixin flex {
+   @include box(flex);
+}
+
+%flex {
+   @include flex;
+}
+
+@mixin inlineFlex {
+   @include box(inline-flex);
+}
+
+%inlineFlex {
+   @include inlineFlex;
+}
+
+
+// Remove Default Appearance
+
+@mixin noDefault {
+   @include looks(none);
+}
+
+%noDefault {
+   @include noDefault;
+}
+
+
+// No User Select
+
+@mixin noSelect {
+   @include select(none);
+}
+
+%noSelect {
+   @include noSelect;
+}
+
+
+// Widescreen ratio
+
+@mixin widescreen {
+   @include ratio(16,9);
+}
+
+%widescreen {
+   @include widescreen;
+}
+
+
+// Standard ratio
+
+@mixin standard {
+   @include ratio(4,3);
+}
+
+%standard {
+   @include standard;
+}
+
+
+// Golden ratio
+
+@mixin goldenRatio {
+   @include ratio(1,0.618);
+}
+
+%goldenRatio {
+   @include goldenRatio;
+}
+
+
+// Box Sizing with Border
+
+@mixin withAll {
+   @include actualSize(border-box);
+}
+
+%withAll {
+   @include withAll;
+}
+
+
+// --- ii. Custom Presets --- //
+
+// Center THIS OBJ with Absolute Positioning
+
+@mixin ctrAbs {
+   @include where(0);
+   position: absolute;
+   margin: auto;
+}
+
+%ctrAbs {
+   @include ctrAbs;
+}
+
+
+// Center THIS OBJ Horizontally with Relative Positioning
+
+@mixin ctrRel {
+   position: relative;
+   margin-right: auto;
+   margin-left: auto;
+}
+
+%ctrRel {
+   @include ctrRel;
+}
+
+
+// Center Objs in THIS CONTAINER with Flexbox
+
+@mixin ctrBox {
+   @include box(flex);
+   @include boxHorizontal(center);
+   @include boxVertical(center);
+}
+
+%ctrBox {
+   @include ctrBox;
+}
+
+
+// Box Shadows:
+
+// 1. Extra Small
+
+@mixin useShadow($var) {
+   $a: rgba(0,0,30,.3);
+   @if $var == xs {
+      @include shadow(0 0 2px $a);
+   } @else if $var == s {
+      @include shadow(0 1px 3px $a)
+   } @else if $var == m {
+      @include shadow(0 2px 6px $a)
+   } @else if $var == l {
+      @include shadow(0 3px 9px $a)
+   }
+}
+
+%useShadow-xs {
+   @include useShadow(xs);
+}
+
+
+// 2. Small
+
+%useShadow-s {
+   @include useShadow(s);
+}
+
+
+// 3. Medium
+
+%useShadow-m {
+   @include useShadow(m);
+}
+
+// 4. Large
+
+%useShadow-l {
+   @include useShadow(l);
+}
+
+
+// No Outline and Border
+
+@mixin noOuty {
+   border: 0;
+   outline: 0;
+}
+
+%noOuty {
+   @include noOuty;
+}
+
+
+// Typography:
+
+// 1. Body Copy
+
+@mixin bodyCopy {
+   font-weight: normal;
+   font-style: normal;
+   line-height: 1.5;
+   letter-spacing: .2pt;
+   text-transform: none;
+   text-rendering: optimizeSpeed;
+   font-stretch: normal;
+   word-spacing: .02em
+}
+
+%bodyCopy {
+   @include bodyCopy;
+}
+
+// 2. Titles
+
+@mixin titles {
+   font-style: normal;
+   line-height: 1.1;
+   letter-spacing: .1pt;
+   text-transform: none;
+   text-rendering: optimizeLegibility;
+   font-kerning: normal;
+   font-stretch: normal;
+   word-spacing: .01em
+}
+
+%titles {
+   @include titles;
+}
+
+
+// Buttons
+
+// Button Hover
+
+@mixin useBtnHover($vars) {
+   &:hover {
+      @if index($vars,shadow) {
+         @include useShadow(s);
+      }
+      @if index($vars,scale) {
+         @include change(scale(1.02));
+      }
+      @if index($vars,opacity) {
+         opacity: .9;
+      }
+   }
+}
+
+@mixin useBtnPush($vars) {
+   &:active {
+      @if index($vars,scale) {
+         @include change(scale(.96));
+      }
+      @if index($vars,opacity) {
+         opacity: .8;
+      }
+   }
+}
+
+
+// TESTING
+
+
+// Background Positioning in Steps
+
+@mixin bkgPos($var, $x, $y) {
+   $wlist: (0);
+   $hlist: (0);
+   @if nth($var,1) > 1 {
+      $s: nth($var,1) - 1;
+      $a: 100 / $s;
+      @for $i from 1 through $s {
+         @if $i < $s {
+            $n: $a * $i;
+            $n: percentage($n / 100);
+            $wlist: append($wlist,$n);
+         } @else {
+            $wlist: append($wlist,100%);
+         }
+      }
+   }
+   @if nth($var,2) > 1 {
+      $s: nth($var,2) - 1;
+      $a: 100 / $s;
+      @for $i from 1 through $s {
+         @if $i < $s {
+            $n: $a * $i;
+            $n: percentage($n / 100);
+            $hlist: append($hlist,$n);
+         } @else {
+            $hlist: append($hlist,100%);
+         }
+      }
+   }
+   background-position: nth($wlist,$x) nth($hlist,$y) ;
+}

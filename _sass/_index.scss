@@ -1,143 +1,125 @@
 //  Home
 
-%animationStyle {
-    -webkit-transition: .6s;
-    transition: .6s
+%animationTiming {
+   @include time(.6s)
 }
 
 #hero {
-    padding: 210px 0 150px;
-    overflow: hidden;
+   padding: 210px 0 150px;
+   overflow: hidden;
 
-    .row {
-        align-items: center
-    }
+   .row {
+      @extend %smoothParent;
+      @include boxItems(center)
+   }
 
-    pre {
-        margin-bottom: 0
-    }
+   pre {
+      margin-bottom: 0
+   }
 
-    .container {
-        @include size(100%,auto);
-        position: relative;
-        overflow: hidden;
-
-        &::before {
-            display: block;
-            width: 100%;
-            padding-top: 62.15%;
-            content: '';
-        }
-    }
+   .container {
+      @include size(100% auto);
+      @include ratio(1,0.6215);
+      position: relative;
+      overflow: hidden;
+   }
 }
 
 #hero-text {
-    @extend %flex;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-transition-property: opacity;
-    transition-property: opacity;
-    -webkit-transition-delay: 1s;
-    transition-delay: 1s;
-    @extend %animationStyle;
-    @extend %smoothMove;
-    @include transform(translateZ(0));
+   @extend %flex;
+   @extend %animationTiming;
+   @extend %smoothMover;
+   @include boxWrap(wrap);
+   @include timeProperty(opacity);
+   @include timeDelay(1s);
 
-    h1 {
-        text-align: left
-    }
+   h1 {
+      text-align: left
+   }
 
-    p {
-        width: 96%;
-        padding-bottom: 30px
-    }
+   p {
+      width: 96%;
+      padding-bottom: 30px
+   }
 
-    .primary {
-        margin: 0
-    }
+   .primary {
+      margin: 0
+   }
 
-    .secondary {
-        width: 90px;
-        margin: 0 0 0 30px
-    }
+   .secondary {
+      width: 90px;
+      margin: 0 0 0 30px
+   }
 }
 
 #expand {
-    background: darken($blueGrayTwo,2);
+   background: darken($blueGrayTwo,2);
 
-    .row {
-        -webkit-align-items: center;
-        align-items: center;
-
-    }
+   .row {
+      @include boxItems(center)
+   }
 }
 
 #expand-text {
-    @extend %flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-justify-content: center;
-    justify-content: center
+   @extend %flex;
+   @include boxDirection(column);
+   @include boxHorizontal(center)
+}
+
+#hero-image .container {
+   @extend %smoothParent;
 }
 
 #bottom, #top {
-    @include size(100%,auto);
-    position: absolute;
-    top: 0;
-    left: 0;
-    @extend %animationStyle;
-    @extend %smoothMove;
-    -webkit-transition-delay: .3s;
-    transition-delay: .3s
+   @extend %animationTiming;
+   @extend %smoothMover;
+   @include size(100% auto);
+   @include timeDelay(.3s);
+   position: absolute;
+   top: 0;
+   left: 0;
 }
 
 #top {
-    -webkit-transition-delay: .6s;
-    transition-delay: .6s
+   @include timeDelay(.6s);
 }
 
 #browsers {
 
-    p {
-        text-align: center
-    }
+   p {
+      text-align: center
+   }
 
-    .browser {
-        @include size(92%,auto);
-        margin: 0 auto;
-        @extend %useSprite;
+   .browser {
+      @extend %useSprite;
+      @include size(92% auto);
+      @include ratio(1);
+      margin: 0 auto;
 
-        &::before {
-            display: block;
-            width: 100%;
-            padding-top: 100%;
-            content: '';
-        }
+      & + p {
+         margin-top: 10px;
+         font-size: 15px;
+         line-height: 1.2
+      }
+   }
 
-        & + p {
-            margin-top: 10px;
-            font-size: 15px;
-            line-height: 1.2em
-        }
-    }
+   .firefox {
+      background-position: 0 33.333%
+   }
 
-    .firefox {
-        background-position: 0 33.333%
-    }
+   .chrome {
+      background-position: 40% 33.333%
+   }
 
-    .chrome {
-        background-position: 40% 33.333%
-    }
+   .safari {
+      background-position: 20% 33.333%
+   }
 
-    .safari {
-        background-position: 20% 33.333%
-    }
+   .opera {
+      background-position: 60% 33.333%
+   }
 
-    .opera {
-        background-position: 60% 33.333%
-    }
-
-    .edge {
-        background-position: 80% 33.333%
-    }
+   .edge {
+      background-position: 80% 33.333%
+   }
 }

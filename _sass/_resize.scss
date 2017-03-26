@@ -2,17 +2,17 @@
 
 @media only screen and (max-width : 1180px) {
 
-    h1 {
-        font-size: 46px
-    }
+   h1 {
+      font-size: 46px
+   }
 
-    h2 {
-        font-size: 29px
-    }
+   h2 {
+      font-size: 29px
+   }
 
-    p {
-        font-size: 18px
-    }
+   p {
+      font-size: 18px
+   }
 
 }
 
@@ -22,22 +22,22 @@
 
 @media only screen and (max-width : 940px) {
 
-    #nav .links {
-        font-size: 17px
-    }
+   #nav .links {
+      font-size: 17px
+   }
 
-    #browsers .browser {
-        width: 60%
-    }
+   #browsers .browser {
+      width: 60%
+   }
 
-    .testr {
-        position: absolute;
-        left: -9999px
-    }
+   .testr {
+      position: absolute;
+      left: -9999px
+   }
 
-    td {
-        padding: 18px
-    }
+   td {
+      padding: 18px
+   }
 
 }
 
@@ -47,91 +47,88 @@
 
 @media only screen and (max-width : 740px) {
 
-    h1 {
-        font-size: 30px
-    }
+   h1 {
+      font-size: 30px
+   }
 
-    h2 {
-        font-size: 21px
-    }
+   h2 {
+      font-size: 21px
+   }
 
-    h1 ~ p {
-        margin: 15px 0 0
-    }
+   h1 ~ p {
+      margin: 15px 0 0
+   }
 
-    #nav {
-        height: 56px;
+   #nav {
+      height: 56px;
 
-        a[href^="index"] {
-            width: 110px;
+      a[href^="index"] {
+         width: 110px;
 
-            img {
-                @include filter(hue-rotate(240deg) saturate(10%) brightness(190%));
+         img {
+            @include mix(hue-rotate(240deg) saturate(10%) brightness(190%));
 
-                &:active {
-                    @include filter(none);
-                }
+            &:active {
+               @include mix(none);
             }
-        }
-    }
+         }
+      }
+   }
 
-    #home #nav a[href^="index"] img {
-        @include filter(none);
-    }
+   #home #nav a[href^="index"] img {
+      @include mix(none);
+   }
 
-    .nav-scroll {
-        height: 56px !important
-    }
+   .nav-scroll {
+      height: 56px !important
+   }
 
-    .header {
-        padding: 0 0 60px
-    }
+   .header {
+      padding: 0 0 60px
+   }
 
-    section {
-        padding: 60px 0
-    }
+   section {
+      padding: 60px 0
+   }
 
-    main ~ section:last-of-type {
-        padding: 0 0 60px
-    }
+   main ~ section:last-of-type {
+      padding: 0 0 60px
+   }
 
-    #hero {
-        padding: 60px 0 20px
-    }
+   #hero {
+      padding: 60px 0 20px
+   }
 
-    #hero-text {
+   #hero-text {
 
-        p {
-            padding-bottom: 30px
-        }
+      p {
+         padding-bottom: 30px
+      }
 
-        .secondary {
-            width: 90px;
-            margin-left: 10px
-        }
-    }
+      .secondary {
+         width: 90px;
+         margin-left: 10px
+      }
+   }
 
-    table {
-        display: block;
-        overflow-x: scroll;
-        overflow-y: auto;
-        font-size: 16px;
-    }
+   table {
+      @include flowage(scroll auto);
+      display: block;
+      font-size: 16px;
+   }
 
-    td {
-        padding: 14px
-    }
+   td {
+      padding: 14px
+   }
 
-    .with-icon::before {
-        width: 150px;
-        height: 150px
-    }
+   .with-icon::before {
+      @include size(150px);
+   }
 
-    textarea {
-        width: 100%;
-        overflow-x: scroll;
-        overflow-y: auto;
-    }
+   textarea {
+      @include flowage(scroll auto);
+      width: 100%;
+   }
 
 }
 
@@ -141,133 +138,132 @@
 
 @media only screen and (max-width : 520px) {
 
-    %textAlign {
-        text-align: center
-    }
+   %textAlign {
+      text-align: center
+   }
 
-    h1 {
-        font-size: 36px
-    }
+   h1 {
+      font-size: 36px
+   }
 
-    #nav {
-        padding-top: 0;
-        padding-bottom: 1px;
-        top: auto;
-        bottom: -1px;
-        background: lighten($blueGrayTwo,2);
-        box-shadow: 0 -1px 4px rgba(0,0,30,.3);
+   #nav {
+      @include shadow(0 -1px 4px rgba(0,0,30,.3));
+      padding-top: 0;
+      padding-bottom: 1px;
+      top: auto;
+      bottom: -1px;
+      background: lighten($blueGrayTwo,2);
 
-        .row ul li {
-            margin: auto
-        }
+      .row ul li {
+         margin: auto
+      }
 
-        a[href^="index"] {
-            width: 90px
-        }
+      a[href^="index"] {
+         width: 90px
+      }
 
-        a[href^="get-flexr"] {
-            color: $blueGraySeven;
+      a[href^="get-flexr"] {
+         color: $blueGraySeven;
+         background: none;
+
+         &:hover, &:active {
             background: none;
+         }
+      }
 
-            &:hover, &:active {
-                background: none;
-            }
-        }
+      ul .links {
+         margin: 0;
+         font-size: 0
+      }
 
-        ul .links {
-            margin: 0;
-            font-size: 0
-        }
+      .links::before {
+         display: block
+      }
 
-        .links::before {
-            display: block
-        }
+      ul .links:active::before {
+         background-position-y: 100%
+      }
+   }
 
-        ul .links:active::before {
-            background-position-y: 100%
-        }
-    }
+   #download #nav a[href^="get-flexr"] {
+      background: none
+   }
 
-    #download #nav a[href^="get-flexr"] {
-        background: none
-    }
+   #download .header {
+      padding: 0
+   }
 
-    #download .header {
-        padding: 0
-    }
+   #hero {
+      padding: 70px 0
+   }
 
-    #hero {
-        padding: 70px 0
-    }
+   #hero-text {
+      @include boxHorizontal(center);
+      margin-bottom: 20px;
 
-    #hero-text {
-        margin-bottom: 20px;
-        -webkit-justify-content: center;
-        justify-content: center;
+      p {
+         @extend %textAlign;
+         margin: 20px auto 0;
+      }
 
-        p {
-            margin: 20px auto 0;
-            @extend %textAlign;
-        }
+      h1 {
+         @extend %textAlign;
+      }
 
-        h1 {
-            @extend %textAlign;
-        }
+      a {
+         margin: 0 auto 20px
+      }
+   }
 
-        a {
-            margin: 0 auto 20px
-        }
-    }
+   #expand-text {
 
-    #expand-text {
+      h1 {
+         @extend %textAlign;
+      }
 
-        h1 {
-            @extend %textAlign;
-        }
+      p {
+         @extend %textAlign;
+      }
+   }
 
-        p {
-            @extend %textAlign;
-        }
-    }
+   #expand-image {
+      order: 2
+   }
 
-    #expand-image {
-        order: 2
-    }
+   #browsers {
 
-    #browsers {
+      .browser {
+         width: 40%
+      }
+   }
 
-        .browser {
-            width: 40%
-        }
-    }
+   #flexr-plus {
+      margin-top: 30px
+   }
 
-    #flexr-plus {
-        margin-top: 30px
-    }
+   .call-to-action p {
+      box-sizing: border-box;
+      padding: 0 15px
+   }
 
-    .call-to-action p {
-        box-sizing: border-box;
-        padding: 0 15px
-    }
+   .primary {
+      margin: 50px auto 20px
+   }
 
-    .primary {
-        margin: 50px auto 20px
-    }
+   .secondary {
+      margin: 0 auto;
+   }
 
-    .secondary {
-        margin: 0 auto;
-    }
+   footer {
 
-    footer {
+      img {
+         width: 24%;
+         margin: 0
+      }
 
-        img {
-            width: 24%;
-            margin: 0
-        }
-
-        small {
-            margin: 30px 0 106px
-        }
-    }
+      small {
+         margin: 30px 0 106px
+      }
+   }
 
 }
