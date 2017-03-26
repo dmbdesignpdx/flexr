@@ -1,14 +1,14 @@
 #Short-term
-<filesmatch ".(css)$">
-Header set Cache-Control "max-age=604800,public"
-</filesmatch>
+<filesMatch ".(css)$">
+Header set Cache-Control "max-age=604800, public"
+</filesMatch>
 
 #Mid-term
-<filesmatch ".(svg|js)$">
-Header set Cache-Control "max-age=2628000,public"
-</filesmatch>
+<filesMatch ".(svg|js)$">
+Header set Cache-Control "max-age=2628000, public"
+</filesMatch>
 
 #Long-term
-<filesmatch ".(ico|png)$">
-Header set Cache-Control "max-age=15768000,public"
-</filesmatch>
+<filesMatch ".(ico|png)$">
+Header set Cache-Control "max-age=15768000, public"
+</filesMatch>
