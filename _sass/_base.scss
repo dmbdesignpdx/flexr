@@ -5,8 +5,7 @@
    @include size(100% 112px);
    @include where(-1px auto 0 auto);
    @include time(.3s);
-   padding-top: 1px;
-   padding-bottom: 0;
+   padding: 1px 0 0;
    position: fixed;
    z-index: 999;
    background: $blueGrayTwo;

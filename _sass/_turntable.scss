@@ -1,4 +1,4 @@
-/* Turntable i8.0 by Daniel Blake -- danielblake.design */
+/* Turntable i8.2 by Daniel Blake -- danielblake.design */
 
 // Create some fresh and sassy beats on the fly with presets and custom mixins!
 
@@ -8,7 +8,7 @@
 $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 
-// --- Platter (Mixins with Arguments) --- //
+// --- The Platter (Custom and Prefix Mixins) --- //
 
 // --- i. Prefix Mixins --- //
 
@@ -25,7 +25,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 @mixin boxDirection($var) {
    @for $i from 2 through 5 {
-      @if (nth($prefix,$i) != -moz-) {
+      @if nth($prefix,$i) != -moz- {
          #{nth($prefix,$i)}flex-direction: $var
       }
    }
@@ -35,7 +35,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // 2. Flex Wrap
 
 @mixin boxWrap($var) {
-   @if ($var == nowrap) {
+   @if $var == nowrap {
       -ms-flex-wrap: none;
    } @else {
       -ms-flex-wrap: $var;
@@ -48,13 +48,13 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // 3. Justify Content
 
 @mixin boxHorizontal($var) {
-   @if ($var == flex-start) {
+   @if $var == flex-start {
       -ms-flex-pack: start;
-   } @else if ($var == flex-end) {
+   } @else if $var == flex-end {
       -ms-flex-pack: end;
-   } @else if ($var == space-between) {
+   } @else if $var == space-between {
       -ms-flex-pack: justify;
-   } @else if ($var == space-around) {
+   } @else if $var == space-around {
       -ms-flex-pack: distribute;
    } @else {
       -ms-flex-pack: $var;
@@ -67,13 +67,13 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // 4. Align Content
 
 @mixin boxVertical($var) {
-   @if ($var == flex-start) {
+   @if $var == flex-start {
       -ms-flex-line-pack: start;
-   } @else if ($var == flex-end) {
+   } @else if $var == flex-end {
       -ms-flex-line-pack: end;
-   } @else if ($var == space-between) {
+   } @else if $var == space-between {
       -ms-flex-line-pack: justify;
-   } @else if ($var == space-around) {
+   } @else if $var == space-around {
       -ms-flex-line-pack: distribute;
    } @else {
       -ms-flex-line-pack: $var;
@@ -86,9 +86,9 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // 5. Align Items
 
 @mixin boxItems($var) {
-   @if ($var == flex-start) {
+   @if $var == flex-start {
       -ms-flex-align: start;
-   } @else if ($var == flex-end) {
+   } @else if $var == flex-end {
       -ms-flex-align: end;
    } @else {
       -ms-flex-align: $var;
@@ -101,9 +101,9 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // 6. Align Self
 
 @mixin boxSelf($var) {
-   @if ($var == flex-start) {
+   @if $var == flex-start {
       -ms-flex-item-align: start;
-   } @else if ($var == flex-end) {
+   } @else if $var == flex-end {
       -ms-flex-item-align: end;
    } @else {
       -ms-flex-item-align: $var;
@@ -173,7 +173,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
    @each $item in $prefix {
       #{$item}transform: $what;
    }
-   @if ($xy) {
+   @if $xy {
       @each $item in $prefix {
          #{$item}transform-origin: $xy;
       }
@@ -225,7 +225,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 @mixin timeProperty($var) {
    @each $item in $prefix {
-      @if ($var == transform or $var == filter) {
+      @if $var == transform or $var == filter {
          #{$item}transition-property: #{$item}#{$var};
       } @else {
          #{$item}transition-property: $var;
@@ -252,15 +252,15 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 //  Keyframes
 
 @mixin frames($name) {
-    @-moz-keyframes #{$name} {
-        @content;
-    }
-    @-webkit-keyframes #{$name} {
-        @content;
-    }
-    @keyframes #{$name} {
-        @content;
-    }
+   @-moz-keyframes #{$name} {
+      @content;
+   }
+   @-webkit-keyframes #{$name} {
+      @content;
+   }
+   @keyframes #{$name} {
+      @content;
+   }
 }
 
 
@@ -270,7 +270,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
    @for $i from 4 through 5 {
       #{nth($prefix,$i)}perspective: $depth;
    }
-   @if ($xy) {
+   @if $xy {
       @for $i from 4 through 5 {
          #{nth($prefix,$i)}perspective-origin: $xy;
       }
@@ -288,7 +288,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 @mixin textAdjust($var) {
    @for $i from 2 through 5 {
-      @if (nth($prefix,$i) != -moz-) {
+      @if nth($prefix,$i) != -moz- {
          #{nth($prefix,$i)}text-size-adjust: $var;
       }
    }
@@ -332,7 +332,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Font Smoothing
 @mixin textSmooth($arg) {
-   @if($arg == antialiased) {
+   @if $arg == antialiased {
       -moz-osx-font-smoothing: grayscale;
    }
    @for $i from 4 through 5 {
@@ -349,40 +349,40 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // 1. Max Screen Width
 
 @mixin maxwidth($var) {
-    @media only screen and (max-width: $var) {
-        @content;
-    }
+   @media only screen and (max-width: $var) {
+      @content;
+   }
 }
 
 
 // 2. Min Screen Width
 
 @mixin minwidth($var) {
-    @media only screen and (max-width: $var) {
-        @content;
-    }
+   @media only screen and (max-width: $var) {
+      @content;
+   }
 }
 
 
 // 3. Min and Max Screen Width
 
 @mixin between($min, $max) {
-    @media only screen and (min-width: $min) and (max-width: $max) {
-        @content;
-    }
+   @media only screen and (min-width: $min) and (max-width: $max) {
+      @content;
+   }
 }
 
 
 // Width and Height Shorthand
 
 @mixin size($vars) {
-    width: nth($vars,1);
-    @if length($vars) > 1 {
-        height: nth($vars,2);
-    }
-    @else {
-        height: nth($vars,1);
-    }
+   width: nth($vars,1);
+   @if length($vars) > 1 {
+      height: nth($vars,2);
+   }
+   @else {
+      height: nth($vars,1);
+   }
 }
 
 
@@ -432,7 +432,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // Create Classes/IDs with name and number
 
 @mixin numSelector($name, $a, $b) {
-   @for $i from $a to $b {
+   @for $i from $a through $b {
       #{$name}-#{$i} {
          @content;
       }
@@ -497,7 +497,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
    border-left: $nw solid transparent;
    border-right: $nw solid transparent;
    border-bottom: nth($vars,2) solid $c;
-   @if ($r) {
+   @if $r {
       @include change(rotate($r));
    }
 }
@@ -550,7 +550,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
    &::before {
       display: block;
       max-width: 100%;
-      padding-top: ($l/$w)*100%;
+      padding-top: ($l / $w) * 100%;
       content: '';
    }
 }
@@ -585,6 +585,46 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
    letter-spacing: .2pt;
    @if $r {
       border-radius: $r;
+   }
+}
+
+// 3. Hover
+
+@mixin btnHover($color:null, $si:null, $sh:null, $o:null) {
+   &:hover {
+      @if $o {
+         opacity: $o;
+      }
+      @if $sh {
+         @include shadow($sh);
+      }
+      @if $si {
+         @include change(scale($si));
+      }
+      @if $color {
+         background-color: nth($color,1);
+         color: nth($color,2);
+      }
+   }
+}
+
+// 4. Active
+
+@mixin btnActive($color:null, $si:null, $sh:null, $o:null) {
+   &:active {
+      @if $o {
+         opacity: $o;
+      }
+      @if $sh {
+         @include shadow($sh);
+      }
+      @if $si {
+         @include change(scale($si));
+      }
+      @if $color {
+         background-color: nth($color,1);
+         color: nth($color,2);
+      }
    }
 }
 
@@ -865,7 +905,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
    text-transform: none;
    text-rendering: optimizeSpeed;
    font-stretch: normal;
-   word-spacing: .02em
+   word-spacing: .02em;
 }
 
 %bodyCopy {
@@ -882,7 +922,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
    text-rendering: optimizeLegibility;
    font-kerning: normal;
    font-stretch: normal;
-   word-spacing: .01em
+   word-spacing: .01em;
 }
 
 %titles {
@@ -908,7 +948,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
    }
 }
 
-@mixin useBtnPush($vars) {
+@mixin useBtnActive($vars) {
    &:active {
       @if index($vars,scale) {
          @include change(scale(.96));
@@ -917,42 +957,4 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
          opacity: .8;
       }
    }
-}
-
-
-// TESTING
-
-
-// Background Positioning in Steps
-
-@mixin bkgPos($var, $x, $y) {
-   $wlist: (0);
-   $hlist: (0);
-   @if nth($var,1) > 1 {
-      $s: nth($var,1) - 1;
-      $a: 100 / $s;
-      @for $i from 1 through $s {
-         @if $i < $s {
-            $n: $a * $i;
-            $n: percentage($n / 100);
-            $wlist: append($wlist,$n);
-         } @else {
-            $wlist: append($wlist,100%);
-         }
-      }
-   }
-   @if nth($var,2) > 1 {
-      $s: nth($var,2) - 1;
-      $a: 100 / $s;
-      @for $i from 1 through $s {
-         @if $i < $s {
-            $n: $a * $i;
-            $n: percentage($n / 100);
-            $hlist: append($hlist,$n);
-         } @else {
-            $hlist: append($hlist,100%);
-         }
-      }
-   }
-   background-position: nth($wlist,$x) nth($hlist,$y) ;
 }
