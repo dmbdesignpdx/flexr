@@ -12,7 +12,7 @@ sass:
 
 creator: Daniel Blake
 
-include: ["_pages"]
+include: [_pages, .htaccess]
 
 #Defaults
 defaults:
