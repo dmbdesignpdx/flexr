@@ -18,15 +18,11 @@ function navSizing() {
 
     var a = window.innerWidth, b = window.pageYOffset, nav = document.getElementById('nav');
 
-    if ((740 > a && b > 20) || (a > 740 && b > 60)) {
-
-        nav.classList.add('nav-scroll')
-
-    } else {
-
-        nav.classList.remove('nav-scroll')
-
-    }
+    if (a > 740 && b > 60 || 740 > a && b > 5) {
+      nav.classList.add('nav-scroll')
+   } else {
+      nav.classList.remove('nav-scroll')
+   }
 
 }
 

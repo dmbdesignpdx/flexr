@@ -3,7 +3,6 @@ html, body {
 }
 
 body {
-   @extend %smoothParent;
    @include smoothFonts;
    min-height: 100vh;
    background: $blueGrayTwo;

@@ -1,10 +1,10 @@
 //  Navigation
 
 #nav {
-   @extend %smoothMover;
-   @include size(100% 112px);
-   @include where(-1px auto 0 auto);
+   @include smoothMover;
+   @include xy(-1px 0);
    @include time(.3s);
+   height: 112px;
    padding: 1px 0 0;
    position: fixed;
    z-index: 999;

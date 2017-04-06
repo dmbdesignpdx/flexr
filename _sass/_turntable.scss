@@ -1,6 +1,6 @@
-/* Turntable i8.2 by Daniel Blake -- danielblake.design */
+/* Turntable i10-0 by Daniel Blake -- danielblake.design */
 
-// Create some fresh and sassy beats on the fly with presets and custom mixins!
+// Create fresh stylesheets on the fly using patterns, scratching, and sampling.
 
 
 // Turntable Variables
@@ -8,9 +8,9 @@
 $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 
-// --- The Platter (Custom and Prefix Mixins) --- //
+// --- RECORDS FOR SCRATCHING (Custom and Prefix Mixins) --- //
 
-// --- i. Prefix Mixins --- //
+// --- i. Vendor-Prefix Mixins --- //
 
 // Flexbox:
 
@@ -248,6 +248,19 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
    }
 }
 
+@mixin animatePlay($var){
+   @for $i from 3 through 5 {
+      #{nth($prefix,$i)}animation-play-state: $vars;
+   }
+}
+
+@mixin animateDirect($var){
+   @for $i from 3 through 5 {
+      #{nth($prefix,$i)}animation-direction: $vars;
+   }
+}
+
+
 
 //  Keyframes
 
@@ -342,7 +355,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 
 
-// --- ii. Custom Mixins --- //
+// --- ii. Template Mixins --- //
 
 //  Media Queries:
 
@@ -386,7 +399,9 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 }
 
 
-// Positioning shorthand like margin and padding
+// Positioning Shorthand
+
+// 1. Just like margin shorthand
 
 @mixin where($vars) {
    top: nth($vars,1);
@@ -394,28 +409,59 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
       right: nth($vars,2);
       bottom: nth($vars,3);
       left: nth($vars,4);
-   }
-   @else if length($vars) > 2 {
+   } @else if length($vars) > 2 {
       right: nth($vars,2);
       bottom: nth($vars,3);
       left: nth($vars,2);
-   }
-   @else if length($vars) > 1 {
+   } @else if length($vars) > 1 {
       right: nth($vars,2);
       bottom: nth($vars,1);
       left: nth($vars,2);
-   }
-   @else {
+   } @else {
       right: nth($vars,1);
       bottom: nth($vars,1);
       left: nth($vars,1);
    }
 }
 
+// 2. Like Where(), but starts with Left, not Top
+
+@mixin there($vars) {
+   left: nth($vars,1);
+   @if length($vars) > 3 {
+      top: nth($vars,2);
+      right: nth($vars,3);
+      bottom: nth($vars,4);
+   } @else if length($vars) > 2 {
+      top: nth($vars,2);
+      right: nth($vars,3);
+      bottom: nth($vars,2);
+   } @else if length($vars) > 1 {
+      top: nth($vars,2);
+      right: nth($vars,1);
+      bottom: nth($vars,2);
+   } @else {
+      top: nth($vars,1);
+      right: nth($vars,1);
+      bottom: nth($vars,1);
+   }
+}
+
+// 3. Left and Top Only
+
+@mixin xy($vars) {
+   left: nth($vars,1);
+   @if length($vars) > 1 {
+      top: nth($vars,2);
+   } @else {
+      top: nth($vars,1);
+   }
+}
+
 
 // SVG Stroke shorthand like border
 
-@mixin stroke($vars) {
+@mixin bound($vars) {
    stroke: nth($vars,2);
    stroke-width: nth($vars,1);
    @if length($vars) > 2 {
@@ -494,9 +540,11 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
    $nw: nth($vars,1)/2;
    width: 0;
    height: 0;
-   border-left: $nw solid transparent;
-   border-right: $nw solid transparent;
-   border-bottom: nth($vars,2) solid $c;
+   border: {
+      left: $nw solid transparent;
+      right: $nw solid transparent;
+      bottom: nth($vars,2) solid $c;
+   }
    @if $r {
       @include change(rotate($r));
    }
@@ -556,79 +604,6 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 }
 
 
-// Buttons:
-
-// 1. with Absolute Width
-
-@mixin btnRel($vars, $r:null) {
-   display: inline-block;
-   width: auto;
-   height: nth($vars,2);
-   padding: 0 nth($vars,1);
-   line-height: nth($vars,2);
-   text-decoration: none;
-   letter-spacing: .1pt;
-   @if $r {
-      border-radius: $r;
-   }
-}
-
-// 2. with Relative Width
-
-@mixin btnAbs($vars, $r:null) {
-   display: block;
-   width: nth($vars,1);
-   height: nth($vars,2);
-   line-height: nth($vars,2);
-   text-decoration: none;
-   text-align: center;
-   letter-spacing: .2pt;
-   @if $r {
-      border-radius: $r;
-   }
-}
-
-// 3. Hover
-
-@mixin btnHover($color:null, $si:null, $sh:null, $o:null) {
-   &:hover {
-      @if $o {
-         opacity: $o;
-      }
-      @if $sh {
-         @include shadow($sh);
-      }
-      @if $si {
-         @include change(scale($si));
-      }
-      @if $color {
-         background-color: nth($color,1);
-         color: nth($color,2);
-      }
-   }
-}
-
-// 4. Active
-
-@mixin btnActive($color:null, $si:null, $sh:null, $o:null) {
-   &:active {
-      @if $o {
-         opacity: $o;
-      }
-      @if $sh {
-         @include shadow($sh);
-      }
-      @if $si {
-         @include change(scale($si));
-      }
-      @if $color {
-         background-color: nth($color,1);
-         color: nth($color,2);
-      }
-   }
-}
-
-
 // Box Shadow
 
 @mixin shadow($var) {
@@ -638,12 +613,64 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 };
 
 
+// Buttons:
+
+// 1. Basic Styling
+
+@mixin btnStyle($color:null, $border:null, $corners:null) {
+   @if $color {
+      background-color: nth($color,1);
+      color: nth($color,2);
+   }
+   @if $border {
+      @if length($border) == 2 {
+         border: #{nth($border,1)} solid #{nth($border,2)};
+      } @else if type-of($border) == number {
+         border: #{$border} solid #{nth($color,2)};
+      } @else {
+         border: $border
+      }
+   }
+   @if $corners {
+      border-radius: $corners
+   }
+}
+
+// 2. with a Relative Width
+
+@mixin btnRel($size, $color:null, $border:null, $corners:null) {
+   display: inline-block;
+   width: auto;
+   height: nth($size,2);
+   padding: 0 nth($size,1);
+   line-height: nth($size,2);
+   text-decoration: none;
+   @include btnStyle($color, $border, $corners);
+}
+
+// 3. with an Absolute Width
+
+@mixin btnAbs($size, $color:null, $border:null, $corners:null) {
+   display: block;
+   width: nth($size,1);
+   height: nth($size,2);
+   line-height: nth($size,2);
+   text: {
+      decoration: none;
+      align: center;
+   }
+   @include btnStyle($color, $border, $corners);
+}
+
+
 // Overflow X and Y Shorthand
 
 @mixin flowage($var) {
    @if length($var) > 1 {
-      overflow-x: nth($var,1);
-      overflow-y: nth($var,2);
+      overflow: {
+         x: nth($var,1);
+         y: nth($var,2);
+      }
    } @else {
       overflow: $var
    }
@@ -651,9 +678,10 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 
 
+
 // --- PRESETS (Predefined Mixins and Placeholders) --- //
 
-// --- i. Based on Prev Mixins --- //
+// --- i. Based on Record Collection --- //
 
 // No highlight tap on mobile
 
@@ -844,15 +872,15 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // 1. Extra Small
 
 @mixin useShadow($var) {
-   $a: rgba(0,0,30,.3);
+   $sdw: rgba(0,0,30,.3);
    @if $var == xs {
-      @include shadow(0 0 2px $a);
+      @include shadow(0 0 2px $sdw);
    } @else if $var == s {
-      @include shadow(0 1px 3px $a)
+      @include shadow(0 1px 3px $sdw)
    } @else if $var == m {
-      @include shadow(0 2px 6px $a)
+      @include shadow(0 2px 6px $sdw)
    } @else if $var == l {
-      @include shadow(0 3px 9px $a)
+      @include shadow(0 3px 9px $sdw)
    }
 }
 
@@ -898,13 +926,17 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // 1. Body Copy
 
 @mixin bodyCopy {
-   font-weight: normal;
-   font-style: normal;
+   font: {
+      weight: normal;
+      style: normal;
+      stretch: normal;
+   }
+   text: {
+      transform: none;
+      rendering: optimizeSpeed;
+   }
    line-height: 1.5;
    letter-spacing: .2pt;
-   text-transform: none;
-   text-rendering: optimizeSpeed;
-   font-stretch: normal;
    word-spacing: .02em;
 }
 
@@ -915,13 +947,17 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // 2. Titles
 
 @mixin titles {
-   font-style: normal;
-   line-height: 1.1;
+   font: {
+      style: normal;
+      kerning: normal;
+      stretch: normal;
+   }
+   text: {
+      transform: none;
+      rendering: optimizeLegibility;
+   }
+   line-height: 1.2;
    letter-spacing: .1pt;
-   text-transform: none;
-   text-rendering: optimizeLegibility;
-   font-kerning: normal;
-   font-stretch: normal;
    word-spacing: .01em;
 }
 
@@ -950,11 +986,90 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 @mixin useBtnActive($vars) {
    &:active {
+      @if index($vars,shadow) {
+         @include useShadow(xs);
+      }
       @if index($vars,scale) {
          @include change(scale(.96));
       }
       @if index($vars,opacity) {
          opacity: .8;
+      }
+   }
+}
+
+
+// Pseudo
+
+@mixin pseudoRel {
+   display: block;
+   content: '';
+   position: relative;
+}
+
+%pseudoRel {
+   @include pseudoRel;
+}
+
+@mixin pseudoAbs {
+   display: block;
+   content: '';
+   position: absolute;
+}
+
+%pseudoAbs {
+   @include pseudoAbs;
+}
+
+
+// Clear Floats
+
+@mixin clear {
+   &::after {
+      display: table;
+      content: '';
+      clear: both;
+   }
+}
+
+%clear {
+   @include clear;
+}
+
+
+
+
+// --- SAMPLES (Maps for global interactive styling) --- //
+
+@mixin sample($var) {
+   $elmt: before, after, selection, first-line, first-letter;
+   @each $key, $value in $var {
+      $state: "";
+      @if index($elmt, $key) {
+         $state: "::" + $key;
+      } @else if $key != default {
+         $state: ":" + $key;
+      }
+      &#{$state} {
+         @each $prop, $rule in $value {
+            @if str-index($prop, transform) or str-index($prop, transition) {
+               @for $i from 1 through 5 {
+                  #{nth($prefix,$i)}#{$prop}: #{$rule};
+               }
+            } @else if str-index($prop, animation) {
+               @for $i from 3 through 5 {
+                  #{nth($prefix,$i)}#{$prop}: #{$rule};
+               }
+            } @else if $prop == filter or $prop == box-shadow {
+               @for $i from 4 through 5 {
+                  #{nth($prefix,$i)}#{$prop}: #{$rule};
+               }
+            } @else if $prop == content and type-of($rule) == string {
+               content: $rule + "";
+            } @else {
+               #{$prop}: #{$rule};
+            }
+         }
       }
    }
 }
