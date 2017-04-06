@@ -62,7 +62,7 @@
    #nav {
       height: 56px;
 
-      a[href^="index"] {
+      a[href="/"] {
          width: 110px;
 
          img {
@@ -75,7 +75,7 @@
       }
    }
 
-   #home #nav a[href^="index"] img {
+   #home #nav a[href="/"] img {
       @include mix(none);
    }
 
@@ -158,11 +158,11 @@
          margin: auto
       }
 
-      a[href^="index"] {
+      a[href="/"] {
          width: 90px
       }
 
-      a[href^="get-flexr"] {
+      a[href="/get-flexr/"] {
          color: $blueGraySeven;
          background: none;
 
@@ -185,7 +185,7 @@
       }
    }
 
-   #download #nav a[href^="get-flexr"] {
+   #download #nav a[href="/get-flexr/"] {
       background: none
    }
 

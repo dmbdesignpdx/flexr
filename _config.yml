@@ -18,7 +18,6 @@ include: [_pages, .htaccess]
 defaults:
    -
       scope:
-         path: ""
-         type: pages
+         path: "_pages"
       values:
          layout: "base"
