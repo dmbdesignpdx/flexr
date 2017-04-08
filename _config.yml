@@ -12,7 +12,12 @@ sass:
 
 creator: Daniel Blake
 
-include: [_pages, .htaccess]
+include:
+   - _pages
+   - .htaccess
+
+exclude:
+   - .jekyll-metadata
 
 #Defaults
 defaults:
