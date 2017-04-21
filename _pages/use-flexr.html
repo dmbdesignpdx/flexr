@@ -25,19 +25,23 @@ bodyID: how-to
 
             <div class="col-12">
 
+               <h2>Current Version: 1.1.0</h2>
+
+               <p>Check out <a href="#release">Current Release Info</a> for more details.</p>
+
                 <h2>First Thing's First</h2>
 
-                <p>You gotta link the Flexr Grid CSS <strong>before</strong> your&nbsp;CSS.</p>
+                <p>You gotta link the Flexr Grid <abbr title="Cascading Style Sheets">CSS</abbr> <strong>before</strong> your&nbsp;CSS.</p>
 
 <pre>&lt;head&gt;
 
-...
+   ...
 
    &lt;link href=".../<b>flexr.css</b>" rel="stylesheet"&gt;
 
    &lt;link href=".../your.css" rel="stylesheet"&gt;
 
-...
+   ...
 
 &lt;/head&gt;</pre>
 
@@ -47,7 +51,7 @@ bodyID: how-to
 
                 <p>Here's the basic structure:</p>
 
-<pre>&lt;section | container&gt;
+<pre>&lt;container&gt;
 
    &lt;row&gt;
 
@@ -59,9 +63,9 @@ bodyID: how-to
 
    &lt;/row&gt;
 
-&lt;/section | container&gt;</pre>
+&lt;/container&gt;</pre>
 
-                <p>This structure isn't set in stone, you may choose to use a section or container as a row. It's up to you!</p>
+                <p>A container can be practically anything: a <code>div</code>, <code>section</code>, <code>nav</code>, <code>ul</code>, etc., even the <code>body</code>; just something to <em>contain</em> your rows and columns. It doesn't even need a special class.</p>
 
 <!-- One Class Will Do -->
 
@@ -185,13 +189,15 @@ http://flexrgrid.com/host/flexr-logo-use-white.svg
 
 <!-- Current Version -->
 
-                <h2>Current Version: 1.1.0</h2>
+                <h2 id="release">Current Release Info</h2>
 
-                <p>Release Date: <time datetime="2017-02-25"><b>February 25, 2017</b></time><br>
-                Release Notes: Fixes width issue with <nobr>.exp .col-1</nobr><br>
-                File Size: 1.4KB</p>
+                <p>Version: <b>1.1.0</b><br>
+               Date: <time datetime="2017-02-25"><b>February 25, 2017</b></time><br>
+                Notes: Fixes width issue with <nobr>.exp .col-1</nobr><br>
+                File Size: 1.4KB<br>
+                Future Release Updates: A Sass/SCSS version will be available soon.</p>
                 <p>Be sure to check back to see if you're using the current version!</p>
-                <p>If you have any questions or issues, please ask/report <a href="https://github.com/dmbdesignpdx/flexr/issues" target="_blank" title="Flexr Grid Github Issues page">here</a>.</p>
+                <p>If you have any questions or issues, please ask/report at <a href="https://github.com/dmbdesignpdx/flexr/issues" target="_blank" title="Flexr Grid Github Issues Page">Github Issues</a>.</p>
 
             </div>
 
