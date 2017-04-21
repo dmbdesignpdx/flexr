@@ -5,8 +5,6 @@ email: dmblakedesign@gmail.com
 baseurl: ""
 url: http://flexrgrid.com
 
-markdown: kramdown
-
 sass:
     style: compressed
 
