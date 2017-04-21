@@ -1,4 +1,4 @@
-/* Turntable i10-0 by Daniel Blake -- danielblake.design */
+/* Turntable i12-1 by Daniel Blake -- danielblake.design */
 
 // Create fresh stylesheets on the fly using patterns, scratching, and sampling.
 
@@ -25,7 +25,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 @mixin boxDirection($var) {
    @for $i from 2 through 5 {
-      @if nth($prefix,$i) != -moz- {
+      @if $i != 3 {
          #{nth($prefix,$i)}flex-direction: $var
       }
    }
@@ -152,9 +152,8 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 //  Filter
 
 @mixin mix($vars){
-   @for $i from 4 through 5 {
-      #{nth($prefix,$i)}filter: $vars;
-   }
+   -webkit-filter: $vars;
+   filter: $vars;
 }
 
 
@@ -280,20 +279,17 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // Perspective
 
 @mixin view($depth, $xy:null) {
-   @for $i from 4 through 5 {
-      #{nth($prefix,$i)}perspective: $depth;
-   }
+   -webkit-perspective: $depth;
+   perspective: $depth;
    @if $xy {
-      @for $i from 4 through 5 {
-         #{nth($prefix,$i)}perspective-origin: $xy;
-      }
+      -webkit-perspective-origin: $var;
+      perspective-origin: $var;
    }
 }
 
 @mixin viewOrigin($var) {
-   @for $i from 4 through 5 {
-      #{nth($prefix,$i)}perspective-origin: $var;
-   }
+   -webkit-perspective-origin: $var;
+   perspective-origin: $var;
 }
 
 
@@ -301,9 +297,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 @mixin textAdjust($var) {
    @for $i from 2 through 5 {
-      @if nth($prefix,$i) != -moz- {
-         #{nth($prefix,$i)}text-size-adjust: $var;
-      }
+      #{nth($prefix,$i)}text-size-adjust: $var;
    }
 }
 
@@ -337,9 +331,8 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // Tap Highlight Color
 
 @mixin tapColor($arg) {
-   @for $i from 4 through 5 {
-      #{nth($prefix,$i)}tap-highlight-color: $arg;
-   }
+   -webkit-tap-highlight-color: $arg;
+   tap-highlight-color: $arg;
 }
 
 
@@ -348,9 +341,27 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
    @if $arg == antialiased {
       -moz-osx-font-smoothing: grayscale;
    }
-   @for $i from 4 through 5 {
-      #{nth($prefix,$i)}font-smoothing: $arg;
+   -webkit-font-smoothing: $arg;
+   font-smoothing: $arg;
+}
+
+
+// Linear Gradient
+
+@mixin blend($var...) {
+   @for $i from 1 through 5 {
+      @if $i != 2 {
+         #{nth($prefix,$i)}linear-gradient: $var
+      }
    }
+}
+
+
+// Box Shadow
+
+@mixin shadow($var) {
+   -webkit-box-shadow: $var;
+   box-shadow: $var;
 }
 
 
@@ -603,14 +614,6 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
    }
 }
 
-
-// Box Shadow
-
-@mixin shadow($var) {
-   @for $i from 4 through 5 {
-      #{nth($prefix,$i)}box-shadow: $var;
-   }
-};
 
 
 // Buttons:
@@ -1040,34 +1043,70 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 
 // --- SAMPLES (Maps for global interactive styling) --- //
+// a working concept
 
-@mixin sample($var) {
-   $elmt: before, after, selection, first-line, first-letter;
-   @each $key, $value in $var {
-      $state: "";
-      @if index($elmt, $key) {
-         $state: "::" + $key;
-      } @else if $key != default {
-         $state: ":" + $key;
+@mixin sample($map) {
+   @each $key, $value in $map {
+      @if nth($value,1) == -n {
+         $key: null;
+      } @else if str-index($key, transform) or str-index($key, transition) {
+         @for $i from 1 through 5 {
+            #{nth($prefix,$i)}#{$key}: #{nth($value,1)};
+         }
+      } @else if str-index($key, animation) {
+         @for $i from 3 through 5 {
+            #{nth($prefix,$i)}#{$key}: #{nth($value,1)};
+         }
+      } @else if $key == filter or $key == box-shadow {
+         @for $i from 4 through 5 {
+            #{nth($prefix,$i)}#{$key}: #{nth($value,1)};
+         }
+      } @else {
+         #{$key}: #{nth($value,1)};
       }
-      &#{$state} {
-         @each $prop, $rule in $value {
-            @if str-index($prop, transform) or str-index($prop, transition) {
+   }
+   &:hover {
+      @each $key, $value in $map {
+         @if length($value) > 1 {
+            @if nth($value,2) == -n {
+               $key: null;
+            } @else if str-index($key, transform) or str-index($key, transition) {
                @for $i from 1 through 5 {
-                  #{nth($prefix,$i)}#{$prop}: #{$rule};
+                  #{nth($prefix,$i)}#{$key}: #{nth($value,2)};
                }
-            } @else if str-index($prop, animation) {
+            } @else if str-index($key, animation) {
                @for $i from 3 through 5 {
-                  #{nth($prefix,$i)}#{$prop}: #{$rule};
+                  #{nth($prefix,$i)}#{$key}: #{nth($value,2)};
                }
-            } @else if $prop == filter or $prop == box-shadow {
+            } @else if $key == filter or $key == box-shadow {
                @for $i from 4 through 5 {
-                  #{nth($prefix,$i)}#{$prop}: #{$rule};
+                  #{nth($prefix,$i)}#{$key}: #{nth($value,2)};
                }
-            } @else if $prop == content and type-of($rule) == string {
-               content: $rule + "";
             } @else {
-               #{$prop}: #{$rule};
+               #{$key}: #{nth($value,2)};
+            }
+         }
+      }
+   }
+   &:active {
+      @each $key, $value in $map {
+         @if length($value) > 2 {
+            @if nth($value,3) == -d {
+               #{$key}: #{nth($value,1)};
+            } @else if str-index($key, transform) or str-index($key, transition) {
+               @for $i from 1 through 5 {
+                  #{nth($prefix,$i)}#{$key}: #{nth($value,3)};
+               }
+            } @else if str-index($key, animation) {
+               @for $i from 3 through 5 {
+                  #{nth($prefix,$i)}#{$key}: #{nth($value,3)};
+               }
+            } @else if $key == filter or $key == box-shadow {
+               @for $i from 4 through 5 {
+                  #{nth($prefix,$i)}#{$key}: #{nth($value,3)};
+               }
+            } @else {
+               #{$key}: #{nth($value,3)};
             }
          }
       }
