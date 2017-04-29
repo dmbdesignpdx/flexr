@@ -1,0 +1,174 @@
+/*! Flexr Grid - Sass Preview 1.0
+Copyright 2016-2017 Flexr. All rights reserved. More info at flexrgrid.com */
+
+// Mixins for Flexr Sass (Ignore)
+
+$base: 8.3333%;
+
+@mixin justify($var){
+   -webkit-justify-content: $var;
+   justify-content: $var
+}
+
+@mixin break($var) {
+   @media only screen and ( max-width : $var ) {
+      @content;
+   }
+}
+
+// Mixins for User
+
+@mixin tabletLan {
+   @include break(1180px) {
+      @content;
+   };
+}
+
+@mixin tabletPor {
+   @include break(940px) {
+      @content;
+   };
+}
+
+@mixin phoneLan {
+   @include break(740px) {
+      @content;
+   };
+}
+
+@mixin phonePor {
+   @include break(520px) {
+      @content;
+   };
+}
+
+
+// Flexr
+
+.row, *[class*="col-"] {
+    height: auto;
+    position: relative
+}
+
+.row {
+   @include justify(center);
+    display: -webkit-flex;
+    display: flex;
+    width: 1152px;
+    margin: 0 auto;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap
+}
+
+.jus-l {
+    @include justify(flex-start)
+}
+
+.jus-r {
+    @include justify(flex-end)
+}
+
+*[class*="col-"] {
+    padding: 15px;
+    box-sizing: border-box
+}
+
+@for $i from 1 through 12 {
+
+   .col-#{$i} {
+      width: $base * $i;
+   }
+
+}
+
+.col-x {
+    width: auto
+}
+
+.fill {
+    width: 100%;
+
+    *[class*="col-"] {
+        padding: 0
+    }
+}
+
+
+//   Smaller Desktop Screens & Tablet Landscape
+
+@include tabletLan {
+
+   .row:not(.fill) {
+      width: calc(100% - 30px)
+   }
+
+}
+
+
+//    Tablet Portait
+
+@include tabletPor {
+
+   .row:not(.fill) {
+      width: calc(100% - 24px)
+   }
+
+   *[class*="col-"] {
+      padding: 12px
+   }
+
+}
+
+
+//    Phone Landscape
+
+@include phoneLan {
+
+   %full {
+      width: $base * 12;
+   }
+
+   .row:not(.fill) {
+       width: calc(100% - 18px)
+   }
+
+   *[class*="col-"] {
+       padding: 9px
+   }
+
+   .exp {
+
+      @for $i from 1 through 3 {
+         $j: $i * 2;
+
+         .col-#{$i} {
+            width: $base * $j;
+         }
+
+      }
+
+      @for $i from 4 through 11 {
+
+         .col-#{$i} {
+            @extend %full;
+         }
+
+      }
+   }
+
+};
+
+
+//    Phone Portrait
+
+@include phonePor {
+
+   *[class*="col-"]:not(.col-x), .exp *[class*="col-"]:not(.col-x) {
+      width: 100%
+   }
+
+   .row.exp .col-1 {
+      width: 50%
+   }
+
+}
