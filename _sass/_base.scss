@@ -1,5 +1,10 @@
 //  Navigation
 
+header {
+   @include smoothParent;
+   z-index: 999;
+}
+
 #nav {
    @include smoothMover;
    @include xy(-1px 0);
@@ -7,16 +12,10 @@
    height: 112px;
    padding: 1px 0 0;
    position: fixed;
-   z-index: 999;
    background: $blueGrayTwo;
 
-   ul, .row {
+   ul.row {
       height: 100%
-   }
-
-   ul {
-      @extend %flex;
-      width: 100%;
    }
 
    li {

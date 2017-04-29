@@ -25,7 +25,7 @@ bodyID: how-to
 
             <div class="col-12">
 
-               <h2>Current Version: 1.1.0</h2>
+               <h2>Current Version: {{ site.data.info.version }}</h2>
 
                <p>Check out <a href="#release">Current Release Info</a> for more details.</p>
 
@@ -191,11 +191,11 @@ http://flexrgrid.com/host/flexr-logo-use-white.svg
 
                 <h2 id="release">Current Release Info</h2>
 
-                <p>Version: <b>1.1.0</b><br>
-               Date: <time datetime="2017-02-25"><b>February 25, 2017</b></time><br>
-                Notes: Fixes width issue with <nobr>.exp .col-1</nobr><br>
-                File Size: 1.4KB<br>
-                Future Release Updates: A Sass/SCSS version will be available soon.</p>
+                <p>Version: <b>{{ site.data.info.version }}</b><br>
+               Date: <time datetime="{{ site.data.info.rdate | date: "%F" }}"><b>{{ site.data.info.rdate | date: "%B %e, %Y" }}</b></time><br>
+                Notes: {{ site.data.info.notes }}<br>
+                File Size: {{ site.data.info.size }}<br>
+                Future Release Updates: {{ site.data.info.future }}</p>
                 <p>Be sure to check back to see if you're using the current version!</p>
                 <p>If you have any questions or issues, please ask/report at <a href="https://github.com/dmbdesignpdx/flexr/issues" target="_blank" title="Flexr Grid Github Issues Page">Github Issues</a>.</p>
 

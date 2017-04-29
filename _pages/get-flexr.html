@@ -14,7 +14,7 @@ bodyID: download
             <div class="col-12">
 
                 <h1 id="download-title" class="with-icon">Download Flexr</h1>
-                <p>Version 1.1.0 &mdash; Release: <time datetime="2017-02-25">2/25/17</time></p>
+                <p>Version {{ site.data.info.version }} &mdash; Release: <time datetime="{{ site.data.info.rdate | date: "%F" }}">{{ site.data.info.rdate | date: "%D" }}</time></p>
 
             </div>
 
@@ -45,7 +45,7 @@ bodyID: download
 
                     <h2 class="with-icon">Download CSS</h2>
 
-                    <p>Includes Flexr Grid CSS (1.4KB)</p>
+                    <p>Includes Flexr Grid CSS ({{ site.data.info.size }})</p>
 
                 </a>
 

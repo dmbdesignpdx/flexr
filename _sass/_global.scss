@@ -28,13 +28,13 @@ img, svg, object {
 }
 
 textarea, button {
+   @extend %noOuty;
    @include noDefault;
-   @include noOuty;
    overflow: auto;
 }
 
 img, a:active, a:focus {
-   @include noOuty;
+   @extend %noOuty;
 }
 
 object {
@@ -55,7 +55,7 @@ address a {
 }
 
 a {
-   @extend %noTap;
+   @include noTap;
    position: relative;
    text-decoration: none;
 }
