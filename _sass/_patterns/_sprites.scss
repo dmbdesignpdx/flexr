@@ -1,0 +1,16 @@
+%useSprite {
+    background: url(../img/master-sprite.svg) no-repeat;
+    background-size: 600% 400%
+}
+
+
+//  Icons
+
+.with-icon::before {
+   @extend %useSprite;
+   @include size(150px);
+    display: block;
+    margin: 0 auto 20px;
+    content: '';
+    background-position: 0 0
+}

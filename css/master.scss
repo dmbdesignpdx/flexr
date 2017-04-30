@@ -4,18 +4,30 @@
 
 @import
    // Vendor
-   "flexr",
-   "turntable",
-   // Author
-   "variables",
-   "classes",
+   "_vendor/flexr",
+   "_vendor/turntable",
+
+   // Base
+   "_base/vars",
+   "_base/global",
+
+   // Patterns
+   "_patterns/buttons",
+   "_patterns/sprites",
+
    // Parts
-   "global",
-   "base",
-   "index",
-   "flexrgrid",
-   "useflexr",
-   "getflexr",
-   "cta",
+   "_parts/nav",
+   "_parts/footer",
+   "_parts/cta",
+
+   // Pages
+   "_pages/home",
+   "_pages/flexrgrid",
+   "_pages/useflexr",
+   "_pages/getflexr",
+
+   // Amendments
+   "_amend/js",
+
    // Resize
    "resize";
