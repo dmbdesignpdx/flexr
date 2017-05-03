@@ -1,0 +1,36 @@
+footer {
+   font-size: 15px;
+   line-height: 1.4;
+   color: $blueGraySix;
+   background: $blueGrayOne;
+
+   .row div:last-child {
+      @extend %flex;
+      @include boxWrap(wrap)
+   }
+
+   img {
+      @include boxSelf(flex-start);
+      @include mix(hue-rotate(240deg) saturate(10%) brightness(110%));
+      width: 27%;
+      margin-top: 50px
+   }
+
+   address {
+      width: 100%;
+      margin: 50px 0 25px;
+      line-height: 1.5
+   }
+
+   small {
+      @include boxSelf(flex-end);
+      margin-bottom: 50px;
+      line-height: 1.3
+   }
+
+   p {
+      font-size: inherit;
+      margin-bottom: 50px
+   }
+
+}

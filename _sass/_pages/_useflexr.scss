@@ -33,6 +33,13 @@ td, th {
     text-align: left;
 }
 
+td {
+
+   @include tabletPor {
+      padding: 18px
+   };
+}
+
 td:last-of-type {
     border-right: none
 }

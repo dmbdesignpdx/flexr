@@ -1,4 +1,4 @@
-/*! Mixin' with Turntable i12-1 -- by Daniel Blake */
+/*! Mixin' with Turntable i13-0 -- by Daniel Blake */
 
 // Create fresh stylesheets on the fly using patterns, scratching, and sampling.
 
@@ -1037,6 +1037,67 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 %clear {
    @include clear;
+}
+
+
+// CSS Output Watch: Common Rules for Grouped Selectors
+
+%block {
+   display: block
+}
+
+%inline {
+   display: inline-block
+}
+
+%none {
+   display: none
+}
+
+%relative {
+   position: relative
+}
+
+%absolute {
+   position: absolute
+}
+
+%fixed {
+   position: fixed
+}
+
+
+// CSS Reset
+
+@mixin fresh {
+
+   html, body, textarea, menu, fieldset, input, button, select, legend, figure, div, h1, h2, h3, h4, h5, h6, hgroup, address, p, hr, blockquote, summary, ol, ul, dl, dd, pre, table, tbody, th, tr, td, colgroup, thead, tfoot, iframe {
+      padding: 0;
+      margin: 0;
+      border: 0
+   }
+
+   nav, main, section, header, footer, article, aside, address, hgroup, img, object, svg, iframe, video, audio, map, embed, canvas, textarea, form, fieldset, input, select, button, label, meter, progress, figure, ol, ul, dl, div, pre, table {
+      @extend %relative;
+   }
+
+   video, img, object, svg, iframe {
+      @extend %block;
+   }
+
+   ol, ul, li {
+      list-style: none
+   }
+
+   a {
+      text-decoration: none;
+      color: inherit
+   }
+
+   address {
+      font-style: normal
+   }
+
 }
 
 

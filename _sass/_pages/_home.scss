@@ -96,6 +96,10 @@
       @include ratio(1);
       margin: 0 auto;
 
+      @include tabletPor {
+         width: 60%
+      };
+
       & + p {
          margin-top: 10px;
          font-size: 15px;

@@ -1,0 +1,14 @@
+//  JS Classes
+
+.nav-scroll {
+    height: 80px !important;
+    box-shadow: 0 2px 5px rgba(0,0,30,.3)
+}
+
+.forIntro #hero-text {
+    opacity: 0
+}
+
+.forIntro #top, .forIntro #bottom {
+    @include change(translateY(100%))
+}
