@@ -1,15 +1,16 @@
 header {
    @include smoothParent;
+   @include xy(-1px 0);
+   @include size(100% auto);
+   position: fixed;
    z-index: 999;
 }
 
 #nav {
    @include smoothMover;
-   @include xy(-1px 0);
    @include time(.3s);
    height: 112px;
    padding: 1px 0 0;
-   position: fixed;
    background: $blueGrayTwo;
 
    ul.row {
@@ -22,7 +23,8 @@ header {
    }
 
    li:first-of-type {
-      margin-right: auto;
+      @include change(translateZ(0));
+      margin-right: auto
    }
 
    li:nth-of-type(1n+2) {
@@ -42,6 +44,10 @@ header {
          display: none;
          content: ''
       }
+
+      @include tabletPor {
+         font-size: 17px
+      };
    }
 
    a[href="/get-flexr/"] {
