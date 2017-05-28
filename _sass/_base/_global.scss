@@ -29,7 +29,7 @@ img, svg, object {
 
 textarea, button {
    @extend %noOuty;
-   @include noDefault;
+   @include noLooks;
    overflow: auto;
 }
 
@@ -72,6 +72,12 @@ main ~ section:last-of-type {
 
 //    Text
 
+@for $i from 1 through 3 {
+   h#{$i} {
+      @extend %titles;
+   }
+}
+
 h2, li, a, button {
    font-weight: 700;
    line-height: 1.1;
@@ -105,13 +111,14 @@ h2 {
    text-align: center
 }
 
-p, address {
+p, address, dd {
    line-height: 1.5;
    color: $blueGraySeven;
    letter-spacing: .1pt
 }
 
 p {
+   @include bodyCopy;
 
    @include tabletLan {
       font-size: 18px
@@ -130,21 +137,20 @@ h2:not(:first-of-type) {
    margin-top: 60px
 }
 
-h2 + p {
-   margin-top: 30px
-}
-
-p + p {
-   margin-top: 30px
-}
-
-
-pre + p {
+h2 + p, p + p, pre + p, dl + p, pre {
    margin-top: 30px
 }
 
 button + p {
    margin-top: 100px
+}
+
+code {
+   margin: 30px 0
+}
+
+dl {
+   margin: 27px 0 0
 }
 
 p strong, p b {
@@ -176,10 +182,9 @@ code, pre {
    @include flowage(scroll auto);
    width: 100%;
    padding: 1.6em 2em 1.8em;
-   margin: 30px 0;
 }
 
-p code {
+p code, dt code {
    padding: .2em .7em .3em;
    margin: 0 4px;
    white-space: nowrap
@@ -196,6 +201,36 @@ p a:hover, address a:hover {
 
 sup {
    vertical-align: top
+}
+
+dt, dd {
+   display: inline-block;
+}
+
+dt {
+   width: auto
+}
+
+dt:not(:first-of-type) {
+   margin-top: 12px
+}
+
+dd {
+   width: 86%;
+   margin-left: 3px;
+
+   @include tabletLan {
+      width: 80%
+   };
+
+   @include phoneLan {
+      width: 72%
+   };
+
+   @include phonePor {
+      width: 55%;
+      font-size: 18px
+   };
 }
 
 

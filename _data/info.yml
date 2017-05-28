@@ -1,6 +1,7 @@
-version: 1.1.0
-rdate: Feb 25, 2017
-size: 1.4KB
+version: 2.0.0
+rdate: May 29, 2017
+size: 3KB
 
-notes: Fixes width issue with .exp .col-1.
-future: Switch classes will be introduced soon.
+notes: Introduces switchable classes.
+future: .sass and .scss versions will be available soon.
+deprecate: Class names 'exp' and 'fill' will become deprecated by Version 3.0.0; please use 'expand' and 'stretch', respectively, instead.

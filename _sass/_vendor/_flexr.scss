@@ -1,20 +1,15 @@
-/*! Flexr Grid - Sass Preview 1.0
+/*! Flexr Grid - Sass Preview
 Copyright 2016-2017 Flexr. All rights reserved. More info at flexrgrid.com */
 
 // Mixins for Flexr Sass (Ignore)
 
 $base: 8.3333%;
 
-@mixin justify($var){
-   -webkit-justify-content: $var;
-   justify-content: $var
-}
-
 @mixin break($var) {
    @media only screen and ( max-width : $var ) {
       @content;
    }
-}
+};
 
 // Mixins for User
 
@@ -45,52 +40,60 @@ $base: 8.3333%;
 
 // Flexr
 
-.row, *[class*="col-"] {
-    height: auto;
-    position: relative
+.row, [class*=col-] {
+   height: auto;
+   position: relative
 }
 
 .row {
-   @include justify(center);
-    display: -webkit-flex;
-    display: flex;
-    width: 1152px;
-    margin: 0 auto;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   display: flex;
+   width: 1152px;
+   margin: 0 auto;
+   -ms-flex-pack: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+   -ms-flex-wrap: wrap;
+   -webkit-flex-wrap: wrap;
+   flex-wrap: wrap
 }
 
 .jus-l {
-    @include justify(flex-start)
+   -ms-flex-pack: start;
+   -webkit-justify-content: flex-start;
+   justify-content: flex-start
 }
 
 .jus-r {
-    @include justify(flex-end)
+   -ms-flex-pack: end;
+   -webkit-justify-content: flex-end;
+   justify-content: flex-end
 }
 
-*[class*="col-"] {
-    padding: 15px;
-    box-sizing: border-box
+[class*=col-] {
+   padding: 15px;
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box
 }
 
 @for $i from 1 through 12 {
-
    .col-#{$i} {
       width: $base * $i;
    }
-
 }
 
 .col-x {
-    width: auto
+   width: auto
 }
 
-.fill {
-    width: 100%;
+.stretch, .fill {
+   width: 100%;
 
-    *[class*="col-"] {
-        padding: 0
-    }
+   [class*=col-] {
+      padding: 0
+   }
 }
 
 
@@ -98,61 +101,75 @@ $base: 8.3333%;
 
 @include tabletLan {
 
-   .row:not(.fill) {
-      width: calc(100% - 30px)
+   .row {
+
+      &:not(.stretch):not(.fill) {
+         width: calc(100% - 30px)
+      }
+
+      @for $i from 1 through 12 {
+         .tl-col-#{$i} {
+            width: $base * $i;
+         }
+      }
    }
 
-}
+};
 
 
 //    Tablet Portait
 
 @include tabletPor {
 
-   .row:not(.fill) {
-      width: calc(100% - 24px)
-   }
-
-   *[class*="col-"] {
+   [class*=col-] {
       padding: 12px
    }
 
-}
+   .row {
+
+      &:not(.stretch):not(.fill) {
+         width: calc(100% - 24px)
+      }
+
+      @for $i from 1 through 12 {
+         .tp-col-#{$i} {
+            width: $base * $i;
+         }
+      }
+   }
+
+   .expand, .exp {
+
+      @for $i from 1 through 4 {
+         $j: $i * 2;
+
+         .col-#{$i} {
+            width: $base * $j;
+         }
+      }
+   }
+
+};
 
 
 //    Phone Landscape
 
 @include phoneLan {
 
-   %full {
-      width: $base * 12;
+   [class*=col-] {
+      padding: 9px
    }
 
-   .row:not(.fill) {
-       width: calc(100% - 18px)
-   }
+   .row {
 
-   *[class*="col-"] {
-       padding: 9px
-   }
-
-   .exp {
-
-      @for $i from 1 through 3 {
-         $j: $i * 2;
-
-         .col-#{$i} {
-            width: $base * $j;
-         }
-
+      &:not(.stretch):not(.fill) {
+         width: calc(100% - 18px)
       }
 
-      @for $i from 4 through 11 {
-
-         .col-#{$i} {
-            @extend %full;
+      @for $i from 1 through 12 {
+         .pl-col-#{$i} {
+            width: $base * $i;
          }
-
       }
    }
 
@@ -163,12 +180,21 @@ $base: 8.3333%;
 
 @include phonePor {
 
-   *[class*="col-"]:not(.col-x), .exp *[class*="col-"]:not(.col-x) {
+   [class*=col-]:not(.col-x), .expand [class*=col-]:not(.col-x), .exp [class*=col-]:not(.col-x) {
       width: 100%
    }
 
-   .row.exp .col-1 {
+   .row.expand .col-1, .row.exp .col-1 {
       width: 50%
    }
 
-}
+   .row {
+
+      @for $i from 1 through 12 {
+         .pp-col-#{$i} {
+            width: $base * $i;
+         }
+      }
+   }
+
+};

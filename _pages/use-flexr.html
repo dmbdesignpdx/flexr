@@ -71,7 +71,7 @@ bodyID: how-to
 
                 <h2>One Class Will Do</h2>
 
-                <p>Creating a column requires only one class <code>col-</code> defined by its size <code>[1&ndash;12]</code> (total column size no more than 12 per row):</p>
+                <p>Creating a column requires only one class <code>col-</code> defined by its size <code>[1&ndash;12]</code> (total column size no more than 12 per row). No need for offset columns.</p>
 
 <pre>&lt;div class="row"&gt;
 
@@ -89,9 +89,9 @@ bodyID: how-to
 
                 <p><strong>Shrinking Columns</strong> is the default type of collapsing.</p>
 
-                <p>To define <strong>Expanding Columns</strong>, all you need to do is add the expanding class <code>exp</code> in the parent row:</p>
+                <p>To define <strong>Expanding Columns</strong>, all you need to do is add the expanding class <code>expand</code> in the parent row:</p>
 
-<pre>&lt;div class="row <b>exp</b>"&gt;
+<pre>&lt;div class="row <b>expand</b>"&gt;
 
    &lt;div class="col-3"&gt;...&lt;/div&gt;
 
@@ -103,9 +103,38 @@ bodyID: how-to
 
 &lt;/div&gt;</pre>
 
-                <p>To define <strong>Filling Columns</strong>, just add the filling class <code>fill</code> in the parent row. Filling Columns make their parent row full width to its parent, and divide the space between themselves equally with no gutters.</p>
+                <p>To define <strong>Stretching Columns</strong>, just add the stretching class <code>stretch</code> in the parent row. Stretching Columns make their parent row full width to its parent, and divide the space between themselves equally with no gutters.</p>
 
                 <p>See the difference in behavior <a href="/flexr-grid/" title="Flexr Grid">here</a>.</p>
+
+
+ <!-- Switchable Column Sizes -->
+
+                 <h2>Switching Column Sizes</h2>
+
+                 <p>Sometimes at certain screen sizes you'd like the column to be specifically bigger or smaller. Flexr has four special prefixes for switching that you can use. All you need to do is attach the prefix that correlates with the <strong>break point</strong> you want to the column size you want it to change to.</p>
+
+                 <dl>
+                    <dt><code>tl-[col]</code></dt>
+                    <dd>Tablet Landscape</dd>
+                    <dt><code>tp-[col]</code></dt>
+                    <dd>Tablet Portrait</dd>
+                    <dt><code>pl-[col]</code></dt>
+                    <dd>Phone Landscape</dd>
+                    <dt><code>pp-[col]</code></dt>
+                    <dd>Phone Portrait</dd>
+                 </dl>
+
+                 <p>Where <code>[col]</code> follows the same column class name structure:</p>
+
+ <pre>&lt;div class="row"&gt;
+
+    &lt;div class="col-5 <b>tp-col-6</b>"&gt;...&lt;/div&gt;
+
+    &lt;div class="col-7 <b>tp-col-6</b>"&gt;...&lt;/div&gt;
+
+ &lt;/div&gt;</pre>
+
 
 <!-- Justifying Columns -->
 
@@ -121,7 +150,7 @@ bodyID: how-to
 
 <!-- Column/Gutter Widths -->
 
-                <h2>Column/Gutter Widths and Break Points</h2>
+                <h2>Column/Gutter Widths and Break&nbsp;Points</h2>
 
                 <table>
 
@@ -192,10 +221,11 @@ http://flexrgrid.com/host/flexr-logo-use-white.svg
                 <h2 id="release">Current Release Info</h2>
 
                 <p><b>Version:</b> {{ site.data.info.version }}<br>
-               <b>Date:</b> <time datetime="{{ site.data.info.rdate | date: "%F" }}">{{ site.data.info.rdate | date: "%B %e, %Y" }}</time><br>
+                <b>Date:</b> <time datetime="{{ site.data.info.rdate | date: "%F" }}">{{ site.data.info.rdate | date: "%B %e, %Y" }}</time><br>
                 <b>Notes:</b> {{ site.data.info.notes }}<br>
                 <b>File Size:</b> {{ site.data.info.size }}<br>
-                <b>Future Release Updates:</b> {{ site.data.info.future }}</p>
+                <b>Future Release Updates:</b> {{ site.data.info.future }}<br>
+                <b>Deprecation Warning:</b> {{ site.data.info.deprecate }}</p>
                 <p>Be sure to check back to see if you're using the current version!</p>
                 <p>If you have any questions or issues, please ask/report at <a href="https://github.com/dmbdesignpdx/flexr/issues" target="_blank" title="Flexr Grid Github Issues Page">Github Issues</a>.</p>
 
