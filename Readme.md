@@ -1,4 +1,4 @@
-# Flexr Grid - Version 2.0.0
+# Flexr Grid - Version 2.0.2
 
 Flexr is a responsive grid for those who just want a grid. Created by a web designer with an acute focus on the digital grid layout and its response to different screens. It features three ways that column react: expand, shrink and stretch.
 
@@ -211,11 +211,11 @@ http://flexrgrid.com/host/flexr-logo-use-white.svg
 
 ## Current Release Info
 
-**Version:** 2.0.0
+**Version:** 2.0.2
 
-**Date:** May 29, 2017
+**Date:** June 5, 2017
 
-**Notes:** Introduces switchable classes.
+**Notes:** Removes col-4 ability to expand.
 
 **File Size:** 3KB
 
