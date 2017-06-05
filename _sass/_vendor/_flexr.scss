@@ -6,12 +6,18 @@ Copyright 2016-2017 Flexr. All rights reserved. More info at flexrgrid.com */
 $base: 8.3333%;
 
 @mixin break($var) {
-   @media only screen and ( max-width : $var ) {
+   @media only screen and (max-width : #{$var}) {
       @content;
    }
 };
 
-// Mixins for User
+// Mixins and Vars for User
+
+$gutter: 30px;
+$tl-gutter: $gutter;
+$tp-gutter: $tl-gutter - 6;
+$pl-gutter: $tp-gutter - 6;
+$pp-gutter: $pl-gutter;
 
 @mixin tabletLan {
    @include break(1180px) {
@@ -72,7 +78,7 @@ $base: 8.3333%;
 }
 
 [class*=col-] {
-   padding: 15px;
+   padding: $gutter / 2;
    -moz-box-sizing: border-box;
    -webkit-box-sizing: border-box;
    box-sizing: border-box
@@ -104,7 +110,7 @@ $base: 8.3333%;
    .row {
 
       &:not(.stretch):not(.fill) {
-         width: calc(100% - 30px)
+         width: calc(100% - #{$gutter})
       }
 
       @for $i from 1 through 12 {
@@ -122,13 +128,13 @@ $base: 8.3333%;
 @include tabletPor {
 
    [class*=col-] {
-      padding: 12px
+      padding: $tp-gutter / 2
    }
 
    .row {
 
       &:not(.stretch):not(.fill) {
-         width: calc(100% - 24px)
+         width: calc(100% - #{$tp-gutter})
       }
 
       @for $i from 1 through 12 {
@@ -140,7 +146,7 @@ $base: 8.3333%;
 
    .expand, .exp {
 
-      @for $i from 1 through 4 {
+      @for $i from 1 through 3 {
          $j: $i * 2;
 
          .col-#{$i} {
@@ -157,13 +163,13 @@ $base: 8.3333%;
 @include phoneLan {
 
    [class*=col-] {
-      padding: 9px
+      padding: $pl-gutter / 2
    }
 
    .row {
 
       &:not(.stretch):not(.fill) {
-         width: calc(100% - 18px)
+         width: calc(100% - #{$pl-gutter})
       }
 
       @for $i from 1 through 12 {
@@ -198,3 +204,5 @@ $base: 8.3333%;
    }
 
 };
+
+/*! Flexr Grid -- Sass Preview end */

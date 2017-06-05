@@ -5,14 +5,15 @@
 }
 
 .example {
-    height: 1em;
-    padding: 20px 0 21px;
+    height: auto;
+    padding: 20px 0;
     font-size: 16px;
     text-align: center;
+    box-sizing: border-box;
     background: $blueGrayFive;
     line-height: 1.1
 }
 
-.fill div[class*="col"]:nth-of-type(even) .example {
+.stretch div[class*="col"]:nth-of-type(even) .example {
     background: $blueGrayFour
 }
