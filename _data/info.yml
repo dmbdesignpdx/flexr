@@ -1,7 +1,7 @@
-version: 2.0.0
-rdate: May 29, 2017
+version: 2.0.2
+rdate: June 5, 2017
 size: 3KB
 
-notes: Introduces switchable classes.
+notes: Removes col-4 ability to expand.
 future: .sass and .scss versions will be available soon.
 deprecate: Class names 'exp' and 'fill' will become deprecated by Version 3.0.0; please use 'expand' and 'stretch', respectively, instead.
