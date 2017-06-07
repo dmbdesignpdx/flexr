@@ -23,4 +23,4 @@ defaults:
       scope:
          path: "_pages"
       values:
-         layout: "base"
+         layout: "page"
