@@ -173,7 +173,7 @@ textarea, code, pre {
 
 textarea {
    @include size(702px 4.9em);
-   @include shadow(none);
+   @include box-shadow(none);
    padding: 26px;
    resize: none;
    margin: 40px auto 0;

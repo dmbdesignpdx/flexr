@@ -34,17 +34,17 @@
          width: 110px;
 
          img {
-            @include mix(hue-rotate(240deg) saturate(10%) brightness(190%));
+            @include filter(hue-rotate(240deg) saturate(10%) brightness(190%));
 
             &:active {
-               @include mix(none);
+               @include filter(none);
             }
          }
       }
    }
 
    #home #nav a[href="/"] img {
-      @include mix(none);
+      @include filter(none);
    }
 
    .nav-scroll {
@@ -120,7 +120,7 @@
    }
 
    #nav {
-      @include shadow(0 -1px 4px rgba(0,0,30,.3));
+      @include box-shadow(0 -1px 4px rgba(0,0,30,.3));
       padding-top: 0;
       padding-bottom: 1px;
       background: lighten($blueGrayTwo,2);
@@ -169,7 +169,7 @@
    }
 
    #hero-text {
-      @include boxHorizontal(center);
+      @include justify-content(center);
       margin-bottom: 20px;
 
       p {

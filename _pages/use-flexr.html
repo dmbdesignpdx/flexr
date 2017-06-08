@@ -65,7 +65,10 @@ bodyID: how-to
 
 &lt;/container&gt;</pre>
 
-                <p>A container can be practically anything: a <code>div</code>, <code>section</code>, <code>nav</code>, <code>ul</code>, etc., even the <code>body</code>; just something to <em>contain</em> your rows and columns. It doesn't even need a special class.</p>
+                <p>A <strong>container</strong> can be practically anything: a <code>div</code>, <code>section</code>, <code>header</code>, <code>nav</code>, etc., even the <code>body</code>; just something to <em>contain</em> your rows and columns. It doesn't even need a special class.</p>
+
+                <p><strong>Rows</strong> and <strong>columns</strong> can also be practically anything. You can have a <code>ul</code> as a row, and its <code>li</code> elements as columns.</p>
+
 
 <!-- One Class Will Do -->
 
@@ -87,7 +90,7 @@ bodyID: how-to
 
                 <h2>Defining Columns</h2>
 
-                <p><strong>Shrinking Columns</strong> is the default type of collapsing.</p>
+                <p><strong>Shrinking Columns</strong> is the default type.</p>
 
                 <p>To define <strong>Expanding Columns</strong>, all you need to do is add the expanding class <code>expand</code> in the parent row:</p>
 
@@ -103,7 +106,9 @@ bodyID: how-to
 
 &lt;/div&gt;</pre>
 
-                <p>To define <strong>Stretching Columns</strong>, just add the stretching class <code>stretch</code> in the parent row. Stretching Columns make their parent row full width to its parent, and divide the space between themselves equally with no gutters.</p>
+               <p>The only canidates for Expanding Columns are the <i>one</i>, <i>two</i>, and <i>three</i> columns. When the screen reduces to the size of tablet portrait, these columns will expand automatically for smaller screens. This will only work if the row is evenly populated with these columns.</p>
+
+                <p>To create <strong>Stretching Columns</strong>, just add the stretching class <code>stretch</code> in the parent row. Stretching Columns make their parent row full width to its parent, and divide the space between themselves equally with no gutters.</p>
 
                 <p>See the difference in behavior <a href="/flexr-grid/" title="Flexr Grid">here</a>.</p>
 
@@ -135,12 +140,14 @@ bodyID: how-to
 
  &lt;/div&gt;</pre>
 
+               <p>Switching column sizes implies that you don't want expanding to happen automatically, so adding the <code>expand</code> class to the parent would not work.</p>
+
 
 <!-- Justifying Columns -->
 
                 <h2>Justifying Columns</h2>
 
-                <p>The default justification is centered. To justify the columns to left or the right, just add the class <code>jus-[l,r]</code> to the parent row. For example, left-justification:</p>
+                <p>The default justification of how the columns populate is <i>centered</i>. To change the justifaction, just add the class <code>jus-l</code> for <i>left</i> or <code>jus-r</code> for <i>right</i> to the parent row. For example, left-justification:</p>
 
 <pre>&lt;div class="row <b>jus-l</b>"&gt;
 

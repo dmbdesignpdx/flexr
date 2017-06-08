@@ -8,7 +8,7 @@ header {
 
 #nav {
    @include smoothMover;
-   @include time(.3s);
+   @include transition(.3s);
    height: 112px;
    padding: 1px 0 0;
    background: $blueGrayTwo;
@@ -23,7 +23,7 @@ header {
    }
 
    li:first-of-type {
-      @include change(translateZ(0));
+      @include transform(translateZ(0));
       margin-right: auto
    }
 
@@ -83,7 +83,7 @@ header {
          cursor: pointer;
 
          &:hover {
-            @include mix(hue-rotate(240deg) saturate(10%) brightness(190%));
+            @include filter(hue-rotate(240deg) saturate(10%) brightness(190%));
          }
       }
    }

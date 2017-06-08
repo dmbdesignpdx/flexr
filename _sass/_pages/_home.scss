@@ -1,7 +1,7 @@
 //  Home
 
 %animationTiming {
-   @include time(.6s)
+   @include transition(.6s)
 }
 
 #hero {
@@ -10,7 +10,7 @@
 
    .row {
       @extend %smoothParent;
-      @include boxItems(center)
+      @include align-items(center)
    }
 
    pre {
@@ -26,12 +26,12 @@
 }
 
 #hero-text {
-   @extend %flex;
+   @extend %box;
    @extend %animationTiming;
    @extend %smoothMover;
-   @include boxWrap(wrap);
-   @include timeProperty(opacity);
-   @include timeDelay(1s);
+   @include flex-wrap(wrap);
+   @include transition-property(opacity);
+   @include transition-delay(1s);
 
    h1 {
       text-align: left
@@ -56,14 +56,14 @@
    background: darken($blueGrayTwo,2);
 
    .row {
-      @include boxItems(center)
+      @include align-items(center)
    }
 }
 
 #expand-text {
-   @extend %flex;
-   @include boxDirection(column);
-   @include boxHorizontal(center)
+   @extend %box;
+   @include flex-direction(column);
+   @include justify-content(center);
 }
 
 #hero-image .container {
@@ -74,14 +74,14 @@
    @extend %animationTiming;
    @extend %smoothMover;
    @include size(100% auto);
-   @include timeDelay(.3s);
+   @include transition-delay(.3s);
    position: absolute;
    top: 0;
    left: 0;
 }
 
 #top {
-   @include timeDelay(.6s);
+   @include transition-delay(.6s);
 }
 
 #browsers {

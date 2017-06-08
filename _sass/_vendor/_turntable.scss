@@ -1,6 +1,6 @@
-/*! Mixin' with Turntable v0.0.7 -- by Daniel Blake */
+/*! Mixin' with Turntable v0.0.11 -- by Daniel Blake */
 
-// Create fresh stylesheets on the fly using patterns, scratching, and sampling.
+// Create fresh stylesheets on the fly using presets, scratching, and sampling.
 
 
 // Turntable Variables
@@ -13,17 +13,28 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // --- i. Vendor-Prefix Mixins --- //
 
 
-// CSS Grid:
+// Display Flex or Grid:
 
-@mixin grid($var, $arg:null) {
-   display: -ms-#{$var} #{$arg};
-   display: $var $arg;
+@mixin display($var, $arg:null) {
+   @if $var == grid {
+      display: -ms-#{$var} #{$arg};
+      display: $var $arg;
+   } @else {
+      $old: if($var == inline-flex, inline-, null );
+      display: -webkit-#{$old}box #{$arg};
+      display: -moz-#{$old}box #{$arg};
+      display: -ms-#{$var}box #{$arg};
+      display: -webkit-#{$var} #{$arg};
+      display: $var $arg;
+   }
 }
 
 
+// CSS Grid
+
 // 1. Grid Template Columns
 
-@mixin gridColumns($var...) {
+@mixin grid-template-columns($var...) {
    @for $i from 1 through 2 {
       $list: ();
       @each $item in $var {
@@ -47,7 +58,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 2. Grid Template Rows
 
-@mixin gridRows($var...) {
+@mixin grid-template-rows($var...) {
    @for $i from 1 through 2 {
       $list: ();
       @each $item in $var {
@@ -61,9 +72,9 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
          $list: append($list, $item, space);
       }
       @if $i == 1 {
-         -ms-grid-columns: $list;
+         -ms-grid-rows: $list;
       } @else {
-         grid-template-columns: $list;
+         grid-template-rows: $list;
       }
    }
 }
@@ -71,7 +82,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 3. Grid Column Span
 
-@mixin gridColumnSpan($var, $arg:null) {
+@mixin grid-column-span($var, $arg:null) {
    -ms-grid-column-span: $var $arg;
    grid-column-end: span #{$var} $arg;
 }
@@ -79,7 +90,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 4. Grid Row Span
 
-@mixin gridRowSpan($var, $arg:null) {
+@mixin grid-row-span($var, $arg:null) {
    -ms-grid-row-span: $var $arg;
    grid-row-end: span #{$var} $arg;
 }
@@ -87,7 +98,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 5. Grid Justify Self
 
-@mixin gridJustifySelf($var, $arg:null) {
+@mixin grid-justify-self($var, $arg:null) {
    -ms-grid-row-align: $var $arg;
    justify-self: $var $arg;
 }
@@ -95,7 +106,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 5. Grid Align Self
 
-@mixin gridAlignSelf($var, $arg:null) {
+@mixin grid-align-self($var, $arg:null) {
    -ms-grid-column-align: $var $arg;
    align-self: $var $arg;
 }
@@ -103,7 +114,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 7. Grid Column Start
 
-@mixin gridColumnStart($var, $arg:null) {
+@mixin grid-column-start($var, $arg:null) {
    -ms-grid-column: $var $arg;
    grid-column-start: $var $arg;
 }
@@ -111,7 +122,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 8. Grid Row Start
 
-@mixin gridRowStart($var, $arg:null) {
+@mixin grid-row-start($var, $arg:null) {
    -ms-grid-row: $var $arg;
    grid-row-start: $var $arg;
 }
@@ -120,19 +131,9 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Flexbox:
 
-@mixin box($var, $arg:null) {
-   $old: if($var == inline-flex, inline-, null );
-   display: -webkit-#{$old}box #{$arg};
-   display: -moz-#{$old}box #{$arg};
-   display: -ms-#{$var}box #{$arg};
-   display: -webkit-#{$var} #{$arg};
-   display: $var $arg;
-}
-
-
 // 1. Flex Direction
 
-@mixin boxDirection($var, $arg:null) {
+@mixin flex-direction($var, $arg:null) {
    $ori: if($var == row or $var == row-reverse, horizontal, vertical);
    $dir: if($var == row or $var == column, normal, reverse);
    -webkit-box-orient: $ori $arg;
@@ -149,7 +150,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 2. Flex Wrap
 
-@mixin boxWrap($var, $arg:null) {
+@mixin flex-wrap($var, $arg:null) {
    -ms-flex-wrap: if($var == nowrap, none #{$arg}, $var $arg);
    -webkit-flex-wrap: $var $arg;
    flex-wrap: $var $arg;
@@ -158,7 +159,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 3. Justify Content
 
-@mixin boxHorizontal($var, $arg:null) {
+@mixin justify-content($var, $arg:null) {
    $old: $var;
    @if $var == flex-start {
       $old: start;
@@ -179,7 +180,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 4. Align Content
 
-@mixin boxVertical($var, $arg:null) {
+@mixin align-content($var, $arg:null) {
    @if $var == flex-start {
       -ms-flex-line-pack: start #{$arg};
    } @else if $var == flex-end {
@@ -198,7 +199,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 5. Align Items
 
-@mixin boxItems($var, $arg:null) {
+@mixin align-items($var, $arg:null) {
    $old: $var;
    @if $var == flex-start {
       $old: start;
@@ -215,7 +216,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 6. Align Self
 
-@mixin boxSelf($var, $arg:null) {
+@mixin align-self($var, $arg:null) {
    @if $var == flex-start {
       -ms-flex-item-align: start #{$arg};
    } @else if $var == flex-end {
@@ -230,7 +231,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 7. Order
 
-@mixin boxOrder($var, $arg:null) {
+@mixin order($var, $arg:null) {
    -webkit-box-ordinal-group: $var $arg;
    -moz-box-ordinal-group: $var $arg;
    -ms-flex-order: $var $arg;
@@ -241,7 +242,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 8. Grow
 
-@mixin boxGrow($var, $arg:null) {
+@mixin flex-grow($var, $arg:null) {
    -ms-flex-positive: $var $arg;
    -webkit-flex-grow: $var $arg;
    flex-grow: $var $arg;
@@ -250,7 +251,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 9. Shrink
 
-@mixin boxShrink($var, $arg:null) {
+@mixin flex-shrink($var, $arg:null) {
    -ms-flex-negative: $var $arg;
    -webkit-flex-shrink: $var $arg;
    flex-shrink: $var $arg;
@@ -259,7 +260,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 9. Basis
 
-@mixin boxBasis($var, $arg:null) {
+@mixin flex-basis($var, $arg:null) {
    -ms-flex-preferred-size: $var $arg;
    -webkit-flex-basis: $var $arg;
    flex-basis: $var $arg;
@@ -268,7 +269,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 10. Flex
 
-@mixin boxSize($var, $arg:null) {
+@mixin flex($var, $arg:null) {
    -webkit-box-flex: $var $arg;
    -moz-box-flex: $var $arg;
    -ms-flex: $var $arg;
@@ -279,7 +280,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 //  Filter
 
-@mixin mix($vars, $arg:null){
+@mixin filter($vars, $arg:null){
    -webkit-filter: $vars $arg;
    filter: $vars $arg;
 }
@@ -287,7 +288,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 //  Appearance
 
-@mixin looks($var, $arg:null){
+@mixin appearance($var, $arg:null){
    @for $i from 3 through 5 {
       #{nth($prefix,$i)}appearance: $var $arg;
    }
@@ -296,24 +297,19 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 //  Transform
 
-@mixin change($what, $xy:null, $arg:null) {
+@mixin transform($what, $arg:null) {
    @each $item in $prefix {
       #{$item}transform: $what $arg;
    }
-   @if $xy {
-      @each $item in $prefix {
-         #{$item}transform-origin: $xy $arg;
-      }
-   }
 }
 
-@mixin changeOrigin($var, $arg:null) {
+@mixin transform-origin($var, $arg:null) {
    @each $item in $prefix {
       #{$item}transform-origin: $var $arg;
    }
 }
 
-@mixin changeStyle($var, $arg:null){
+@mixin transform-style($var, $arg:null){
    @each $item in $prefix {
       #{$item}transform-style: $var $arg;
    }
@@ -322,7 +318,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 //  Transition
 
-@mixin time($vars...) {
+@mixin transition($vars...) {
    $arg: null;
    @each $item in $prefix {
       $list: ();
@@ -343,19 +339,19 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
    }
 }
 
-@mixin timeDelay($var, $arg:null) {
+@mixin transition-delay($var, $arg:null) {
    @each $item in $prefix {
       #{$item}transition-delay: $var $arg;
    }
 }
 
-@mixin timeDuration($var, $arg:null) {
+@mixin transition-duration($var, $arg:null) {
    @each $item in $prefix {
       #{$item}transition-duration: $var $arg;
    }
 }
 
-@mixin timeProperty($var, $arg:null) {
+@mixin transition-property($var, $arg:null) {
    @each $item in $prefix {
       #{$item}transition-property: if($var == transform or $var == filter, #{$item}#{$var} #{$arg}, $var $arg);
    }
@@ -364,35 +360,34 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 //  Animation
 
-@mixin animate($vars...){
+@mixin animation($vars...){
    @for $i from 3 through 5 {
       #{nth($prefix,$i)}animation: $vars;
    }
 }
 
-@mixin animateDelay($var, $arg:null){
+@mixin animation-delay($var, $arg:null){
    @for $i from 3 through 5 {
       #{nth($prefix,$i)}animation-delay: $vars $arg;
    }
 }
 
-@mixin animatePlay($var, $arg:null){
+@mixin animation-play($var, $arg:null){
    @for $i from 3 through 5 {
       #{nth($prefix,$i)}animation-play-state: $vars $arg;
    }
 }
 
-@mixin animateDirect($var, $arg:null){
+@mixin animation-direct($var, $arg:null){
    @for $i from 3 through 5 {
       #{nth($prefix,$i)}animation-direction: $vars $arg;
    }
 }
 
 
-
 //  Keyframes
 
-@mixin frames($name) {
+@mixin keyframes($name) {
    @-moz-keyframes #{$name} {
       @content;
    }
@@ -407,16 +402,12 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Perspective
 
-@mixin view($depth, $xy:null, $arg:null) {
+@mixin perspective($depth, $arg:null) {
    -webkit-perspective: $depth $arg;
    perspective: $depth $arg;
-   @if $xy {
-      -webkit-perspective-origin: $var $arg;
-      perspective-origin: $var $arg;
-   }
 }
 
-@mixin viewOrigin($var, $arg:null) {
+@mixin perspective-origin($var, $arg:null) {
    -webkit-perspective-origin: $var $arg;
    perspective-origin: $var $arg;
 }
@@ -424,7 +415,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Text Size Adjust
 
-@mixin textAdjust($var, $arg:null) {
+@mixin text-size-adjust($var, $arg:null) {
    @for $i from 2 through 5 {
       #{nth($prefix,$i)}text-size-adjust: $var $arg;
    }
@@ -433,7 +424,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // User Select
 
-@mixin select($var, $arg:null) {
+@mixin user-select($var, $arg:null) {
    @for $i from 2 through 5 {
       #{nth($prefix,$i)}user-select: $var $arg;
    }
@@ -442,7 +433,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Box Sizing
 
-@mixin whichBox($var, $arg:null) {
+@mixin box-sizing($var, $arg:null) {
    -moz-box-sizing: $var $arg;
    -webkit-box-sizing: $var $arg;
    box-sizing: $var $arg;
@@ -451,7 +442,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Backface Visibility
 
-@mixin otherSide($var, $arg:null) {
+@mixin backface-visibility($var, $arg:null) {
    @for $i from 3 through 5 {
       #{nth($prefix,$i)}backface-visibility: $var $arg;
    }
@@ -460,14 +451,14 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Tap Highlight Color
 
-@mixin tapColor($var, $arg:null) {
+@mixin tap-highlight-color($var, $arg:null) {
    -webkit-tap-highlight-color: $var $arg;
    tap-highlight-color: $var $arg;
 }
 
 
 // Font Smoothing
-@mixin textSmooth($var, $arg:null) {
+@mixin font-smoothing($var, $arg:null) {
    @if $var == antialiased {
       -moz-osx-font-smoothing: grayscale $arg;
    }
@@ -478,7 +469,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Linear Gradient
 
-@mixin blend($lg, $img:null, $arg:null) {
+@mixin linear-gradient($lg, $img:null, $arg:null) {
    @if $img {
       $img: url(#{$img});
    }
@@ -502,7 +493,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
                   }
                } @else if type-of($item) == 'number' {
                   @if unit($item) == 'deg' {
-                     $item: (90 - $item) + 360;
+                     $item: if($item < 90, ($item - 90) + 360, $item - 90);
                   }
                }
             }
@@ -519,7 +510,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Box Shadow
 
-@mixin shadow($var, $arg:null) {
+@mixin box-shadow($var, $arg:null) {
    -webkit-box-shadow: $var $arg;
    box-shadow: $var $arg;
 }
@@ -562,7 +553,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 3. Read-Only
 
-@mixin readonly($var: unquote("$var")) {
+@mixin read-only($var: unquote("$var")) {
    #{$var}:-moz-read-only {
       @content;
    }
@@ -574,7 +565,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 4. Read-Write
 
-@mixin readwrite($var: unquote("$var")) {
+@mixin read-write($var: unquote("$var")) {
    #{$var}:-moz-read-write {
       @content;
    }
@@ -634,7 +625,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 3. Progressbar
 
-@mixin progressbar($var: unquote("$var")) {
+@mixin progress-bar($var: unquote("$var")) {
    @for $i from 3 through 5 {
       #{$var}::#{nth($prefix,$i)}progress-bar {
          @content;
@@ -645,7 +636,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 4. Range/Slider Thumb
 
-@mixin thumb($var: unquote("$var")) {
+@mixin slider-thumb($var: unquote("$var")) {
    #{$var}::-ms-thumb {
       @content;
    }
@@ -660,7 +651,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 5. Range/Slider Track
 
-@mixin track($var: unquote("$var")) {
+@mixin slider-runnable-track($var: unquote("$var")) {
    #{$var}::-ms-track {
       @content;
    }
@@ -681,7 +672,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // 1. Max Screen Width
 
 @mixin maxwidth($var) {
-   @media only screen and (max-width: $var) {
+   @media only screen and (max-width: #{$var}) {
       @content;
    }
 }
@@ -690,7 +681,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // 2. Min Screen Width
 
 @mixin minwidth($var) {
-   @media only screen and (max-width: $var) {
+   @media only screen and (max-width: #{$var}) {
       @content;
    }
 }
@@ -699,7 +690,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // 3. Min and Max Screen Width
 
 @mixin between($min, $max) {
-   @media only screen and (min-width: $min) and (max-width: $max) {
+   @media only screen and (min-width: #{$min}) and (max-width: #{$max}) {
       @content;
    }
 }
@@ -710,6 +701,32 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 @mixin size($vars, $arg:null) {
    width: nth($vars,1) $arg;
    height: if(length($vars) > 1, nth($vars,2) $arg, nth($vars,1) $arg);
+}
+
+
+// Transform with Origin
+
+@mixin change($what, $xy:null, $arg:null) {
+   @each $item in $prefix {
+      #{$item}transform: $what $arg;
+   }
+   @if $xy {
+      @each $item in $prefix {
+         #{$item}transform-origin: $xy $arg;
+      }
+   }
+}
+
+
+// Perspective and Origin
+
+@mixin view($depth, $xy:null, $arg:null) {
+   -webkit-perspective: $depth $arg;
+   perspective: $depth $arg;
+   @if $xy {
+      -webkit-perspective-origin: $var $arg;
+      perspective-origin: $var $arg;
+   }
 }
 
 
@@ -858,7 +875,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
       bottom: #{nth($vars,2)} solid #{$c} #{$arg};
    }
    @if $r {
-      @include change(rotate($r), $arg:$arg);
+      @include transform(rotate($r), $arg:$arg);
    }
 }
 
@@ -866,7 +883,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // Parallelogram
 
 @mixin parallelogram($vars, $s, $arg:null) {
-   @include change(skew($s), $arg:$arg);
+   @include transform(skew($s), $arg:$arg);
    width: nth($vars,1) $arg;
    height: nth($vars,2) $arg;
 }
@@ -891,12 +908,12 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
    }
 
    &::before {
-      @include change(rotate(-45deg, 0 100%), $arg:$arg);
+      @include transform(rotate(-45deg, 0 100%), $arg:$arg);
       left: $nw $arg;
    }
 
    &::after {
-      @include change(rotate(45deg, 100% 100%), $arg:$arg);
+      @include transform(rotate(45deg, 100% 100%), $arg:$arg);
       left: 0 $arg;
    }
 }
@@ -990,8 +1007,8 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // No highlight tap on mobile
 
 @mixin noTap {
-   @include tapColor(transparent);
-   @include tapColor(none);
+   @include tap-highlight-color(transparent);
+   @include tap-highlight-color(none);
 }
 
 %noTap {
@@ -1004,7 +1021,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // 1. This one goes on the thing being transformed
 
 @mixin smoothMover {
-   @include otherSide(hidden);
+   @include backface-visibility(hidden);
 }
 
 %smoothMover {
@@ -1015,7 +1032,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // 2. This goes on the parent
 
 @mixin smoothParent {
-   @include changeStyle(preserve-3d);
+   @include transform-style(preserve-3d);
 }
 
 %smoothParent {
@@ -1023,10 +1040,21 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 }
 
 
+// 3. Translate-Z work-around
+
+@mixin superSmooth {
+   @include transform(translateZ(0));
+}
+
+%superSmooth {
+   @include superSmooth;
+}
+
+
 // Font Antialiasing on OSX
 
 @mixin smoothFonts {
-   @include textSmooth(antialiased);
+   @include font-smoothing(antialiased);
 }
 
 %smoothFonts {
@@ -1037,7 +1065,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // No Text Size Adjusting;
 
 @mixin noTextAdjust {
-   @include textAdjust(100%);
+   @include text-size-adjust(100%);
 }
 
 %noTextAdjust {
@@ -1047,27 +1075,27 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Use Flexbox
 
-@mixin flex {
-   @include box(flex);
+@mixin box {
+   @include display(flex);
 }
 
-%flex {
-   @include flex;
+%box {
+   @include box;
 }
 
-@mixin inlineFlex {
-   @include box(inline-flex);
+@mixin inlineBox {
+   @include display(inline-flex);
 }
 
-%inlineFlex {
-   @include inlineFlex;
+%inlineBox {
+   @include inlineBox;
 }
 
 
 // Remove Default Appearance
 
 @mixin noLooks {
-   @include looks(none);
+   @include appearance(none);
 }
 
 %noLooks {
@@ -1078,7 +1106,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // No User Select
 
 @mixin noSelect {
-   @include select(none);
+   @include user-select(none);
 }
 
 %noSelect {
@@ -1133,7 +1161,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // Box Sizing with Border
 
 @mixin withAll {
-   @include whichBox(border-box);
+   @include box-sizing(border-box);
 }
 
 %withAll {
@@ -1172,9 +1200,9 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // Center Objs in THIS CONTAINER with Flexbox
 
 @mixin ctrBox {
-   @include box(flex);
-   @include boxHorizontal(center);
-   @include boxVertical(center);
+   @include display(flex);
+   @include justify-content(center);
+   @include align-items(center);
 }
 
 %ctrBox {
@@ -1189,19 +1217,19 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 @mixin useShadow($var, $arg:null) {
    $sdw: rgba(0,0,30,.3);
    @if $var == xs {
-      @include shadow(0 0 2px $sdw, $arg);
+      @include box-shadow(0 0 2px $sdw, $arg);
    }
    @if $var == s {
-      @include shadow(0 1px 3px $sdw, $arg)
+      @include box-shadow(0 1px 3px $sdw, $arg)
    }
    @if $var == m {
-      @include shadow(0 2px 6px $sdw, $arg)
+      @include box-shadow(0 2px 6px $sdw, $arg)
    }
    @if $var == l {
-      @include shadow(0 3px 9px $sdw, $arg)
+      @include box-shadow(0 3px 9px $sdw, $arg)
    }
    @if $var == xl {
-      @include shadow(0 4px 12px $sdw, $arg)
+      @include box-shadow(0 4px 12px $sdw, $arg)
    }
 }
 
@@ -1315,6 +1343,26 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
    @include pseudoAbs;
 }
 
+@mixin pseudoInRel {
+   display: inline-block;
+   content: '';
+   position: relative;
+}
+
+%pseudoInRel {
+   @include pseudoInRel;
+}
+
+@mixin pseudoInAbs {
+   display: inline-block;
+   content: '';
+   position: absolute;
+}
+
+%pseudoInAbs {
+   @include pseudoInAbs;
+}
+
 
 // Clear Floats
 
@@ -1387,7 +1435,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
       border: 0
    }
 
-   nav, main, section, header, footer, article, aside, address, hgroup, img, object, svg, iframe, video, audio, map, embed, canvas, textarea, form, fieldset, input, select, button, label, meter, progress, figure, ol, ul, dl, div, pre, table {
+   nav, main, section, header, footer, article, aside, address, hgroup, img, object, svg, iframe, video, audio, map, embed, canvas, textarea, form, fieldset, input, select, button, label, meter, progress, figure, ol, ul, dl, div, pre, table, h1, h2, h3, h4, h5, h6, p {
       @extend %relative;
    }
 
@@ -1419,11 +1467,11 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
    }
 
    form, fieldset, input, textarea {
-      @include whichBox(border-box);
+      @include box-sizing(border-box);
    }
 
    input, select, textarea, button, progress, meter {
-      @include looks(none);
+      @include appearance(none);
    }
 
    select, button, input[type=button] ,[role=button] {

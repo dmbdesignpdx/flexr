@@ -5,13 +5,13 @@ footer {
    background: $blueGrayOne;
 
    .row div:last-child {
-      @extend %flex;
-      @include boxWrap(wrap)
+      @extend %box;
+      @include flex-wrap(wrap)
    }
 
    img {
-      @include boxSelf(flex-start);
-      @include mix(hue-rotate(240deg) saturate(10%) brightness(110%));
+      @include align-self(flex-start);
+      @include filter(hue-rotate(240deg) saturate(10%) brightness(110%));
       width: 27%;
       margin-top: 50px
    }
@@ -23,7 +23,7 @@ footer {
    }
 
    small {
-      @include boxSelf(flex-end);
+      @include align-self(flex-end);
       margin-bottom: 50px;
       line-height: 1.3
    }

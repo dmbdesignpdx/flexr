@@ -1,8 +1,8 @@
 //  JS Classes
 
 .nav-scroll {
+   @include box-shadow(0 2px 5px rgba(0,0,30,.3));
     height: 80px !important;
-    box-shadow: 0 2px 5px rgba(0,0,30,.3)
 }
 
 .forIntro #hero-text {
@@ -10,5 +10,5 @@
 }
 
 .forIntro #top, .forIntro #bottom {
-    @include change(translateY(100%))
+    @include transform(translateY(100%))
 }
