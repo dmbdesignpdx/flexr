@@ -1,6 +1,6 @@
-# Flexr Grid - Version 2.0.2
+# Flexr Grid - Version 2.0.3
 
-Flexr is a responsive grid for those who just want a grid. Created by a web designer with an acute focus on the digital grid layout and its response to different screens. It features three ways that column react: expand, shrink and stretch.
+Flexr is a responsive grid for those who just want a grid. Created by a Daniel Blake, a front end web designer, with a focus on the digital grid layout and its response to different screens. It features three ways columns react: expanding, shrinking and stretching.
 
 
 ## First Thing's First
@@ -42,12 +42,13 @@ Here's the basic structure:
 </container>
 ```
 
-A container can be practically anything: a `div`, `section`, `nav`, `ul`, etc., even the `body`; just something to _contain_ your rows and columns. It doesn't even need a special class.
+A container can be practically anything: a `div`, `section`, `header`, `nav`, etc., even the `body`; just something to _contain_ your rows and columns. It doesn't even need any special class.
 
+**Rows** and **columns** can also be practically anything: you can have a `ul` as a row, and its `li` elements as columns.
 
 ## One Class Will Do
 
-Creating a column requires only one class `col-` defined by its size `[1&ndash;12]` (total column size no more than 12 per row). No need for offset columns.
+Creating a column requires only one class `col-` defined by its size `[1&ndash;12]` with no need for any offset columns.
 
 ```html
 <div class="row">
@@ -59,7 +60,9 @@ Creating a column requires only one class `col-` defined by its size `[1&ndash;1
 </div>
 ```
 
-If you'd like to use a column with a width that <i>you</i> define (i.e. a logo), simply give the column the class `col-x` and define the width in your css.
+Flexr is a **12 column grid**.
+
+If you'd like to use a column with a width that _you_ define (i.e. a logo), simply give the column the class `col-x` and define the width in your css.
 
 
 ## Defining Columns
@@ -82,9 +85,9 @@ To create **Expanding Columns**, all you need to do is add the expanding class `
 </div>
 ```
 
-Expanding Columns are columns that instead of shrinking in width along with the screen size (as Shrinking Columns do), they expand to keep their real estate on the screen.
+The only canidates for Expanding Columns are the _one_, _two_, and _three_ columns. When the screen reduces to the size of tablet portrait, these columns will expand automatically for smaller screens. This will only work if the row is evenly populated with these columns.
 
-To define **Stretching Columns**, just add the stretching class `stretch` in the parent row. Stretching Columns make their parent row full width to its parent, and divide the space between themselves equally with no gutters.
+To create **Stretching Columns**, just add the stretching class `stretch` in the parent row. Stretching Columns make their parent row full width to its parent, and divide the space between themselves equally with no gutters.
 
 ## Switching Column Sizes
 
@@ -115,7 +118,7 @@ Where `[col]` follows the same column class name structure:
 
 ## Justifying Columns
 
-The default justification is centered. To justify the columns to left or the right, just add the class `jus-[l,r]` to the parent row. For example, left-justification:
+The default justification of how the columns populate is _centered_. To change the justifaction, just add the class `jus-l` for _left_ or `jus-r` for _right_ to the parent row. For example, left-justification:
 
 ```html
 <div class="row jus-l">
@@ -128,13 +131,13 @@ The default justification is centered. To justify the columns to left or the rig
 
 ## Column/Gutter Widths and Break Points
 
-Break Point|Column Width|Gutter Width
----|---|---
-1180px +|~68px|28px
-1180px|~60px|28px
-940px|~44px|24px
-740px|~31px|16px
-520px|auto|16px
+Breakpoint Name|Breakpoint Value|Column Width|Gutter Width
+-|-|-|-
+Desktop|1180px +|~68px|28px
+Tablet Landscape|1180px|~60px|28px
+Tablet Portrait|940px|~44px|24px
+Phone Landscape|740px|~31px|16px
+Phone Portrait|520px|auto|16px
 
 
 ## Basic Site Example
@@ -211,15 +214,15 @@ http://flexrgrid.com/host/flexr-logo-use-white.svg
 
 ## Current Release Info
 
-**Version:** 2.0.2
+**Version:** 2.0.3
 
-**Date:** June 5, 2017
+**Date:** June 27, 2017
 
-**Notes:** Removes col-4 ability to expand.
+**Notes:** Adds MIT license.
 
 **File Size:** 3KB
 
-**Future Release Updates:** .sass and .scss versions will be available soon.
+**Future Release Updates:** Sass versions will be available soon.
 
 **Deprecation Warning:** Class names 'exp' and 'fill' will become deprecated by Version 3.0.0; please use 'expand' and 'stretch', respectively, instead.
 
