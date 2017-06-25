@@ -1,0 +1,22 @@
+{
+   "name": "flexr-grid",
+   "version": "1.0.0",
+   "description": "Flexr is a CSS responsive grid framework for modern browsers",
+   "main": "dist/flexr.min.js",
+   "homepage":"http:flexrgrid.com",
+   "repository": "https://github.com/dmbdesignpdx/flexr.git",
+   "author": "Daniel Blake <daniel@danielblake.design>",
+   "license": "MIT",
+   "scripts": {
+      "build": "babel src -d lib"
+   },
+
+   "devDependencies": {
+      "babel-cli": "^6.24.1",
+      "babel-preset-es2015": "^6.24.1",
+      "babili": "^0.1.4"
+   },
+   "babel": {
+      "presets": ["es2015","babili"]
+   }
+}

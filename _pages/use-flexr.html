@@ -25,7 +25,7 @@ bodyID: how-to
 
             <div class="col-12">
 
-               <h2>Current Version: {{ site.data.info.version }}</h2>
+               <h2>Current Release: Version {{ site.data.info.version }}</h2>
 
                <p>Check out <a href="#release">Current Release Info</a> for more details.</p>
 
@@ -65,16 +65,16 @@ bodyID: how-to
 
 &lt;/container&gt;</pre>
 
-                <p>A <strong>container</strong> can be practically anything: a <code>div</code>, <code>section</code>, <code>header</code>, <code>nav</code>, etc., even the <code>body</code>; just something to <em>contain</em> your rows and columns. It doesn't even need a special class.</p>
+                <p>A <strong>container</strong> can be practically anything: a <code>div</code>, <code>section</code>, <code>header</code>, <code>nav</code>, etc., even the <code>body</code>; just something to <em>contain</em> your rows and columns. It doesn't even need any special class.</p>
 
-                <p><strong>Rows</strong> and <strong>columns</strong> can also be practically anything. You can have a <code>ul</code> as a row, and its <code>li</code> elements as columns.</p>
+                <p><strong>Rows</strong> and <strong>columns</strong> can also be practically anything: you can have a <code>ul</code> as a row, and its <code>li</code> elements as columns.</p>
 
 
 <!-- One Class Will Do -->
 
                 <h2>One Class Will Do</h2>
 
-                <p>Creating a column requires only one class <code>col-</code> defined by its size <code>[1&ndash;12]</code> (total column size no more than 12 per row). No need for offset columns.</p>
+                <p>Creating a column requires only one class <code>col-</code> defined by its size <code>[1&ndash;12]</code> with no need for any offset columns.</p>
 
 <pre>&lt;div class="row"&gt;
 
@@ -83,6 +83,8 @@ bodyID: how-to
    &lt;div class="<b>col-6</b>"&gt;...&lt;/div&gt;
 
 &lt;/div&gt;</pre>
+
+               <p>Flexr is a <strong>12 column grid</strong>.</p>
 
                <p>If you'd like to use a column with a width that <i>you</i> define (i.e. for a logo), simply give the column the class <code>col-x</code> and define the width in your css.</p>
 
