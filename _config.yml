@@ -1,6 +1,8 @@
 title: Flexr Grid
 description: Flexr is a css responsive grid framework for modern browsers.
 email: dmblakedesign@gmail.com
+copyright: Copyright 2016 Daniel Blake. All rights reserved.
+author: Daniel Blake
 
 baseurl: ""
 url: http://flexrgrid.com
@@ -8,13 +10,12 @@ url: http://flexrgrid.com
 sass:
     style: compressed
 
-creator: Daniel Blake
-
 include:
    - _pages
    - .htaccess
 
 exclude:
+   - .sass-cache
    - .jekyll-metadata
 
 #Defaults
