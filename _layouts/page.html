@@ -7,10 +7,46 @@
 
 <body id="{{ page.bodyID }}">
 
-    {%- include nav.html -%}
+   {%- include nav.html -%}
 
-    {{ content }}
+   {%- if page.bodyID == 'how-to' -%}
 
-    {%- include footer.html -%}
+   <main>
+
+      <section>
+
+         <div class="row header">
+
+             <div class="col-12">
+
+                 <h1 id="doc-title" class="with-icon">Flexr Documentation</h1>
+
+             </div>
+
+         </div>
+
+         <div class="row">
+
+             <div class="col-12">
+
+                {{ content }}
+
+             </div>
+
+        </div>
+
+      </section>
+
+   </main>
+
+   {%- include cta.html -%}
+
+   {%- else -%}
+
+   {{ content }}
+
+   {%- endif -%}
+
+   {%- include footer.html -%}
 
 </body></html>

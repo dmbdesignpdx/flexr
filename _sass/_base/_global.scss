@@ -182,7 +182,7 @@ textarea {
    white-space: nowrap;
 }
 
-code, pre {
+p code, pre {
    @include flowage(scroll auto);
    width: 100%;
    padding: 1.6em 2em 1.8em;
@@ -194,7 +194,7 @@ p code, dt code {
    white-space: nowrap
 }
 
-code strong, pre strong, pre b, code b, footer a, p a {
+pre span, footer a, p a {
    font-weight: 700;
    color: $flexrRed
 }
