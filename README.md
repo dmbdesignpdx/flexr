@@ -1,6 +1,6 @@
 # Flexr Grid - Version 2.0.3
 
-Flexr is a responsive grid for those who just want a grid. Created by a Daniel Blake, a front end web designer, with a focus on the digital grid layout and its response to different screens. It features three ways columns react: expanding, shrinking and stretching.
+Flexr is a responsive grid for those who just want a grid. Created by Daniel Blake, a front end web designer, with a focus on the digital grid layout and its response to different screens. It features three ways columns react: expanding, shrinking and stretching.
 
 
 ## First Thing's First
