@@ -60,10 +60,27 @@
    }
 }
 
-#expand-text {
+#why-text {
    @extend %box;
    @include flex-direction(column);
    @include justify-content(center);
+   margin-bottom: 6px;
+
+   ul {
+      margin-top: 15px
+   }
+
+   li {
+      font-weight: 300;
+      color: $blueGraySeven;
+      list-style: square;
+      margin-left: 1.25em;
+      line-height: 1.6;
+
+      &::first-letter {
+         text-transform: capitalize;
+      }
+   }
 }
 
 #hero-image .container {
@@ -74,19 +91,18 @@
    @extend %animationTiming;
    @extend %smoothMover;
    @include size(100% auto);
-   @include transition-delay(.3s);
+   @include transition-delay(0.3s);
+   @include xy(0);
    position: absolute;
-   top: 0;
-   left: 0;
 }
 
-#expand-image img {
+#why-image img {
    width: 90%;
    margin: 0 auto;
 }
 
 #top {
-   @include transition-delay(.6s);
+   @include transition-delay(0.6s);
 }
 
 #browsers {
@@ -130,5 +146,9 @@
 
    .edge {
       background-position: 80% 33.333%
+   }
+
+   .explorer {
+      background-position: 100% 33.333%
    }
 }
