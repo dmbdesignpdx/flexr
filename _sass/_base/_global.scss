@@ -172,14 +172,15 @@ textarea, code, pre {
 }
 
 textarea {
-   @include size(702px 4.9em);
+   @include size(680px auto);
    @include box-shadow(none);
-   padding: 26px;
+   padding: 20px 24px 22px;
    resize: none;
    margin: 40px auto 0;
-   font-size: 14px;
-   text-align: center;
-   white-space: nowrap;
+   font-size: 15px;
+   white-space: pre-wrap;
+   line-height: 1.5;
+   word-break: keep-all;
 }
 
 p code, pre {

@@ -94,7 +94,7 @@
    }
 
    textarea {
-      @include flowage(scroll auto);
+      @include flowage(hidden scroll);
       width: 100%;
    }
 
