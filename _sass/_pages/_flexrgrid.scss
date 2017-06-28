@@ -17,3 +17,12 @@
 .stretch div[class*="col"]:nth-of-type(even) .example {
     background: $blueGrayFour
 }
+
+@include tabletPor {
+
+   .testr {
+      position: absolute;
+      left: -9999px
+   }
+
+};

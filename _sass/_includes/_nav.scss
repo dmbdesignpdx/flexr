@@ -1,17 +1,20 @@
-header {
-   @include smoothParent;
-   @include xy(-1px 0);
-   @include size(100% auto);
-   position: fixed;
-   z-index: 999;
-}
-
 #nav {
    @include smoothMover;
-   @include transition(.3s);
+   @include transition(0.3s);
    height: 112px;
    padding: 1px 0 0;
    background: $blueGrayTwo;
+
+   @include phoneLan {
+      height: 56px;
+   };
+
+   @include phonePor {
+      @include box-shadow(0 -1px 4px rgba(0,0,30,.3));
+      padding-top: 0;
+      padding-bottom: 1px;
+      background: lighten($blueGrayTwo,2);
+   };
 
    ul.row {
       height: 100%
@@ -19,16 +22,23 @@ header {
 
    li {
       margin-top: auto;
-      margin-bottom: auto
-   }
+      margin-bottom: auto;
 
-   li:first-of-type {
-      @include transform(translateZ(0));
-      margin-right: auto
-   }
+      &:first-of-type {
+         @include transform(translateZ(0));
+         margin-right: auto
+      }
 
-   li:nth-of-type(1n+2) {
-      margin-left: 30px
+      &:nth-of-type(1n+2) {
+         margin-left: 30px
+      }
+
+      @include phonePor {
+
+         @at-root header #nav ul.row li {
+            margin: auto;
+         }
+      };
    }
 
    .links {
@@ -38,19 +48,38 @@ header {
          color: $flexrRed
       }
 
+      @include tabletPor {
+         font-size: 17px
+      };
+
+      @include phonePor {
+
+         @at-root #nav li a.links {
+            margin: 0;
+            font-size: 0
+         }
+      };
+
       &::before {
          @extend %useSprite;
          @include size(28px);
          display: none;
-         content: ''
+         content: '';
+
+         @include phonePor {
+            display: block
+         };
       }
 
-      @include tabletPor {
-         font-size: 17px
-      };
+      &:active::before {
+
+         @include phonePor {
+            background-position-y: 100%
+         };
+      }
    }
 
-   a[href="/get-flexr/"] {
+   a[href="/get-flexr/"] { // Get It
       margin-right: 15px;
       margin-left: 15px;
       color: $blueGrayTwo;
@@ -61,22 +90,39 @@ header {
          background: $blueGraySeven
       }
 
+      @include phonePor {
+         color: $blueGraySeven;
+         background: none;
+
+         &:hover, &:active {
+            background: none;
+         }
+      };
+
       &::before {
          background-position: 40% 66.666%
       }
    }
 
-   a[href="/flexr-grid/"]::before {
+   a[href="/flexr-grid/"]::before { // The Grid
       background-position: 0 66.666%
    }
 
-   a[href="/use-flexr/"]::before {
+   a[href="/use-flexr/"]::before { // Use It
       background-position: 20% 66.666%
    }
 
-   a[href="/"] {
+   a[href="/"] { // Home
       width: 170px;
       cursor: default;
+
+      @include phoneLan {
+         width: 110px;
+      };
+
+      @include phonePor {
+         width: 90px;
+      };
 
       img {
          padding-top: 1px;
@@ -85,20 +131,48 @@ header {
          &:hover {
             @include filter(hue-rotate(240deg) saturate(10%) brightness(190%));
          }
+
+         @include phoneLan {
+            @include filter(hue-rotate(240deg) saturate(10%) brightness(190%));
+
+            &:active {
+               @include filter(none);
+            }
+         };
       }
    }
 }
 
-
+@include phoneLan {
+   #home #nav a[href="/"] img {
+      @include filter(none);
+   }
+};
 
 #the-grid #nav a[href="/flexr-grid/"], #how-to #nav a[href="/use-flexr/"] {
    color: $flexrRed
 }
 
 #download #nav a[href="/get-flexr/"] {
-   background: $blueGraySeven
+   background: $blueGraySeven;
+
+   @include phonePor {
+      background: none;
+   };
 }
 
 #the-grid #nav a[href="/flexr-grid/"]::before, #how-to #nav a[href="/use-flexr/"]::before, #download #nav a[href="/get-flexr/"]::before {
    background-position-y: 100%
+}
+
+
+//  JS Classes
+
+header .nav-scroll {
+   @include box-shadow(0 2px 5px rgba(0,0,30,.3));
+    height: 80px;
+
+    @include phoneLan {
+      height: 56px;
+   };
 }

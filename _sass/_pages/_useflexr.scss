@@ -11,35 +11,3 @@
       padding-bottom: 50px
    }
 }
-
-table {
-    width: 100%;
-    margin: 30px 0 0;
-    font-size: 17px;
-    color: $blueGraySeven;
-    background: $blueGrayFive;
-    table-layout: fixed;
-    border-collapse: collapse;
-}
-
-tr:nth-of-type(even) {
-    background: $blueGrayFour;
-}
-
-td, th {
-    width: 16.666%;
-    padding: 20px;
-    border-right: 1px solid $blueGrayTwo;
-    text-align: left;
-}
-
-td {
-
-   @include tabletPor {
-      padding: 18px
-   };
-}
-
-td:last-of-type {
-    border-right: none
-}

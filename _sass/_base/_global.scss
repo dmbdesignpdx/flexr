@@ -60,12 +60,33 @@ a {
    text-decoration: none;
 }
 
+header {
+   @include smoothParent;
+   @include xy(-1px 0);
+   @include size(100% auto);
+   position: fixed;
+   z-index: 999;
+
+   @include phonePor {
+      top: auto;
+      bottom: -1px;
+   };
+}
+
 section {
-   padding: 120px 0
+   padding: 120px 0;
+
+   @include phoneLan {
+      padding: 60px 0;
+   };
 }
 
 main ~ section:last-of-type {
-   padding: 0 0 130px
+   padding: 0 0 130px;
+
+   @include phoneLan {
+      padding: 0 0 60px;
+   };
 }
 
 abbr {
@@ -105,14 +126,22 @@ h1 {
    @include tabletLan {
       font-size: 46px
    };
+
+   @include phoneLan {
+      font-size: 30px
+   };
+
+   @include phonePor {
+      font-size: 36px
+   };
 }
 
 h2 {
-   font-size: 29px
-}
+   font-size: 29px;
 
-.header h1 {
-   text-align: center
+   @include phoneLan {
+      font-size: 21px
+   };
 }
 
 p, address, dd {
@@ -181,6 +210,11 @@ textarea {
    white-space: pre-wrap;
    line-height: 1.5;
    word-break: keep-all;
+
+   @include phoneLan {
+      @include flowage(hidden scroll);
+      width: 100%;
+   };
 }
 
 p code, pre {
@@ -238,6 +272,48 @@ dd {
    };
 }
 
+table {
+    width: 100%;
+    margin: 30px 0 0;
+    font-size: 17px;
+    color: $blueGraySeven;
+    background: $blueGrayFive;
+    table-layout: fixed;
+    border-collapse: collapse;
+
+    @include phoneLan {
+      @include flowage(scroll auto);
+      display: block;
+      font-size: 16px;
+   };
+}
+
+tr:nth-of-type(even) {
+    background: $blueGrayFour;
+}
+
+td, th {
+    width: 16.666%;
+    padding: 20px;
+    border-right: 1px solid $blueGrayTwo;
+    text-align: left;
+}
+
+td {
+
+   @include tabletPor {
+      padding: 18px
+   };
+
+   @include phoneLan {
+      padding: 14px
+   };
+}
+
+td:last-of-type {
+    border-right: none
+}
+
 
 // Global Classes
 
@@ -248,7 +324,15 @@ dd {
 
 
 .header {
-    padding: 30px 0 120px
+    padding: 30px 0 120px;
+
+    h1 {
+       text-align: center
+    }
+
+    @include phoneLan {
+      padding: 0 0 60px
+   };
 }
 
 .buffer {

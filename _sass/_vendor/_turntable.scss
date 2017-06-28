@@ -1,4 +1,4 @@
-/*! Mixin' with Turntable v0.0.11 -- by Daniel Blake */
+/*! Mixin' with Turntable v0.0.12 -- by Daniel Blake */
 
 // Create fresh stylesheets on the fly using presets, scratching, and sampling.
 
@@ -1286,10 +1286,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
       kerning: none;
       stretch: normal;
    }
-   text: {
-      transform: none;
-      rendering: optimizeSpeed;
-   }
+   text-rendering: optimizeSpeed;
    line-height: 1.5;
    letter-spacing: .2pt;
    word-spacing: .02em;
@@ -1307,10 +1304,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
       kerning: normal;
       stretch: normal;
    }
-   text: {
-      transform: none;
-      rendering: optimizeLegibility;
-   }
+   text-rendering: optimizeLegibility;
    line-height: 1.2;
    letter-spacing: .1pt;
    word-spacing: .01em;

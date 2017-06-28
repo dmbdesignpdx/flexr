@@ -8,13 +8,17 @@
    padding: 210px 0 150px;
    overflow: hidden;
 
+   @include phoneLan {
+      padding: 60px 0 20px;
+   };
+
+   @include phonePor {
+      padding: 60px 0 70px;
+   };
+
    .row {
       @extend %smoothParent;
       @include align-items(center)
-   }
-
-   pre {
-      margin-bottom: 0
    }
 
    .container {
@@ -33,13 +37,34 @@
    @include transition-property(opacity);
    @include transition-delay(1s);
 
+   @include phonePor {
+      @include justify-content(center);
+      margin-bottom: 20px;
+   };
+
    h1 {
-      text-align: left
+      text-align: left;
+
+      @include phonePor {
+         text-align: center;
+      };
    }
 
    p {
       width: 96%;
-      padding-bottom: 30px
+      padding-bottom: 30px;
+
+      @include phonePor {
+         margin: 20px auto 0;
+         text-align: center;
+      };
+   }
+
+   a {
+
+      @include phonePor {
+         margin: 0 auto 20px
+      };
    }
 
    .primary {
@@ -48,7 +73,11 @@
 
    .secondary {
       width: 90px;
-      margin: 0 0 0 30px
+      margin: 0 0 0 30px;
+
+      @include phonePor {
+         margin-left: 10px
+      };
    }
 }
 
@@ -66,6 +95,20 @@
    @include justify-content(center);
    margin-bottom: 6px;
 
+   h1 {
+
+      @include phonePor {
+         text-align: center;
+      };
+   }
+
+   p {
+
+      @include phonePor {
+         text-align: center;
+      };
+   }
+
    ul {
       margin-top: 15px
    }
@@ -76,6 +119,10 @@
       list-style: square;
       margin-left: 1.25em;
       line-height: 1.6;
+
+      @include phonePor {
+         font-size: 18px
+      };
 
       &::first-letter {
          text-transform: capitalize;
@@ -96,9 +143,16 @@
    position: absolute;
 }
 
-#why-image img {
-   width: 90%;
-   margin: 0 auto;
+#why-image {
+
+   @include phonePor {
+      order: 2
+   };
+
+   img {
+      width: 90%;
+      margin: 0 auto;
+   }
 }
 
 #top {
@@ -121,6 +175,10 @@
          width: 60%
       };
 
+      @include phonePor {
+         width: 40%
+      };
+
       & + p {
          margin-top: 10px;
          font-size: 15px;
@@ -133,7 +191,7 @@
    }
 
    .chrome {
-      background-position: 40% 33.333%
+      background-position: 40% 33.222%
    }
 
    .safari {
@@ -151,4 +209,15 @@
    .explorer {
       background-position: 100% 33.333%
    }
+}
+
+
+// JS Classes
+
+.forIntro #hero-text {
+    opacity: 0
+}
+
+.forIntro #top, .forIntro #bottom {
+    @include transform(translateY(100%))
 }

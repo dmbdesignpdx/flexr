@@ -7,7 +7,11 @@
 }
 
 #download .header {
-   padding: 30px 0 80px
+   padding: 30px 0 80px;
+
+   @include phonePor {
+      padding: 0;
+   };
 }
 
 #download-title::before {
@@ -15,7 +19,11 @@
 }
 
 #flexr-plus::before {
-   background-position: 20% 0
+   background-position: 20% 0;
+
+   @include phonePor {
+      margin-top: 30px
+   };
 }
 
 #host-title::before {
@@ -34,7 +42,7 @@
    }
 
    a {
-      padding: 50px 0;
+      padding: 50px 0 60px;
       font-weight: 300;
 
       &:hover {
