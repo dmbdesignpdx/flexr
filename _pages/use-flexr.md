@@ -48,7 +48,7 @@ A <strong>container</strong> can be practically anything: a `div`, `section`, `h
 
 ## One Class Will Do
 
-Creating a column requires only one class `col-` defined by its size `[1&ndash;12]` with no need for any offset columns.
+Creating a column requires only one class `col-` defined by its size `[1–12]` with no need for any offset columns.
 
 <pre>&lt;div class="row"&gt;
 
@@ -84,11 +84,11 @@ The only canidates for Expanding Columns are the _one_, _two_, and _three_ colum
 
 To create <strong>Stretching Columns</strong>, just add the stretching class `stretch` in the parent row. Stretching Columns make their parent row full width to its parent, and divide the space between themselves equally with no gutters.
 
-See the difference in behavior [here](/flexr-grid/).
+See the difference in behavior on the [Flexr Grid Page](/flexr-grid/).
 
 ## Switching Column Sizes
 
-Sometimes at certain screen sizes you'd like the column to be specifically bigger or smaller. Flexr has four special prefixes for switching that you can use. All you need to do is attach the prefix that correlates with the <strong>breakpoint</strong> you want to the column size you want it to change to.
+Sometimes at certain screen sizes you'd like the column to be specifically bigger or smaller. Flexr has four special prefixes for switching that you can use. All you need to do is attach the prefix that matches the <strong>breakpoint</strong> where you want to change with the new column size:
 
 <dl>
    <dt><code>tl-[col]</code></dt>
@@ -101,7 +101,7 @@ Sometimes at certain screen sizes you'd like the column to be specifically bigge
    <dd>Phone Portrait</dd>
 </dl>
 
-Where `[col]` follows the same column class name structure:
+Where `[col]` follows the same column class name structure.
 
  <pre>&lt;div class="row"&gt;
 
