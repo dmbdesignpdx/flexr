@@ -18,10 +18,16 @@ function navSizing() {
 
     var a = window.innerWidth, b = window.pageYOffset, nav = document.getElementById('nav');
 
+
     if (a > 740 && b > 60 || 740 > a && b > 5) {
+
+
       nav.classList.add('nav-scroll')
+
    } else {
+
       nav.classList.remove('nav-scroll')
+
    }
 
 }
@@ -64,8 +70,8 @@ function selectAndCopy(obj,text) {
 
 // Call Functions
 
-window.onscroll = navSizing;
+window.addEventListener('scroll',navSizing);
 
-window.onresize = navSizing;
+window.addEventListener('resize',navSizing);
 
-window.onload = introAction;
+window.addEventListener('load',introAction);

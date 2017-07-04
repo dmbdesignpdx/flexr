@@ -46,7 +46,15 @@
       font-weight: 300;
 
       &:hover {
-         background: $blueGrayThree
+         background: $blueGrayThree;
+
+         @include phoneLan {
+            background: none;
+         };
+      }
+
+      &:active {
+         background: $blueGrayThree;
       }
    }
 

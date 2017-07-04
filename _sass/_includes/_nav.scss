@@ -168,7 +168,7 @@
 
 //  JS Classes
 
-header .nav-scroll {
+header #nav.nav-scroll {
    @include box-shadow(0 2px 5px rgba(0,0,30,.3));
     height: 80px;
 
