@@ -21,6 +21,7 @@ exclude:
    - js
    - yarn.lock
    - package.json
+   - gulpfile.js
 
 
 defaults:

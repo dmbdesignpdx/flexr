@@ -15,12 +15,11 @@ function introAction() {
 // Scrolling
 
 function navSizing() {
-
-    var a = window.innerWidth, b = window.pageYOffset, nav = document.getElementById('nav');
-
+   
+   const nav = document.getElementById('nav');
+   let [a,b] = [window.innerWidth, window.pageYOffset];
 
     if (a > 740 && b > 60 || 740 > a && b > 5) {
-
 
       nav.classList.add('nav-scroll')
 
