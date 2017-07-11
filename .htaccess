@@ -1,14 +1,12 @@
-#Short-term
-<filesMatch ".(css)$">
-Header set Cache-Control "max-age=604800, public"
-</filesMatch>
+AddType image/svg+xml .svg .svgz
 
-#Mid-term
-<filesMatch ".(svg|js)$">
-Header set Cache-Control "max-age=2628000, public"
-</filesMatch>
-
-#Long-term
-<filesMatch ".(ico|png)$">
-Header set Cache-Control "max-age=15768000, public"
-</filesMatch>
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/png "access 6 months"
+ExpiresByType image/svg+xml "access 6 months"
+ExpiresByType text/css "access 1 month"
+ExpiresByType text/html "access 3 weeks"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 1 month"
+</IfModule>

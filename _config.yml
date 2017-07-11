@@ -16,12 +16,17 @@ include:
 
 exclude:
    - .sass-cache
+   - .gitignore
    - .jekyll-metadata
    - node_modules
    - js
    - yarn.lock
    - package.json
    - gulpfile.js
+   - README.md
+   - CNAME
+   - flexrgrid.csr
+   - flexrgrid.key
 
 
 defaults:
