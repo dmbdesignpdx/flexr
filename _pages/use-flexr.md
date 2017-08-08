@@ -42,7 +42,7 @@ Here's the basic structure:
 
 &lt;/container&gt;</pre>
 
-A <strong>container</strong> can be practically anything: a `div`, `section`, `header`, `nav`, etc., even the `body`; just something to <em>contain</em> your rows and columns. It doesn't even need any special class.
+A <strong>container</strong> can be practically anything: a `div`, `section`, `header`, `nav`, etc., even the `body`; just something to <em>contain</em> your rows and columns. It doesn't even need a special class.
 
 <strong>Rows</strong> and <strong>columns</strong> can also be practically anything: you can have a `ul` as a row, and its `li` elements as columns.
 
