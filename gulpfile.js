@@ -10,7 +10,7 @@ gulp.task('scripts', () => {
    return gulp.src(['./js/*.js' ])
    .pipe(plumber())
    .pipe(concat('flexr.min.js'))
-   .pipe(babel({presets: ['es2015']}))
+   .pipe(babel({presets: ['env']}))
    .pipe(uglify())
    .pipe(gulp.dest('./dist/'))
    .pipe(gulp.dest('./_site/dist/'));
