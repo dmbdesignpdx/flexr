@@ -3,10 +3,10 @@ AddType image/svg+xml .svg .svgz
 <IfModule mod_expires.c>
 ExpiresActive On
 ExpiresByType image/png "access 6 months"
-ExpiresByType image/svg+xml "access 6 months"
-ExpiresByType text/css "access 1 month"
+ExpiresByType image/svg+xml "access 3 months"
+ExpiresByType text/css "access 3 weeks"
 ExpiresByType text/html "access 3 weeks"
-ExpiresByType text/x-javascript "access 1 month"
-ExpiresByType image/x-icon "access 1 year"
+ExpiresByType text/x-javascript "access 3 weeks"
+ExpiresByType image/x-icon "access 6 months"
 ExpiresDefault "access 1 month"
 </IfModule>
