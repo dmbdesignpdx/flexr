@@ -3,5 +3,5 @@ rdate: June 27, 2017
 size: 3KB
 
 notes: Adds MIT license.
-future: Sass versions will be available soon.
-deprecate: !!html Class names 'exp' and 'fill' will be deprecated by Version 3.0.0; please use 'expand' and 'stretch', respectively,&nbsp;instead.
+future: Sass mixins and functions will be available soon.
+deprecate: !!html Class names 'exp' and 'fill' will be deprecated by Version 2.1.0; please use 'expand' and 'stretch', respectively,&nbsp;instead.

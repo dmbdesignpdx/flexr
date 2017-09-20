@@ -113,7 +113,7 @@ h1, h2 {
 }
 
 h1, h2, p, address {
-   @extend %left;
+   text-align: inherit;
    width: 100%;
 }
 

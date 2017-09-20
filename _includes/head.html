@@ -2,8 +2,6 @@
 
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<style type="text/css">body{background:#2E2E42}</style>
-
 <title>{{ page.title | default: site.title }}</title>
 
 <meta name="description" content="{{ site.description }}">
@@ -74,11 +72,9 @@
 
 <meta property="og:type" content="website">
 
-<noscript id="deferred-styles">
-  <link href='https://fonts.googleapis.com/css?family=Roboto:300,700' rel='stylesheet'>
-</noscript>
+<style type="text/css">body{background:#2E2E42}</style>
 
-<script>var loadDeferredStyles=function(){var e=document.getElementById("deferred-styles"),t=document.createElement("div");t.innerHTML=e.textContent,document.body.appendChild(t),e.parentElement.removeChild(e)},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(function(){window.setTimeout(loadDeferredStyles,0)}):window.addEventListener("load",loadDeferredStyles);</script>
+<link href="https://cdn.jsdelivr.net/gh/dmbdesignpdx/flexr@2.0.5/flexr.css" rel="stylesheet">
 
 <script src="/dist/google-analytics.js" type="text/javascript"></script>
 
@@ -96,5 +92,11 @@
    "email":"daniel@danielblake.design"
 }
 </script>
+
+<noscript id="deferred-styles">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,700' rel='stylesheet'>
+</noscript>
+
+<script>var loadDeferredStyles=function(){var e=document.getElementById("deferred-styles"),t=document.createElement("div");t.innerHTML=e.textContent,document.body.appendChild(t),e.parentElement.removeChild(e)},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(function(){window.setTimeout(loadDeferredStyles,0)}):window.addEventListener("load",loadDeferredStyles);</script>
 
 <link href="/css/master.css" rel="stylesheet">

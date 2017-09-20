@@ -5,16 +5,6 @@
 }
 
 #hero {
-   padding: 210px 0 150px;
-   overflow: hidden;
-
-   @include phoneLan {
-      padding: 60px 0 20px;
-   };
-
-   @include phonePor {
-      padding: 60px 0 70px;
-   };
 
    .row {
       @extend %smoothParent;
@@ -31,24 +21,14 @@
 
 #hero-text {
    @extend %box;
-   @extend %animationTiming;
-   @extend %smoothMover;
    @include flex-wrap(wrap);
-   @include transition-property(opacity);
-   @include transition-delay(1s);
+   @extend %left;
 
    @include phonePor {
       @include justify-content(center);
       margin-bottom: 20px;
+      text-align: center;
    };
-
-   h1 {
-      @extend %left;
-
-      @include phonePor {
-         text-align: center;
-      };
-   }
 
    p {
       width: 96%;
@@ -56,7 +36,6 @@
 
       @include phonePor {
          margin: 20px auto 0;
-         text-align: center;
       };
    }
 
@@ -95,25 +74,16 @@
    @include justify-content(center);
    margin-bottom: 6px;
 
-   h1 {
-
-      @include phonePor {
-         text-align: center;
-      };
-   }
-
-   p {
-
-      @include phonePor {
-         text-align: center;
-      };
-   }
+   @include phonePor {
+      text-align: center;
+   };
 
    ul {
       margin-top: 15px
    }
 
    li {
+      @extend %left;
       font-weight: 300;
       color: $blueGraySeven;
       list-style: square;
@@ -213,15 +183,4 @@
    .explorer {
       background-position: 100% 33.333%
    }
-}
-
-
-// JS Classes
-
-.forIntro #hero-text {
-    opacity: 0
-}
-
-.forIntro #top, .forIntro #bottom {
-    @include transform(translateY(100%))
 }
