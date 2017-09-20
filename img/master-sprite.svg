@@ -1,55 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="title" viewBox="0 0 1500 1000">
-<title id="title">Master sprite sheet of icons</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000">
 <defs><style><![CDATA[
-      .cls-1, .cls-9 {
-        fill: #f56
-      }
+   .cls-1, .cls-9 { fill: #f56 }
 
-      .cls-11, .cls-2 {
-        fill: none
-      }
+   .cls-11, .cls-2 { fill: none }
 
-      .cls-2 {
-        stroke: #334;
-        stroke-width: 13px
-      }
+   .cls-2 { stroke: #334; stroke-width: 13px }
 
-      .cls-3 {
-        fill: #dde
-      }
+   .cls-3 { fill: #dde }
 
-      .cls-4 {
-        fill: #779
-      }
+   .cls-4 { fill: #779 }
 
-      .cls-14, .cls-5 {
-        fill: #fa6
-      }
+   .cls-14, .cls-5 { fill: #fa6 }
 
-      .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
-        stroke: #1c1c2d
-      }
+   .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 { stroke: #1c1c2d }
 
-      .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-5, .cls-6, .cls-8, .cls-9 {
-        stroke-width: 5px
-      }
+   .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-5, .cls-6, .cls-8, .cls-9 { stroke-width: 5px }
 
-      .cls-6 {
-        fill: #eef
-      }
+   .cls-6 { fill: #eef }
 
-      .cls-10, .cls-7, .cls-8 {
-        fill: #3dd
-      }
+   .cls-10, .cls-7, .cls-8 { fill: #3dd }
 
-      .cls-12 {
-        fill: #5eb
-      }
+   .cls-12 { fill: #5eb }
 
-      .cls-13 {
-        fill: #4b4b69
-      }
+   .cls-13 { fill: #4b4b69 }
 ]]></style></defs>
   <g id="nav">
     <g id="active">

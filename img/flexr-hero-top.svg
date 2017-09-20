@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="title" viewBox="0 0 692 430">
-<title id="title">Illustration of a smart phone with a minimalistic-styled website</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 692 430">
 <defs><style><![CDATA[
-      * { stroke: #1c1c2d; stroke-width: 2px }
+   * { stroke: #1c1c2d; stroke-width: 2px }
 
-      .cls-2 { fill: #363647 }
+   .cls-2 { fill: #363647 }
 
-      .cls-3 { fill: none }
+   .cls-3 { fill: none }
 
-      .cls-5 { fill: #dde }
+   .cls-5 { fill: #dde }
 
-      .cls-6 { fill: #668 }
+   .cls-6 { fill: #668 }
 
-      .cls-7 { fill: #aab }
+   .cls-7 { fill: #aab }
 
-      .cls-8 { fill: #bbc }
+   .cls-8 { fill: #bbc }
 
-      .cls-9 { fill: #f56 }
+   .cls-9 { fill: #f56 }
 ]]></style></defs>
 <rect class="cls-2" x="497" y="55" width="174" height="360" rx="23" ry="23"/>
 <rect class="cls-3" x="565" y="390" width="38" height="16" rx="8" ry="8"/>

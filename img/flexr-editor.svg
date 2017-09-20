@@ -1,42 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 430">
 <defs><style><![CDATA[
-      .cls-1 {
-        fill: #454559;
-      }
+   .cls-1 { fill: #454559 }
 
-      .cls-1, .cls-2, .cls-3, .cls-4 {
-        stroke: #1c1c2d;
-        stroke-width: 3px;
-      }
+   .cls-1, .cls-2, .cls-3, .cls-4 { stroke: #1c1c2d; stroke-width: 3px }
 
-      .cls-2 {
-        fill: #353549;
-      }
+   .cls-2 { fill: #353549 }
 
-      .cls-3 {
-        fill: #779;
-      }
+   .cls-3 { fill: #779 }
 
-      .cls-4, .cls-6 {
-        fill: #f56;
-      }
+   .cls-4, .cls-6 { fill: #f56 }
 
-      .cls-5 {
-        fill: #eef;
-      }
+   .cls-5 { fill: #eef }
 
-      .cls-7 {
-        fill: #fa6;
-      }
+   .cls-7 { fill: #fa6 }
 
-      .cls-8 {
-        fill: #5eb;
-      }
+   .cls-8 { fill: #5eb }
 
-      .cls-9 {
-        fill: #3dd;
-      }
+   .cls-9 { fill: #3dd }
 ]]></style></defs>
 <rect class="cls-1" x="3" y="3" width="594" height="424" rx="10"/>
 <path class="cls-2" d="M97,3H587a10,10,0,0,1,10,10V417a10,10,0,0,1-10,10H97Z"/>
