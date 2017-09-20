@@ -1,4 +1,4 @@
-/*! Mixin' with Turntable v0.0.12 -- by Daniel Blake */
+/*! Mixin' with Turntable v0.0.17 -- by Daniel Blake */
 
 // Create fresh stylesheets on the fly using presets, scratching, and sampling.
 
@@ -15,17 +15,17 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Display Flex or Grid:
 
-@mixin display($var, $arg:null) {
-   @if $var == grid {
-      display: -ms-#{$var} #{$arg};
-      display: $var $arg;
+@mixin display($arg, $impt:null) {
+   @if $arg == grid {
+      display: -ms-#{$arg} #{$impt};
+      display: $arg $impt;
    } @else {
-      $old: if($var == inline-flex, inline-, null );
-      display: -webkit-#{$old}box #{$arg};
-      display: -moz-#{$old}box #{$arg};
-      display: -ms-#{$var}box #{$arg};
-      display: -webkit-#{$var} #{$arg};
-      display: $var $arg;
+      $old: if($arg == inline-flex, inline-, null );
+      display: -webkit-#{$old}box #{$impt};
+      display: -moz-#{$old}box #{$impt};
+      display: -ms-#{$arg}box #{$impt};
+      display: -webkit-#{$arg} #{$impt};
+      display: $arg $impt;
    }
 }
 
@@ -34,10 +34,10 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 1. Grid Template Columns
 
-@mixin grid-template-columns($var...) {
+@mixin grid-template-columns($args...) {
    @for $i from 1 through 2 {
-      $list: ();
-      @each $item in $var {
+      $array: ();
+      @each $item in $arg {
          @if length($item) > 1 {
             @if $i == 1 {
                $item: unquote("(#{nth($item,2)})[#{nth($item,1)}]");
@@ -45,12 +45,12 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
                $item: unquote("repeat(#{nth($item,1)}, #{nth($item,2)})");
             }
          }
-         $list: append($list, $item, space);
+         $array: append($array, $item, space);
       }
       @if $i == 1 {
-         -ms-grid-columns: $list;
+         -ms-grid-columns: $array;
       } @else {
-         grid-template-columns: $list;
+         grid-template-columns: $array;
       }
    }
 }
@@ -58,10 +58,10 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 2. Grid Template Rows
 
-@mixin grid-template-rows($var...) {
+@mixin grid-template-rows($args...) {
    @for $i from 1 through 2 {
-      $list: ();
-      @each $item in $var {
+      $array: ();
+      @each $item in $arg {
          @if length($item) > 1 {
             @if $i == 1 {
                $item: unquote("(#{nth($item,2)})[#{nth($item,1)}]");
@@ -69,12 +69,12 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
                $item: unquote("repeat(#{nth($item,1)}, #{nth($item,2)})");
             }
          }
-         $list: append($list, $item, space);
+         $array: append($array, $item, space);
       }
       @if $i == 1 {
-         -ms-grid-rows: $list;
+         -ms-grid-rows: $array;
       } @else {
-         grid-template-rows: $list;
+         grid-template-rows: $array;
       }
    }
 }
@@ -82,49 +82,49 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 3. Grid Column Span
 
-@mixin grid-column-span($var, $arg:null) {
-   -ms-grid-column-span: $var $arg;
-   grid-column-end: span #{$var} $arg;
+@mixin grid-column-span($arg, $impt:null) {
+   -ms-grid-column-span: $arg $impt;
+   grid-column-end: span #{$arg} $impt;
 }
 
 
 // 4. Grid Row Span
 
-@mixin grid-row-span($var, $arg:null) {
-   -ms-grid-row-span: $var $arg;
-   grid-row-end: span #{$var} $arg;
+@mixin grid-row-span($arg, $impt:null) {
+   -ms-grid-row-span: $arg $impt;
+   grid-row-end: span #{$arg} $impt;
 }
 
 
 // 5. Grid Justify Self
 
-@mixin grid-justify-self($var, $arg:null) {
-   -ms-grid-row-align: $var $arg;
-   justify-self: $var $arg;
+@mixin grid-justify-self($arg, $impt:null) {
+   -ms-grid-row-align: $arg $impt;
+   justify-self: $arg $impt;
 }
 
 
 // 5. Grid Align Self
 
-@mixin grid-align-self($var, $arg:null) {
-   -ms-grid-column-align: $var $arg;
-   align-self: $var $arg;
+@mixin grid-align-self($arg, $impt:null) {
+   -ms-grid-column-align: $arg $impt;
+   align-self: $arg $impt;
 }
 
 
 // 7. Grid Column Start
 
-@mixin grid-column-start($var, $arg:null) {
-   -ms-grid-column: $var $arg;
-   grid-column-start: $var $arg;
+@mixin grid-column-start($arg, $impt:null) {
+   -ms-grid-column: $arg $impt;
+   grid-column-start: $arg $impt;
 }
 
 
 // 8. Grid Row Start
 
-@mixin grid-row-start($var, $arg:null) {
-   -ms-grid-row: $var $arg;
-   grid-row-start: $var $arg;
+@mixin grid-row-start($arg, $impt:null) {
+   -ms-grid-row: $arg $impt;
+   grid-row-start: $arg $impt;
 }
 
 
@@ -133,16 +133,16 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 1. Flex Direction
 
-@mixin flex-direction($var, $arg:null) {
-   $ori: if($var == row or $var == row-reverse, horizontal, vertical);
-   $dir: if($var == row or $var == column, normal, reverse);
-   -webkit-box-orient: $ori $arg;
-   -moz-box-orient: $ori $arg;
-   -webkit-box-direction: $dir $arg;
-   -moz-box-direction: $dir $arg;
+@mixin flex-direction($arg, $impt:null) {
+   $origin: if($arg == row or $arg == row-reverse, horizontal, vertical);
+   $dir: if($arg == row or $arg == column, normal, reverse);
+   -webkit-box-orient: $origin $impt;
+   -moz-box-orient: $origin $impt;
+   -webkit-box-direction: $dir $impt;
+   -moz-box-direction: $dir $impt;
    @for $i from 2 through 5 {
       @if $i != 3 {
-         #{nth($prefix,$i)}flex-direction: $var $arg
+         #{nth($prefix,$i)}flex-direction: $arg $impt
       }
    }
 }
@@ -150,237 +150,237 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 2. Flex Wrap
 
-@mixin flex-wrap($var, $arg:null) {
-   -ms-flex-wrap: if($var == nowrap, none #{$arg}, $var $arg);
-   -webkit-flex-wrap: $var $arg;
-   flex-wrap: $var $arg;
+@mixin flex-wrap($arg, $impt:null) {
+   -ms-flex-wrap: if($arg == nowrap, none #{$impt}, $arg $impt);
+   -webkit-flex-wrap: $arg $impt;
+   flex-wrap: $arg $impt;
 }
 
 
 // 3. Justify Content
 
-@mixin justify-content($var, $arg:null) {
-   $old: $var;
-   @if $var == flex-start {
+@mixin justify-content($arg, $impt:null) {
+   $old: $arg;
+   @if $arg == flex-start {
       $old: start;
-   } @else if $var == flex-end {
+   } @else if $arg == flex-end {
       $old: end;
-   } @else if $var == space-between {
+   } @else if $arg == space-between {
       $old: justify;
-   } @else if $var == space-around {
+   } @else if $arg == space-around {
       $old: distribute;
    }
-   -webkit-box-pack: if($old == distribute, justify #{$arg}, $old $arg);
-   -moz-box-pack: if($old == distribute, justify #{$arg}, $old $arg);
-   -ms-flex-pack: $old $arg;
-   -webkit-justify-content: $var $arg;
-   justify-content: $var $arg;
+   -webkit-box-pack: if($old == distribute, justify #{$impt}, $old $impt);
+   -moz-box-pack: if($old == distribute, justify #{$impt}, $old $impt);
+   -ms-flex-pack: $old $impt;
+   -webkit-justify-content: $arg $impt;
+   justify-content: $arg $impt;
 }
 
 
 // 4. Align Content
 
-@mixin align-content($var, $arg:null) {
-   @if $var == flex-start {
-      -ms-flex-line-pack: start #{$arg};
-   } @else if $var == flex-end {
-      -ms-flex-line-pack: end #{$arg};
-   } @else if $var == space-between {
-      -ms-flex-line-pack: justify #{$arg};
-   } @else if $var == space-around {
-      -ms-flex-line-pack: distribute #{$arg};
+@mixin align-content($arg, $impt:null) {
+   @if $arg == flex-start {
+      -ms-flex-line-pack: start #{$impt};
+   } @else if $arg == flex-end {
+      -ms-flex-line-pack: end #{$impt};
+   } @else if $arg == space-between {
+      -ms-flex-line-pack: justify #{$impt};
+   } @else if $arg == space-around {
+      -ms-flex-line-pack: distribute #{$impt};
    } @else {
-      -ms-flex-line-pack: $var $arg;
+      -ms-flex-line-pack: $arg $impt;
    }
-   -webkit-align-content: $var $arg;
-   align-content: $var $arg;
+   -webkit-align-content: $arg $impt;
+   align-content: $arg $impt;
 }
 
 
 // 5. Align Items
 
-@mixin align-items($var, $arg:null) {
-   $old: $var;
-   @if $var == flex-start {
+@mixin align-items($arg, $impt:null) {
+   $old: $arg;
+   @if $arg == flex-start {
       $old: start;
-   } @else if $var == flex-end {
+   } @else if $arg == flex-end {
       $old: end;
    }
-   -webkit-box-align: $old $arg;
-   -moz-box-align: $old $arg;
-   -ms-flex-align: $old $arg;
-   -webkit-align-items: $var $arg;
-   align-items: $var $arg;
+   -webkit-box-align: $old $impt;
+   -moz-box-align: $old $impt;
+   -ms-flex-align: $old $impt;
+   -webkit-align-items: $arg $impt;
+   align-items: $arg $impt;
 }
 
 
 // 6. Align Self
 
-@mixin align-self($var, $arg:null) {
-   @if $var == flex-start {
-      -ms-flex-item-align: start #{$arg};
-   } @else if $var == flex-end {
-      -ms-flex-item-align: end #{$arg};
+@mixin align-self($arg, $impt:null) {
+   @if $arg == flex-start {
+      -ms-flex-item-align: start #{$impt};
+   } @else if $arg == flex-end {
+      -ms-flex-item-align: end #{$impt};
    } @else {
-      -ms-flex-item-align: $var $arg;
+      -ms-flex-item-align: $arg $impt;
    }
-   -webkit-align-self: $var $arg;
-   align-self: $var $arg;
+   -webkit-align-self: $arg $impt;
+   align-self: $arg $impt;
 }
 
 
 // 7. Order
 
-@mixin order($var, $arg:null) {
-   -webkit-box-ordinal-group: $var $arg;
-   -moz-box-ordinal-group: $var $arg;
-   -ms-flex-order: $var $arg;
-   -webkit-order: $var $arg;
-   order: $var $arg;
+@mixin order($arg, $impt:null) {
+   -webkit-box-ordinal-group: $arg $impt;
+   -moz-box-ordinal-group: $arg $impt;
+   -ms-flex-order: $arg $impt;
+   -webkit-order: $arg $impt;
+   order: $arg $impt;
 }
 
 
 // 8. Grow
 
-@mixin flex-grow($var, $arg:null) {
-   -ms-flex-positive: $var $arg;
-   -webkit-flex-grow: $var $arg;
-   flex-grow: $var $arg;
+@mixin flex-grow($arg, $impt:null) {
+   -ms-flex-positive: $arg $impt;
+   -webkit-flex-grow: $arg $impt;
+   flex-grow: $arg $impt;
 }
 
 
 // 9. Shrink
 
-@mixin flex-shrink($var, $arg:null) {
-   -ms-flex-negative: $var $arg;
-   -webkit-flex-shrink: $var $arg;
-   flex-shrink: $var $arg;
+@mixin flex-shrink($arg, $impt:null) {
+   -ms-flex-negative: $arg $impt;
+   -webkit-flex-shrink: $arg $impt;
+   flex-shrink: $arg $impt;
 }
 
 
 // 9. Basis
 
-@mixin flex-basis($var, $arg:null) {
-   -ms-flex-preferred-size: $var $arg;
-   -webkit-flex-basis: $var $arg;
-   flex-basis: $var $arg;
+@mixin flex-basis($arg, $impt:null) {
+   -ms-flex-preferred-size: $arg $impt;
+   -webkit-flex-basis: $arg $impt;
+   flex-basis: $arg $impt;
 }
 
 
 // 10. Flex
 
-@mixin flex($var, $arg:null) {
-   -webkit-box-flex: $var $arg;
-   -moz-box-flex: $var $arg;
-   -ms-flex: $var $arg;
-   -webkit-flex: $var $arg;
-   flex: $var $arg;
+@mixin flex($arg, $impt:null) {
+   -webkit-box-flex: $arg $impt;
+   -moz-box-flex: $arg $impt;
+   -ms-flex: $arg $impt;
+   -webkit-flex: $arg $impt;
+   flex: $arg $impt;
 }
 
 
 //  Filter
 
-@mixin filter($vars, $arg:null){
-   -webkit-filter: $vars $arg;
-   filter: $vars $arg;
+@mixin filter($arg, $impt:null){
+   -webkit-filter: $arg $impt;
+   filter: $arg $impt;
 }
 
 
 //  Appearance
 
-@mixin appearance($var, $arg:null){
+@mixin appearance($arg, $impt:null){
    @for $i from 3 through 5 {
-      #{nth($prefix,$i)}appearance: $var $arg;
+      #{nth($prefix,$i)}appearance: $arg $impt;
    }
 }
 
 
 //  Transform
 
-@mixin transform($what, $arg:null) {
+@mixin transform($arg, $impt:null) {
    @each $item in $prefix {
-      #{$item}transform: $what $arg;
+      #{$item}transform: $arg $impt;
    }
 }
 
-@mixin transform-origin($var, $arg:null) {
+@mixin transform-origin($arg, $impt:null) {
    @each $item in $prefix {
-      #{$item}transform-origin: $var $arg;
+      #{$item}transform-origin: $arg $impt;
    }
 }
 
-@mixin transform-style($var, $arg:null){
+@mixin transform-style($arg, $impt:null){
    @each $item in $prefix {
-      #{$item}transform-style: $var $arg;
+      #{$item}transform-style: $arg $impt;
    }
 }
 
 
 //  Transition
 
-@mixin transition($vars...) {
-   $arg: null;
+@mixin transition($args...) {
+   $impt: null;
    @each $item in $prefix {
-      $list: ();
-      @each $var in $vars {
-         @if index($var,transform) {
-            $var: set-nth($var,1,#{$item}transform);
+      $array: ();
+      @each $arg in $args {
+         @if index($arg,transform) {
+            $arg: set-nth($arg,1,#{$item}transform);
          }
-         @else if index($var,filter) {
-            $var: set-nth($var,1,#{$item}filter);
+         @else if index($arg,filter) {
+            $arg: set-nth($arg,1,#{$item}filter);
          }
-         @else if index($var,!important) {
-            $var: null;
-            $arg: !important;
+         @else if index($arg,!important) {
+            $arg: null;
+            $impt: !important;
          }
-         $list: append($list,$var,comma);
+         $array: append($array,$arg,comma);
       }
-      #{$item}transition: $list $arg;
+      #{$item}transition: $array $impt;
    }
 }
 
-@mixin transition-delay($var, $arg:null) {
+@mixin transition-delay($arg, $impt:null) {
    @each $item in $prefix {
-      #{$item}transition-delay: $var $arg;
+      #{$item}transition-delay: $arg $impt;
    }
 }
 
-@mixin transition-duration($var, $arg:null) {
+@mixin transition-duration($arg, $impt:null) {
    @each $item in $prefix {
-      #{$item}transition-duration: $var $arg;
+      #{$item}transition-duration: $arg $impt;
    }
 }
 
-@mixin transition-property($var, $arg:null) {
+@mixin transition-property($arg, $impt:null) {
    @each $item in $prefix {
-      #{$item}transition-property: if($var == transform or $var == filter, #{$item}#{$var} #{$arg}, $var $arg);
+      #{$item}transition-property: if($arg == transform or $arg == filter, #{$item}#{$arg} #{$impt}, $arg $impt);
    }
 }
 
 
 //  Animation
 
-@mixin animation($vars...){
+@mixin animation($args...){
    @for $i from 3 through 5 {
-      #{nth($prefix,$i)}animation: $vars;
+      #{nth($prefix,$i)}animation: $args;
    }
 }
 
-@mixin animation-delay($var, $arg:null){
+@mixin animation-delay($arg, $impt:null){
    @for $i from 3 through 5 {
-      #{nth($prefix,$i)}animation-delay: $vars $arg;
+      #{nth($prefix,$i)}animation-delay: $arg $impt;
    }
 }
 
-@mixin animation-play($var, $arg:null){
+@mixin animation-play($arg, $impt:null){
    @for $i from 3 through 5 {
-      #{nth($prefix,$i)}animation-play-state: $vars $arg;
+      #{nth($prefix,$i)}animation-play-state: $arg $impt;
    }
 }
 
-@mixin animation-direct($var, $arg:null){
+@mixin animation-direction($arg, $impt:null){
    @for $i from 3 through 5 {
-      #{nth($prefix,$i)}animation-direction: $vars $arg;
+      #{nth($prefix,$i)}animation-direction: $arg $impt;
    }
 }
 
@@ -402,81 +402,81 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Perspective
 
-@mixin perspective($depth, $arg:null) {
-   -webkit-perspective: $depth $arg;
-   perspective: $depth $arg;
+@mixin perspective($arg, $impt:null) {
+   -webkit-perspective: $arg $impt;
+   perspective: $arg $impt;
 }
 
-@mixin perspective-origin($var, $arg:null) {
-   -webkit-perspective-origin: $var $arg;
-   perspective-origin: $var $arg;
+@mixin perspective-origin($arg, $impt:null) {
+   -webkit-perspective-origin: $arg $impt;
+   perspective-origin: $arg $impt;
 }
 
 
 // Text Size Adjust
 
-@mixin text-size-adjust($var, $arg:null) {
+@mixin text-size-adjust($arg, $impt:null) {
    @for $i from 2 through 5 {
-      #{nth($prefix,$i)}text-size-adjust: $var $arg;
+      #{nth($prefix,$i)}text-size-adjust: $arg $impt;
    }
 }
 
 
 // User Select
 
-@mixin user-select($var, $arg:null) {
+@mixin user-select($arg, $impt:null) {
    @for $i from 2 through 5 {
-      #{nth($prefix,$i)}user-select: $var $arg;
+      #{nth($prefix,$i)}user-select: $arg $impt;
    }
 }
 
 
 // Box Sizing
 
-@mixin box-sizing($var, $arg:null) {
-   -moz-box-sizing: $var $arg;
-   -webkit-box-sizing: $var $arg;
-   box-sizing: $var $arg;
+@mixin box-sizing($arg, $impt:null) {
+   -moz-box-sizing: $arg $impt;
+   -webkit-box-sizing: $arg $impt;
+   box-sizing: $arg $impt;
 }
 
 
 // Backface Visibility
 
-@mixin backface-visibility($var, $arg:null) {
+@mixin backface-visibility($arg, $impt:null) {
    @for $i from 3 through 5 {
-      #{nth($prefix,$i)}backface-visibility: $var $arg;
+      #{nth($prefix,$i)}backface-visibility: $arg $impt;
    }
 }
 
 
 // Tap Highlight Color
 
-@mixin tap-highlight-color($var, $arg:null) {
-   -webkit-tap-highlight-color: $var $arg;
-   tap-highlight-color: $var $arg;
+@mixin tap-highlight-color($arg, $impt:null) {
+   -webkit-tap-highlight-color: $arg $impt;
+   tap-highlight-color: $arg $impt;
 }
 
 
 // Font Smoothing
-@mixin font-smoothing($var, $arg:null) {
-   @if $var == antialiased {
-      -moz-osx-font-smoothing: grayscale $arg;
+@mixin font-smoothing($arg, $impt:null) {
+   @if $arg == antialiased {
+      -moz-osx-font-smoothing: grayscale $impt;
    }
-   -webkit-font-smoothing: $var $arg;
-   font-smoothing: $var $arg;
+   -webkit-font-smoothing: $arg $impt;
+   font-smoothing: $arg $impt;
 }
 
 
 // Linear Gradient
 
-@mixin linear-gradient($lg, $img:null, $arg:null) {
+@mixin linear-gradient($gradient, $img:null, $impt:null) {
    @if $img {
       $img: url(#{$img});
    }
    @for $i from 1 through 5 {
       @if $i != 2 {
-         $list: ();
-         @each $item in $lg {
+         $array: ();
+         @each $item in $gradient {
             @if $i < 5 {
                @if nth($item,1) == to {
                   @if nth($item,2) == bottom {
@@ -485,7 +485,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
                   @else if nth($item,2) == top {
                      $item: bottom;
                   }
-                  @else if nth($item,2) == right {
+                  @else if nth($itemt,2) == right {
                      $item: left;
                   }
                   @else if nth($item,2) == left {
@@ -497,12 +497,12 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
                   }
                }
             }
-            $list: append($list,$item,comma);
+            $array: append($array,$item,comma);
          }
          $main: ();
          $main: append($main,$img,comma);
-         $main: append($main,#{nth($prefix,$i)}linear-gradient(#{$list}));
-         background-image: $main $arg;
+         $main: append($main,#{nth($prefix,$i)}linear-gradient(#{$array}));
+         background-image: $main $impt;
       }
    }
 }
@@ -510,9 +510,9 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Box Shadow
 
-@mixin box-shadow($var, $arg:null) {
-   -webkit-box-shadow: $var $arg;
-   box-shadow: $var $arg;
+@mixin box-shadow($arg, $impt:null) {
+   -webkit-box-shadow: $arg $impt;
+   box-shadow: $arg $impt;
 }
 
 
@@ -520,14 +520,14 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 1. Any
 
-@mixin any($var...) {
+@mixin any($args...) {
    @for $i from 3 through 5 {
-      $list: ();
-      @for $j from 1 through (length($var) - 1) {
-         $add: unquote(":#{nth($prefix,$i)}any(#{nth($var,$j)})");
-         $list: append($list, $add, space);
+      $array: ();
+      @for $j from 1 through (length($args) - 1) {
+         $add: unquote(":#{nth($prefix,$i)}any(#{nth($args,$j)})");
+         $array: append($array, $add, space);
       }
-      #{$list} #{nth($var,length($var))} {
+      #{$array} #{nth($arg,length($args))} {
          @content;
       }
    }
@@ -536,14 +536,14 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 2. Fullscreen
 
-@mixin fullscreen($var: unquote("$var")) {
+@mixin fullscreen($arg: unquote("$arg")) {
    @for $i from 2 through 5 {
       @if $i == 2 or $i == 5 {
-         #{$var}:#{nth($prefix,$i)}fullscreen {
+         #{$arg}:#{nth($prefix,$i)}fullscreen {
             @content;
          }
       } @else {
-         #{$var}:#{nth($prefix,$i)}full-screen {
+         #{$arg}:#{nth($prefix,$i)}full-screen {
             @content;
          }
       }
@@ -553,11 +553,11 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 3. Read-Only
 
-@mixin read-only($var: unquote("$var")) {
-   #{$var}:-moz-read-only {
+@mixin read-only($arg: unquote("$arg")) {
+   #{$arg}:-moz-read-only {
       @content;
    }
-   #{$var}:read-only {
+   #{$arg}:read-only {
       @content;
    }
 }
@@ -565,11 +565,11 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 4. Read-Write
 
-@mixin read-write($var: unquote("$var")) {
-   #{$var}:-moz-read-write {
+@mixin read-write($arg: unquote("$arg")) {
+   #{$arg}:-moz-read-write {
       @content;
    }
-   #{$var}:read-write {
+   #{$arg}:read-write {
       @content;
    }
 }
@@ -577,10 +577,10 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 5. Backdrop
 
-@mixin backdrop($var: unquote("$var")) {
+@mixin backdrop($arg: unquote("$arg")) {
    @for $i from 2 through 5 {
       @if $i != 3 {
-         #{$var}::#{nth($prefix,$i)}backdrop {
+         #{$arg}::#{nth($prefix,$i)}backdrop {
             @content;
          }
       }
@@ -592,11 +592,11 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 1. Selection
 
-@mixin selection($var: unquote("$var")) {
-   #{$var}::-moz-selection {
+@mixin selection($arg: unquote("$arg")) {
+   #{$arg}::-moz-selection {
       @content;
    }
-   #{$var}::selection {
+   #{$arg}::selection {
       @content;
    }
 }
@@ -604,20 +604,20 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 2.  Placeholder
 
-@mixin placeholder($var: unquote("$var")) {
-   #{$var}:-moz-placeholder {
+@mixin placeholder($arg: unquote("$arg")) {
+   #{$arg}:-moz-placeholder {
       @content;
    }
-   #{$var}:-ms-input-placeholder {
+   #{$arg}:-ms-input-placeholder {
       @content;
    }
-   #{$var}::-moz-placeholder {
+   #{$arg}::-moz-placeholder {
       @content;
    }
-   #{$var}::-webkit-input-placeholder {
+   #{$arg}::-webkit-input-placeholder {
       @content;
    }
-   #{$var}::placeholder {
+   #{$arg}::placeholder {
       @content;
    }
 }
@@ -625,9 +625,9 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 3. Progressbar
 
-@mixin progress-bar($var: unquote("$var")) {
+@mixin progress-bar($arg: unquote("$arg")) {
    @for $i from 3 through 5 {
-      #{$var}::#{nth($prefix,$i)}progress-bar {
+      #{$arg}::#{nth($prefix,$i)}progress-bar {
          @content;
       }
    }
@@ -636,14 +636,14 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 4. Range/Slider Thumb
 
-@mixin slider-thumb($var: unquote("$var")) {
-   #{$var}::-ms-thumb {
+@mixin slider-thumb($arg: unquote("$arg")) {
+   #{$arg}::-ms-thumb {
       @content;
    }
-   #{$var}::-moz-range-thumb {
+   #{$arg}::-moz-range-thumb {
       @content;
    }
-   #{$var}::-webkit-slider-thumb {
+   #{$arg}::-webkit-slider-thumb {
       @content;
    }
 }
@@ -651,14 +651,14 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 5. Range/Slider Track
 
-@mixin slider-runnable-track($var: unquote("$var")) {
-   #{$var}::-ms-track {
+@mixin slider-runnable-track($arg: unquote("$arg")) {
+   #{$arg}::-ms-track {
       @content;
    }
-   #{$var}::-moz-range-track {
+   #{$arg}::-moz-range-track {
       @content;
    }
-   #{$var}::-webkit-slider-runnable-track {
+   #{$arg}::-webkit-slider-runnable-track {
       @content;
    }
 }
@@ -671,8 +671,8 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 1. Max Screen Width
 
-@mixin maxwidth($var) {
-   @media only screen and (max-width: #{$var}) {
+@mixin maxwidth($arg) {
+   @media only screen and (max-width: #{$arg}) {
       @content;
    }
 }
@@ -680,8 +680,8 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 2. Min Screen Width
 
-@mixin minwidth($var) {
-   @media only screen and (max-width: #{$var}) {
+@mixin minwidth($arg) {
+   @media only screen and (max-width: #{$arg}) {
       @content;
    }
 }
@@ -698,21 +698,61 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Width and Height Shorthand
 
-@mixin size($vars, $arg:null) {
-   width: nth($vars,1) $arg;
-   height: if(length($vars) > 1, nth($vars,2) $arg, nth($vars,1) $arg);
+@mixin size($arg, $impt:null) {
+   width: nth($arg,1) $impt;
+   height: if(length($arg) > 1, nth($arg,2) $impt, nth($arg,1) $impt);
 }
 
 
 // Transform with Origin
 
-@mixin change($what, $xy:null, $arg:null) {
+@mixin change($what, $xy:null, $impt:null) {
    @each $item in $prefix {
-      #{$item}transform: $what $arg;
+      #{$item}transform: $what $impt;
    }
    @if $xy {
       @each $item in $prefix {
-         #{$item}transform-origin: $xy $arg;
+         #{$item}transform-origin: $xy $impt;
+      }
+   }
+}
+
+
+// Transform with Origin and Transition
+
+@mixin animate($what, $args...) {
+   $impt: null;
+   $xy: null;
+   $test: center, top, left, right, bottom;
+   @each $item in $prefix {
+      $array: ();
+      @each $arg in $args {
+         @if index($arg,transform) {
+            $arg: set-nth($arg,1,#{$item}transform);
+         } @else if index($arg,filter) {
+            $arg: set-nth($arg,1,#{$item}filter);
+         } @else if type-of(nth($arg,1)) == 'number' {
+            @if unit(nth($arg,1)) != 's' {
+               $xy: $arg;
+               $arg: null;
+            }
+         } @else if index($test,nth($arg,1)) {
+            $xy: $arg;
+            $arg: null;
+         } @else if index($arg,!important) {
+            $arg: null;
+            $impt: !important;
+         }
+         $array: append($array,$arg,comma);
+      }
+      #{$item}transition: $array $impt;
+   }
+   @each $item in $prefix {
+      #{$item}transform: $what $impt;
+   }
+   @if $xy {
+      @each $item in $prefix {
+         #{$item}transform-origin: $xy $impt;
       }
    }
 }
@@ -720,12 +760,12 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Perspective and Origin
 
-@mixin view($depth, $xy:null, $arg:null) {
-   -webkit-perspective: $depth $arg;
-   perspective: $depth $arg;
+@mixin view($depth, $xy:null, $impt:null) {
+   -webkit-perspective: $depth $impt;
+   perspective: $depth $impt;
    @if $xy {
-      -webkit-perspective-origin: $var $arg;
-      perspective-origin: $var $arg;
+      -webkit-perspective-origin: $arg $impt;
+      perspective-origin: $arg $impt;
    }
 }
 
@@ -734,71 +774,71 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 1. Just like margin shorthand
 
-@mixin where($vars, $arg:null) {
-   top: nth($vars,1) $arg;
-   @if length($vars) > 3 {
-      right: nth($vars,2) $arg;
-      bottom: nth($vars,3) $arg;
-      left: nth($vars,4) $arg;
-   } @else if length($vars) > 2 {
-      right: nth($vars,2) $arg;
-      bottom: nth($vars,3) $arg;
-      left: nth($vars,2) $arg;
-   } @else if length($vars) > 1 {
-      right: nth($vars,2) $arg;
-      bottom: nth($vars,1) $arg;
-      left: nth($vars,2) $arg;
+@mixin where($arg, $impt:null) {
+   top: nth($arg,1) $impt;
+   @if length($arg) > 3 {
+      right: nth($arg,2) $impt;
+      bottom: nth($arg,3) $impt;
+      left: nth($arg,4) $impt;
+   } @else if length($arg) > 2 {
+      right: nth($arg,2) $impt;
+      bottom: nth($arg,3) $impt;
+      left: nth($arg,2) $impt;
+   } @else if length($arg) > 1 {
+      right: nth($arg,2) $impt;
+      bottom: nth($arg,1) $impt;
+      left: nth($arg,2) $impt;
    } @else {
-      right: nth($vars,1) $arg;
-      bottom: nth($vars,1) $arg;
-      left: nth($vars,1) $arg;
+      right: nth($arg,1) $impt;
+      bottom: nth($arg,1) $impt;
+      left: nth($arg,1) $impt;
    }
 }
 
 
 // 2. Like Where(), but starts with Left, not Top
 
-@mixin there($vars, $arg:null) {
-   left: nth($vars,1) $arg;
-   @if length($vars) > 3 {
-      top: nth($vars,2) $arg;
-      right: nth($vars,3) $arg;
-      bottom: nth($vars,4) $arg;
-   } @else if length($vars) > 2 {
-      top: nth($vars,2) $arg;
-      right: nth($vars,3) $arg;
-      bottom: nth($vars,2) $arg;
-   } @else if length($vars) > 1 {
-      top: nth($vars,2) $arg;
-      right: nth($vars,1) $arg;
-      bottom: nth($vars,2) $arg;
+@mixin there($arg, $impt:null) {
+   left: nth($arg,1) $impt;
+   @if length($arg) > 3 {
+      top: nth($arg,2) $impt;
+      right: nth($arg,3) $impt;
+      bottom: nth($arg,4) $impt;
+   } @else if length($arg) > 2 {
+      top: nth($arg,2) $impt;
+      right: nth($arg,3) $impt;
+      bottom: nth($arg,2) $impt;
+   } @else if length($arg) > 1 {
+      top: nth($arg,2) $impt;
+      right: nth($arg,1) $impt;
+      bottom: nth($arg,2) $impt;
    } @else {
-      top: nth($vars,1) $arg;
-      right: nth($vars,1) $arg;
-      bottom: nth($vars,1) $arg;
+      top: nth($arg,1) $impt;
+      right: nth($arg,1) $impt;
+      bottom: nth($arg,1) $impt;
    }
 }
 
 
 // 3. Left and Top Only
 
-@mixin xy($vars, $arg:null) {
-   left: nth($vars,1) $arg;
-   top: if(length($vars) > 1, nth($vars,2) $arg, nth($vars,1) $arg);
+@mixin xy($arg, $impt:null) {
+   left: nth($arg,1) $impt;
+   top: if(length($arg) > 1, nth($arg,2) $impt, nth($arg,1) $impt);
 }
 
 
 // SVG Stroke shorthand like border
 
-@mixin bound($vars, $arg:null) {
-   stroke: nth($vars,2) $arg;
-   stroke-width: nth($vars,1) $arg;
-   @if length($vars) > 2 {
-      @if nth($vars,3) == dashed {
-         stroke-dasharray: 10,10 $arg;
-      } @else if nth($vars,3) == dotted {
-         stroke-dasharray: 0,10 $arg;
-         stroke-linecap: round $arg;
+@mixin bound($arg, $impt:null) {
+   stroke: nth($arg,2) $impt;
+   stroke-width: nth($arg,1) $impt;
+   @if length($arg) > 2 {
+      @if nth($arg,3) == dashed {
+         stroke-dasharray: 10,10 $impt;
+      } @else if nth($arg,3) == dotted {
+         stroke-dasharray: 0,10 $impt;
+         stroke-linecap: round $impt;
       }
    }
 }
@@ -806,10 +846,18 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Create Classes/IDs with name and number
 
-@mixin numSelector($name, $a, $b) {
-   @for $i from $a through $b {
+@mixin numName($type, $name, $max, $min:1) {
+   %group {
+      @content;
+   }
+   @if $type == class {
+      $name: "." + $name;
+   } @else if $type == id {
+      $name: "#" + $name;
+   }
+   @for $i from $min through $max {
       #{$name}-#{$i} {
-         @content;
+         @extend %group;
       }
    }
 }
@@ -817,10 +865,18 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Create Classes/IDs with custom prefix
 
-@mixin preName($pre, $list...) {
-   @each $item in $list {
+@mixin preName($type, $pre, $array...) {
+   %group {
+      @content;
+   }
+   @if $type == class {
+      $pre: "." + $pre;
+   } @else if $type == id {
+      $pre: "#" + $pre;
+   }
+   @each $item in $array {
       #{$pre}-#{$item} {
-         @content;
+         @extend %group;
       }
    }
 }
@@ -828,10 +884,18 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Create Classes/IDs with custom postfix
 
-@mixin postName($post, $list...) {
-   @each $item in $list {
+@mixin postName($type, $post, $array...) {
+   %group {
+      @content;
+   }
+   @if $type == class {
+      $pre: "." + $post;
+   } @else if $type == id {
+      $pre: "#" + $post;
+   }
+   @each $item in $array {
       #{$item}-#{$post} {
-         @content;
+         @extend %group;
       }
    }
 }
@@ -839,96 +903,96 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Opacity with Blend Mode
 
-@mixin opaque($amt, $type, $arg:null) {
-   opacity: $amt $arg;
-   mix-blend-mode: $type $arg;
+@mixin opaque($amount, $type, $impt:null) {
+   opacity: $amount $impt;
+   mix-blend-mode: $type $impt;
 }
 
 
 // Circle
 
-@mixin circle($var, $arg:null) {
-   width: $var $arg;
-   height: $var $arg;
-   border-radius: 50% #{$arg};
+@mixin circle($arg, $impt:null) {
+   width: $arg $impt;
+   height: $arg $impt;
+   border-radius: 50% #{$impt};
 }
 
 
 // Oval
 
-@mixin oval($vars, $arg:null) {
-   width: nth($vars,1) $arg;
-   height: nth($vars,2) $arg;
-   border-radius: 50% #{$arg};
+@mixin oval($arg, $impt:null) {
+   width: nth($arg,1) $impt;
+   height: nth($arg,2) $impt;
+   border-radius: 50% #{$impt};
 }
 
 
 // Triangle
 
-@mixin triangle($vars, $c, $r:null, $arg:null) {
-   $nw: nth($vars,1)/2;
-   width: 0 #{$arg};
-   height: 0 #{$arg};
+@mixin triangle($arg, $color, $rotate:null, $impt:null) {
+   $nw: nth($arg,1)/2;
+   width: 0 #{$impt};
+   height: 0 #{$impt};
    border: {
-      left: #{$nw} solid transparent #{$arg};
-      right: #{$nw} solid transparent #{$arg};
-      bottom: #{nth($vars,2)} solid #{$c} #{$arg};
+      left: #{$nw} solid transparent #{$impt};
+      right: #{$nw} solid transparent #{$impt};
+      bottom: #{nth($arg,2)} solid #{$color} #{$impt};
    }
-   @if $r {
-      @include transform(rotate($r), $arg:$arg);
+   @if $rotate {
+      @include transform(rotate($rotate), $impt:$impt);
    }
 }
 
 
 // Parallelogram
 
-@mixin parallelogram($vars, $s, $arg:null) {
-   @include transform(skew($s), $arg:$arg);
-   width: nth($vars,1) $arg;
-   height: nth($vars,2) $arg;
+@mixin parallelogram($arg, $amount, $impt:null) {
+   @include transform(skew($amount), $impt:$impt);
+   width: nth($arg,1) $impt;
+   height: nth($arg,2) $impt;
 }
 
 
 // Heart
 // Nicolas Gallagher -- nicolasgallagher.com
 
-@mixin heart($w, $c, $arg:null) {
-   $nw: $w / 2;
-   width: $w $arg;
-   height: ($w * .9) $arg;
+@mixin heart($width, $color, $impt:null) {
+   $new: $width / 2;
+   width: $width $impt;
+   height: ($width * .9) $impt;
 
    &::before, &::after {
-      position: absolute $arg;
-      top: 0 $arg;
-      width: $nw $arg;
-      height: ($w * .8) $arg;
-      content: '' $arg;
-      background: $c $arg;
-      border-radius: #{$nw} #{$nw} 0 0 $arg;
+      position: absolute $impt;
+      top: 0 $impt;
+      width: $new $impt;
+      height: ($width * .8) $impt;
+      content: '' $impt;
+      background: $color $impt;
+      border-radius: #{$new} #{$new} 0 0 $impt;
    }
 
    &::before {
-      @include transform(rotate(-45deg, 0 100%), $arg:$arg);
-      left: $nw $arg;
+      @include transform(rotate(-45deg, 0 100%), $impt:$impt);
+      left: $new $impt;
    }
 
    &::after {
-      @include transform(rotate(45deg, 100% 100%), $arg:$arg);
-      left: 0 $arg;
+      @include transform(rotate(45deg, 100% 100%), $impt:$impt);
+      left: 0 $impt;
    }
 }
 
 
 // Mantain a ratio
 
-@mixin ratio($w, $l:$w, $arg:null) {
-   height: auto $arg;
+@mixin ratio($width, $length:$width, $impt:null) {
+   height: auto $impt;
 
    &::before {
-      display: block $arg;
-      max-width: 100% $arg;
-      padding-top: ($l / $w) * 100% $arg;
-      content: '' $arg;
+      display: block $impt;
+      max-width: 100% $impt;
+      padding-top: ($length / $width) * 100% $impt;
+      content: '' $impt;
    }
 }
 
@@ -938,65 +1002,71 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 1. Basic Styling
 
-@mixin btnStyle($color:null, $border:null, $corners:null, $arg:null) {
+@mixin btnStyle($color:null, $border:null, $corners:null, $impt:null) {
    @if $color {
-      background-color: nth($color,1) $arg;
-      color: nth($color,2) $arg;
+      background-color: nth($color,1) $impt;
+      color: nth($color,2) $impt;
    }
    @if $border {
       @if length($border) == 2 {
-         border: #{nth($border,1)} solid #{nth($border,2)} #{$arg};
+         border: #{nth($border,1)} solid #{nth($border,2)} #{$impt};
       } @else if type-of($border) == number {
-         border: #{$border} solid #{nth($color,2)} #{$arg};
+         border: #{$border} solid #{nth($color,2)} #{$impt};
       } @else {
-         border: $border $arg
+         border: $border $impt
       }
    }
    @if $corners {
-      border-radius: $corners $arg
+      border-radius: $corners $impt
    }
 }
 
 // 2. with a Relative Width
 
-@mixin btnRel($size, $color:null, $border:null, $corners:null, $arg:null) {
-   display: inline-block #{$arg};
-   width: auto #{$arg};
-   height: nth($size,2) $arg;
-   padding: 0 #{nth($size,1)} #{$arg};
-   line-height: nth($size,2) $arg;
-   text-decoration: none #{$arg};
-   @include btnStyle($color, $border, $corners, $arg);
+@mixin btnRel($size, $color:null, $border:null, $corners:null, $impt:null) {
+   display: inline-block #{$impt};
+   width: auto #{$impt};
+   height: nth($size,2) $impt;
+   padding: 0 #{nth($size,1)} #{$impt};
+   line-height: nth($size,2) $impt;
+   text-decoration: none #{$impt};
+   @include btnStyle($color, $border, $corners, $impt);
 }
 
 // 3. with an Absolute Width
 
-@mixin btnAbs($size, $color:null, $border:null, $corners:null, $arg:null) {
-   display: block #{$arg};
-   width: nth($size,1) $arg;
+@mixin btnAbs($size, $color:null, $border:null, $corners:null, $impt:null) {
+   display: block #{$impt};
+   width: nth($size,1) $impt;
    height: nth($size,2);
-   line-height: nth($size,2) $arg;
+   line-height: nth($size,2) $impt;
    text: {
-      decoration: none #{$arg};
-      align: center #{$arg};
+      decoration: none #{$impt};
+      align: center #{$impt};
    }
-   @include btnStyle($color, $border, $corners, $arg);
+   @include btnStyle($color, $border, $corners, $impt);
 }
 
 
 // Overflow X and Y Shorthand
 
-@mixin flowage($var, $arg:null) {
-   @if length($var) > 1 {
+@mixin flowage($arg, $impt:null) {
+   @if length($arg) > 1 {
       overflow: {
-         x: nth($var,1) $arg;
-         y: nth($var,2) $arg;
+         x: nth($arg,1) $impt;
+         y: nth($arg,2) $impt;
       }
    } @else {
-      overflow: $var $arg
+      overflow: $arg $impt
    }
 }
 
+
+// Colors
+
+@function shades($color, $impt) {
+   @return if($impt > 0, lighten($color, abs($impt)), darken($color, abs($impt)));
+}
 
 
 
@@ -1214,22 +1284,22 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 1. with Options
 
-@mixin useShadow($var, $arg:null) {
+@mixin useShadow($arg, $impt:null) {
    $sdw: rgba(0,0,30,.3);
-   @if $var == xs {
-      @include box-shadow(0 0 2px $sdw, $arg);
+   @if $arg == xs {
+      @include box-shadow(0 0 2px $sdw, $impt);
    }
-   @if $var == s {
-      @include box-shadow(0 1px 3px $sdw, $arg)
+   @if $arg == s {
+      @include box-shadow(0 1px 3px $sdw, $impt)
    }
-   @if $var == m {
-      @include box-shadow(0 2px 6px $sdw, $arg)
+   @if $arg == m {
+      @include box-shadow(0 2px 6px $sdw, $impt)
    }
-   @if $var == l {
-      @include box-shadow(0 3px 9px $sdw, $arg)
+   @if $arg == l {
+      @include box-shadow(0 3px 9px $sdw, $impt)
    }
-   @if $var == xl {
-      @include box-shadow(0 4px 12px $sdw, $arg)
+   @if $arg == xl {
+      @include box-shadow(0 4px 12px $sdw, $impt)
    }
 }
 
@@ -1264,7 +1334,9 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 }
 
 
-// No Outline and Border
+// Clear External Styling
+
+// 1. No Outline and Border
 
 @mixin noOuty {
    border: 0;
@@ -1276,20 +1348,52 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 }
 
 
+// 2. No Padding and Margin
+
+@mixin noBuffering {
+   padding: 0;
+   margin: 0
+}
+
+%noBuffering {
+   @include noBuffering;
+}
+
+
+// 3. No Padding, Margin, and Border
+
+@mixin noSpacing {
+   @include noBuffering;
+   border: 0
+}
+
+%noSpacing {
+   @include noSpacing;
+}
+
+
+// 4. No Padding, Margin, Outline, and Border
+
+@mixin noBounding {
+   @include noBuffering;
+   @include noOuty;
+}
+
+%noBounding {
+   @include noBounding;
+}
+
+
 // Typography:
 
 // 1. Body Copy
 
 @mixin bodyCopy {
-   font: {
-      style: normal;
-      kerning: none;
-      stretch: normal;
-   }
+   font-kerning: none;
    text-rendering: optimizeSpeed;
    line-height: 1.5;
-   letter-spacing: .2pt;
-   word-spacing: .02em;
+   letter-spacing: 0.2pt;
+   word-spacing: 0.02em;
 }
 
 %bodyCopy {
@@ -1299,15 +1403,11 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // 2. Titles
 
 @mixin titles {
-   font: {
-      style: normal;
-      kerning: normal;
-      stretch: normal;
-   }
+   font-kerning: normal;
    text-rendering: optimizeLegibility;
    line-height: 1.2;
-   letter-spacing: .1pt;
-   word-spacing: .01em;
+   letter-spacing: 0.1pt;
+   word-spacing: 0.01em;
 }
 
 %titles {
@@ -1317,44 +1417,26 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Pseudo
 
-@mixin pseudoRel {
-   display: block;
+@mixin pseudo($pos, $type:block) {
+   display: $type;
+   position: $pos;
    content: '';
-   position: relative;
 }
 
 %pseudoRel {
-   @include pseudoRel;
-}
-
-@mixin pseudoAbs {
-   display: block;
-   content: '';
-   position: absolute;
+   @include pseudo(relative);
 }
 
 %pseudoAbs {
-   @include pseudoAbs;
-}
-
-@mixin pseudoInRel {
-   display: inline-block;
-   content: '';
-   position: relative;
+   @include pseudo(absolute);
 }
 
 %pseudoInRel {
-   @include pseudoInRel;
-}
-
-@mixin pseudoInAbs {
-   display: inline-block;
-   content: '';
-   position: absolute;
+   @include pseudo(relative, inline-block);
 }
 
 %pseudoInAbs {
-   @include pseudoInAbs;
+   @include pseudo(absolute, inline-block);
 }
 
 
@@ -1411,11 +1493,6 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
    text-align: right
 }
 
-%noBuffer {
-   padding: 0;
-   margin: 0
-}
-
 
 // CSS Reset
 
@@ -1424,9 +1501,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 @mixin freshStart {
 
    html, body, figure, div, h1, h2, h3, h4, h5, h6, hgroup, address, p, hr, blockquote, summary, ol, ul, dl, dd, pre, table, tbody, th, tr, td, colgroup, thead, tfoot, iframe, %forForms {
-      padding: 0;
-      margin: 0;
-      border: 0
+      @extend %noSpacing;
    }
 
    nav, main, section, header, footer, article, aside, address, hgroup, img, object, svg, iframe, video, audio, map, embed, canvas, textarea, form, fieldset, input, select, button, label, meter, progress, figure, ol, ul, dl, div, pre, table, h1, h2, h3, h4, h5, h6, p {
@@ -1448,6 +1523,10 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
    address {
       font-style: normal
+   }
+
+   span.nobr {
+      white-space: nowrap
    }
 
 }
@@ -1486,7 +1565,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 @mixin sample($map) {
    @each $key, $value in $map {
-      @if nth($value,1) == -n {
+      @if nth($value,1) == skip {
          $key: null;
       } @else if str-index($key, transform) or str-index($key, transition) {
          @for $i from 1 through 5 {
@@ -1507,7 +1586,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
    &:hover {
       @each $key, $value in $map {
          @if length($value) > 1 {
-            @if nth($value,2) == -n {
+            @if nth($value,2) == skip {
                $key: null;
             } @else if str-index($key, transform) or str-index($key, transition) {
                @for $i from 1 through 5 {
@@ -1530,7 +1609,7 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
    &:active {
       @each $key, $value in $map {
          @if length($value) > 2 {
-            @if nth($value,3) == -d {
+            @if nth($value,3) == default {
                #{$key}: #{nth($value,1)};
             } @else if str-index($key, transform) or str-index($key, transition) {
                @for $i from 1 through 5 {

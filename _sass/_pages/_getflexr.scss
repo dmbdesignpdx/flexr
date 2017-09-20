@@ -1,9 +1,9 @@
 //   Get Flexr
 
 %downloadText {
+   @extend %center;
    @include ctrRel;
    width: 85%;
-   text-align: center
 }
 
 #download .header {

@@ -14,8 +14,8 @@ html, body, nav, main, section, header, footer, img, object, svg, address, texta
 }
 
 nav, main, section, header, footer, img, object, svg, address, textarea, pre, button, figure, nav a, [role=button] {
-   display: block;
-   position: relative
+   @extend %block;
+   @extend %relative;
 }
 
 nav, section, header, footer, img, object {
@@ -45,22 +45,22 @@ address {
 }
 
 ul, li {
-   position: relative;
+   @extend %relative;
    list-style: none
 }
 
 address a {
-   display: inline-block
+   @extend %inline;
 }
 
 a {
+   @extend %relative;
    @include noTap;
-   position: relative;
    text-decoration: none;
 }
 
 header {
-   @include smoothParent;
+   @extend %smoothParent;
    @include xy(-1px 0);
    @include size(100% auto);
    position: fixed;
@@ -113,8 +113,8 @@ h1, h2 {
 }
 
 h1, h2, p, address {
+   @extend %left;
    width: 100%;
-   text-align: left
 }
 
 h1 {
@@ -242,7 +242,7 @@ sup {
 }
 
 dt, dd {
-   display: inline-block;
+   @extend %inline;
 }
 
 dt {
@@ -292,10 +292,10 @@ tr:nth-of-type(even) {
 }
 
 td, th {
+   @extend %left;
     width: 16.666%;
     padding: 20px;
     border-right: 1px solid $blueGrayTwo;
-    text-align: left;
 }
 
 td {
@@ -326,7 +326,7 @@ td:last-of-type {
     padding: 30px 0 120px;
 
     h1 {
-       text-align: center
+       @extend %center;
     }
 
     @include phoneLan {

@@ -22,9 +22,9 @@
    }
 
    .container {
+      @extend %relative;
       @include size(100% auto);
       @include ratio(1,0.6215);
-      position: relative;
       overflow: hidden;
    }
 }
@@ -43,7 +43,7 @@
    };
 
    h1 {
-      text-align: left;
+      @extend %left;
 
       @include phonePor {
          text-align: center;
@@ -166,7 +166,7 @@
 #browsers {
 
    p {
-      text-align: center
+      @extend %center;
    }
 
    .browser {

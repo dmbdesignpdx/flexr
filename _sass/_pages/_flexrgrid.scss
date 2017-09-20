@@ -5,10 +5,10 @@
 }
 
 .example {
+   @extend %center;
     height: auto;
     padding: 20px 0;
     font-size: 16px;
-    text-align: center;
     box-sizing: border-box;
     background: $blueGrayFive;
     line-height: 1.1

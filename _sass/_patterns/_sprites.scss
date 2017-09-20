@@ -8,8 +8,8 @@
 
 .with-icon::before {
    @extend %useSprite;
+   @extend %block;
    @include size(150px);
-    display: block;
     margin: 0 auto 20px;
     content: '';
     background-position: 0 0;
