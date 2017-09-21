@@ -1,10 +1,12 @@
 //  Home
 
 %animationTiming {
-   @include transition(.6s)
+   @include transition(0.6s)
 }
 
 #hero {
+   padding: 210px 0 150px;
+   overflow: hidden;
 
    .row {
       @extend %smoothParent;
@@ -108,7 +110,6 @@
    @extend %animationTiming;
    @extend %smoothMover;
    @include size(100% auto);
-   @include transition-delay(0.3s);
    @include xy(0);
    position: absolute;
 }
@@ -127,6 +128,10 @@
          width: 100%
       };
    }
+}
+
+#bottom {
+   @include transition-delay(0.3s);
 }
 
 #top {
@@ -183,4 +188,8 @@
    .explorer {
       background-position: 100% 33.333%
    }
+}
+
+.forIntro #top, .forIntro #bottom {
+   @include transform(translateY(100%));
 }

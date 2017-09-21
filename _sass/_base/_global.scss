@@ -5,6 +5,7 @@ html, body {
 body {
    @include smoothFonts;
    min-height: 100vh;
+   background: $blueGrayTwo;
    font: 300 20px Roboto, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
