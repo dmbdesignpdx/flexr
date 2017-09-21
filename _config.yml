@@ -10,6 +10,13 @@ url: http://flexrgrid.com
 sass:
     style: compressed
 
+compress_html:
+   clippings: all
+   comments: ["<!--","-->"]
+   endings: all
+   ignore:
+      envs: [development]
+
 include:
    - _pages
    - .htaccess

@@ -1,15 +1,19 @@
+---
+layout: compress
+---
+
 <!DOCTYPE html><html lang="en">
 <head>
 
-   {% include head.html %}
+   {%- include head.html -%}
 
 </head>
 
 <body id="{{ page.bodyID }}">
 
-   {% include nav.html %}
+   {%- include nav.html -%}
 
-   {% if page.bodyID == 'how-to' %}
+   {%- if page.bodyID == 'how-to' -%}
 
    <main>
 
@@ -39,14 +43,14 @@
 
    </main>
 
-   {% include cta.html %}
+   {%- include cta.html -%}
 
-   {% else %}
+   {%- else -%}
 
    {{ content }}
 
-   {% endif %}
+   {%- endif -%}
 
-   {% include footer.html %}
+   {%- include footer.html -%}
 
 </body></html>
