@@ -8,6 +8,14 @@
    padding: 210px 0 150px;
    overflow: hidden;
 
+   @include phoneLan {
+      padding: 60px 0 20px;
+   };
+
+   @include phonePor {
+      padding: 60px 0 70px;
+   };
+
    .row {
       @extend %smoothParent;
       @include align-items(center)

@@ -123,19 +123,21 @@
          width: 90px;
       };
 
-      img {
+      svg {
          padding-top: 1px;
          cursor: pointer;
 
-         &:hover {
-            @include filter(hue-rotate(240deg) saturate(10%) brightness(190%));
+         &:hover * {
+            fill: #EEF;
          }
 
          @include phoneLan {
-            @include filter(hue-rotate(240deg) saturate(10%) brightness(190%));
+            * {
+               fill: $blueGraySeven;
+               }
 
-            &:active {
-               @include filter(none);
+            &:active * {
+               fill: $flexrRed;
             }
          };
       }
@@ -143,8 +145,8 @@
 }
 
 @include phoneLan {
-   #home #nav a[href="/"] img {
-      @include filter(none);
+   #home #nav a[href="/"] svg * {
+      fill: #F56;
    }
 };
 

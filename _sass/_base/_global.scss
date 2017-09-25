@@ -27,6 +27,10 @@ img, svg, object {
    @extend %withAll;
 }
 
+img {
+   font-size: 0
+}
+
 textarea, button {
    @extend %noOuty;
    @include noLooks;

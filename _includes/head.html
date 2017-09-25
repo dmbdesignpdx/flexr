@@ -16,8 +16,6 @@
 
 <meta name="theme-color" content="#2B2B3F">
 
-<link rel="apple-touch-icon" sizes="114x114" href="{{ site.url }}/img/apple-touch-icon-114x114.png">
-
 <link rel="apple-touch-icon" sizes="120x120" href="{{ site.url }}/img/apple-touch-icon-120x120.png">
 
 <link rel="apple-touch-icon" sizes="144x144" href="{{ site.url }}/img/apple-touch-icon-144x144.png">
@@ -74,7 +72,14 @@
 
 <style type="text/css">body{background:#2E2E42}</style>
 
-<script src="/dist/google-analytics.js" type="text/javascript"></script>
+<link href="https://cdn.jsdelivr.net/gh/dmbdesignpdx/flexr@2.0.5/flexr.css" rel="stylesheet">
+
+<link href="/css/master.css" rel="stylesheet">
+
+<script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-80550036-1', 'auto');ga('send', 'pageview');</script>
 
 <script defer src="/dist/flexr.min.js" type="text/javascript"></script>
 
@@ -96,8 +101,3 @@
 </noscript>
 
 <script>var loadDeferredStyles=function(){var e=document.getElementById("deferred-styles"),t=document.createElement("div");t.innerHTML=e.textContent,document.body.appendChild(t),e.parentElement.removeChild(e)},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(function(){window.setTimeout(loadDeferredStyles,0)}):window.addEventListener("load",loadDeferredStyles);</script>
-
-<!--[if IE]>
-<link href="https://cdn.jsdelivr.net/gh/dmbdesignpdx/flexr@2.0.5/flexr.css" rel="stylesheet">
-<link href="/css/master.css" rel="stylesheet">
-<![endif]-->
