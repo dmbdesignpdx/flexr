@@ -15,11 +15,11 @@
       background: lighten($blueGrayTwo,2);
    };
 
-   ul.row {
+   nav.row {
       height: 100%
    }
 
-   li {
+   a {
       margin-top: auto;
       margin-bottom: auto;
 
@@ -34,7 +34,7 @@
 
       @include phonePor {
 
-         @at-root header #nav ul.row li {
+         @at-root #nav nav.row a {
             margin: auto;
          }
       };
@@ -53,7 +53,7 @@
 
       @include phonePor {
 
-         @at-root #nav li a.links {
+         @at-root #nav a.links {
             margin: 0;
             font-size: 0
          }
@@ -128,7 +128,7 @@
          cursor: pointer;
 
          &:hover * {
-            fill: #EEF;
+            fill: $blueGraySeven;
          }
 
          @include phoneLan {
@@ -146,7 +146,7 @@
 
 @include phoneLan {
    #home #nav a[href="/"] svg * {
-      fill: #F56;
+      fill: $flexrRed;
    }
 };
 
