@@ -11,6 +11,14 @@ layout: compress
 
 <body id="{{ page.bodyID }}">
 
+   <!--[if !IE]> -->
+
+   <link href="https://cdn.jsdelivr.net/gh/dmbdesignpdx/flexr@2.0.5/flexr.css" rel="stylesheet">
+
+   <link href="/css/master.css" rel="stylesheet" lazyload="1"><script> </script>
+
+   <!-- <![endif]-->
+
    {%- include nav.html -%}
 
    {%- if page.bodyID == 'how-to' -%}
