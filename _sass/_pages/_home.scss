@@ -9,11 +9,7 @@
    overflow: hidden;
 
    @include phoneLan {
-      padding: 60px 0 20px;
-   };
-
-   @include phonePor {
-      padding: 60px 0 70px;
+      padding: 60px 0 30px;
    };
 
    .row {
@@ -64,8 +60,9 @@
       width: 90px;
       margin: 0 0 0 30px;
 
-      @include phonePor {
-         margin-left: 10px
+      @include phoneLan {
+         width: 70px;
+         margin-left: 20px
       };
    }
 }
@@ -94,8 +91,8 @@
 
    li {
       @extend %left;
-      font-weight: 300;
-      color: $blueGraySeven;
+      @extend %light;
+      @extend %color-seven;
       list-style: square;
       margin-left: 1.25em;
       line-height: 1.6;

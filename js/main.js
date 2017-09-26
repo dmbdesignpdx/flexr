@@ -1,25 +1,21 @@
 // Intro
 
-function introAction() {
+let introAction = () => {
 
-    if (document.body.id == "home") {
+   setTimeout(function(){document.getElementById('hero').classList.remove('forIntro')},100);
 
-        setTimeout(function(){document.getElementById('hero').classList.remove('forIntro')},100);
-
-    }
-
-}
+};
 
 
 
 // Scrolling
 
-function navSizing() {
-   
+let navSizing = () => {
+
    const nav = document.getElementById('nav');
    let [a,b] = [window.innerWidth, window.pageYOffset];
 
-    if (a > 740 && b > 60 || 740 > a && b > 5) {
+   if (a > 740 && b > 60 || 740 > a && b > 5) {
 
       nav.classList.add('nav-scroll')
 
@@ -29,42 +25,43 @@ function navSizing() {
 
    }
 
-}
-
+};
 
 
 //  Select Link
 
-function selectAndCopy(obj,text) {
+let selectAndCopy = (obj,text) => {
 
-        text.select();
+   text.select();
 
-        var copied = document.execCommand('copy');
+   const copied = document.execCommand('copy');
 
-        if (copied) {
-            obj.innerHTML = "Copied!"
-        }
-        else {
-            obj.innerHTML = "Didn't Copy"
-        }
+   if (copied) {
+      obj.innerHTML = "Copied!"
+   } else {
+      obj.innerHTML = "Didn't Copy"
+   }
 
-}
+};
 
-(function(){
+(a => {
 
-    if (document.body.id == "download") {
+   if (a == "download") {
 
-        var linkButton = document.getElementById('linkcopy'),
-        linkText = document.getElementById('linktext');
+      const linkButton = document.getElementById('linkcopy'),
+      linkText = document.getElementById('linktext');
 
-        linkButton.onclick = function(){selectAndCopy(this,linkText)};
+      linkButton.onclick = function(){selectAndCopy(this,linkText)};
 
-        linkText.onclick = function(){this.select()};
+      linkText.onclick = function(){this.select()};
 
-    }
+   } else if (a == "home") {
 
-})();
+      document.getElementById('top').onload = introAction;
 
+   }
+
+})(document.body.id);
 
 
 // Call Functions
@@ -72,5 +69,3 @@ function selectAndCopy(obj,text) {
 window.addEventListener('scroll',navSizing);
 
 window.addEventListener('resize',navSizing);
-
-window.addEventListener('load',introAction);

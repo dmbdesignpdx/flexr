@@ -1,3 +1,15 @@
+%bold {
+   font-weight: 700
+}
+
+%light {
+   font-weight: 300
+}
+
+%color-seven {
+   color: $blueGraySeven
+}
+
 html, body {
    height: 100vh
 }
@@ -5,8 +17,7 @@ html, body {
 body {
    @include smoothFonts;
    min-height: 100vh;
-   background: $blueGrayTwo;
-   font: 300 20px Roboto, 'Helvetica Neue', Helvetica, sans-serif;
+   font: 300 20px Roboto, sans-serif;
 }
 
 html, body, nav, main, section, header, footer, img, object, svg, address, textarea, button, figure, h1, h2, h3, p, ul, li, a, code, pre {
@@ -41,10 +52,6 @@ img, a:active, a:focus {
    @extend %noOuty;
 }
 
-object {
-   pointer-events: none
-}
-
 address {
    font-style: normal
 }
@@ -62,19 +69,6 @@ a {
    @extend %relative;
    @include noTap;
    text-decoration: none;
-}
-
-header {
-   @extend %smoothParent;
-   @include xy(-1px 0);
-   @include size(100% auto);
-   position: fixed;
-   z-index: 999;
-
-   @include phonePor {
-      top: auto;
-      bottom: -1px;
-   };
 }
 
 section {
@@ -108,7 +102,7 @@ abbr {
 }
 
 h2, li, a, button {
-   font-weight: 700;
+   @extend %bold;
    line-height: 1.1;
    letter-spacing: .2pt
 }
@@ -123,21 +117,14 @@ h1, h2, p, address {
 }
 
 h1 {
-   font-size: 49px;
-   font-weight: 300;
-   letter-spacing: -.2pt;
-
-   @include tabletLan {
-      font-size: 46px
-   };
+   @extend %light;
+   font-size: 47px;
+   letter-spacing: -0.2pt;
 
    @include phoneLan {
-      font-size: 30px
+      font-size: 34px
    };
 
-   @include phonePor {
-      font-size: 36px
-   };
 }
 
 h2 {
@@ -149,9 +136,9 @@ h2 {
 }
 
 p, address, dd {
+   @extend %color-seven;
    line-height: 1.5;
-   color: $blueGraySeven;
-   letter-spacing: .1pt
+   letter-spacing: 0.1pt
 }
 
 p {
@@ -191,13 +178,12 @@ dl {
 }
 
 p strong, p b {
-   font-weight: 700;
-   letter-spacing: .2pt
+   @extend %bold;
+   letter-spacing: 0.2pt
 }
 
 textarea, code, pre {
    @extend %withAll;
-   font-size: 18px;
    line-height: 1.2;
    color: #DDE;
    background: #42425d;
@@ -225,21 +211,22 @@ p code, pre {
    @include flowage(scroll auto);
    width: 100%;
    padding: 1.6em 2em 1.8em;
+   font-size: 18px
 }
 
 p code, dt code {
-   padding: .2em .7em .3em;
+   padding: 0.2em 0.7em 0.3em;
    margin: 0 4px;
    white-space: nowrap
 }
 
 pre span, footer a, p a {
-   font-weight: 700;
+   @extend %bold;
    color: $flexrRed
 }
 
 p a:hover, address a:hover {
-   color: $blueGraySeven
+   @extend %color-seven;
 }
 
 sup {
@@ -259,28 +246,24 @@ dt:not(:first-of-type) {
 }
 
 dd {
-   width: 86%;
+   width: 78%;
    margin-left: 3px;
 
-   @include tabletLan {
-      width: 80%
-   };
-
    @include phoneLan {
-      width: 72%
+      width: 70%
    };
 
    @include phonePor {
-      width: 55%;
+      width: 50%;
       font-size: 18px
    };
 }
 
 table {
+   @extend %color-seven;
     width: 100%;
     margin: 30px 0 0;
-    font-size: 17px;
-    color: $blueGraySeven;
+    font-size: 16px;
     background: $blueGrayFive;
     table-layout: fixed;
     border-collapse: collapse;
@@ -288,7 +271,6 @@ table {
     @include phoneLan {
       @include flowage(scroll auto);
       display: block;
-      font-size: 16px;
    };
 }
 
@@ -299,19 +281,8 @@ tr:nth-of-type(even) {
 td, th {
    @extend %left;
     width: 16.666%;
-    padding: 20px;
+    padding: 18px;
     border-right: 1px solid $blueGrayTwo;
-}
-
-td {
-
-   @include tabletPor {
-      padding: 18px
-   };
-
-   @include phoneLan {
-      padding: 14px
-   };
 }
 
 td:last-of-type {
@@ -322,7 +293,7 @@ td:last-of-type {
 // Global Classes
 
 .null {
-    opacity: .4;
+    opacity: 0.4;
     pointer-events: none
 }
 

@@ -2,9 +2,8 @@
    @extend %center;
    @extend %noTap;
    @include btnAbs(150px 60px);
+   @extend %color-seven;
    margin: 50px auto 0;
-   font-size: 1em;
-   color: $blueGraySeven;
    background: $flexrRed;
 }
 
@@ -33,20 +32,20 @@
 
 .secondary {
    @extend %buttonStyle;
-   color: #FA6;
+   color: $orange;
    background: none;
 
    &:hover {
-      color: $blueGraySeven;
+      @extend %color-seven;
       cursor: pointer;
 
       @include phoneLan {
-         color: #FA6;
+         color: $orange;
       };
    }
 
    &:active {
-      color: $blueGraySeven;
+      @extend %color-seven;
    }
 
    @include phonePor {
