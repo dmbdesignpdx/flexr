@@ -96,8 +96,8 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 }
 </script>
 
-<noscript id="deferred-styles">
+<noscript id="deferred">
   <link href='https://fonts.googleapis.com/css?family=Roboto:300,700' rel='stylesheet'>
 </noscript>
 
-<script>var loadDeferredStyles=function(){var e=document.getElementById("deferred-styles"),t=document.createElement("div");t.innerHTML=e.textContent,document.body.appendChild(t),e.parentElement.removeChild(e)},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(function(){window.setTimeout(loadDeferredStyles,0)}):window.addEventListener("load",loadDeferredStyles);</script>
+<script>var loadStyles=function(){var e=document.getElementById("deferred"),t=document.createElement("div");t.innerHTML=e.textContent,document.body.appendChild(t),e.parentElement.removeChild(e)},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(function(){window.setTimeout(loadStyles,0)}):window.onload=loadStyles;</script>
