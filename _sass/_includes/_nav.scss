@@ -1,79 +1,18 @@
 #nav {
    @extend %smoothMover;
-   @include xy(-1px 0);
    @include transition(0.3s);
-   @include size(100% 112px);
-   height: 112px;
-   padding: 1px 0 0;
-   position: fixed;
-   z-index: 999;
-   background: $blueGrayTwo;
-
-   @include phoneLan {
-      height: 56px;
-   };
-
-   @include phonePor {
-      @include box-shadow(0 -1px 4px rgba(0,0,30,.3));
-      top: auto;
-      bottom: -1px;
-      padding: 0 0 1px;
-      background: lighten($blueGrayTwo,2);
-   };
-
-   nav.row {
-      height: 100%
-   }
 
    a {
-      margin-top: auto;
-      margin-bottom: auto;
 
       &:first-of-type {
          @include transform(translateZ(0));
-         margin-right: auto
       }
-
-      &:nth-of-type(1n+2) {
-         margin-left: 30px
-      }
-
-      @include phonePor {
-
-         @at-root #nav nav.row a {
-            margin: auto;
-         }
-      };
    }
 
    .links {
-      @extend %color-seven;
 
       &:hover, &:active {
          color: $flexrRed
-      }
-
-      @include tabletPor {
-         font-size: 17px
-      };
-
-      @include phonePor {
-
-         @at-root #nav a.links {
-            margin: 0;
-            font-size: 0
-         }
-      };
-
-      &::before {
-         @extend %useSprite;
-         @include size(28px);
-         display: none;
-         content: '';
-
-         @include phonePor {
-            display: block
-         };
       }
 
       &:active::before {
@@ -85,10 +24,6 @@
    }
 
    a[href="/get-flexr/"] { // Get It
-      margin-right: 15px;
-      margin-left: 15px;
-      color: $blueGrayTwo;
-      background: $cyan;
 
       &:hover, &:active {
          color: $blueGrayTwo;
@@ -96,37 +31,17 @@
       }
 
       @include phonePor {
-         color: $blueGraySeven;
-         background: none;
 
          &:hover, &:active {
             background: none;
          }
       };
-
-      &::before {
-         background-position: 40% 66.666%
-      }
-   }
-
-   a[href="/flexr-grid/"]::before { // The Grid
-      background-position: 0 66.666%
-   }
-
-   a[href="/use-flexr/"]::before { // Use It
-      background-position: 20% 66.666%
    }
 
    a[href="/"] { // Home
-      width: 170px;
       cursor: default;
 
-      @include phoneLan {
-         width: 94px;
-      };
-
       svg {
-         padding-top: 1px;
          cursor: pointer;
 
          &:hover * {
@@ -134,9 +49,6 @@
          }
 
          @include phoneLan {
-            * {
-               fill: $blueGraySeven;
-            }
 
             &:active * {
                fill: $flexrRed;
@@ -144,38 +56,4 @@
          };
       }
    }
-}
-
-@include phoneLan {
-   #home #nav a[href="/"] svg * {
-      fill: $flexrRed;
-   }
-};
-
-#the-grid #nav a[href="/flexr-grid/"], #how-to #nav a[href="/use-flexr/"] {
-   color: $flexrRed
-}
-
-#download #nav a[href="/get-flexr/"] {
-   background: $blueGraySeven;
-
-   @include phonePor {
-      background: none;
-   };
-}
-
-#the-grid #nav a[href="/flexr-grid/"]::before, #how-to #nav a[href="/use-flexr/"]::before, #download #nav a[href="/get-flexr/"]::before {
-   background-position-y: 100%
-}
-
-
-//  JS Classes
-
-header#nav.nav-scroll {
-   @include box-shadow(0 2px 5px rgba(0,0,30,.3));
-    height: 80px;
-
-    @include phoneLan {
-      height: 56px;
-   };
 }

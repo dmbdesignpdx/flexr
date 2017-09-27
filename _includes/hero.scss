@@ -1,0 +1,96 @@
+@import "../_sass/_vendor/turntable";
+
+#hero {
+   padding: 210px 0 150px;
+   overflow: hidden;
+
+   .row {
+      @include align-items(center)
+   }
+
+   .container {
+      @extend %relative;
+      @include smoothParent;
+      @include size(100% auto);
+      @include ratio(1,0.6215);
+      overflow: hidden;
+   }
+}
+
+#bottom, #top {
+   @include smoothMover;
+   @include transition(0.6s);
+}
+
+#bottom {
+   @include transition-delay(0.3s);
+}
+
+#top {
+   @include transition-delay(0.6s);
+}
+
+#hero-text {
+   @include display(flex);
+   @include flex-wrap(wrap);
+   text-align: left;
+
+   p {
+      width: 96%;
+      padding-bottom: 30px;
+   }
+
+   .primary {
+      margin: 0
+   }
+
+   .secondary {
+      width: 90px;
+      margin: 0 0 0 30px;
+   }
+}
+
+#bottom, #top {
+   @include size(100% auto);
+   @include xy(0);
+   position: absolute;
+}
+
+// Tablet Portrait
+@media only screen and (max-width:740px) {
+
+   #hero {
+      padding: 60px 0 30px;
+   }
+
+   #hero-text .secondary {
+      width: 70px;
+      margin-left: 20px
+   }
+
+}
+
+// Phone Portrait
+@media only screen and (max-width:520px) {
+
+   #hero-text {
+      @include justify-content(center);
+      margin-bottom: 20px;
+      text-align: center;
+
+      p {
+         margin: 20px auto 0;
+      }
+
+      a {
+         margin: 0 auto 20px
+      }
+   }
+
+}
+
+// JS Classes
+
+.forIntro #top, .forIntro #bottom {
+   @include transform(translateY(100%));
+}

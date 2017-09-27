@@ -1,14 +1,4 @@
-%buttonStyle {
-   @extend %center;
-   @extend %noTap;
-   @include btnAbs(150px 60px);
-   @extend %color-seven;
-   margin: 50px auto 0;
-   background: $flexrRed;
-}
-
 .primary {
-   @extend %buttonStyle;
 
    &:hover {
       color: $flexrRed;
@@ -24,16 +14,9 @@
       color: $flexrRed;
       background: $blueGraySeven;
    }
-
-   @include phonePor {
-      margin: 50px auto 20px
-   };
 }
 
 .secondary {
-   @extend %buttonStyle;
-   color: $orange;
-   background: none;
 
    &:hover {
       @extend %color-seven;
@@ -48,7 +31,4 @@
       @extend %color-seven;
    }
 
-   @include phonePor {
-      margin: 0 auto;
-   };
 }

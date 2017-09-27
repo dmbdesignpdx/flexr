@@ -10,42 +10,39 @@
    color: $blueGraySeven
 }
 
-html, body {
-   height: 100vh
+%useSprite {
+    background: url(../img/master-sprite.svg) no-repeat;
+    background-size: 600% 400%
 }
 
-body {
-   @include smoothFonts;
-   min-height: 100vh;
-   font: 300 20px Roboto, sans-serif;
+@mixin break($var) {
+   @media only screen and (max-width : #{$var}) {
+      @content;
+   }
+};
+
+@mixin tabletLan {
+   @include break(1180px) {
+      @content;
+   };
 }
 
-html, body, nav, main, section, header, footer, img, object, svg, address, textarea, button, figure, h1, h2, h3, p, ul, li, a, code, pre {
-   padding: 0;
-   margin: 0
+@mixin tabletPor {
+   @include break(940px) {
+      @content;
+   };
 }
 
-nav, main, section, header, footer, img, object, svg, address, textarea, pre, button, figure, nav a, [role=button] {
-   @extend %block;
-   @extend %relative;
+@mixin phoneLan {
+   @include break(740px) {
+      @content;
+   };
 }
 
-nav, section, header, footer, img, object {
-   @include size(100% auto)
-}
-
-img, svg, object {
-   @extend %withAll;
-}
-
-img {
-   font-size: 0
-}
-
-textarea, button {
-   @extend %noOuty;
-   @include noLooks;
-   overflow: auto;
+@mixin phonePor {
+   @include break(520px) {
+      @content;
+   };
 }
 
 img, a:active, a:focus {
@@ -65,20 +62,6 @@ address a {
    @extend %inline;
 }
 
-a {
-   @extend %relative;
-   @include noTap;
-   text-decoration: none;
-}
-
-section {
-   padding: 120px 0;
-
-   @include phoneLan {
-      padding: 60px 0;
-   };
-}
-
 main ~ section:last-of-type {
    padding: 0 0 130px;
 
@@ -87,83 +70,10 @@ main ~ section:last-of-type {
    };
 }
 
-abbr {
-   text-decoration: none
-}
-
 
 
 //    Text
 
-@for $i from 1 through 3 {
-   h#{$i} {
-      @extend %titles;
-   }
-}
-
-h2, li, a, button {
-   @extend %bold;
-   line-height: 1.1;
-   letter-spacing: .2pt
-}
-
-h1, h2 {
-   color: $blueGray
-}
-
-h1, h2, p, address {
-   text-align: inherit;
-   width: 100%;
-}
-
-h1 {
-   @extend %light;
-   font-size: 47px;
-   letter-spacing: -0.2pt;
-
-   @include phoneLan {
-      font-size: 34px
-   };
-
-}
-
-h2 {
-   font-size: 29px;
-
-   @include phoneLan {
-      font-size: 21px
-   };
-}
-
-p, address, dd {
-   @extend %color-seven;
-   line-height: 1.5;
-   letter-spacing: 0.1pt
-}
-
-p {
-   @include bodyCopy;
-
-   @include tabletLan {
-      font-size: 18px
-   };
-}
-
-h1 + p {
-   margin: 15px 0 0
-}
-
-p + .primary {
-   margin: 28px auto 0
-}
-
-h2:not(:first-of-type) {
-   margin-top: 60px
-}
-
-h2 + p, p + p, pre + p, dl + p, pre {
-   margin-top: 30px
-}
 
 button + p {
    margin-top: 100px
@@ -180,31 +90,6 @@ dl {
 p strong, p b {
    @extend %bold;
    letter-spacing: 0.2pt
-}
-
-textarea, code, pre {
-   @extend %withAll;
-   line-height: 1.2;
-   color: #DDE;
-   background: #42425d;
-   font-family: monospace;
-}
-
-textarea {
-   @include size(680px auto);
-   @include box-shadow(none);
-   padding: 20px 24px 22px;
-   resize: none;
-   margin: 40px auto 0;
-   font-size: 15px;
-   white-space: pre-wrap;
-   line-height: 1.5;
-   word-break: keep-all;
-
-   @include phoneLan {
-      @include flowage(hidden scroll);
-      width: 100%;
-   };
 }
 
 p code, pre {
@@ -297,18 +182,6 @@ td:last-of-type {
     pointer-events: none
 }
 
-
-.header {
-    padding: 30px 0 120px;
-
-    h1 {
-       @extend %center;
-    }
-
-    @include phoneLan {
-      padding: 0 0 60px
-   };
-}
 
 .buffer {
     padding: 90px 0 0

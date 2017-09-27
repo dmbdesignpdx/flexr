@@ -1,23 +1,5 @@
 //   Get Flexr
 
-%downloadText {
-   @extend %center;
-   @include ctrRel;
-   width: 85%;
-}
-
-#download .header {
-   padding: 30px 0 80px;
-
-   @include phonePor {
-      padding: 0;
-   };
-}
-
-#download-title::before {
-   background-position: 80% 0
-}
-
 #flexr-plus::before {
    background-position: 20% 0;
 
@@ -26,20 +8,7 @@
    };
 }
 
-#host-title::before {
-   background-position: 100% 0
-}
-
 #download-section {
-
-   h2 {
-      @extend %downloadText;
-      margin-top: 10px;
-   }
-
-   p {
-      @extend %downloadText;
-   }
 
    a {
       @extend %light;

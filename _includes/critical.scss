@@ -1,0 +1,302 @@
+@import "../_sass/_vendor/flexr", "../_sass/_vendor/turntable", "../_sass/_base/vars";
+
+html, body {
+   background: #2E2E42;
+}
+
+html, body {
+   height: 100vh
+}
+
+body {
+   min-height: 100vh;
+   font: 300 20px Roboto, sans-serif;
+}
+
+html, body, nav, main, section, header, footer, img, object, svg, address, textarea, button, figure, h1, h2, h3, p, ul, li, a, code, pre {
+   padding: 0;
+   margin: 0
+}
+
+nav, main, section, header, footer, img, object, svg, address, textarea, pre, button, figure, nav a, [role=button] {
+   @extend %block;
+   @extend %relative;
+}
+
+nav, section, header, footer, img, object {
+   @include size(100% auto)
+}
+
+img, svg, object {
+   @extend %withAll;
+   font-size: 0
+}
+
+a, abbr {
+   text-decoration: none
+}
+
+a {
+   @extend %relative;
+   @include noTap;
+}
+
+h2, li, a, button {
+   font-weight: 700;
+   line-height: 1.1;
+   letter-spacing: .2pt
+}
+
+h1, h2, p, address {
+   text-align: inherit;
+   width: 100%;
+}
+
+@for $i from 1 through 3 {
+   h#{$i} {
+      @extend %titles;
+   }
+}
+
+section {
+   padding: 120px 0
+}
+
+h1, h2 {
+   color: #99B;
+}
+
+h1 {
+   font-size: 47px;
+   font-weight: 300;
+   letter-spacing: -0.2pt;
+}
+
+p, address, dd {
+   color: $blueGraySeven;
+   line-height: 1.5;
+   letter-spacing: 0.1pt
+}
+
+h1 + p {
+   margin: 15px 0 0
+}
+
+p + .primary {
+   margin: 28px auto 0
+}
+
+
+
+// Nav
+
+#nav {
+   @include xy(-1px 0);
+   @include size(100% 112px);
+   height: 112px;
+   padding: 1px 0 0;
+   position: fixed;
+   z-index: 999;
+   background: $blueGrayTwo;
+
+   nav.row {
+      height: 100%
+   }
+
+   a {
+      margin-top: auto;
+      margin-bottom: auto;
+
+      &:first-of-type {
+         margin-right: auto
+      }
+
+      &:nth-of-type(1n+2) {
+         margin-left: 30px
+      }
+   }
+
+   .links {
+      color: $blueGraySeven;
+
+      &::before {
+         @extend %useSprite;
+         @include size(28px);
+         display: none;
+         content: '';
+      }
+   }
+
+   a[href="/get-flexr/"] { // Get It
+      margin-right: 15px;
+      margin-left: 15px;
+      color: $blueGrayTwo;
+      background: $cyan;
+
+      &::before {
+         background-position: 40% 66.666%
+      }
+   }
+
+   a[href="/flexr-grid/"]::before { // The Grid
+      background-position: 0 66.666%
+   }
+
+   a[href="/use-flexr/"]::before { // Use It
+      background-position: 20% 66.666%
+   }
+
+   a[href="/"] { // Home
+      width: 170px;
+
+      svg {
+         padding-top: 1px;
+      }
+   }
+}
+
+#the-grid #nav a[href="/flexr-grid/"], #how-to #nav a[href="/use-flexr/"] {
+   color: $flexrRed
+}
+
+#download #nav a[href="/get-flexr/"] {
+   background: $blueGraySeven;
+}
+
+#the-grid #nav a[href="/flexr-grid/"]::before, #how-to #nav a[href="/use-flexr/"]::before, #download #nav a[href="/get-flexr/"]::before {
+   background-position-y: 100%
+}
+
+
+//  JS Classes
+
+header#nav.nav-scroll {
+   @include box-shadow(0 2px 5px rgba(0,0,30,.3));
+    height: 80px;
+}
+
+
+%useSprite {
+    background: url(../img/master-sprite.svg) no-repeat;
+    background-size: 600% 400%
+}
+
+
+//  Icons
+
+.with-icon::before {
+   @extend %useSprite;
+   @extend %block;
+   @include size(150px);
+    margin: 0 auto 20px;
+    content: '';
+    background-position: 0 0;
+}
+
+
+%buttonStyle {
+   @extend %center;
+   @extend %noTap;
+   @include btnAbs(150px 60px);
+   color: $blueGraySeven;
+   margin: 50px auto 0;
+   background: $flexrRed;
+}
+
+.primary {
+   @extend %buttonStyle;
+}
+
+.secondary {
+   @extend %buttonStyle;
+   color: $orange;
+   background: none;
+}
+
+
+@media only screen and (max-width:940px) {
+
+   p {
+      font-size: 18px
+   }
+
+   #nav .links {
+      font-size: 17px
+   }
+
+}
+
+
+@media only screen and (max-width:740px) {
+
+   h1 {
+      font-size: 34px
+   }
+
+   section {
+      padding: 60px 0;
+   }
+
+   #nav {
+
+      a[href="/"] { // Home
+         width: 94px;
+
+         svg * {
+            fill: $blueGraySeven;
+         }
+      }
+   }
+
+   #nav, header#nav.nav-scroll {
+      height: 56px;
+   }
+
+}
+
+
+@media only screen and (max-width:520px) {
+
+   .primary {
+      margin: 50px auto 20px
+   }
+
+   .secondary {
+      margin: 0 auto;
+   }
+
+   #nav {
+      @include box-shadow(0 -1px 4px rgba(0,0,30,.3));
+      top: auto;
+      bottom: -1px;
+      padding: 0 0 1px;
+      background: lighten($blueGrayTwo,2);
+
+      .links::before {
+         display: block
+      }
+
+      a[href="/get-flexr/"] {
+         color: $blueGraySeven;
+         background: none;
+      }
+   }
+
+   #nav nav.row a {
+      margin: auto;
+   }
+
+   #nav a.links {
+      margin: 0;
+      font-size: 0
+   }
+
+   #download #nav a[href="/get-flexr/"] {
+      background: none;
+   }
+
+   #home #nav a[href="/"] svg * {
+      fill: $flexrRed;
+   }
+
+}

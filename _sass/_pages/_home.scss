@@ -4,68 +4,6 @@
    @include transition(0.6s)
 }
 
-#hero {
-   padding: 210px 0 150px;
-   overflow: hidden;
-
-   @include phoneLan {
-      padding: 60px 0 30px;
-   };
-
-   .row {
-      @extend %smoothParent;
-      @include align-items(center)
-   }
-
-   .container {
-      @extend %relative;
-      @include size(100% auto);
-      @include ratio(1,0.6215);
-      overflow: hidden;
-   }
-}
-
-#hero-text {
-   @extend %box;
-   @include flex-wrap(wrap);
-   @extend %left;
-
-   @include phonePor {
-      @include justify-content(center);
-      margin-bottom: 20px;
-      text-align: center;
-   };
-
-   p {
-      width: 96%;
-      padding-bottom: 30px;
-
-      @include phonePor {
-         margin: 20px auto 0;
-      };
-   }
-
-   a {
-
-      @include phonePor {
-         margin: 0 auto 20px
-      };
-   }
-
-   .primary {
-      margin: 0
-   }
-
-   .secondary {
-      width: 90px;
-      margin: 0 0 0 30px;
-
-      @include phoneLan {
-         width: 70px;
-         margin-left: 20px
-      };
-   }
-}
 
 #expand {
    background: darken($blueGrayTwo,2);
@@ -107,18 +45,6 @@
    }
 }
 
-#hero-image .container {
-   @extend %smoothParent;
-}
-
-#bottom, #top {
-   @extend %animationTiming;
-   @extend %smoothMover;
-   @include size(100% auto);
-   @include xy(0);
-   position: absolute;
-}
-
 #why-image {
 
    @include phonePor {
@@ -133,14 +59,6 @@
          width: 100%
       };
    }
-}
-
-#bottom {
-   @include transition-delay(0.3s);
-}
-
-#top {
-   @include transition-delay(0.6s);
 }
 
 #browsers {

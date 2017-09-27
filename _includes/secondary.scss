@@ -1,0 +1,124 @@
+@import "../_sass/_vendor/flexr", "../_sass/_vendor/turntable", "../_sass/_base/vars";
+
+h2 {
+   font-size: 29px;
+}
+
+h2:not(:first-of-type) {
+   margin-top: 60px
+}
+
+h2 + p, p + p, pre + p, dl + p, pre {
+   margin-top: 30px
+}
+
+.header {
+    padding: 30px 0 120px;
+
+    h1 {
+       text-align: center;
+    }
+}
+
+#download .header {
+   padding: 30px 0 80px;
+}
+
+
+#doc-title::before {
+    background-position: 60% 0
+}
+
+#download-title::before {
+   background-position: 80% 0
+}
+
+#grid-title::before {
+    background-position: 40% 0
+}
+
+#host-title::before {
+   background-position: 100% 0
+}
+
+.example {
+   text-align: center;
+    height: auto;
+    padding: 20px 0;
+    font-size: 16px;
+    box-sizing: border-box;
+    background: $blueGrayFive;
+    line-height: 1.1
+}
+
+%downloadText {
+   @extend %center;
+   @include ctrRel;
+   width: 85%;
+}
+
+#download-section {
+   h2 {
+      @extend %downloadText;
+      margin-top: 10px;
+   }
+
+   p {
+      @extend %downloadText;
+   }
+}
+
+textarea, button {
+   @extend %noOuty;
+   @include noLooks;
+   overflow: auto;
+}
+
+textarea, code, pre {
+   @extend %withAll;
+   line-height: 1.2;
+   color: #DDE;
+   background: #42425d;
+   font-family: monospace;
+}
+
+textarea {
+   @include size(680px auto);
+   @include box-shadow(none);
+   padding: 20px 24px 22px;
+   resize: none;
+   margin: 40px auto 0;
+   font-size: 15px;
+   white-space: pre-wrap;
+   line-height: 1.5;
+   word-break: keep-all;
+}
+
+@media only screen and (max-width:740px) {
+
+   h2 {
+      font-size: 21px
+   }
+
+   .header {
+      padding: 0 0 60px
+   }
+
+   textarea {
+      @include flowage(hidden scroll);
+      width: 100%;
+   }
+
+}
+
+@media only screen and (max-width:520px) {
+
+   #download .header {
+      padding: 0;
+   }
+
+   textarea {
+      height: 9em;
+   }
+
+}

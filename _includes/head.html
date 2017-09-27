@@ -70,11 +70,12 @@
 
 <meta property="og:type" content="website">
 
-<style type="text/css">html,body{background:#2E2E42}</style>
-
-<link href="https://cdn.jsdelivr.net/gh/dmbdesignpdx/flexr@2.0.5/flexr.css" rel="stylesheet">
-
-<link href="/css/master.css" rel="stylesheet">
+{%- capture critical -%}
+{%- include critical.scss -%}
+{%- if page.bodyID == "home" -%}{%- include hero.scss -%}
+{%- else -%}{%- include secondary.scss -%}{%- endif -%}
+{%- endcapture -%}
+<style>{{ critical | scssify }}</style>
 
 <script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -97,7 +98,8 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 </script>
 
 <noscript id="deferred">
-  <link href='https://fonts.googleapis.com/css?family=Roboto:300,700' rel='stylesheet'>
+   <link href="/css/master.css" rel="stylesheet">
+   <link href='https://fonts.googleapis.com/css?family=Roboto:300,700' rel='stylesheet'>
 </noscript>
 
 <script>var loadStyles=function(){var e=document.getElementById("deferred"),t=document.createElement("div");t.innerHTML=e.textContent,document.body.appendChild(t),e.parentElement.removeChild(e)},raf=requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame;raf?raf(function(){window.setTimeout(loadStyles,0)}):window.onload=loadStyles;</script>
