@@ -33,9 +33,9 @@ html, body, nav, main, section, header, footer, img, object, svg, address, texta
    margin: 0
 }
 
-nav, main, section, header, footer, img, object, svg, address, textarea, pre, button, figure, nav a, [role=button] {
-   @extend %block;
-   @extend %relative;
+nav, main, section, header, footer, img, object, svg, address, textarea, pre, button, figure, nav a, [role=button], .with-icon::before {
+   display: block;
+   position: relative;
 }
 
 nav, section, header, footer, img, object {
@@ -43,7 +43,7 @@ nav, section, header, footer, img, object {
 }
 
 img, svg, object {
-   @extend %withAll;
+   box-sizing: border-box;
    font-size: 0
 }
 
@@ -51,8 +51,7 @@ a, abbr {
    text-decoration: none
 }
 
-a {
-   @extend %relative;
+a, .primary, .secondary {
    @include noTap;
 }
 
@@ -67,10 +66,8 @@ h1, h2, p, address {
    width: 100%;
 }
 
-@for $i from 1 through 3 {
-   h#{$i} {
-      @extend %titles;
-   }
+h1, h2, h3 {
+   @include titles;
 }
 
 section {
@@ -135,10 +132,9 @@ p + .primary {
       color: $blueGraySeven;
 
       &::before {
-         @extend %useSprite;
          @include size(28px);
          display: none;
-         content: '';
+         content: ''
       }
    }
 
@@ -165,7 +161,7 @@ p + .primary {
       width: 170px;
 
       svg {
-         padding-top: 1px;
+         padding-top: 1px
       }
    }
 }
@@ -186,12 +182,12 @@ p + .primary {
 //  JS Classes
 
 header#nav.nav-scroll {
-   @include box-shadow(0 2px 5px rgba(0,0,30,.3));
-    height: 80px;
+   box-shadow: 0 2px 5px rgba(0,0,30,.3);
+   height: 80px
 }
 
 
-%useSprite {
+.with-icon::before, #nav .links::before {
     background: url(../img/master-sprite.svg) no-repeat;
     background-size: 600% 400%
 }
@@ -200,32 +196,23 @@ header#nav.nav-scroll {
 //  Icons
 
 .with-icon::before {
-   @extend %useSprite;
-   @extend %block;
    @include size(150px);
     margin: 0 auto 20px;
     content: '';
-    background-position: 0 0;
+    background-position: 0 0
 }
 
-
-%buttonStyle {
-   @extend %center;
-   @extend %noTap;
+.primary, .secondary {
    @include btnAbs(150px 60px);
+   text-align: center;
    color: $blueGraySeven;
    margin: 50px auto 0;
-   background: $flexrRed;
-}
-
-.primary {
-   @extend %buttonStyle;
+   background: $flexrRed
 }
 
 .secondary {
-   @extend %buttonStyle;
    color: $orange;
-   background: none;
+   background: none
 }
 
 
@@ -249,7 +236,7 @@ header#nav.nav-scroll {
    }
 
    section {
-      padding: 60px 0;
+      padding: 60px 0
    }
 
    #nav {
@@ -258,13 +245,13 @@ header#nav.nav-scroll {
          width: 94px;
 
          svg * {
-            fill: $blueGraySeven;
+            fill: $blueGraySeven
          }
       }
    }
 
    #nav, header#nav.nav-scroll {
-      height: 56px;
+      height: 56px
    }
 
 }
@@ -277,11 +264,11 @@ header#nav.nav-scroll {
    }
 
    .secondary {
-      margin: 0 auto;
+      margin: 0 auto
    }
 
    #nav {
-      @include box-shadow(0 -1px 4px rgba(0,0,30,.3));
+      box-shadow: 0 -1px 4px rgba(0,0,30,.3);
       top: auto;
       bottom: -1px;
       padding: 0 0 1px;
@@ -293,12 +280,12 @@ header#nav.nav-scroll {
 
       a[href="/get-flexr/"] {
          color: $blueGraySeven;
-         background: none;
+         background: none
       }
    }
 
    #nav nav.row a {
-      margin: auto;
+      margin: auto
    }
 
    #nav a.links {
@@ -307,11 +294,11 @@ header#nav.nav-scroll {
    }
 
    #download #nav a[href="/get-flexr/"] {
-      background: none;
+      background: none
    }
 
    #home #nav a[href="/"] svg * {
-      fill: $flexrRed;
+      fill: $flexrRed
    }
 
 }

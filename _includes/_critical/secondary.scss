@@ -14,7 +14,7 @@ $blueGraySix: #AAB;
 $blueGraySeven: #EEF;
 
 h2 {
-   font-size: 29px;
+   font-size: 29px
 }
 
 h2:not(:first-of-type) {
@@ -64,31 +64,26 @@ h2 + p, p + p, pre + p, dl + p, pre {
     line-height: 1.1
 }
 
-%downloadText {
-   @extend %center;
+#download-section h2, #download-section p {
    @include ctrRel;
    width: 85%;
+   text-align: center;
 }
 
 #download-section {
    h2 {
-      @extend %downloadText;
       margin-top: 10px;
-   }
-
-   p {
-      @extend %downloadText;
    }
 }
 
 textarea, button {
-   @extend %noOuty;
+   @include noOuty;
    @include noLooks;
    overflow: auto;
 }
 
 textarea, code, pre {
-   @extend %withAll;
+   box-sizing: border-box;
    line-height: 1.2;
    color: #DDE;
    background: #42425d;
@@ -97,7 +92,7 @@ textarea, code, pre {
 
 textarea {
    @include size(680px auto);
-   @include box-shadow(none);
+   box-shadow: none;
    padding: 20px 24px 22px;
    resize: none;
    margin: 40px auto 0;
