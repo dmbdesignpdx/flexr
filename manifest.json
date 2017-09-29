@@ -1,13 +1,16 @@
+---
+# Chrome
+---
 {
-    "name": "",
+    "name": "Flexr Grid",
     "icons": [
         {
-            "src": "/img/android-chrome-192x192.png",
+            "src": "{{ site.url }}/img/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/img/android-chrome-256x256.png",
+            "src": "{{ site.url }}/img/android-chrome-256x256.png",
             "sizes": "256x256",
             "type": "image/png"
         }

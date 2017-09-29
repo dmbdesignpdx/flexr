@@ -5,11 +5,10 @@
 <browserconfig>
   <msapplication>
     <tile>
-      <square70x70logo src="{{ site.url }}/img/mstile-70x70.png"/>
-      <square150x150logo src="{{ site.url }}/img/mstile-270x270.png"/>
+      <square150x150logo src="{{ site.url }}/img/mstile-150x150.png"/>
       <square310x310logo src="{{ site.url }}/img/mstile-310x310.png"/>
       <wide310x150logo src="{{ site.url }}/img/mstile-310x150.png"/>
-      <TileColor>#2B2B3F</TileColor>
+      <TileColor>#ee1111</TileColor>
     </tile>
   </msapplication>
 </browserconfig>

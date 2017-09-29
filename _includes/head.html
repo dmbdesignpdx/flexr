@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 
 <title>{{ page.title | default: site.title }}</title>
 
@@ -14,15 +14,8 @@
 
 <meta name="copyright" content="Copyright {{ site.copyright }}. All rights reserved.">
 
+
 <meta name="theme-color" content="#2E2E42">
-
-<link rel="apple-touch-icon" sizes="120x120" href="{{ site.url }}/img/apple-touch-icon-120x120.png">
-
-<link rel="apple-touch-icon" sizes="144x144" href="{{ site.url }}/img/apple-touch-icon-144x144.png">
-
-<link rel="apple-touch-icon" sizes="152x152" href="{{ site.url }}/img/apple-touch-icon-152x152.png">
-
-<link rel="apple-touch-icon" sizes="167x167" href="{{ site.url }}/img/apple-touch-icon-167x167.png">
 
 <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}/img/apple-touch-icon-180x180.png">
 
@@ -32,19 +25,12 @@
 
 <link rel="icon" type="image/png" href="{{ site.url }}/img/favicon-96x96.png" sizes="96x96">
 
-<link rel="icon" sizes="192x192" href="{{ site.url }}/img/touch-icon.png">
-
 <link rel="shortcut icon" type="image/x-icon" href="{{ site.url }}/favicon.ico">
 
 <link rel="mask-icon" href="{{ site.url }}/img/pinned-tab.svg" color="#FF5566">
 
 <link rel="manifest" href="{{ site.url }}/mainfiest.json">
 
-<meta name="msapplication-TileColor" content="#2E2E42">
-
-<meta name="msapplication-TileImage" content="{{ site.url }}/img/mstile-144x144.png">
-
-<meta name="msapplication-config" content="{{ site.url }}/browserconfig.xml">
 
 <meta name="twitter:card" content="summary_large_image">
 
@@ -71,9 +57,9 @@
 <meta property="og:type" content="website">
 
 {%- capture critical -%}
-{%- include critical.scss -%}
-{%- if page.bodyID == "home" -%}{%- include hero.scss -%}
-{%- else -%}{%- include secondary.scss -%}{%- endif -%}
+{%- include _critical/critical.scss -%}
+{%- if page.bodyID == "home" -%}{%- include _critical/hero.scss -%}
+{%- else -%}{%- include _critical/secondary.scss -%}{%- endif -%}
 {%- endcapture -%}
 <style>{{ critical | scssify }}</style>
 
