@@ -147,7 +147,7 @@ The default justification of how the columns populate is _centered_. To change t
 
       <th scope="rowgroup">Breakpoint Value</th>
 
-      <td>520px</td>
+      <td>470px</td>
 
       <td>740px</td>
 

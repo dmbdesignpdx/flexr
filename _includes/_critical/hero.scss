@@ -68,7 +68,7 @@
 }
 
 // Phone Portrait
-@media only screen and (max-width:520px) {
+@media only screen and (max-width:470px) {
 
    #hero-text {
       @include justify-content(center);

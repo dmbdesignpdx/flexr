@@ -38,7 +38,7 @@ $pp-gutter: $pl-gutter;
 }
 
 @mixin phonePor {
-   @include break(520px) {
+   @include break(470px) {
       @content;
    };
 }
