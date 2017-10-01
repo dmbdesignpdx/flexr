@@ -16,16 +16,13 @@ $blueGraySeven: #EEF;
 
 
 html, body {
-   background: #2E2E42;
-}
-
-html, body {
-   height: 100vh
+   height: 100vh;
+   background: #2E2E42
 }
 
 body {
    min-height: 100vh;
-   font: 300 20px Roboto, sans-serif;
+   font: 300 20px Roboto, sans-serif
 }
 
 html, body, nav, main, section, header, footer, img, object, svg, address, textarea, button, figure, h1, h2, h3, p, ul, li, a, code, pre {
@@ -33,12 +30,12 @@ html, body, nav, main, section, header, footer, img, object, svg, address, texta
    margin: 0
 }
 
-nav, main, section, header, footer, img, object, svg, address, textarea, pre, button, figure, nav a, [role=button], .with-icon::before {
+nav, main, section, header, footer, img, object, svg, address, textarea, pre, button, figure, nav a, div, [role=button], .with-icon::before {
    display: block;
    position: relative;
 }
 
-nav, section, header, footer, img, object {
+nav, section, header, footer, img, object, #hero .container {
    @include size(100% auto)
 }
 
@@ -57,13 +54,12 @@ a, .primary, .secondary {
 
 h2, li, a, button {
    font-weight: 700;
-   line-height: 1.1;
-   letter-spacing: .2pt
+   letter-spacing: 0.2pt
 }
 
 h1, h2, p, address {
    text-align: inherit;
-   width: 100%;
+   width: 100%
 }
 
 h1, h2, h3 {
@@ -75,13 +71,13 @@ section {
 }
 
 h1, h2 {
-   color: #99B;
+   color: #99B
 }
 
 h1 {
    font-size: 47px;
    font-weight: 300;
-   letter-spacing: -0.2pt;
+   letter-spacing: -0.2pt
 }
 
 p, address, dd {
@@ -98,14 +94,16 @@ p + .primary {
    margin: 28px auto 0
 }
 
-
+.with-icon::before, #nav .links::before {
+    background: url(../img/master-sprite.svg) no-repeat;
+    background-size: 600% 400%
+}
 
 // Nav
 
 #nav {
    @include xy(-1px 0);
    @include size(100% 112px);
-   height: 112px;
    padding: 1px 0 0;
    position: fixed;
    z-index: 999;
@@ -138,7 +136,7 @@ p + .primary {
       }
    }
 
-   a[href="/get-flexr/"] { // Get It
+   [href="/get-flexr/"] { // Get It
       margin-right: 15px;
       margin-left: 15px;
       color: $blueGrayTwo;
@@ -149,15 +147,15 @@ p + .primary {
       }
    }
 
-   a[href="/flexr-grid/"]::before { // The Grid
+   [href="/flexr-grid/"]::before { // The Grid
       background-position: 0 66.666%
    }
 
-   a[href="/use-flexr/"]::before { // Use It
+   [href="/use-flexr/"]::before { // Use It
       background-position: 20% 66.666%
    }
 
-   a[href="/"] { // Home
+   [href="/"] { // Home
       width: 170px;
 
       svg {
@@ -166,15 +164,15 @@ p + .primary {
    }
 }
 
-#the-grid #nav a[href="/flexr-grid/"], #how-to #nav a[href="/use-flexr/"] {
+#the-grid #nav [href="/flexr-grid/"], #how-to #nav [href="/use-flexr/"] {
    color: $flexrRed
 }
 
-#download #nav a[href="/get-flexr/"] {
+#download #nav [href="/get-flexr/"] {
    background: $blueGraySeven;
 }
 
-#the-grid #nav a[href="/flexr-grid/"]::before, #how-to #nav a[href="/use-flexr/"]::before, #download #nav a[href="/get-flexr/"]::before {
+#the-grid #nav [href="/flexr-grid/"]::before, #how-to #nav [href="/use-flexr/"]::before, #download #nav [href="/get-flexr/"]::before {
    background-position-y: 100%
 }
 
@@ -182,14 +180,8 @@ p + .primary {
 //  JS Classes
 
 header#nav.nav-scroll {
-   box-shadow: 0 2px 5px rgba(0,0,30,.3);
+   box-shadow: 0 2px 5px rgba(0,0,30,0.3);
    height: 80px
-}
-
-
-.with-icon::before, #nav .links::before {
-    background: url(../img/master-sprite.svg) no-repeat;
-    background-size: 600% 400%
 }
 
 
@@ -204,7 +196,6 @@ header#nav.nav-scroll {
 
 .primary, .secondary {
    @include btnAbs(150px 60px);
-   text-align: center;
    color: $blueGraySeven;
    margin: 50px auto 0;
    background: $flexrRed
@@ -241,7 +232,7 @@ header#nav.nav-scroll {
 
    #nav {
 
-      a[href="/"] { // Home
+      [href="/"] { // Home
          width: 94px;
 
          svg * {
@@ -278,7 +269,7 @@ header#nav.nav-scroll {
          display: block
       }
 
-      a[href="/get-flexr/"] {
+      [href="/get-flexr/"] {
          color: $blueGraySeven;
          background: none
       }
@@ -293,11 +284,11 @@ header#nav.nav-scroll {
       font-size: 0
    }
 
-   #download #nav a[href="/get-flexr/"] {
+   #download #nav [href="/get-flexr/"] {
       background: none
    }
 
-   #home #nav a[href="/"] svg * {
+   #home #nav [href="/"] svg * {
       fill: $flexrRed
    }
 

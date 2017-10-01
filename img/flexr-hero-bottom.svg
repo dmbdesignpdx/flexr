@@ -1,33 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 692 430">
-<defs><style><![CDATA[
-   * { stroke: #1c1c2d; stroke-width: 2px }
-
-   .cls-1 { fill: #363647 }
-
-   .cls-2 { fill: #dde }
-
-   .cls-4 { fill: #eef }
-
-   .cls-5 { fill: #668 }
-
-   .cls-6, .cls-3 { fill: #aab }
-
-   .cls-7 { fill: #bbc }
-
-   .cls-8 { fill: #f56 }
-]]></style></defs>
+<?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 692 430"><defs><style><![CDATA[*{stroke:#1c1c2d; stroke-width:2px}.cls-1{fill:#363647}.cls-2{fill:#dde}.cls-4{fill:#eef}.cls-5{fill:#668}.cls-6, .cls-3{fill:#aab}.cls-7{fill:#bbc}.cls-8{fill:#f56}]]></style></defs>
 <rect class="cls-1" x="67" y="2" width="534" height="371" rx="17" ry="17"/>
 <path class="cls-2" d="M3,361H663a0,0,0,0,1,0,0v9a12,12,0,0,1-12,12H15a12,12,0,0,1-12-12v-9.3a0,0,0,0,1,0,0Z"/>
 <path class="cls-3" d="M387,361.4a9,9,0,0,1-9,9H288a9,9,0,0,1-9-9Z"/>
-<rect class="cls-4" x="82" y="26" width="504" height="315"/>
-<rect class="cls-5" x="82" y="26" width="504" height="58"/>
-<rect class="cls-6" x="170" y="243" width="70" height="98"/>
-<rect class="cls-6" x="256" y="243" width="70" height="98"/>
-<rect class="cls-6" x="342" y="243" width="70" height="98"/>
-<rect class="cls-6" x="428" y="243" width="70" height="98"/>
-<rect class="cls-7" x="170" y="99" width="328" height="129"/>
-<rect class="cls-8" x="170" y="40" width="70" height="29"/>
-<rect class="cls-2" x="342" y="48" width="40" height="13"/>
-<rect class="cls-2" x="400" y="48" width="40" height="13"/>
-<rect class="cls-2" x="458" y="48" width="40" height="13"/></svg>
+<path class="cls-4" d="M82,26h504v315h-504z"/>
+<path class="cls-5" d="M82,26h504v58h-504z"/>
+<path class="cls-6" d="M170,243h70v98h-70z"/>
+<path class="cls-6" d="M256,243h70v98h-70z"/>
+<path class="cls-6" d="M342,243h70v98h-70z"/>
+<path class="cls-6" d="M428,243h70v98h-70z"/>
+<path class="cls-7" d="M170,99h328v129h-328z"/>
+<path class="cls-8" d="M170,40h70v29h-70z"/>
+<path class="cls-2" d="M342,48h40v13h-40z"/>
+<path class="cls-2" d="M400,48h40v13h-40z"/>
+<path class="cls-2" d="M458,48h40v13h-40z"/></svg>

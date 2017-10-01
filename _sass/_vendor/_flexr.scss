@@ -52,29 +52,14 @@ $pp-gutter: $pl-gutter;
 }
 
 .row {
-   display: -ms-flexbox;
    display: -webkit-flex;
    display: flex;
    width: 1152px;
    margin: 0 auto;
-   -ms-flex-pack: center;
    -webkit-justify-content: center;
    justify-content: center;
-   -ms-flex-wrap: wrap;
    -webkit-flex-wrap: wrap;
    flex-wrap: wrap
-}
-
-.jus-l {
-   -ms-flex-pack: start;
-   -webkit-justify-content: flex-start;
-   justify-content: flex-start
-}
-
-.jus-r {
-   -ms-flex-pack: end;
-   -webkit-justify-content: flex-end;
-   justify-content: flex-end
 }
 
 [class*=col-] {

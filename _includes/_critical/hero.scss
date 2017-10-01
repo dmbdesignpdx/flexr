@@ -10,15 +10,15 @@
 
    .container {
       @include smoothParent;
-      @include size(100% auto);
       @include ratio(1,0.6215);
       overflow: hidden;
-      position: relative
    }
 }
 
 #bottom, #top {
    @include smoothMover;
+   @include xy(0);
+   position: absolute;
    -webkit-transition: 0.6s;
    transition: 0.6s
 }
@@ -51,12 +51,6 @@
       width: 90px;
       margin: 0 0 0 30px
    }
-}
-
-#bottom, #top {
-   @include size(100% auto);
-   @include xy(0);
-   position: absolute
 }
 
 // Tablet Portrait

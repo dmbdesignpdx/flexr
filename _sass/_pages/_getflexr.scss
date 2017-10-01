@@ -12,6 +12,7 @@
 
    a {
       @extend %light;
+      display: block;
       padding: 50px 0 60px;
 
       &:hover {
@@ -30,5 +31,7 @@
 }
 
 #linkcopy {
-   width: 160px
+   width: 160px;
+   font-size: 20px;
+   border-radius: 0
 }

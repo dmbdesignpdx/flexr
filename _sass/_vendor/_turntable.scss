@@ -1,4 +1,6 @@
-/* Mixin' with Turntable v0.0.17 -- by Daniel Blake */
+@import "prefix-support";
+
+/* Mixin' with Turntable v0.1.0 -- by Daniel Blake */
 
 // Create fresh stylesheets on the fly using presets, scratching, and sampling.
 
@@ -7,25 +9,33 @@
 
 $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
-
 // --- RECORDS FOR SCRATCHING (Custom and Prefix Mixins) --- //
+
 
 // --- i. Vendor-Prefix Mixins --- //
 
-
 // Display Flex or Grid:
 
-@mixin display($arg, $impt:null) {
+@mixin display($arg) {
    @if $arg == grid {
-      display: -ms-#{$arg} #{$impt};
-      display: $arg $impt;
+      @if nth($support,2) < 11 {
+         display: -ms-#{$arg};
+      }
+      display: $arg;
    } @else {
       $old: if($arg == inline-flex, inline-, null );
-      display: -webkit-#{$old}box #{$impt};
-      display: -moz-#{$old}box #{$impt};
-      display: -ms-#{$arg}box #{$impt};
-      display: -webkit-#{$arg} #{$impt};
-      display: $arg $impt;
+      @if nth($support,2) < 11 {
+         display: -ms-#{$arg}box;
+      }
+      @if nth($support,1) < 2014 {
+         display: -webkit-#{$old}box;
+         display: -moz-#{$old}box;
+      }
+      @if nth($support,1) < 2015 {
+         display: -webkit-#{$arg};
+
+      }
+      display: $arg;
    }
 }
 
@@ -82,49 +92,49 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 3. Grid Column Span
 
-@mixin grid-column-span($arg, $impt:null) {
-   -ms-grid-column-span: $arg $impt;
-   grid-column-end: span #{$arg} $impt;
+@mixin grid-column-span($arg) {
+   -ms-grid-column-span: $arg;
+   grid-column-end: span #{$arg};
 }
 
 
 // 4. Grid Row Span
 
-@mixin grid-row-span($arg, $impt:null) {
-   -ms-grid-row-span: $arg $impt;
-   grid-row-end: span #{$arg} $impt;
+@mixin grid-row-span($arg) {
+   -ms-grid-row-span: $arg;
+   grid-row-end: span #{$arg};
 }
 
 
 // 5. Grid Justify Self
 
-@mixin grid-justify-self($arg, $impt:null) {
-   -ms-grid-row-align: $arg $impt;
-   justify-self: $arg $impt;
+@mixin grid-justify-self($arg) {
+   -ms-grid-row-align: $arg;
+   justify-self: $arg;
 }
 
 
 // 5. Grid Align Self
 
-@mixin grid-align-self($arg, $impt:null) {
-   -ms-grid-column-align: $arg $impt;
-   align-self: $arg $impt;
+@mixin grid-align-self($arg) {
+   -ms-grid-column-align: $arg;
+   align-self: $arg;
 }
 
 
 // 7. Grid Column Start
 
-@mixin grid-column-start($arg, $impt:null) {
-   -ms-grid-column: $arg $impt;
-   grid-column-start: $arg $impt;
+@mixin grid-column-start($arg) {
+   -ms-grid-column: $arg;
+   grid-column-start: $arg;
 }
 
 
 // 8. Grid Row Start
 
-@mixin grid-row-start($arg, $impt:null) {
-   -ms-grid-row: $arg $impt;
-   grid-row-start: $arg $impt;
+@mixin grid-row-start($arg) {
+   -ms-grid-row: $arg;
+   grid-row-start: $arg;
 }
 
 
@@ -133,266 +143,437 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 1. Flex Direction
 
-@mixin flex-direction($arg, $impt:null) {
-   $origin: if($arg == row or $arg == row-reverse, horizontal, vertical);
-   $dir: if($arg == row or $arg == column, normal, reverse);
-   -webkit-box-orient: $origin $impt;
-   -moz-box-orient: $origin $impt;
-   -webkit-box-direction: $dir $impt;
-   -moz-box-direction: $dir $impt;
-   @for $i from 2 through 5 {
-      @if $i != 3 {
-         #{nth($prefix,$i)}flex-direction: $arg $impt
+@mixin flex-direction($arg) {
+   @if nth($support,1) < 2015 or nth($support,2) < 11 {
+      $origin: if($arg == row or $arg == row-reverse, horizontal, vertical);
+      $dir: if($arg == row or $arg == column, normal, reverse);
+      @if nth($support,2) < 11 {
+         -ms-flex-direction: $arg;
+      }
+      @if nth($support,1) < 2014 {
+         -webkit-box-orient: $origin;
+         -moz-box-orient: $origin;
+         -webkit-box-direction: $dir;
+         -moz-box-direction: $dir;
+      } @else if nth($support,1) < 2015 {
+         -webkit-flex-direction: $arg;
       }
    }
+   flex-direction: $arg;
 }
 
 
 // 2. Flex Wrap
 
-@mixin flex-wrap($arg, $impt:null) {
-   -ms-flex-wrap: if($arg == nowrap, none #{$impt}, $arg $impt);
-   -webkit-flex-wrap: $arg $impt;
-   flex-wrap: $arg $impt;
+@mixin flex-wrap($arg) {
+   @if nth($support,1) < 2015 or nth($support,2) < 11 {
+      @if nth($support,2) < 11 {
+         -ms-flex-wrap: if($arg == nowrap, none, $arg);
+      }
+      @if nth($support,1) < 2015 {
+         -webkit-flex-wrap: $arg;
+      }
+   }
+   flex-wrap: $arg;
 }
 
 
 // 3. Justify Content
 
-@mixin justify-content($arg, $impt:null) {
-   $old: $arg;
-   @if $arg == flex-start {
-      $old: start;
-   } @else if $arg == flex-end {
-      $old: end;
-   } @else if $arg == space-between {
-      $old: justify;
-   } @else if $arg == space-around {
-      $old: distribute;
+@mixin justify-content($arg) {
+   @if nth($support,1) < 2015 or nth($support,2) < 11 {
+      $old: $arg;
+      @if $arg == flex-start {
+         $old: start;
+      } @else if $arg == flex-end {
+         $old: end;
+      } @else if $arg == space-between {
+         $old: justify;
+      } @else if $arg == space-around {
+         $old: distribute;
+      }
+      @if nth($support,2) < 11 {
+         -ms-flex-pack: $old;
+      }
+      @if nth($support,1) < 2014 {
+         -webkit-box-pack: if($old == distribute, justify, $old);
+         -moz-box-pack: if($old == distribute, justify, $old);
+      }
+      @if nth($support,1) < 2015 {
+         -webkit-justify-content: $arg;
+      }
    }
-   -webkit-box-pack: if($old == distribute, justify #{$impt}, $old $impt);
-   -moz-box-pack: if($old == distribute, justify #{$impt}, $old $impt);
-   -ms-flex-pack: $old $impt;
-   -webkit-justify-content: $arg $impt;
-   justify-content: $arg $impt;
+   justify-content: $arg;
 }
 
 
 // 4. Align Content
 
-@mixin align-content($arg, $impt:null) {
-   @if $arg == flex-start {
-      -ms-flex-line-pack: start #{$impt};
-   } @else if $arg == flex-end {
-      -ms-flex-line-pack: end #{$impt};
-   } @else if $arg == space-between {
-      -ms-flex-line-pack: justify #{$impt};
-   } @else if $arg == space-around {
-      -ms-flex-line-pack: distribute #{$impt};
-   } @else {
-      -ms-flex-line-pack: $arg $impt;
+@mixin align-content($arg) {
+   @if nth($support,1) < 2015 or nth($support,2) < 11 {
+      @if nth($support,2) < 11 {
+         @if $arg == flex-start {
+            -ms-flex-line-pack: start;
+         } @else if $arg == flex-end {
+            -ms-flex-line-pack: end;
+         } @else if $arg == space-between {
+            -ms-flex-line-pack: justify;
+         } @else if $arg == space-around {
+            -ms-flex-line-pack: distribute;
+         } @else {
+            -ms-flex-line-pack: $arg;
+         }
+      }
+      @if nth($support,1) < 2015 {
+         -webkit-align-content: $arg;
+      }
    }
-   -webkit-align-content: $arg $impt;
-   align-content: $arg $impt;
+   align-content: $arg;
 }
 
 
 // 5. Align Items
 
-@mixin align-items($arg, $impt:null) {
-   $old: $arg;
-   @if $arg == flex-start {
-      $old: start;
-   } @else if $arg == flex-end {
-      $old: end;
+@mixin align-items($arg) {
+   @if nth($support,1) < 2015 or nth($support,2) < 11 {
+      $old: $arg;
+      @if $arg == flex-start {
+         $old: start;
+      } @else if $arg == flex-end {
+         $old: end;
+      }
+      @if nth($support,2) < 11 {
+         -ms-flex-align: $old;
+      }
+      @if nth($support,1) < 2014 {
+         -webkit-box-align: $old;
+         -moz-box-align: $old;
+      }
+      @if nth($support,1) < 2015 {
+         -webkit-align-items: $arg;
+      }
    }
-   -webkit-box-align: $old $impt;
-   -moz-box-align: $old $impt;
-   -ms-flex-align: $old $impt;
-   -webkit-align-items: $arg $impt;
-   align-items: $arg $impt;
+   align-items: $arg;
 }
 
 
 // 6. Align Self
 
-@mixin align-self($arg, $impt:null) {
-   @if $arg == flex-start {
-      -ms-flex-item-align: start #{$impt};
-   } @else if $arg == flex-end {
-      -ms-flex-item-align: end #{$impt};
-   } @else {
-      -ms-flex-item-align: $arg $impt;
+@mixin align-self($arg) {
+   @if nth($support,1) < 2015 or nth($support,2) < 11 {
+      @if nth($support,2) < 11 {
+         @if $arg == flex-start {
+            -ms-flex-item-align: start;
+         } @else if $arg == flex-end {
+            -ms-flex-item-align: end;
+         } @else {
+            -ms-flex-item-align: $arg;
+         }
+      }
+      @if nth($support,1) < 2015 {
+         -webkit-align-self: $arg;
+      }
    }
-   -webkit-align-self: $arg $impt;
-   align-self: $arg $impt;
+   align-self: $arg;
 }
 
 
 // 7. Order
 
-@mixin order($arg, $impt:null) {
-   -webkit-box-ordinal-group: $arg $impt;
-   -moz-box-ordinal-group: $arg $impt;
-   -ms-flex-order: $arg $impt;
-   -webkit-order: $arg $impt;
-   order: $arg $impt;
+@mixin order($arg) {
+   @if nth($support,1) < 2015 or nth($support,2) < 11 {
+      @if nth($support,2) < 11 {
+         -ms-flex-order: $arg;
+      }
+      @if nth($support,1) < 2014 {
+         -webkit-box-ordinal-group: $arg;
+         -moz-box-ordinal-group: $arg;
+      }
+      @if nth($support,1) < 2015 {
+         -webkit-order: $arg;
+      }
+   }
+   order: $arg;
 }
 
 
 // 8. Grow
 
-@mixin flex-grow($arg, $impt:null) {
-   -ms-flex-positive: $arg $impt;
-   -webkit-flex-grow: $arg $impt;
-   flex-grow: $arg $impt;
+@mixin flex-grow($arg) {
+   @if nth($support,1) < 2015 or nth($support,2) < 11 {
+      @if nth($support,2) < 11 {
+         -ms-flex-positive: $arg;
+      }
+      @if nth($support,1) < 2015 {
+         -webkit-flex-grow: $arg;
+      }
+   }
+   flex-grow: $arg;
 }
 
 
 // 9. Shrink
 
-@mixin flex-shrink($arg, $impt:null) {
-   -ms-flex-negative: $arg $impt;
-   -webkit-flex-shrink: $arg $impt;
-   flex-shrink: $arg $impt;
+@mixin flex-shrink($arg) {
+   @if nth($support,1) < 2015 or nth($support,2) < 11 {
+      @if nth($support,2) < 11 {
+         -ms-flex-negative: $arg;
+      }
+      @if nth($support,1) < 2015 {
+         -webkit-flex-shrink: $arg;
+      }
+   }
+   flex-shrink: $arg;
 }
 
 
 // 9. Basis
 
-@mixin flex-basis($arg, $impt:null) {
-   -ms-flex-preferred-size: $arg $impt;
-   -webkit-flex-basis: $arg $impt;
-   flex-basis: $arg $impt;
+@mixin flex-basis($arg) {
+   @if nth($support,1) < 2015 or nth($support,2) < 11 {
+      @if nth($support,2) < 11 {
+         -ms-flex-preferred-size: $arg;
+      }
+      @if nth($support,1) < 2015 {
+         -webkit-flex-basis: $arg;
+      }
+   }
+   flex-basis: $arg;
 }
 
 
 // 10. Flex
 
-@mixin flex($arg, $impt:null) {
-   -webkit-box-flex: $arg $impt;
-   -moz-box-flex: $arg $impt;
-   -ms-flex: $arg $impt;
-   -webkit-flex: $arg $impt;
-   flex: $arg $impt;
+@mixin flex($arg) {
+   @if nth($support,1) < 2015 or nth($support,2) < 11 {
+      @if nth($support,2) < 11 {
+         -ms-flex: $arg;
+      }
+      @if nth($support,1) < 2014 {
+         -webkit-box-flex: $arg;
+         -moz-box-flex: $arg;
+      }
+      @if nth($support,1) < 2015 {
+         -webkit-flex: $arg;
+      }
+   }
+   flex: $arg;
 }
 
 
 //  Filter
 
-@mixin filter($arg, $impt:null){
-   -webkit-filter: $arg $impt;
-   filter: $arg $impt;
+@mixin filter($arg) {
+   -webkit-filter: $arg;
+   filter: $arg;
 }
 
 
 //  Appearance
 
-@mixin appearance($arg, $impt:null){
-   @for $i from 3 through 5 {
-      #{nth($prefix,$i)}appearance: $arg $impt;
-   }
+@mixin appearance($arg) {
+   -moz-appearance: $arg;
+   -webkit-appearance: $arg;
+   appearance: $arg;
 }
 
 
 //  Transform
 
-@mixin transform($arg, $impt:null) {
-   @each $item in $prefix {
-      #{$item}transform: $arg $impt;
+@mixin transform($arg) {
+   @if nth($support,1) < 2017 or nth($support,2) < 10 {
+      @if nth($support,2) < 10 {
+         -ms-transform: $arg;
+      }
+      @if nth($support,1) < 2012 {
+         -o-transform: $arg;
+      }
+      @if nth($support,1) < 2013 {
+         -moz-transform: $arg;
+      }
+      @if nth($support,1) < 2017 {
+         -webkit-transform: $arg;
+      }
    }
+   transform: $arg;
 }
 
-@mixin transform-origin($arg, $impt:null) {
-   @each $item in $prefix {
-      #{$item}transform-origin: $arg $impt;
+@mixin transform-origin($arg) {
+   @if nth($support,1) < 2017 or nth($support,2) < 10 {
+      @if nth($support,2) < 10 {
+         -ms-transform-origin: $arg;
+      }
+      @if nth($support,1) < 2012 {
+         -o-transform-origin: $arg;
+      }
+      @if nth($support,1) < 2013 {
+         -moz-transform-origin: $arg;
+      }
+      @if nth($support,1) < 2017 {
+         -webkit-transform-origin: $arg;
+      }
    }
+   transform-origin: $arg;
 }
 
-@mixin transform-style($arg, $impt:null){
-   @each $item in $prefix {
-      #{$item}transform-style: $arg $impt;
+@mixin transform-style($arg) {
+   @if nth($support,1) < 2017 or nth($support,2) < 10 {
+      @if nth($support,2) < 10 {
+         -ms-transform-style: $arg;
+      }
+      @if nth($support,1) < 2012 {
+         -o-transform-style: $arg;
+      }
+      @if nth($support,1) < 2013 {
+         -moz-transform-style: $arg;
+      }
+      @if nth($support,1) < 2017 {
+         -webkit-transform-style: $arg;
+      }
    }
+   transform-style: $arg;
 }
 
 
 //  Transition
 
 @mixin transition($args...) {
-   $impt: null;
-   @each $item in $prefix {
+   @if nth($support,1) < 2014 {
+      @if nth($support,1) < 2012 {
+         $array: ();
+         @each $arg in $args {
+            @if index($arg,transform) {
+               $arg: set-nth($arg,1,-o-transform);
+            } @else if index($arg,filter) {
+               $arg: null;
+            }
+            $array: append($array,$arg,comma);
+         }
+         -o-transition: $array;
+      }
+      @if nth($support,1) < 2013 {
+         $array: ();
+         @each $arg in $args {
+            @if index($arg,transform) {
+               $arg: set-nth($arg,1,-moz-transform);
+            } @else if index($arg,filter) {
+               $arg: null;
+            }
+            $array: append($array,$arg,comma);
+         }
+         -moz-transition: $array;
+      }
       $array: ();
       @each $arg in $args {
          @if index($arg,transform) {
-            $arg: set-nth($arg,1,#{$item}transform);
-         }
-         @else if index($arg,filter) {
-            $arg: set-nth($arg,1,#{$item}filter);
-         }
-         @else if index($arg,!important) {
-            $arg: null;
-            $impt: !important;
+            $arg: set-nth($arg,1,-webkit-transform);
+         } @else if index($arg,filter) {
+            $arg: set-nth($arg,1,-webkit-filter);
          }
          $array: append($array,$arg,comma);
       }
-      #{$item}transition: $array $impt;
+      -webkit-transition: $array;
    }
+   transition: $args;
 }
 
-@mixin transition-delay($arg, $impt:null) {
-   @each $item in $prefix {
-      #{$item}transition-delay: $arg $impt;
+
+
+@mixin transition-delay($arg) {
+   @if nth($support,1) < 2014 {
+      @if nth($support,1) < 2012 {
+         -o-transition-delay: $arg;
+      }
+      @if nth($support,1) < 2013 {
+         -moz-transition-delay: $arg;
+      }
+      -webkit-transition-delay: $arg;
    }
+   transition-delay: $arg;
 }
 
-@mixin transition-duration($arg, $impt:null) {
-   @each $item in $prefix {
-      #{$item}transition-duration: $arg $impt;
+@mixin transition-duration($arg) {
+   @if nth($support,1) < 2014 {
+      @if nth($support,1) < 2012 {
+         -o-transition-duration: $arg;
+      }
+      @if nth($support,1) < 2013 {
+         -moz-transition-duration: $arg;
+      }
+      -webkit-transition-duration: $arg;
    }
+   transition-duration: $arg;
 }
 
-@mixin transition-property($arg, $impt:null) {
-   @each $item in $prefix {
-      #{$item}transition-property: if($arg == transform or $arg == filter, #{$item}#{$arg} #{$impt}, $arg $impt);
+@mixin transition-property($arg) {
+   @if nth($support,1) < 2014 {
+      @if nth($support,1) < 2012 {
+         -o-transition-property: if($arg == transform, -o-#{$arg}, $arg);
+      }
+      @if nth($support,1) < 2013 {
+         -moz-transition-property: if($arg == transform, -moz-#{$arg}, $arg);
+      }
+      -webkit-transition-property: if($arg == transform or $arg == filter, -webkit-#{$arg}, $arg);
    }
+   transition-property: $arg;
 }
 
 
 //  Animation
 
-@mixin animation($args...){
-   @for $i from 3 through 5 {
-      #{nth($prefix,$i)}animation: $args;
+@mixin animation($args...) {
+   @if nth($support,1) < 2017 {
+      @if nth($support,1) < 2013 {
+         -moz-animation: $args;
+      }
+      -webkit-animation: $args;
    }
+   animation: $args;
 }
 
-@mixin animation-delay($arg, $impt:null){
-   @for $i from 3 through 5 {
-      #{nth($prefix,$i)}animation-delay: $arg $impt;
+@mixin animation-delay($arg) {
+   @if nth($support,1) < 2017 {
+      @if nth($support,1) < 2013 {
+         -moz-animation-delay: $args;
+      }
+      -webkit-animation-delay: $args;
    }
+   animation-delay: $args;
 }
 
-@mixin animation-play($arg, $impt:null){
-   @for $i from 3 through 5 {
-      #{nth($prefix,$i)}animation-play-state: $arg $impt;
+@mixin animation-play($arg) {
+   @if nth($support,1) < 2017 {
+      @if nth($support,1) < 2013 {
+         -moz-animation-play: $args;
+      }
+      -webkit-animation-play: $args;
    }
+   animation-play: $args;
 }
 
-@mixin animation-direction($arg, $impt:null){
-   @for $i from 3 through 5 {
-      #{nth($prefix,$i)}animation-direction: $arg $impt;
+@mixin animation-direction($arg){
+   @if nth($support,1) < 2017 {
+      @if nth($support,1) < 2013 {
+         -moz-animation-direction: $args;
+      }
+      -webkit-animation-direction: $args;
    }
+   animation-direction: $args;
 }
 
 
 //  Keyframes
 
 @mixin keyframes($name) {
-   @-moz-keyframes #{$name} {
-      @content;
-   }
-   @-webkit-keyframes #{$name} {
-      @content;
+   @if nth($support,1) < 2017 {
+      @if nth($support,1) < 2013 {
+         @-moz-keyframes #{$name} {
+            @content;
+         }
+      }
+      @-webkit-keyframes #{$name} {
+         @content;
+      }
    }
    @keyframes #{$name} {
       @content;
@@ -402,117 +583,139 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Perspective
 
-@mixin perspective($arg, $impt:null) {
-   -webkit-perspective: $arg $impt;
-   perspective: $arg $impt;
+@mixin perspective($arg) {
+   @if nth($support,1) < 2017 {
+      @if nth($support,1) < 2013 {
+         -moz-perspective: $arg;
+      }
+      -webkit-perspective: $arg;
+   }
+   perspective: $arg;
 }
 
-@mixin perspective-origin($arg, $impt:null) {
-   -webkit-perspective-origin: $arg $impt;
-   perspective-origin: $arg $impt;
+@mixin perspective-origin($arg) {
+   @if nth($support,1) < 2017 {
+      @if nth($support,1) < 2013 {
+         -moz-perspective-origin: $arg;
+      }
+      -webkit-perspective-origin: $arg;
+   }
+   perspective-origin: $arg;
 }
 
 
 // Text Size Adjust
 
-@mixin text-size-adjust($arg, $impt:null) {
+@mixin text-size-adjust($arg) {
    @for $i from 2 through 5 {
-      #{nth($prefix,$i)}text-size-adjust: $arg $impt;
+      #{nth($prefix,$i)}text-size-adjust: $arg;
    }
 }
 
 
 // User Select
 
-@mixin user-select($arg, $impt:null) {
+@mixin user-select($arg) {
    @for $i from 2 through 5 {
-      #{nth($prefix,$i)}user-select: $arg $impt;
+      #{nth($prefix,$i)}user-select: $arg;
    }
 }
 
 
 // Box Sizing
 
-@mixin box-sizing($arg, $impt:null) {
-   -moz-box-sizing: $arg $impt;
-   -webkit-box-sizing: $arg $impt;
-   box-sizing: $arg $impt;
+@mixin box-sizing($arg) {
+   @if nth($support,1) < 2015 {
+      @if nth($support,1) < 2012 {
+         -webkit-box-sizing: $arg;
+      }
+      -moz-box-sizing: $arg;
+   }
+   box-sizing: $arg;
 }
 
 
 // Backface Visibility
 
-@mixin backface-visibility($arg, $impt:null) {
-   @for $i from 3 through 5 {
-      #{nth($prefix,$i)}backface-visibility: $arg $impt;
+@mixin backface-visibility($arg) {
+   @if nth($support,1) < 2017 {
+      @if nth($support,1) < 2013 {
+         -moz-backface-visibility: $arg;
+      }
+      -webkit-backface-visibility: $arg;
    }
+   backface-visibility: $arg;
 }
 
 
 // Tap Highlight Color
 
-@mixin tap-highlight-color($arg, $impt:null) {
-   -webkit-tap-highlight-color: $arg $impt;
-   tap-highlight-color: $arg $impt;
+@mixin tap-highlight-color($arg) {
+   -webkit-tap-highlight-color: $arg;
+   tap-highlight-color: $arg;
 }
 
 
 // Font Smoothing
-@mixin font-smoothing($arg, $impt:null) {
+@mixin font-smoothing($arg) {
    @if $arg == antialiased {
-      -moz-osx-font-smoothing: grayscale $impt;
+      -moz-osx-font-smoothing: grayscale;
+   } @else if $arg == none {
+      -moz-osx-font-smoothing: unset;
+   } @else if $arg == subpixel-antialiased {
+      -moz-osx-font-smoothing: auto;
    }
-   -webkit-font-smoothing: $arg $impt;
-   font-smoothing: $arg $impt;
+   -webkit-font-smoothing: $arg;
+   font-smoothing: $arg;
 }
 
 
 // Linear Gradient
 
-@mixin linear-gradient($gradient, $img:null, $impt:null) {
+@mixin linear-gradient($gradient, $img:null) {
    @if $img {
-      $img: url(#{$img});
+      $img: unquote("url(#{$img}),");
    }
-   @for $i from 1 through 5 {
-      @if $i != 2 {
-         $array: ();
-         @each $item in $gradient {
-            @if $i < 5 {
-               @if nth($item,1) == to {
-                  @if nth($item,2) == bottom {
-                     $item: top;
-                  }
-                  @else if nth($item,2) == top {
-                     $item: bottom;
-                  }
-                  @else if nth($itemt,2) == right {
-                     $item: left;
-                  }
-                  @else if nth($item,2) == left {
-                     $item: right;
-                  }
-               } @else if type-of($item) == 'number' {
-                  @if unit($item) == 'deg' {
-                     $item: if($item < 90, ($item - 90) + 360, $item - 90);
-                  }
-               }
+   @if nth($support,1) < 2014 {
+      $array: ();
+      @each $item in $gradient {
+         @if nth($item,1) == to {
+            @if nth($item,2) == bottom {
+               $item: top;
             }
-            $array: append($array,$item,comma);
+            @else if nth($item,2) == top {
+               $item: bottom;
+            }
+            @else if nth($itemt,2) == right {
+               $item: left;
+            }
+            @else if nth($item,2) == left {
+               $item: right;
+            }
+         } @else if type-of($item) == 'number' {
+            @if unit($item) == 'deg' {
+               $item: if($item < 90, ($item - 90) + 360, $item - 90);
+            }
          }
-         $main: ();
-         $main: append($main,$img,comma);
-         $main: append($main,#{nth($prefix,$i)}linear-gradient(#{$array}));
-         background-image: $main $impt;
+         $array: append($array,$item,comma);
       }
+      @if nth($support,1) < 2012 {
+         background-image: #{$img} -o-linear-gradient(#{$array});
+      }
+      background-image: #{$img} -moz-linear-gradient(#{$array});
+      background-image: #{$img} -webkit-linear-gradient(#{$array});
    }
+   background-image: #{$img} linear-gradient(#{$gradient});
 }
 
 
 // Box Shadow
 
-@mixin box-shadow($arg, $impt:null) {
-   -webkit-box-shadow: $arg $impt;
-   box-shadow: $arg $impt;
+@mixin box-shadow($arg) {
+   @if nth($support,1) < 2012 {
+      -webkit-box-shadow: $arg;
+   }
+   box-shadow: $arg;
 }
 
 
@@ -537,16 +740,19 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // 2. Fullscreen
 
 @mixin fullscreen($arg: unquote("$arg")) {
-   @for $i from 2 through 5 {
-      @if $i == 2 or $i == 5 {
-         #{$arg}:#{nth($prefix,$i)}fullscreen {
-            @content;
-         }
-      } @else {
-         #{$arg}:#{nth($prefix,$i)}full-screen {
-            @content;
-         }
+   @if nth($support,1) < 2016 {
+      #{$arg}:-moz-full-screen {
+         @content;
       }
+   }
+   #{$arg}:-ms-fullscreen {
+      @content;
+   }
+   #{$arg}:-webkit-full-screen {
+      @content;
+   }
+   #{$arg}:fullscreen {
+      @content;
    }
 }
 
@@ -578,12 +784,16 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 // 5. Backdrop
 
 @mixin backdrop($arg: unquote("$arg")) {
-   @for $i from 2 through 5 {
-      @if $i != 3 {
-         #{$arg}::#{nth($prefix,$i)}backdrop {
-            @content;
-         }
+   @if nth($support,1) < 2015  {
+      #{$arg}::-webkit-backdrop {
+         @content;
       }
+   }
+   #{$arg}::-ms-backdrop {
+      @content;
+   }
+   #{$arg}::backdrop {
+      @content;
    }
 }
 
@@ -698,75 +908,36 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Width and Height Shorthand
 
-@mixin size($arg, $impt:null) {
-   width: nth($arg,1) $impt;
-   height: if(length($arg) > 1, nth($arg,2) $impt, nth($arg,1) $impt);
+@mixin size($arg) {
+   width: nth($arg,1);
+   height: if(length($arg) > 1, nth($arg,2), nth($arg,1));
 }
 
 
 // Transform with Origin
 
-@mixin change($what, $xy:null, $impt:null) {
-   @each $item in $prefix {
-      #{$item}transform: $what $impt;
-   }
-   @if $xy {
-      @each $item in $prefix {
-         #{$item}transform-origin: $xy $impt;
-      }
-   }
+@mixin change($what, $xy) {
+   @include transform($what);
+   @include transform-origin($xy);
 }
 
 
 // Transform with Origin and Transition
 
-@mixin animate($what, $args...) {
-   $impt: null;
-   $xy: null;
-   $test: center, top, left, right, bottom;
-   @each $item in $prefix {
-      $array: ();
-      @each $arg in $args {
-         @if index($arg,transform) {
-            $arg: set-nth($arg,1,#{$item}transform);
-         } @else if index($arg,filter) {
-            $arg: set-nth($arg,1,#{$item}filter);
-         } @else if type-of(nth($arg,1)) == 'number' {
-            @if unit(nth($arg,1)) != 's' {
-               $xy: $arg;
-               $arg: null;
-            }
-         } @else if index($test,nth($arg,1)) {
-            $xy: $arg;
-            $arg: null;
-         } @else if index($arg,!important) {
-            $arg: null;
-            $impt: !important;
-         }
-         $array: append($array,$arg,comma);
-      }
-      #{$item}transition: $array $impt;
+@mixin animate($what, $args, $where:null) {
+   @include transform($what);
+   @if $where {
+      @include transform-origin($where);
    }
-   @each $item in $prefix {
-      #{$item}transform: $what $impt;
-   }
-   @if $xy {
-      @each $item in $prefix {
-         #{$item}transform-origin: $xy $impt;
-      }
-   }
+   @include transition($args);
 }
 
 
 // Perspective and Origin
 
-@mixin view($depth, $xy:null, $impt:null) {
-   -webkit-perspective: $depth $impt;
-   perspective: $depth $impt;
-   @if $xy {
-      -webkit-perspective-origin: $arg $impt;
-      perspective-origin: $arg $impt;
-   }
+@mixin view($depth, $xy) {
+   @include perspective($depth);
+   @include perspective-origin($xy);
 }
 
 
@@ -774,71 +945,71 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 1. Just like margin shorthand
 
-@mixin where($arg, $impt:null) {
-   top: nth($arg,1) $impt;
+@mixin where($arg) {
+   top: nth($arg,1);
    @if length($arg) > 3 {
-      right: nth($arg,2) $impt;
-      bottom: nth($arg,3) $impt;
-      left: nth($arg,4) $impt;
+      right: nth($arg,2);
+      bottom: nth($arg,3);
+      left: nth($arg,4);
    } @else if length($arg) > 2 {
-      right: nth($arg,2) $impt;
-      bottom: nth($arg,3) $impt;
-      left: nth($arg,2) $impt;
+      right: nth($arg,2);
+      bottom: nth($arg,3);
+      left: nth($arg,2);
    } @else if length($arg) > 1 {
-      right: nth($arg,2) $impt;
-      bottom: nth($arg,1) $impt;
-      left: nth($arg,2) $impt;
+      right: nth($arg,2);
+      bottom: nth($arg,1);
+      left: nth($arg,2);
    } @else {
-      right: nth($arg,1) $impt;
-      bottom: nth($arg,1) $impt;
-      left: nth($arg,1) $impt;
+      right: nth($arg,1);
+      bottom: nth($arg,1);
+      left: nth($arg,1);
    }
 }
 
 
 // 2. Like Where(), but starts with Left, not Top
 
-@mixin there($arg, $impt:null) {
-   left: nth($arg,1) $impt;
+@mixin there($arg) {
+   left: nth($arg,1);
    @if length($arg) > 3 {
-      top: nth($arg,2) $impt;
-      right: nth($arg,3) $impt;
-      bottom: nth($arg,4) $impt;
+      top: nth($arg,2);
+      right: nth($arg,3);
+      bottom: nth($arg,4);
    } @else if length($arg) > 2 {
-      top: nth($arg,2) $impt;
-      right: nth($arg,3) $impt;
-      bottom: nth($arg,2) $impt;
+      top: nth($arg,2);
+      right: nth($arg,3);
+      bottom: nth($arg,2);
    } @else if length($arg) > 1 {
-      top: nth($arg,2) $impt;
-      right: nth($arg,1) $impt;
-      bottom: nth($arg,2) $impt;
+      top: nth($arg,2);
+      right: nth($arg,1);
+      bottom: nth($arg,2);
    } @else {
-      top: nth($arg,1) $impt;
-      right: nth($arg,1) $impt;
-      bottom: nth($arg,1) $impt;
+      top: nth($arg,1);
+      right: nth($arg,1);
+      bottom: nth($arg,1);
    }
 }
 
 
 // 3. Left and Top Only
 
-@mixin xy($arg, $impt:null) {
-   left: nth($arg,1) $impt;
-   top: if(length($arg) > 1, nth($arg,2) $impt, nth($arg,1) $impt);
+@mixin xy($arg) {
+   left: nth($arg,1);
+   top: if(length($arg) > 1, nth($arg,2), nth($arg,1));
 }
 
 
 // SVG Stroke shorthand like border
 
-@mixin bound($arg, $impt:null) {
-   stroke: nth($arg,2) $impt;
-   stroke-width: nth($arg,1) $impt;
+@mixin bound($arg) {
+   stroke: nth($arg,2);
+   stroke-width: nth($arg,1);
    @if length($arg) > 2 {
       @if nth($arg,3) == dashed {
-         stroke-dasharray: 10,10 $impt;
+         stroke-dasharray: 10,10;
       } @else if nth($arg,3) == dotted {
-         stroke-dasharray: 0,10 $impt;
-         stroke-linecap: round $impt;
+         stroke-dasharray: 0,10;
+         stroke-linecap: round;
       }
    }
 }
@@ -903,96 +1074,96 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // Opacity with Blend Mode
 
-@mixin opaque($amount, $type, $impt:null) {
-   opacity: $amount $impt;
-   mix-blend-mode: $type $impt;
+@mixin opaque($amount, $type) {
+   opacity: $amount;
+   mix-blend-mode: $type;
 }
 
 
 // Circle
 
-@mixin circle($arg, $impt:null) {
-   width: $arg $impt;
-   height: $arg $impt;
-   border-radius: 50% #{$impt};
+@mixin circle($arg) {
+   width: $arg;
+   height: $arg;
+   border-radius: 50%;
 }
 
 
 // Oval
 
-@mixin oval($arg, $impt:null) {
-   width: nth($arg,1) $impt;
-   height: nth($arg,2) $impt;
-   border-radius: 50% #{$impt};
+@mixin oval($arg) {
+   width: nth($arg,1);
+   height: nth($arg,2);
+   border-radius: 50%;
 }
 
 
 // Triangle
 
-@mixin triangle($arg, $color, $rotate:null, $impt:null) {
+@mixin triangle($arg, $color, $rotate:null) {
    $nw: nth($arg,1)/2;
-   width: 0 #{$impt};
-   height: 0 #{$impt};
+   width: 0;
+   height: 0;
    border: {
-      left: #{$nw} solid transparent #{$impt};
-      right: #{$nw} solid transparent #{$impt};
-      bottom: #{nth($arg,2)} solid #{$color} #{$impt};
+      left: #{$nw} solid transparent;
+      right: #{$nw} solid transparent;
+      bottom: #{nth($arg,2)} solid #{$color};
    }
    @if $rotate {
-      @include transform(rotate($rotate), $impt:$impt);
+      @include transform(rotate($rotate));
    }
 }
 
 
 // Parallelogram
 
-@mixin parallelogram($arg, $amount, $impt:null) {
-   @include transform(skew($amount), $impt:$impt);
-   width: nth($arg,1) $impt;
-   height: nth($arg,2) $impt;
+@mixin parallelogram($arg, $amount) {
+   @include transform(skew($amount));
+   width: nth($arg,1);
+   height: nth($arg,2);
 }
 
 
 // Heart
 // Nicolas Gallagher -- nicolasgallagher.com
 
-@mixin heart($width, $color, $impt:null) {
+@mixin heart($width, $color) {
    $new: $width / 2;
-   width: $width $impt;
-   height: ($width * .9) $impt;
+   width: $width;
+   height: ($width * .9);
 
    &::before, &::after {
-      position: absolute $impt;
-      top: 0 $impt;
-      width: $new $impt;
-      height: ($width * .8) $impt;
-      content: '' $impt;
-      background: $color $impt;
-      border-radius: #{$new} #{$new} 0 0 $impt;
+      position: absolute;
+      top: 0;
+      width: $new;
+      height: ($width * .8);
+      content: '';
+      background: $color;
+      border-radius: #{$new} #{$new} 0 0;
    }
 
    &::before {
-      @include transform(rotate(-45deg, 0 100%), $impt:$impt);
-      left: $new $impt;
+      @include transform(rotate(-45deg, 0 100%));
+      left: $new;
    }
 
    &::after {
-      @include transform(rotate(45deg, 100% 100%), $impt:$impt);
-      left: 0 $impt;
+      @include transform(rotate(45deg, 100% 100%));
+      left: 0;
    }
 }
 
 
 // Mantain a ratio
 
-@mixin ratio($width, $length:$width, $impt:null) {
-   height: auto $impt;
+@mixin ratio($width, $length:$width) {
+   height: auto;
 
    &::before {
-      display: block $impt;
-      max-width: 100% $impt;
-      padding-top: ($length / $width) * 100% $impt;
-      content: '' $impt;
+      display: block;
+      max-width: 100%;
+      padding-top: ($length / $width) * 100%;
+      content: '';
    }
 }
 
@@ -1002,70 +1173,70 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 1. Basic Styling
 
-@mixin btnStyle($color:null, $border:null, $corners:null, $impt:null) {
+@mixin btnStyle($color:null, $border:null, $corners:null) {
    @if $color {
-      background-color: nth($color,1) $impt;
-      color: nth($color,2) $impt;
+      background-color: nth($color,1);
+      color: nth($color,2);
    }
    @if $border {
       @if length($border) == 2 {
-         border: #{nth($border,1)} solid #{nth($border,2)} #{$impt};
+         border: #{nth($border,1)} solid #{nth($border,2)};
       } @else if type-of($border) == number {
-         border: #{$border} solid #{nth($color,2)} #{$impt};
+         border: #{$border} solid #{nth($color,2)};
       } @else {
-         border: $border $impt
+         border: $border
       }
    }
    @if $corners {
-      border-radius: $corners $impt
+      border-radius: $corners
    }
 }
 
 // 2. with a Relative Width
 
-@mixin btnRel($size, $color:null, $border:null, $corners:null, $impt:null) {
-   display: inline-block #{$impt};
-   width: auto #{$impt};
-   height: nth($size,2) $impt;
-   padding: 0 #{nth($size,1)} #{$impt};
-   line-height: nth($size,2) $impt;
-   text-decoration: none #{$impt};
-   @include btnStyle($color, $border, $corners, $impt);
+@mixin btnRel($size, $color:null, $border:null, $corners:null) {
+   display: inline-block;
+   width: auto;
+   height: nth($size,2);
+   padding: 0 #{nth($size,1)};
+   line-height: nth($size,2);
+   text-decoration: none;
+   @include btnStyle($color, $border, $corners);
 }
 
 // 3. with an Absolute Width
 
-@mixin btnAbs($size, $color:null, $border:null, $corners:null, $impt:null) {
-   display: block #{$impt};
-   width: nth($size,1) $impt;
+@mixin btnAbs($size, $color:null, $border:null, $corners:null) {
+   display: block;
+   width: nth($size,1);
    height: nth($size,2);
-   line-height: nth($size,2) $impt;
+   line-height: nth($size,2);
    text: {
-      decoration: none #{$impt};
-      align: center #{$impt};
+      decoration: none;
+      align: center;
    }
-   @include btnStyle($color, $border, $corners, $impt);
+   @include btnStyle($color, $border, $corners);
 }
 
 
 // Overflow X and Y Shorthand
 
-@mixin flowage($arg, $impt:null) {
+@mixin flowage($arg) {
    @if length($arg) > 1 {
       overflow: {
-         x: nth($arg,1) $impt;
-         y: nth($arg,2) $impt;
+         x: nth($arg,1);
+         y: nth($arg,2);
       }
    } @else {
-      overflow: $arg $impt
+      overflow: $arg
    }
 }
 
 
 // Colors
 
-@function shades($color, $impt) {
-   @return if($impt > 0, lighten($color, abs($impt)), darken($color, abs($impt)));
+@function shades($color, $num) {
+   @return if($num > 0, lighten($color, abs($num)), darken($color, abs($num)));
 }
 
 
@@ -1284,22 +1455,22 @@ $prefix: -o-, -ms-, -moz-, -webkit-, null;
 
 // 1. with Options
 
-@mixin useShadow($arg, $impt:null) {
+@mixin useShadow($arg) {
    $sdw: rgba(0,0,30,.3);
    @if $arg == xs {
-      @include box-shadow(0 0 2px $sdw, $impt);
+      @include box-shadow(0 0 2px $sdw);
    }
    @if $arg == s {
-      @include box-shadow(0 1px 3px $sdw, $impt)
+      @include box-shadow(0 1px 3px $sdw)
    }
    @if $arg == m {
-      @include box-shadow(0 2px 6px $sdw, $impt)
+      @include box-shadow(0 2px 6px $sdw)
    }
    @if $arg == l {
-      @include box-shadow(0 3px 9px $sdw, $impt)
+      @include box-shadow(0 3px 9px $sdw)
    }
    @if $arg == xl {
-      @include box-shadow(0 4px 12px $sdw, $impt)
+      @include box-shadow(0 4px 12px $sdw)
    }
 }
 

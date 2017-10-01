@@ -23,7 +23,7 @@
       }
    }
 
-   a[href="/get-flexr/"] { // Get It
+   [href="/get-flexr/"] { // Get It
 
       &:hover, &:active {
          color: $blueGrayTwo;
@@ -38,7 +38,7 @@
       };
    }
 
-   a[href="/"] { // Home
+   [href="/"] { // Home
       cursor: default;
 
       svg {
