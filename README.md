@@ -1,4 +1,4 @@
-# Flexr Grid - Version 2.0.5
+# Flexr Grid - Version 2.0.7
 
 Flexr is a responsive grid for those who just want a grid. Created by Daniel Blake, a front end web designer, with a focus on the digital grid layout and its response to different screens. It features three ways columns react: expanding, shrinking and stretching.
 
@@ -214,16 +214,16 @@ http://flexrgrid.com/host/flexr-logo-use-white.svg
 
 ## Current Release Info
 
-**Version:** 2.0.5
+**Version:** 2.0.7
 
-**Date:** June 27, 2017
+**Date:** October 1, 2017
 
-**Notes:** Adds MIT license.
+**Notes:** Reduces phone portrait breakpoint to 470px.
 
 **File Size:** 3KB
 
 **Future Release Updates:** Sass versions will be available soon.
 
-**Deprecation Warning:** Class names 'exp' and 'fill' will become deprecated by Version 3.0.0; please use 'expand' and 'stretch', respectively, instead.
+**Deprecation Warning:** Class names 'exp' and 'fill' will become deprecated by Version 2.1.0; please use 'expand' and 'stretch', respectively, instead.
 
 \*Be sure to check back to see if you're using the current version!
