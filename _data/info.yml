@@ -1,5 +1,5 @@
-version: 2.0.7
-rdate: October 1, 2017
+version: 2.0.8
+rdate: October 2, 2017
 size: 3KB
 
 notes: Reduces phone portrait breakpoint to 470px.
