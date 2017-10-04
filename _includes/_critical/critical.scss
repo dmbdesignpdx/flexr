@@ -14,10 +14,9 @@ $blueGraySix: #AAB;
 $blueGraySeven: #EEF;
 
 
-
+html {background: #2E2E42;overflow-y: scroll}
 html, body {
    height: 100vh;
-   background: #2E2E42
 }
 
 body {
@@ -25,21 +24,21 @@ body {
    font: 300 20px Roboto, sans-serif
 }
 
-html, body, nav, main, section, header, footer, img, object, svg, address, textarea, button, figure, h1, h2, h3, p, ul, li, a, code, pre {
+body, img, h1, h2, h3, p, ul, li, a, pre {
    padding: 0;
    margin: 0
 }
 
-nav, main, section, header, footer, img, object, svg, address, textarea, pre, button, figure, nav a, div, [role=button], .with-icon::before {
+nav, main, section, header, footer, img, svg, address, textarea, pre, button, nav a, div, .with-icon::before {
    display: block;
    position: relative;
 }
 
-nav, section, header, footer, img, object, #hero .container {
+nav, section, header, footer, img, #hero .container {
    @include size(100% auto)
 }
 
-img, svg, object {
+img, svg {
    box-sizing: border-box;
    font-size: 0
 }
@@ -232,7 +231,7 @@ header#nav.nav-scroll {
 
    #nav {
 
-      [href="/"] { // Home
+      [href="/"] {
          width: 94px;
 
          svg * {

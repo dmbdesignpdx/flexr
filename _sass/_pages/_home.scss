@@ -85,31 +85,60 @@
       & + p {
          margin-top: 10px;
          font-size: 15px;
-         line-height: 1.2
+         line-height: 1.2;
+
+         &::after {
+            display: block;
+            margin-top: 2px;
+         }
       }
    }
 
    .firefox {
-      background-position: 0 33.333%
+      background-position: 0 33.333%;
+
+      & + p::after {
+         content: '28+';
+      }
    }
 
    .chrome {
-      background-position: 40% 33.222%
+      background-position: 40% 33.222%;
+
+      & + p::after {
+         content: '26+';
+      }
    }
 
    .safari {
-      background-position: 20% 33.333%
+      background-position: 20% 33.333%;
+
+      & + p::after {
+         content: '6.1+';
+      }
    }
 
    .opera {
-      background-position: 60% 33.333%
+      background-position: 60% 33.333%;
+
+      & + p::after {
+         content: '15+';
+      }
    }
 
    .edge {
-      background-position: 80% 33.333%
+      background-position: 80% 33.333%;
+
+      & + p::after {
+         content: '12+';
+      }
    }
 
    .explorer {
-      background-position: 100% 33.333%
+      background-position: 100% 33.333%;
+
+      & + p::after {
+         content: '10+';
+      }
    }
 }

@@ -15,7 +15,7 @@
    }
 }
 
-#bottom, #top {
+#btm, #top {
    @include smoothMover;
    @include xy(0);
    position: absolute;
@@ -23,7 +23,7 @@
    transition: 0.6s
 }
 
-#bottom {
+#btm {
    -webkit-transition-delay: 0.3s;
    transition-delay: 0.3s
 }
@@ -40,7 +40,7 @@
 
    p {
       width: 96%;
-      padding-bottom: 30px
+      padding: 0 0 30px
    }
 
    .primary {
@@ -88,7 +88,7 @@
 
 // JS Classes
 
-.forIntro #top, .forIntro #bottom {
+.forIntro #top, .forIntro #btm {
    -webkit-transform: translateY(100%);
    transform: translateY(100%)
 }
