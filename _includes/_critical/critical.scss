@@ -206,7 +206,7 @@ header#nav.nav-scroll {
 }
 
 
-@media only screen and (max-width:940px) {
+@media (max-width:940px) {
 
    p {
       font-size: 18px
@@ -219,7 +219,7 @@ header#nav.nav-scroll {
 }
 
 
-@media only screen and (max-width:740px) {
+@media (max-width:740px) {
 
    h1 {
       font-size: 34px
@@ -247,7 +247,7 @@ header#nav.nav-scroll {
 }
 
 
-@media only screen and (max-width:470px) {
+@media (max-width:470px) {
 
    .primary {
       margin: 50px auto 20px

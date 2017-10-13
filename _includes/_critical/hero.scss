@@ -54,7 +54,7 @@
 }
 
 // Tablet Portrait
-@media only screen and (max-width:740px) {
+@media (max-width:740px) {
 
    #hero {
       padding: 60px 0 30px;
@@ -68,7 +68,7 @@
 }
 
 // Phone Portrait
-@media only screen and (max-width:470px) {
+@media (max-width:470px) {
 
    #hero-text {
       @include justify-content(center);
