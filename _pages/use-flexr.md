@@ -12,6 +12,7 @@ Check out [Current Release Info](#release) for more details.
 
 You gotta link the Flexr Grid <abbr title="Cascading Style Sheets">CSS</abbr> <strong>before</strong> your CSS.
 
+<div class="pre">
 <pre>&lt;head&gt;
 
    ...
@@ -23,11 +24,13 @@ You gotta link the Flexr Grid <abbr title="Cascading Style Sheets">CSS</abbr> <s
    ...
 
 &lt;/head&gt;</pre>
+</div>
 
 ## Setting Up
 
 Here's the basic structure:
 
+<div class="pre">
 <pre>&lt;container&gt;
 
    &lt;row&gt;
@@ -41,6 +44,7 @@ Here's the basic structure:
    &lt;/row&gt;
 
 &lt;/container&gt;</pre>
+</div>
 
 A <strong>container</strong> can be practically anything: a `div`, `section`, `header`, `nav`, etc., even the `body`; just something to <em>contain</em> your rows and columns. It doesn't even need a special class.
 
@@ -50,6 +54,7 @@ A <strong>container</strong> can be practically anything: a `div`, `section`, `h
 
 Creating a column requires only one class `col-` defined by its size `[1–12]` with no need for any offset columns.
 
+<div class="pre">
 <pre>&lt;div class="row"&gt;
 
    &lt;div class="<span>col-6</span>"&gt;...&lt;/div&gt;
@@ -57,6 +62,7 @@ Creating a column requires only one class `col-` defined by its size `[1–12]` 
    &lt;div class="<span>col-6</span>"&gt;...&lt;/div&gt;
 
 &lt;/div&gt;</pre>
+</div>
 
 Flexr is a <strong>12 column grid</strong>.
 
@@ -68,6 +74,7 @@ If you'd like to use a column with a width that _you_ define (i.e. for a logo), 
 
 To define <strong>Expanding Columns</strong>, all you need to do is add the expanding class `expand` in the parent row:
 
+<div class="pre">
 <pre>&lt;div class="row <span>expand</span>"&gt;
 
    &lt;div class="col-3"&gt;...&lt;/div&gt;
@@ -79,12 +86,13 @@ To define <strong>Expanding Columns</strong>, all you need to do is add the expa
    &lt;div class="col-3"&gt;...&lt;/div&gt;
 
 &lt;/div&gt;</pre>
+</div>
 
 The only canidates for Expanding Columns are the _one_, _two_, and _three_ columns. When the screen reduces to the size of tablet portrait, these columns will expand automatically for smaller screens. This will only work if the row is evenly populated with these columns.
 
 To create <strong>Stretching Columns</strong>, just add the stretching class `stretch` in the parent row. Stretching Columns make their parent row full width to its parent, and divide the space between themselves equally with no gutters.
 
-See the difference in behavior on the [Flexr Grid Page](/flexr-grid/).
+See the difference in behavior on the <span class="nobr">[Flexr Grid Page](/flexr-grid/).</span>
 
 ## Switching Column Sizes
 
@@ -103,6 +111,7 @@ Sometimes at certain screen sizes you'd like the column to be specifically bigge
 
 Where `[col]` follows the same column class name structure.
 
+<div class="pre">
  <pre>&lt;div class="row"&gt;
 
     &lt;div class="col-5 <span>tp-col-6</span>"&gt;...&lt;/div&gt;
@@ -110,6 +119,7 @@ Where `[col]` follows the same column class name structure.
     &lt;div class="col-7 <span>tp-col-6</span>"&gt;...&lt;/div&gt;
 
  &lt;/div&gt;</pre>
+ </div>
 
 Switching column sizes implies that you don't want expanding to happen automatically, so adding the `expand` class to the parent would not work.
 
@@ -117,11 +127,13 @@ Switching column sizes implies that you don't want expanding to happen automatic
 
 The default justification of how the columns populate is _centered_. To change the justifaction, just add the class `jus-l` for _left_ or `jus-r` for _right_ to the parent row. For example, left-justification:
 
+<div class="pre">
 <pre>&lt;div class="row <span>jus-l</span>"&gt;
 
    &lt;div class="col-4"&gt;...&lt;/div&gt;
 
 &lt;/div&gt;</pre>
+</div>
 
 ## Column/Gutter Widths and Break&nbsp;Points
 

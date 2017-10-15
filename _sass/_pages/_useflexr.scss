@@ -7,3 +7,21 @@
       padding-bottom: 50px
    }
 }
+
+.pre::after {
+   display: block;
+   content: 'HTML';
+   position: absolute;
+   top: 29px;
+   right: 32px;
+   font-family: Roboto, sans-serif;
+   font-weight: 700;
+   font-size: 14px;
+   letter-spacing: 0.2pt;
+   opacity: 0.35
+}
+
+.pre {
+   width: 100%;
+   // overflow:hidden;
+}

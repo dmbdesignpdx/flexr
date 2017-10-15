@@ -70,6 +70,9 @@ main ~ section:last-of-type {
    };
 }
 
+span.nobr {
+   white-space: nowrap
+}
 
 
 //    Text
@@ -96,7 +99,11 @@ p code, pre {
    @include flowage(scroll auto);
    width: 100%;
    padding: 1.6em 2em 1.8em;
-   font-size: 18px
+   font-size: 18px;
+
+   @include phoneLan {
+      font-size: 17px
+   };
 }
 
 p code, dt code {
@@ -123,7 +130,11 @@ dt, dd {
 }
 
 dt {
-   width: auto
+   width: auto;
+
+   @include phoneLan {
+      font-size: 18px
+   };
 }
 
 dt:not(:first-of-type) {
