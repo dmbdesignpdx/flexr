@@ -64,80 +64,97 @@
 
 #browsers {
 
-   p {
+   li, p {
       @extend %center;
    }
 
-   .browser {
-      @extend %useSprite;
-      @include size(92% auto);
-      @include ratio(1);
-      margin: 0 auto;
+   li {
+      @extend %color-seven;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.2;
 
-      @include tabletPor {
-         width: 60%
-      };
 
-      @include phonePor {
-         width: 40%
-      };
-
-      & + p {
-         margin-top: 10px;
-         font-size: 15px;
-         line-height: 1.2;
-
-         &::after {
-            display: block;
-            margin-top: 2px;
-         }
+      &::after {
+         display: block;
+         margin-top: 2px;
       }
    }
 
-   .firefox {
-      background-position: 0 33.333%;
+   .browser::before {
+      @extend %block;
+      @extend %useSprite;
+      @include size(60px);
+      content: '';
+      margin: 0 auto 10px;
 
-      & + p::after {
+      @include phoneLan {
+         @include size(46px);
+      };
+   }
+
+   .firefox {
+
+      &::before {
+         background-position: 0 33.333%
+      }
+
+      &::after {
          content: '28+';
       }
    }
 
    .chrome {
-      background-position: 40% 33.222%;
 
-      & + p::after {
+      &::before {
+         background-position: 40% 33.222%;
+      }
+
+      &::after {
          content: '26+';
       }
    }
 
    .safari {
-      background-position: 20% 33.333%;
 
-      & + p::after {
+      &::before {
+         background-position: 20% 33.333%;
+      }
+
+      &::after {
          content: '6.1+';
       }
    }
 
    .opera {
-      background-position: 60% 33.333%;
 
-      & + p::after {
+      &::before {
+         background-position: 60% 33.333%;
+      }
+
+      &::after {
          content: '15+';
       }
    }
 
    .edge {
-      background-position: 80% 33.333%;
 
-      & + p::after {
+      &::before {
+         background-position: 80% 33.333%;
+      }
+
+      &::after {
          content: '12+';
       }
    }
 
    .explorer {
-      background-position: 100% 33.333%;
 
-      & + p::after {
+      &::before {
+         background-position: 100% 33.333%;
+      }
+
+      &::after {
          content: '10+';
       }
    }
