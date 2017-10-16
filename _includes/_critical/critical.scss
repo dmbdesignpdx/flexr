@@ -196,7 +196,6 @@ header#nav.nav-scroll {
 .primary, .secondary {
    @include btnAbs(150px 60px);
    color: $blueGraySeven;
-   margin: 50px auto 0;
    background: $flexrRed
 }
 
@@ -250,10 +249,10 @@ header#nav.nav-scroll {
 @media (max-width:470px) {
 
    .primary {
-      margin: 50px auto 20px
+      margin: 50px auto 30px
    }
 
-   .secondary {
+   .cta a.secondary {
       margin: 0 auto
    }
 

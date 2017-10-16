@@ -1,5 +1,14 @@
+.primary, .secondary {
+   margin-top: 50px;
+}
+
 .primary {
 
+   #download-section & {
+      margin-right: auto;
+      margin-left: auto;
+   }
+   
    &:hover {
       color: $flexrRed;
       background: $blueGraySeven;
