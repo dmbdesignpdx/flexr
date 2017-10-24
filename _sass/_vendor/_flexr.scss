@@ -6,7 +6,7 @@ Copyright 2016-2017 Flexr. All rights reserved. More info at flexrgrid.com */
 $base: 8.3333%;
 
 @mixin break($var) {
-   @media only screen and (max-width : #{$var}) {
+   @media (max-width : #{$var}) {
       @content;
    }
 };
