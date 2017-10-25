@@ -47,9 +47,9 @@
 <meta property="og:type" content="website">
 
 {%- capture critical -%}
-{%- include _critical/critical.scss -%}
+{%- include _critical/site.scss -%}
 {%- if page.bodyID == "home" -%}{%- include _critical/hero.scss -%}
-{%- else -%}{%- include _critical/secondary.scss -%}{%- endif -%}
+{%- else -%}{%- include _critical/siblings.scss -%}{%- endif -%}
 {%- endcapture -%}
 <style>{{ critical | scssify }}</style>
 
