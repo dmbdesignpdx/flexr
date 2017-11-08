@@ -50,17 +50,9 @@ img, svg {
    font-size: 0
 }
 
-a, .primary, .secondary {
-   @include noTap;
-}
-
 h2, li, a, button {
    font-weight: 700;
    letter-spacing: 0.2pt
-}
-
-h1, h2, h3 {
-   @include titles;
 }
 
 section {

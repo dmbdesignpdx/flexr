@@ -45,6 +45,10 @@
    };
 }
 
+h1, h2, h3 {
+   @include titles;
+}
+
 img, a:active, a:focus {
    @extend %noOuty;
 }
@@ -72,6 +76,10 @@ main ~ section:last-of-type {
 
 span.nobr {
    white-space: nowrap
+}
+
+a, .primary, .secondary {
+   @include noTap;
 }
 
 

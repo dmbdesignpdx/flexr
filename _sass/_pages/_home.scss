@@ -6,6 +6,17 @@
    }
 };
 
+#hero {
+
+   .container {
+      @include smoothParent;
+   }
+}
+
+#btm, #top {
+   @include smoothMover;
+}
+
 #btm {
    @include animation(introPlay 0.6s 0.5s forwards);
 }

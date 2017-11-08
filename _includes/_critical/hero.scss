@@ -9,14 +9,12 @@
    }
 
    .container {
-      @include smoothParent;
       @include ratio(1,0.6215);
       overflow: hidden;
    }
 }
 
 #btm, #top {
-   @include smoothMover;
    @include xy(0);
    @include transform(translateY(100%));
    position: absolute;
