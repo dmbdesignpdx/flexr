@@ -1,8 +1,17 @@
 //  Home
 
-%animationTiming {
-   -webkit-transition: 0.6s;
-   transition: 0.6s;
+@include keyframes(introPlay) {
+   to {
+      @include transform(translateY(0));
+   }
+};
+
+#btm {
+   @include animation(introPlay 0.6s 0.5s forwards);
+}
+
+#top {
+   @include animation(introPlay 0.6s 0.8s forwards);
 }
 
 

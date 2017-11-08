@@ -229,11 +229,7 @@ header#nav.nav-scroll {
    #nav {
 
       [href="/"] {
-         width: 94px;
-
-         svg * {
-            fill: $blueGraySeven
-         }
+         width: 94px
       }
    }
 
@@ -268,6 +264,13 @@ header#nav.nav-scroll {
       [href="/get-flexr/"] {
          color: $blueGraySeven;
          background: none
+      }
+
+      [href="/"] {
+
+         svg * {
+            fill: $blueGraySeven
+         }
       }
    }
 

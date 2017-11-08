@@ -18,19 +18,8 @@
 #btm, #top {
    @include smoothMover;
    @include xy(0);
+   @include transform(translateY(100%));
    position: absolute;
-   -webkit-transition: 0.6s;
-   transition: 0.6s
-}
-
-#btm {
-   -webkit-transition-delay: 0.3s;
-   transition-delay: 0.3s
-}
-
-#top {
-   -webkit-transition-delay: 0.6s;
-   transition-delay: 0.6s
 }
 
 #hero-text {
@@ -57,7 +46,7 @@
 @media (max-width:740px) {
 
    #hero {
-      padding: 60px 0 30px;
+      padding: 60px 0 30px
    }
 
    #hero-text .secondary {
@@ -69,6 +58,10 @@
 
 // Phone Portrait
 @media (max-width:470px) {
+
+   #hero {
+      padding-top: 45px
+   }
 
    #hero-text {
       @include justify-content(center);
@@ -84,11 +77,4 @@
       }
    }
 
-}
-
-// JS Classes
-
-.forIntro #top, .forIntro #btm {
-   -webkit-transform: translateY(100%);
-   transform: translateY(100%)
 }
