@@ -1,7 +1,16 @@
-# Flexr Grid - Version 2.0.8
+# Flexr Grid - Version 2.1.0
 
 Flexr is a responsive grid for those who just want a grid. Created by Daniel Blake, a front end web designer, with a focus on the digital grid layout and its response to different screens. It features three ways columns react: expanding, shrinking and stretching.
 
+## Column/Gutter Widths and Break Points
+
+Breakpoint Name|Breakpoint Value|Column Width|Gutter Width
+-|-|-|-
+Desktop|1180px +|~68px|28px
+Tablet Landscape|1180px|~60px|28px
+Tablet Portrait|940px|~44px|24px
+Phone Landscape|740px|~31px|16px
+Phone Portrait|470px|auto|16px
 
 ## First Thing's First
 
@@ -118,27 +127,15 @@ Where `[col]` follows the same column class name structure:
 
 ## Justifying Columns
 
-The default justification of how the columns populate is _centered_. To change the justifaction, just add the class `jus-l` for _left_ or `jus-r` for _right_ to the parent row. For example, left-justification:
+The default justification of how the columns populate is _centered_. To change the justifaction, just add the class `left` for _left justification_ or `right` for _right justification_ to the parent row. For example, left-justification:
 
 ```html
-<div class="row jus-l">
+<div class="row left">
 
    <div class="col-4">...</div>
 
 </div>
 ```
-
-
-## Column/Gutter Widths and Break Points
-
-Breakpoint Name|Breakpoint Value|Column Width|Gutter Width
--|-|-|-
-Desktop|1180px +|~68px|28px
-Tablet Landscape|1180px|~60px|28px
-Tablet Portrait|940px|~44px|24px
-Phone Landscape|740px|~31px|16px
-Phone Portrait|470px|auto|16px
-
 
 ## Basic Site Example
 
@@ -214,16 +211,16 @@ http://flexrgrid.com/host/flexr-logo-use-white.svg
 
 ## Current Release Info
 
-**Version:** 2.0.8
+**Version:** 2.1.0
 
-**Date:** October 3, 2017
+**Date:** December 3, 2017
 
-**Notes:** Reduces phone portrait breakpoint to 470px.
+**Notes:** Adds classes 'left' and 'right'.
 
-**File Size:** 3KB
+**File Size:** 3.1KB
 
-**Future Release Updates:** Sass versions will be available soon.
+**Future Release Updates:** Sass mixins and functions will be available soon.
 
-**Deprecation Warning:** Class names 'exp' and 'fill' will become deprecated by Version 3.0.0; please use 'expand' and 'stretch', respectively, instead.
+**Deprecation Warning:** Class names 'exp', 'fill', 'jus-l', and 'jus-r' will become deprecated by Version 3.0.0; please use 'expand', 'stretch', 'left', and 'right', respectively, instead.
 
 \*Be sure to check back to see if you're using the current version!
