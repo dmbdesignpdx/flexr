@@ -8,6 +8,76 @@ bodyID: how-to
 
 Check out [Current Release Info](#release) for more details.
 
+## Column/Gutter Widths and Break&nbsp;Points
+
+<table>
+
+   <tr>
+
+     <th scope="rowgroup">Breakpoint Name</th>
+
+     <td>Phone Portrait</td>
+
+     <td>Phone Landscape</td>
+
+     <td>Tablet Portrait</td>
+
+     <td>Tablet Landscape</td>
+
+     <td>Desktop</td>
+
+   </tr>
+
+   <tr>
+
+      <th scope="rowgroup">Breakpoint Value</th>
+
+      <td>470px</td>
+
+      <td>740px</td>
+
+      <td>940px</td>
+
+      <td>1180px</td>
+
+      <td>&gt;1180px</td>
+
+   </tr>
+
+   <tr>
+
+      <th scope="rowgroup">Column Size</th>
+
+      <td>auto</td>
+
+      <td>~31px</td>
+
+      <td>~44px</td>
+
+      <td>~60px</td>
+
+      <td>~68px</td>
+
+   </tr>
+
+   <tr>
+
+      <th scope="rowgroup">Gutter Size</th>
+
+      <td>16px</td>
+
+      <td>16px</td>
+
+      <td>24px</td>
+
+      <td>30px</td>
+
+      <td>30px</td>
+
+   </tr>
+
+</table>
+
 ## First Thing's First
 
 You gotta link the Flexr Grid <abbr title="Cascading Style Sheets">CSS</abbr> <strong>before</strong> your CSS.
@@ -125,85 +195,15 @@ Switching column sizes implies that you don't want expanding to happen automatic
 
 ## Justifying Columns
 
-The default justification of how the columns populate is _centered_. To change the justifaction, just add the class `jus-l` for _left_ or `jus-r` for _right_ to the parent row. For example, left-justification:
+The default justification of how the columns populate is _centered_. To change the justifaction, just add the class `left` for _left-justification_ or `right` for _right-justification_ to the parent row. For example, left-justification:
 
 <div class="pre">
-<pre>&lt;div class="row <span>jus-l</span>"&gt;
+<pre>&lt;div class="row <span>left</span>"&gt;
 
    &lt;div class="col-4"&gt;...&lt;/div&gt;
 
 &lt;/div&gt;</pre>
 </div>
-
-## Column/Gutter Widths and Break&nbsp;Points
-
-<table>
-
-   <tr>
-
-     <th scope="rowgroup">Breakpoint Name</th>
-
-     <td>Phone Portrait</td>
-
-     <td>Phone Landscape</td>
-
-     <td>Tablet Portrait</td>
-
-     <td>Tablet Landscape</td>
-
-     <td>Desktop</td>
-
-   </tr>
-
-   <tr>
-
-      <th scope="rowgroup">Breakpoint Value</th>
-
-      <td>470px</td>
-
-      <td>740px</td>
-
-      <td>940px</td>
-
-      <td>1180px</td>
-
-      <td>&gt;1180px</td>
-
-   </tr>
-
-   <tr>
-
-      <th scope="rowgroup">Column Size</th>
-
-      <td>auto</td>
-
-      <td>~31px</td>
-
-      <td>~44px</td>
-
-      <td>~60px</td>
-
-      <td>~68px</td>
-
-   </tr>
-
-   <tr>
-
-      <th scope="rowgroup">Gutter Size</th>
-
-      <td>16px</td>
-
-      <td>16px</td>
-
-      <td>24px</td>
-
-      <td>30px</td>
-
-      <td>30px</td>
-
-   </tr>
-
-</table>
 
 ## Flexr-Use Notification
 

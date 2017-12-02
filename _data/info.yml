@@ -1,7 +1,7 @@
-version: 2.0.8
-rdate: October 3, 2017
-size: 3KB
+version: 2.1.0
+rdate: December 3, 2017
+size: 3.1KB
 
-notes: Reduces phone portrait breakpoint to 470px.
+notes: Adds classes 'left' and 'right'.
 future: Sass mixins and functions will be available soon.
-deprecate: !!html Class names 'exp' and 'fill' will be deprecated by Version 2.1.0; please use 'expand' and 'stretch', respectively,&nbsp;instead.
+deprecate: !!html Class names 'exp', 'fill', 'jus-l', and 'jus-r' will be deprecated by Version 3.0.0; please use 'expand', 'stretch', 'left', and 'right', respectively,&nbsp;instead.
