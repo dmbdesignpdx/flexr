@@ -5,7 +5,7 @@ copyright: 2016–2017 Daniel Blake
 author: Daniel Blake
 
 baseurl: ""
-url: http://flexrgrid.com
+url: https://flexrgrid.com
 
 sass:
     style: compressed

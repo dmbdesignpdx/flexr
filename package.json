@@ -3,7 +3,7 @@
    "version": "1.0.0",
    "description": "Flexr is a CSS responsive grid framework for modern browsers",
    "main": "dist/flexr.min.js",
-   "homepage": "http:flexrgrid.com",
+   "homepage": "https://flexrgrid.com",
    "repository": "https://github.com/dmbdesignpdx/flexr.git",
    "author": "Daniel Blake <daniel@danielblake.design>",
    "license": "MIT",

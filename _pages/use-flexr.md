@@ -210,11 +210,11 @@ The default justification of how the columns populate is _centered_. To change t
 If you'd like to indicate on your site that you're using Flexr, here are some badges you can link to:
 
 ```
-http://flexrgrid.com/host/flexr-logo-use.svg
+https://flexrgrid.com/host/flexr-logo-use.svg
 
-http://flexrgrid.com/host/flexr-logo-use-black.svg
+https://flexrgrid.com/host/flexr-logo-use-black.svg
 
-http://flexrgrid.com/host/flexr-logo-use-white.svg
+https://flexrgrid.com/host/flexr-logo-use-white.svg
 ```
 
 ## Current Release Info
