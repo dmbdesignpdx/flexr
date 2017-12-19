@@ -4,12 +4,20 @@ uglify = require('gulp-uglify'),
 concat = require('gulp-concat'),
 shell = require('gulp-shell'),
 plumber = require('gulp-plumber'),
-browserSync = require('browser-sync').create();
+browserSync = require('browser-sync').create(),
+coffee = require('gulp-coffee');
+
+const proj = {
+   scripts: ['./scripts/*.coffee' ],
+   src: 'flexr.min.js',
+   port: 4000
+}
 
 gulp.task('scripts', () => {
-   return gulp.src(['./js/*.js' ])
+   return gulp.src(proj.scripts)
    .pipe(plumber())
-   .pipe(concat('flexr.min.js'))
+   .pipe(concat(proj.src))
+   .pipe(coffee({bare:true}))
    .pipe(babel({presets: ['env']}))
    .pipe(uglify())
    .pipe(gulp.dest('./dist/'))
@@ -21,19 +29,18 @@ gulp.task('wait', ['scripts'], done => {
    browserSync.reload();
 });
 
-gulp.task('watch', () => gulp.watch('./js/*.js', ['wait']));
+gulp.task('watch', () => gulp.watch(proj.scripts, ['scripts']));
 
-gulp.task('lookout', () => {
-   gulp.watch('./js/*.js', ['wait']);
-   browserSync.watch('./_site/*').on('change', browserSync.reload);
-});
+gulp.task('lookout', () => gulp.watch(proj.scripts, ['wait']));
 
 gulp.task('sync', () => {
    browserSync.init({
       server: {baseDir:'./_site/'},
-      port: 4000,
+      host: "localhost",
+      port: proj.port,
       open: false
    });
+   browserSync.watch(['./_site/*', '!./_site/**/*.coffee']).on('change', browserSync.reload);
 });
 
 gulp.task('serve', shell.task('jekyll serve'));
@@ -43,4 +50,4 @@ gulp.task('auto', ['serve', 'scripts', 'sync', 'lookout']);
 gulp.task('default', ['serve', 'scripts', 'watch']);
 
 // Emergency kill if Plumber fails
-gulp.task('kill', shell.task(`kill -9 $(lsof -t -i:4000)`));
+gulp.task('kill', shell.task(`kill -9 $(lsof -t -i:${proj.port})`));
