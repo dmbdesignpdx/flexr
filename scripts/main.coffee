@@ -1,51 +1,59 @@
-introAction = ->
-   setTimeout ->
-      document.getElementById "hero"
-      .classList
-      .remove "forIntro"
-      return
-   , 100
-   return
+# VARIABLES
+site =
+   init: document.body.id
+   nav: document.getElementById "nav"
 
 
+
+# FUNCTIONS
 navSizing = ->
-   nav = document.getElementById "nav"
-   a = window.innerWidth
-   b = window.pageYOffset
+   w = window.innerWidth
+   y = window.pageYOffset
 
-   if a > 740 and b > 60 or 740 > a and b > 5
-      nav.classList.add "nav-scroll"
+   if w > 740 and y > 60 or 740 > w and y > 5
+      site.nav.classList.add "nav-scroll"
    else
-      nav.classList.remove "nav-scroll"
+      site.nav.classList.remove "nav-scroll"
    return
 
 
-selectAndCopy = (obj,text) ->
-   text.select()
 
-   copied = document.execCommand "copy"
-
-   if copied then obj.innerHTML = "Copied!" else obj.innerHTML = "Didn't Copy"
-   return
-
-
-do (a = document.body.id) ->
-   if a is "download"
-      linkButton = document.getElementById "linkcopy"
-      linkText = document.getElementById "linktext"
-
-      linkButton.addEventListener "click", ->
-         selectAndCopy this, linkText
+if site.init is "home"
+   introAction = ->
+      setTimeout ->
+         document.getElementById "hero"
+         .classList.remove "forIntro"
          return
-      linkText.addEventListener "click", ->
-         this.select()
-         return
+      , 100
+      return
 
-   else if a is "home"
-      document.getElementById "top"
-         .onload = introAction
-   return
+   document.getElementById "top"
+      .addEventListener "load", introAction
 
 
+
+if site.init is "download"
+   linkButton = document.getElementById "linkcopy"
+   linkText = document.getElementById "linktext"
+
+   selectAndCopy = (obj,text) ->
+      text.select()
+
+      copied = document.execCommand "copy"
+
+      if copied then obj.innerHTML = "Copied!" else obj.innerHTML = "Didn't Copy"
+      return
+
+
+   linkButton.addEventListener "click", ->
+      selectAndCopy this, linkText
+      return
+   linkText.addEventListener "click", ->
+      this.select()
+      return
+
+
+
+# INVOKE
 window.addEventListener "scroll", navSizing
 window.addEventListener "resize", navSizing

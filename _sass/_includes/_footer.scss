@@ -28,7 +28,7 @@ footer {
 
    small {
       @include align-self(flex-end);
-      margin-bottom: 50px;
+      margin-bottom: 120px;
       line-height: 1.3;
 
       @include phonePor {
@@ -38,7 +38,7 @@ footer {
 
    p {
       font-size: inherit;
-      margin-bottom: 50px
+      margin-bottom: 120px
    }
 
 }
