@@ -56,10 +56,6 @@
       margin-left: 1.25em;
       line-height: 1.6;
 
-      @include phonePor {
-         font-size: 18px
-      };
-
       &::first-letter {
          text-transform: capitalize;
       }
@@ -91,7 +87,7 @@
    li {
       @extend %color-seven;
       font-weight: 300;
-      font-size: 15px;
+      font-size: 0.75rem;
       line-height: 1.2;
 
 

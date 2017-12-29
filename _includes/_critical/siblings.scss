@@ -14,7 +14,7 @@ $blueGraySix: #AAB;
 $blueGraySeven: #EEF;
 
 h2 {
-   font-size: 29px
+   font-size: 1.45rem
 }
 
 h2:not(:first-of-type) {
@@ -58,7 +58,7 @@ h2 + p, p + p, .pre + p, dl + p, .pre {
    text-align: center;
     height: auto;
     padding: 20px 0;
-    font-size: 16px;
+    font-size: 0.8rem;
     box-sizing: border-box;
     background: $blueGrayFive;
     line-height: 1.1
@@ -96,7 +96,7 @@ textarea {
    padding: 20px 24px 22px;
    resize: none;
    margin: 40px auto 0;
-   font-size: 15px;
+   font-size: 0.8rem;
    white-space: pre-wrap;
    line-height: 1.5;
    word-break: keep-all;
@@ -105,7 +105,7 @@ textarea {
 @media (max-width:740px) {
 
    h2 {
-      font-size: 21px
+      font-size: 1.1rem
    }
 
    .header {

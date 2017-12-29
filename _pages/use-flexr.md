@@ -87,7 +87,7 @@ You gotta link the Flexr Grid <abbr title="Cascading Style Sheets">CSS</abbr> <s
 
    ...
 
-   &lt;link href=".../<span>flexr.css</span>" rel="stylesheet"&gt;
+   &lt;link href=".../<span>flexr.min.css</span>" rel="stylesheet"&gt;
 
    &lt;link href=".../your.css" rel="stylesheet"&gt;
 
@@ -209,13 +209,15 @@ The default justification of how the columns populate is _centered_. To change t
 
 If you'd like to indicate on your site that you're using Flexr, here are some badges you can link to:
 
-```
+<div class="pre">
+<pre>
 https://flexrgrid.com/host/flexr-logo-use.svg
 
 https://flexrgrid.com/host/flexr-logo-use-black.svg
 
 https://flexrgrid.com/host/flexr-logo-use-white.svg
-```
+</pre>
+</div>
 
 ## Current Release Info
 {:#release}
@@ -225,8 +227,8 @@ https://flexrgrid.com/host/flexr-logo-use-white.svg
 **Notes:** {{ site.data.info.notes }}<br>
 **File Size:** {{ site.data.info.size }}<br>
 **Future Release Updates:** {{ site.data.info.future }}<br>
-**Deprecation Warning:** {{ site.data.info.deprecate }}
+**Deprecation Warning(s):** {{ site.data.info.deprecate }}
 
 Be sure to check back to see if you're using the current version!
 
-If you have any questions or issues, please ask/report at [GitHub Issues](https://github.com/dmbdesignpdx/flexr/issues){:target="_blank" title="Flexr Grid Github Issues Page"}.
+If you have any questions or issues, please ask/report using [GitHub Issues](https://github.com/dmbdesignpdx/flexr/issues){:target="_blank" title="Flexr Grid Github Issues Page"}.

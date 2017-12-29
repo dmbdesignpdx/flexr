@@ -19,12 +19,12 @@ $blueGraySeven: #EEF;
 
 html {
    background: #2E2E42;
-   overflow-y: scroll
+   overflow-y: scroll;
+   font: 300 20px Roboto, Helvetica, sans-serif
 }
 
-html, body {
-   height: 100vh;
-   font: 300 20px Roboto, Helvetica, sans-serif
+body {
+   height: 100vh
 }
 
 body, h1, h2, h3, p, ul, pre {
@@ -64,7 +64,7 @@ h1, h2 {
 }
 
 h1 {
-   font-size: 47px;
+   font-size: 2.35rem;
    font-weight: 300;
    letter-spacing: -0.2pt
 }
@@ -201,17 +201,13 @@ header#nav.nav-scroll {
       font-size: 18px
    }
 
-   #nav .links {
-      font-size: 17px
-   }
-
 }
 
 
 @media (max-width:740px) {
 
    h1 {
-      font-size: 34px
+      font-size: 1.8rem
    }
 
    section {
