@@ -57,6 +57,11 @@ address {
    font-style: normal
 }
 
+button {
+   padding: 0;
+   overflow: hidden
+}
+
 ul, li {
    @extend %relative;
    list-style: none
