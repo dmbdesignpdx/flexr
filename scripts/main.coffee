@@ -1,7 +1,5 @@
 # VARIABLES
-site =
-   init: document.body.id
-   nav: document.getElementById "nav"
+nav = document.getElementById "nav"
 
 
 
@@ -11,14 +9,14 @@ navSizing = ->
    y = window.pageYOffset
 
    if w > 740 and y > 60 or 740 > w and y > 5
-      site.nav.classList.add "nav-scroll"
+      nav.classList.add "nav-scroll"
    else
-      site.nav.classList.remove "nav-scroll"
+      nav.classList.remove "nav-scroll"
    return
 
 
 
-if site.init is "home"
+if init is "home"
    introAction = ->
       setTimeout ->
          document.getElementById "hero"
@@ -32,7 +30,7 @@ if site.init is "home"
 
 
 
-if site.init is "download"
+if init is "download"
    linkButton = document.getElementById "linkcopy"
    linkText = document.getElementById "linktext"
 

@@ -5,6 +5,7 @@ concat = require('gulp-concat'),
 shell = require('gulp-shell'),
 plumber = require('gulp-plumber'),
 browserSync = require('browser-sync').create(),
+iife = require('gulp-iife'),
 coffee = require('gulp-coffee');
 
 const proj = {
@@ -18,6 +19,7 @@ gulp.task('scripts', () => {
    .pipe(plumber())
    .pipe(concat(proj.src))
    .pipe(coffee({bare:true}))
+   .pipe(iife({prependSemicolon:false, useStrict:false, params: ["init"], args: ["document.body.id"]}))
    .pipe(babel({presets: ['env']}))
    .pipe(uglify())
    .pipe(gulp.dest('./dist/'))
