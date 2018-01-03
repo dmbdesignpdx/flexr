@@ -234,6 +234,4 @@ https://flexrgrid.com/host/flexr-logo-use-white.svg
 
 **Deprecation Warning(s):** {{ site.data.info.deprecate }}
 
-Be sure to check back to see if you're using the current version!
-
 If you have any questions or issues, please ask/report using [GitHub Issues](https://github.com/dmbdesignpdx/flexr/issues){:target="_blank" title="Flexr Grid Github Issues Page"}.
