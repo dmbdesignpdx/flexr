@@ -1,7 +1,19 @@
 //  Use It
 
 #release {
-   padding-top: 120px;
+   padding: 120px 0 24px;
+
+   & ~ p {
+      margin-top: 6px;
+
+      strong {
+         color: #99B
+      }
+   }
+
+   & ~ p:last-of-type, & ~ p:nth-last-of-type(2) {
+      margin-top: 30px
+   }
 
    & ~ p:last-of-type {
       padding-bottom: 50px
@@ -18,10 +30,9 @@
    font-weight: 700;
    font-size: 0.7rem;
    letter-spacing: 0.2pt;
-   opacity: 0.35
+   opacity: 0.36
 }
 
 .pre {
-   width: 100%;
-   // overflow:hidden;
+   width: 100%
 }

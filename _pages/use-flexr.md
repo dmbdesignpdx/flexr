@@ -222,11 +222,16 @@ https://flexrgrid.com/host/flexr-logo-use-white.svg
 ## Current Release Info
 {:#release}
 
-**Version:** {{ site.data.info.version }}<br>
-**Date:** <time datetime="{{ site.data.info.rdate | date: "%F" }}">{{ site.data.info.rdate | date: "%B %e, %Y" }}</time><br>
-**Notes:** {{ site.data.info.notes }}<br>
-**File Size:** {{ site.data.info.size }}<br>
-**Future Release Updates:** {{ site.data.info.future }}<br>
+**Version:** {{ site.data.info.version }}
+
+**Date:** <time datetime="{{ site.data.info.rdate | date: "%F" }}">{{ site.data.info.rdate | date: "%B %e, %Y" }}</time>
+
+**Notes:** {{ site.data.info.notes }}
+
+**File Size:** {{ site.data.info.size }}
+
+**Future Release Update(s):** {{ site.data.info.future }}
+
 **Deprecation Warning(s):** {{ site.data.info.deprecate }}
 
 Be sure to check back to see if you're using the current version!
