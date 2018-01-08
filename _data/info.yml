@@ -3,5 +3,5 @@ rdate: December 3, 2017
 size: 3.1KB
 
 notes: Adds classes 'left' and 'right'.
-future: (For Flexr 3) Breakpoints will become more specific to cover new, longer phones.
+future: Flexr 3 coming soon! Breakpoint range will increase and become more specific to cover modern screen sizes. IE 10 and Moz 29 support will be dropped.
 deprecate: !!html Class names 'exp', 'fill', 'jus-l', and 'jus-r' will be deprecated by Version 3; please use 'expand', 'stretch', 'left', and 'right', respectively,&nbsp;instead.
