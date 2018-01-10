@@ -1,28 +1,12 @@
-@import "speakers";
+/* Mixin' with Turntable v0.1.13 -- by Daniel Blake */
 
-/* Mixin' with Turntable v0.1.0 -- by Daniel Blake */
+$channel: ( year: 2014, ie: 11 );
 
-// Create fresh stylesheets on the fly.
-
-
-// Turntable Variables
 
 $prefix: -o-, -ms-, -moz-, -webkit-, null;
-$browseryear: map-get($support,year);
-$ieversion: map-get($support,ie);
+$browseryear: map-get($channel,year);
+$ieversion: map-get($channel,ie);
 
-@if type-of(map-get($support,ie)) != number {
-   $ieversion: 99;
-}
-
-// Equalizer
-// Record Collection
-// Samples
-
-
-// --- Equalizer (Contains Vendor-Prefix Mixins)--- //
-
-// Display Flex or Grid:
 
 @mixin display($arg) {
    @if $arg == grid {
@@ -48,10 +32,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// CSS Grid
-
-// 1. Grid Template Columns
-
 @mixin grid-template-columns($args...) {
    @for $i from 1 through 2 {
       $array: ();
@@ -73,8 +53,6 @@ $ieversion: map-get($support,ie);
    }
 }
 
-
-// 2. Grid Template Rows
 
 @mixin grid-template-rows($args...) {
    @for $i from 1 through 2 {
@@ -98,15 +76,11 @@ $ieversion: map-get($support,ie);
 }
 
 
-// 3. Grid Column Span
-
 @mixin grid-column-span($arg) {
    -ms-grid-column-span: $arg;
    grid-column-end: span #{$arg};
 }
 
-
-// 4. Grid Row Span
 
 @mixin grid-row-span($arg) {
    -ms-grid-row-span: $arg;
@@ -114,15 +88,11 @@ $ieversion: map-get($support,ie);
 }
 
 
-// 5. Grid Justify Self
-
 @mixin grid-justify-self($arg) {
    -ms-grid-row-align: $arg;
    justify-self: $arg;
 }
 
-
-// 5. Grid Align Self
 
 @mixin grid-align-self($arg) {
    -ms-grid-column-align: $arg;
@@ -130,15 +100,11 @@ $ieversion: map-get($support,ie);
 }
 
 
-// 7. Grid Column Start
-
 @mixin grid-column-start($arg) {
    -ms-grid-column: $arg;
    grid-column-start: $arg;
 }
 
-
-// 8. Grid Row Start
 
 @mixin grid-row-start($arg) {
    -ms-grid-row: $arg;
@@ -146,10 +112,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-
-// Flexbox:
-
-// 1. Flex Direction
 
 @mixin flex-direction($arg) {
    @if $browseryear < 2015 or $ieversion < 11 {
@@ -171,8 +133,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// 2. Flex Wrap
-
 @mixin flex-wrap($arg) {
    @if $browseryear < 2015 or $ieversion < 11 {
       @if $ieversion < 11 {
@@ -185,8 +145,6 @@ $ieversion: map-get($support,ie);
    flex-wrap: $arg;
 }
 
-
-// 3. Justify Content
 
 @mixin justify-content($arg) {
    @if $browseryear < 2015 or $ieversion < 11 {
@@ -215,8 +173,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// 4. Align Content
-
 @mixin align-content($arg) {
    @if $browseryear < 2015 or $ieversion < 11 {
       @if $ieversion < 11 {
@@ -239,8 +195,6 @@ $ieversion: map-get($support,ie);
    align-content: $arg;
 }
 
-
-// 5. Align Items
 
 @mixin align-items($arg) {
    @if $browseryear < 2015 or $ieversion < 11 {
@@ -265,8 +219,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// 6. Align Self
-
 @mixin align-self($arg) {
    @if $browseryear < 2015 or $ieversion < 11 {
       @if $ieversion < 11 {
@@ -286,8 +238,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// 7. Order
-
 @mixin order($arg) {
    @if $browseryear < 2015 or $ieversion < 11 {
       @if $ieversion < 11 {
@@ -305,8 +255,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// 8. Grow
-
 @mixin flex-grow($arg) {
    @if $browseryear < 2015 or $ieversion < 11 {
       @if $ieversion < 11 {
@@ -319,8 +267,6 @@ $ieversion: map-get($support,ie);
    flex-grow: $arg;
 }
 
-
-// 9. Shrink
 
 @mixin flex-shrink($arg) {
    @if $browseryear < 2015 or $ieversion < 11 {
@@ -335,8 +281,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// 9. Basis
-
 @mixin flex-basis($arg) {
    @if $browseryear < 2015 or $ieversion < 11 {
       @if $ieversion < 11 {
@@ -349,8 +293,6 @@ $ieversion: map-get($support,ie);
    flex-basis: $arg;
 }
 
-
-// 10. Flex
 
 @mixin flex($arg) {
    @if $browseryear < 2015 or $ieversion < 11 {
@@ -369,15 +311,11 @@ $ieversion: map-get($support,ie);
 }
 
 
-//  Filter
-
 @mixin filter($arg) {
    -webkit-filter: $arg;
    filter: $arg;
 }
 
-
-//  Appearance
 
 @mixin appearance($arg) {
    -moz-appearance: $arg;
@@ -385,8 +323,6 @@ $ieversion: map-get($support,ie);
    appearance: $arg;
 }
 
-
-//  Transform
 
 @mixin transform($arg) {
    @if $browseryear < 2017 or $ieversion < 10 {
@@ -443,8 +379,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-//  Transition
-
 @mixin transition($args...) {
    @if $browseryear < 2014 {
       @if $browseryear < 2012 {
@@ -454,6 +388,7 @@ $ieversion: map-get($support,ie);
                $arg: set-nth($arg,1,-o-transform);
             } @else if index($arg,filter) {
                $arg: null;
+               @warn "'-o-transition': Opera did not support 'filter' before 2012; therefore it has been omitted";
             }
             $array: append($array,$arg,comma);
          }
@@ -466,6 +401,7 @@ $ieversion: map-get($support,ie);
                $arg: set-nth($arg,1,-moz-transform);
             } @else if index($arg,filter) {
                $arg: null;
+               @warn "'-moz-transition': Firefox only supported 'filter' with 'url()' before 2013; therefore it has been omitted";
             }
             $array: append($array,$arg,comma);
          }
@@ -526,8 +462,6 @@ $ieversion: map-get($support,ie);
    transition-property: $arg;
 }
 
-
-//  Animation
 
 @mixin animation($args...) {
    @if $browseryear < 2017 {
@@ -620,8 +554,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-//  Keyframes
-
 @mixin keyframes($name) {
    @if $browseryear < 2017 {
       @if $browseryear < 2013 {
@@ -638,8 +570,6 @@ $ieversion: map-get($support,ie);
    }
 }
 
-
-// Perspective
 
 @mixin perspective($arg) {
    @if $browseryear < 2017 {
@@ -662,8 +592,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// Text Size Adjust
-
 @mixin text-size-adjust($arg) {
    @for $i from 2 through 5 {
       #{nth($prefix,$i)}text-size-adjust: $arg;
@@ -671,16 +599,12 @@ $ieversion: map-get($support,ie);
 }
 
 
-// User Select
-
 @mixin user-select($arg) {
    @for $i from 2 through 5 {
       #{nth($prefix,$i)}user-select: $arg;
    }
 }
 
-
-// Box Sizing
 
 @mixin box-sizing($arg) {
    @if $browseryear < 2015 {
@@ -693,8 +617,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// Backface Visibility
-
 @mixin backface-visibility($arg) {
    @if $browseryear < 2017 {
       @if $browseryear < 2013 {
@@ -706,15 +628,11 @@ $ieversion: map-get($support,ie);
 }
 
 
-// Tap Highlight Color
-
 @mixin tap-highlight-color($arg) {
    -webkit-tap-highlight-color: $arg;
    tap-highlight-color: $arg;
 }
 
-
-// Font Smoothing
 @mixin font-smoothing($arg) {
    @if $arg == antialiased {
       -moz-osx-font-smoothing: grayscale;
@@ -727,8 +645,6 @@ $ieversion: map-get($support,ie);
    font-smoothing: $arg;
 }
 
-
-// Linear Gradient
 
 @mixin linear-gradient($gradient, $img:null) {
    @if $img {
@@ -767,8 +683,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// Box Shadow
-
 @mixin box-shadow($arg) {
    @if $browseryear < 2012 {
       -webkit-box-shadow: $arg;
@@ -777,10 +691,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// Pseudo Classes
-
-// 1. Any
-
 @mixin any($args...) {
    @for $i from 3 through 5 {
       $array: ();
@@ -788,14 +698,12 @@ $ieversion: map-get($support,ie);
          $add: unquote(":#{nth($prefix,$i)}any(#{nth($args,$j)})");
          $array: append($array, $add, space);
       }
-      #{$array} #{nth($arg,length($args))} {
+      #{$array} #{nth($args,length($args))} {
          @content;
       }
    }
 }
 
-
-// 2. Fullscreen
 
 @mixin fullscreen($arg: unquote("$arg")) {
    @if $browseryear < 2016 {
@@ -815,8 +723,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// 3. Read-Only
-
 @mixin read-only($arg: unquote("$arg")) {
    #{$arg}:-moz-read-only {
       @content;
@@ -826,8 +732,6 @@ $ieversion: map-get($support,ie);
    }
 }
 
-
-// 4. Read-Write
 
 @mixin read-write($arg: unquote("$arg")) {
    #{$arg}:-moz-read-write {
@@ -839,10 +743,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// Pseudo Elements
-
-// 1. Selection
-
 @mixin selection($arg: unquote("$arg")) {
    #{$arg}::-moz-selection {
       @content;
@@ -852,8 +752,6 @@ $ieversion: map-get($support,ie);
    }
 }
 
-
-// 2.  Placeholder
 
 @mixin placeholder($arg: unquote("$arg")) {
    #{$arg}:-moz-placeholder {
@@ -874,8 +772,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// 3. Progressbar
-
 @mixin progress-bar($arg: unquote("$arg")) {
    @for $i from 3 through 5 {
       #{$arg}::#{nth($prefix,$i)}progress-bar {
@@ -884,8 +780,6 @@ $ieversion: map-get($support,ie);
    }
 }
 
-
-// 4. Range/Slider Thumb
 
 @mixin slider-thumb($arg: unquote("$arg")) {
    #{$arg}::-ms-thumb {
@@ -900,8 +794,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// 5. Range/Slider Track
-
 @mixin slider-runnable-track($arg: unquote("$arg")) {
    #{$arg}::-ms-track {
       @content;
@@ -914,8 +806,6 @@ $ieversion: map-get($support,ie);
    }
 }
 
-
-// 6. Backdrop
 
 @mixin backdrop($arg: unquote("$arg")) {
    @if $browseryear < 2015  {
@@ -932,39 +822,146 @@ $ieversion: map-get($support,ie);
 }
 
 
+@mixin touch-action($arg) {
+   @if ieversion < 11 {
+      -ms-touch-action: $arg;
+   }
+   touch-action: $arg;
+}
 
-// --- Record Collection (Custom Mixins) --- //
 
-//  Media Queries:
+@mixin background-clip($arg) {
+   -webkit-background-clip: $arg;
+   background-clip: $arg;
+}
 
-// 1. Max Screen Width
 
-@mixin maxwidth($arg) {
-   @media only screen and (max-width: #{$arg}) {
+@mixin text-stroke($arg) {
+   -webkit-text-stroke: $arg;
+   text-stroke: $arg;
+}
+
+
+@mixin object-fit($arg) {
+   @if $browseryear < 2016 {
+      -o-object-fit: $arg
+   }
+   object-fit: $arg
+}
+
+
+@mixin object-position($arg) {
+   @if $browseryear < 2016 {
+      -o-object-position: $arg
+   }
+   object-position: $arg
+}
+
+
+@mixin image-rendering($arg) {
+   @if $ieversion < 12 {
+      @if $arg == auto {
+         -ms-interpolation-mode: bicubic;
+      }
+      @if $arg == pixelated {
+         -ms-interpolation-mode: nearest-neighbor;
+      }
+   }
+   @if $browseryear < 2017 {
+      @if $browseryear < 2012 and $arg == auto {
+         image-rendering: -webkit-optimize-contrast;
+      }
+      @if $arg == crisp-edges {
+         -o-image-rendering: $arg;
+      }
+      -webkit-image-rendering: $arg;
+   }
+   @if $arg == crisp-edges {
+      -moz-image-rendering: $arg;
+   }
+   image-rendering: $arg;
+}
+
+
+@mixin clip-path($arg) {
+   -webkit-clip-path: $arg;
+   clip-path: $arg;
+}
+
+
+@mixin mask($arg) {
+   -webkit-mask: $arg;
+   mask: $arg;
+}
+
+
+@mixin mask-clip($arg) {
+   -webkit-mask-clip: $arg;
+   mask-clip: $arg;
+}
+
+
+@mixin mask-image($arg) {
+   -webkit-mask-image: $arg;
+   mask-image: $arg;
+}
+
+
+@mixin mask-origin($arg) {
+   -webkit-mask-origin: $arg;
+   mask-origin: $arg;
+}
+
+
+@mixin mask-position($arg) {
+   -webkit-mask-position: $arg;
+   mask-position: $arg;
+}
+
+
+@mixin mask-repeat($arg) {
+   -webkit-mask-repeat: $arg;
+   mask-repeat: $arg;
+}
+
+
+@mixin viewport {
+   @-ms-viewport {
+      @content;
+   }
+
+   @-o-viewport {
+      @content;
+   }
+
+   @viewport {
       @content;
    }
 }
 
 
-// 2. Min Screen Width
 
-@mixin minwidth($arg) {
-   @media only screen and (max-width: #{$arg}) {
+
+@mixin max($arg) {
+   @media (max-width: #{$arg}) {
       @content;
    }
 }
 
 
-// 3. Min and Max Screen Width
+@mixin min($arg) {
+   @media (max-width: #{$arg}) {
+      @content;
+   }
+}
+
 
 @mixin between($min, $max) {
-   @media only screen and (min-width: #{$min}) and (max-width: #{$max}) {
+   @media (min-width: #{$min}) and (max-width: #{$max}) {
       @content;
    }
 }
 
-
-// Width and Height Shorthand
 
 @mixin size($arg) {
    width: nth($arg,1);
@@ -972,15 +969,11 @@ $ieversion: map-get($support,ie);
 }
 
 
-// Transform with Origin
-
 @mixin change($what, $xy) {
    @include transform($what);
    @include transform-origin($xy);
 }
 
-
-// Transform with Origin and Transition
 
 @mixin animate($what, $args, $where:null) {
    @include transform($what);
@@ -991,17 +984,11 @@ $ieversion: map-get($support,ie);
 }
 
 
-// Perspective and Origin
-
 @mixin view($depth, $xy) {
    @include perspective($depth);
    @include perspective-origin($xy);
 }
 
-
-// Positioning Shorthand
-
-// 1. Just like margin shorthand
 
 @mixin where($arg) {
    top: nth($arg,1);
@@ -1025,8 +1012,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// 2. Like Where(), but starts with Left, not Top
-
 @mixin there($arg) {
    left: nth($arg,1);
    @if length($arg) > 3 {
@@ -1049,15 +1034,11 @@ $ieversion: map-get($support,ie);
 }
 
 
-// 3. Left and Top Only
-
 @mixin xy($arg) {
    left: nth($arg,1);
    top: if(length($arg) > 1, nth($arg,2), nth($arg,1));
 }
 
-
-// SVG Stroke shorthand like border
 
 @mixin bound($arg) {
    stroke: nth($arg,2);
@@ -1072,8 +1053,6 @@ $ieversion: map-get($support,ie);
    }
 }
 
-
-// Create Classes/IDs with name and number
 
 @mixin numName($type, $name, $max, $min:1) {
    %group {
@@ -1092,8 +1071,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// Create Classes/IDs with custom prefix
-
 @mixin preName($type, $pre, $array...) {
    %group {
       @content;
@@ -1110,8 +1087,6 @@ $ieversion: map-get($support,ie);
    }
 }
 
-
-// Create Classes/IDs with custom postfix
 
 @mixin postName($type, $post, $array...) {
    %group {
@@ -1130,15 +1105,11 @@ $ieversion: map-get($support,ie);
 }
 
 
-// Opacity with Blend Mode
-
 @mixin opaque($amount, $type) {
    opacity: $amount;
    mix-blend-mode: $type;
 }
 
-
-// Circle
 
 @mixin circle($arg) {
    width: $arg;
@@ -1147,16 +1118,12 @@ $ieversion: map-get($support,ie);
 }
 
 
-// Oval
-
 @mixin oval($arg) {
    width: nth($arg,1);
    height: nth($arg,2);
    border-radius: 50%;
 }
 
-
-// Triangle
 
 @mixin triangle($arg, $color, $rotate:null) {
    $nw: nth($arg,1)/2;
@@ -1173,17 +1140,12 @@ $ieversion: map-get($support,ie);
 }
 
 
-// Parallelogram
-
 @mixin parallelogram($arg, $amount) {
    @include transform(skew($amount));
    width: nth($arg,1);
    height: nth($arg,2);
 }
 
-
-// Heart
-// Nicolas Gallagher -- nicolasgallagher.com
 
 @mixin heart($width, $color) {
    $new: $width / 2;
@@ -1212,8 +1174,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// Mantain a ratio
-
 @mixin ratio($width, $length:$width) {
    height: auto;
 
@@ -1225,59 +1185,6 @@ $ieversion: map-get($support,ie);
    }
 }
 
-
-
-// Buttons:
-
-// 1. Basic Styling
-
-@mixin btnStyle($color:null, $border:null, $corners:null) {
-   @if $color {
-      background-color: nth($color,1);
-      color: nth($color,2);
-   }
-   @if $border {
-      @if length($border) == 2 {
-         border: #{nth($border,1)} solid #{nth($border,2)};
-      } @else if type-of($border) == number {
-         border: #{$border} solid #{nth($color,2)};
-      } @else {
-         border: $border
-      }
-   }
-   @if $corners {
-      border-radius: $corners
-   }
-}
-
-// 2. with a Relative Width
-
-@mixin btnRel($size, $color:null, $border:null, $corners:null) {
-   display: inline-block;
-   width: auto;
-   height: nth($size,2);
-   padding: 0 #{nth($size,1)};
-   line-height: nth($size,2);
-   text-decoration: none;
-   @include btnStyle($color, $border, $corners);
-}
-
-// 3. with an Absolute Width
-
-@mixin btnAbs($size, $color:null, $border:null, $corners:null) {
-   display: block;
-   width: nth($size,1);
-   height: nth($size,2);
-   line-height: nth($size,2);
-   text: {
-      decoration: none;
-      align: center;
-   }
-   @include btnStyle($color, $border, $corners);
-}
-
-
-// Overflow X and Y Shorthand
 
 @mixin flowage($arg) {
    @if length($arg) > 1 {
@@ -1291,19 +1198,7 @@ $ieversion: map-get($support,ie);
 }
 
 
-// Colors
 
-@function shades($color, $num) {
-   @return if($num > 0, lighten($color, abs($num)), darken($color, abs($num)));
-}
-
-
-
-// --- Samples (Predefined Mixins and Placeholders) --- //
-
-// --- i. Based on Record Collection --- //
-
-// No highlight tap on mobile
 
 @mixin noTap {
    @include tap-highlight-color(transparent);
@@ -1315,10 +1210,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// For smoother 2D transforms:
-
-// 1. This one goes on the thing being transformed
-
 @mixin smoothMover {
    @include backface-visibility(hidden);
 }
@@ -1327,8 +1218,6 @@ $ieversion: map-get($support,ie);
    @include smoothMover;
 }
 
-
-// 2. This goes on the parent
 
 @mixin smoothParent {
    @include transform-style(preserve-3d);
@@ -1339,8 +1228,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// 3. Translate-Z work-around
-
 @mixin superSmooth {
    @include transform(translateZ(0));
 }
@@ -1349,8 +1236,6 @@ $ieversion: map-get($support,ie);
    @include superSmooth;
 }
 
-
-// Font Antialiasing on OSX
 
 @mixin smoothFonts {
    @include font-smoothing(antialiased);
@@ -1361,8 +1246,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// No Text Size Adjusting;
-
 @mixin noTextAdjust {
    @include text-size-adjust(100%);
 }
@@ -1371,8 +1254,6 @@ $ieversion: map-get($support,ie);
    @include noTextAdjust;
 }
 
-
-// Use Flexbox
 
 @mixin box {
    @include display(flex);
@@ -1391,8 +1272,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// Remove Default Appearance
-
 @mixin noLooks {
    @include appearance(none);
 }
@@ -1402,9 +1281,8 @@ $ieversion: map-get($support,ie);
 }
 
 
-// No User Select
-
 @mixin noSelect {
+   -webkit-touch-callout: none;
    @include user-select(none);
 }
 
@@ -1412,8 +1290,6 @@ $ieversion: map-get($support,ie);
    @include noSelect;
 }
 
-
-// Widescreen ratio
 
 @mixin widescreen {
    @include ratio(16,9);
@@ -1424,8 +1300,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// Standard ratio
-
 @mixin standard {
    @include ratio(4,3);
 }
@@ -1435,29 +1309,23 @@ $ieversion: map-get($support,ie);
 }
 
 
-// Golden ratio
-
-@mixin goldenRatio {
+@mixin golden {
    @include ratio(1,0.618);
 }
 
-%goldenRatio {
-   @include goldenRatio;
+%golden {
+   @include golden;
 }
 
 
-// Equal ratio
-
-@mixin equalRatio {
+@mixin equal {
    @include ratio(1);
 }
 
-%goldenRatio {
-   @include equalRatio;
+%equal {
+   @include equal;
 }
 
-
-// Box Sizing with Border
 
 @mixin withAll {
    @include box-sizing(border-box);
@@ -1467,10 +1335,6 @@ $ieversion: map-get($support,ie);
    @include withAll;
 }
 
-
-// --- ii. Custom Presets --- //
-
-// Center THIS OBJ with Absolute Positioning
 
 @mixin ctrAbs {
    @include where(0);
@@ -1483,8 +1347,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// Center THIS OBJ Horizontally with Relative Positioning
-
 @mixin ctrRel {
    position: relative;
    margin-right: auto;
@@ -1496,8 +1358,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// Center Objs in THIS CONTAINER with Flexbox
-
 @mixin ctrBox {
    @include display(flex);
    @include justify-content(center);
@@ -1508,10 +1368,6 @@ $ieversion: map-get($support,ie);
    @include ctrBox;
 }
 
-
-// Box Shadows:
-
-// 1. with Options
 
 @mixin useShadow($arg) {
    $sdw: rgba(0,0,30,.3);
@@ -1532,40 +1388,26 @@ $ieversion: map-get($support,ie);
    }
 }
 
-// 2. Extra Small
-
 %useShadow-xs {
    @include useShadow(xs);
 }
-
-// 3. Small
 
 %useShadow-s {
    @include useShadow(s);
 }
 
-// 4. Medium
-
 %useShadow-m {
    @include useShadow(m);
 }
-
-// 5. Large
 
 %useShadow-l {
    @include useShadow(l);
 }
 
-// 5. Extra Large
-
 %useShadow-xl {
    @include useShadow(xl);
 }
 
-
-// Clear External Styling
-
-// 1. No Outline and Border
 
 @mixin noOuty {
    border: 0;
@@ -1577,8 +1419,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// 2. No Padding and Margin
-
 @mixin noBuffering {
    padding: 0;
    margin: 0
@@ -1588,8 +1428,6 @@ $ieversion: map-get($support,ie);
    @include noBuffering;
 }
 
-
-// 3. No Padding, Margin, and Border
 
 @mixin noSpacing {
    @include noBuffering;
@@ -1601,8 +1439,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// 4. No Padding, Margin, Outline, and Border
-
 @mixin noBounding {
    @include noBuffering;
    @include noOuty;
@@ -1613,13 +1449,9 @@ $ieversion: map-get($support,ie);
 }
 
 
-// Typography:
-
-// 1. Body Copy
-
 @mixin bodyCopy {
    font-kerning: none;
-   text-rendering: optimizeSpeed;
+   text-rendering: optimizeLegibility;
    word-spacing: 0.02em;
 }
 
@@ -1627,11 +1459,9 @@ $ieversion: map-get($support,ie);
    @include bodyCopy;
 }
 
-// 2. Titles
-
 @mixin titles {
    font-kerning: normal;
-   text-rendering: optimizeLegibility;
+   text-rendering: geometricPrecision;
    word-spacing: 0.01em;
 }
 
@@ -1639,8 +1469,6 @@ $ieversion: map-get($support,ie);
    @include titles;
 }
 
-
-// Pseudo
 
 @mixin pseudo($pos, $type:block) {
    display: $type;
@@ -1665,8 +1493,6 @@ $ieversion: map-get($support,ie);
 }
 
 
-// Clear Floats
-
 @mixin clear {
    &::after {
       display: table;
@@ -1679,8 +1505,6 @@ $ieversion: map-get($support,ie);
    @include clear;
 }
 
-
-// CSS Output Watch: Common/Often Used Rules for Grouped Selectors
 
 %block {
    display: block
@@ -1719,13 +1543,9 @@ $ieversion: map-get($support,ie);
 }
 
 
-// CSS Reset
-
-// 1. General
-
 @mixin freshStart {
 
-   html, body, figure, div, h1, h2, h3, h4, h5, h6, hgroup, address, p, hr, blockquote, summary, ol, ul, dl, dd, pre, table, tbody, th, tr, td, colgroup, thead, tfoot, iframe, %forForms {
+   html, body, figure, div, h1, h2, h3, h4, h5, h6, hgroup, address, p, hr, blockquote, summary, ol, ul, dl, dd, pre, table, tbody, th, tr, td, colgroup, thead, tfoot, iframe, button %forForms {
       @extend %noSpacing;
    }
 
@@ -1737,11 +1557,16 @@ $ieversion: map-get($support,ie);
       @extend %block;
    }
 
-   ol, ul, li {
+   ol, ul {
       list-style: none
    }
 
-   a {
+   table {
+      border-collapse: collapse;
+      border-spacing: 0
+   }
+
+   a, abbr {
       text-decoration: none;
       color: inherit
    }
@@ -1750,13 +1575,7 @@ $ieversion: map-get($support,ie);
       font-style: normal
    }
 
-   span.nobr {
-      white-space: nowrap
-   }
-
 }
-
-// 2. Forms
 
 @mixin freshForms {
 
@@ -1780,4 +1599,32 @@ $ieversion: map-get($support,ie);
       resize: none
    }
 
+}
+
+
+@function shades($color, $num) {
+   @return if($num > 0, lighten($color, abs($num)), darken($color, abs($num)));
+}
+
+
+@function rel($arg) {
+   @return if($arg > 0, calc(100% + #{abs($arg)}), calc(100% - #{abs($arg)}));
+}
+
+
+@function ts($arg) {
+   @return unquote("rgba(0,0,30,#{$arg})");
+}
+
+
+@function hex($arg) {
+   $str: str-slice(ie-hex-str($arg),4);
+   @if str-slice($str,1,1) == str-slice($str,2,2) and str-slice($str,3,3) == str-slice($str,4,4) and str-slice($str,5,5) == str-slice($str,6,6) {
+      $a: str-slice($str,1,1);
+      $b: str-slice($str,3,3);
+      $c: str-slice($str,5,5);
+      @return unquote("##{$a}#{$b}#{$c}");
+   } @else {
+      @return unquote("##{$str}");
+   }
 }

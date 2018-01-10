@@ -183,7 +183,11 @@ header#nav.nav-scroll {
 }
 
 .primary, .secondary {
-   @include btnAbs(150px 60px);
+   @include size(150px 60px);
+   display: block;
+   text-decoration: none;
+   line-height: 60px;
+   text-align: center;
    color: $blueGraySeven;
    background: $flexrRed
 }
