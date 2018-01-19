@@ -4,7 +4,7 @@
 
    a {
 
-      &:first-of-type {
+      &:first-child {
          @include transform(translateZ(0));
       }
    }
@@ -23,7 +23,7 @@
       }
    }
 
-   [href="/get-flexr/"] { // Get It
+   a:last-child { // Get It
 
       &:hover, &:active {
          color: $blueGrayTwo;
@@ -38,7 +38,7 @@
       };
    }
 
-   [href="/"] { // Home
+   a:first-child { // Home
       cursor: default;
 
       svg {

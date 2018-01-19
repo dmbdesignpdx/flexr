@@ -10,6 +10,7 @@
 
    .container {
       @include ratio(1,0.6215);
+      position: relative;
       overflow: hidden;
    }
 }

@@ -8,7 +8,7 @@ navSizing = ->
    w = window.innerWidth
    y = window.pageYOffset
 
-   if w > 740 and y > 60 or 740 > w and y > 5
+   if w > 862 and y > 60 or 862 > w and y > 5
       nav.classList.add "nav-scroll"
    else
       nav.classList.remove "nav-scroll"

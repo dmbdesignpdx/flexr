@@ -1,59 +1,64 @@
-/* Flexr Grid - Sass Preview
-Copyright 2016-2017 Flexr. All rights reserved. More info at flexrgrid.com */
+/*! Flexr Grid - 3.0.0-alpha.1
+Copyright 2016-2018 Daniel Blake. All rights reserved. flexrgrid.com */
 
-// Mixins for Flexr Sass (Ignore)
 
-$base: 8.3333%;
 
-@mixin break($var) {
-   @media (max-width : #{$var}) {
+// Vars and Mixins
+
+@mixin break($a, $b) {
+   @media (max-width:#{$a}) and (orientation:#{$b}) {
       @content;
    }
-};
+}
 
-// Mixins and Vars for User
+$gutter: (
+   d: 30px,
+   tp: 24px,
+   p: 18px
+);
 
-$gutter: 30px;
-$tl-gutter: $gutter;
-$tp-gutter: $tl-gutter - 6;
-$pl-gutter: $tp-gutter - 6;
-$pp-gutter: $pl-gutter;
+@function col($arg) {
+   @return 8.33333% * $arg;
+}
+
+@function gutter($arg:d) {
+   @return map-get($gutter,$arg);
+}
 
 @mixin tabletLan {
-   @include break(1180px) {
+   @include break(1282px, landscape) {
       @content;
    };
 }
 
 @mixin tabletPor {
-   @include break(940px) {
+   @include break(1032px, portrait) {
       @content;
    };
 }
 
 @mixin phoneLan {
-   @include break(740px) {
+   @include break(862px, landscape) {
       @content;
    };
 }
 
 @mixin phonePor {
-   @include break(470px) {
+   @include break(482px, portrait) {
       @content;
    };
 }
 
 
+
+
 // Flexr
 
-.row, [class*=col-] {
-   height: auto;
-}
-
 .row {
+   display: -ms-flexbox;
    display: -webkit-flex;
    display: flex;
-   width: 1152px;
+   width: 1222px;
    margin: 0 auto;
    -webkit-justify-content: center;
    justify-content: center;
@@ -62,7 +67,7 @@ $pp-gutter: $pl-gutter;
 }
 
 [class*=col-] {
-   padding: $gutter / 2;
+   padding: gutter() / 2;
    -moz-box-sizing: border-box;
    -webkit-box-sizing: border-box;
    box-sizing: border-box
@@ -70,8 +75,18 @@ $pp-gutter: $pl-gutter;
 
 @for $i from 1 through 12 {
    .col-#{$i} {
-      width: $base * $i;
+      width: col($i);
    }
+}
+
+.left {
+   -webkit-justify-content: flex-start;
+   justify-content: flex-start
+}
+
+.right {
+   -webkit-justify-content: flex-end;
+   justify-content: flex-end
 }
 
 .col-x {
@@ -93,13 +108,13 @@ $pp-gutter: $pl-gutter;
 
    .row {
 
-      &:not(.stretch) {
-         width: calc(100% - #{$gutter})
+      &:not(.stretch), &:not(.fill) {
+         width: calc(100% - #{gutter()})
       }
 
       @for $i from 1 through 12 {
          .tl-col-#{$i} {
-            width: $base * $i;
+            width: col($i);
          }
       }
    }
@@ -112,18 +127,18 @@ $pp-gutter: $pl-gutter;
 @include tabletPor {
 
    [class*=col-] {
-      padding: $tp-gutter / 2
+      padding: gutter(tp) / 2
    }
 
    .row {
 
       &:not(.stretch) {
-         width: calc(100% - #{$tp-gutter})
+         width: calc(100% - #{gutter(tp)})
       }
 
       @for $i from 1 through 12 {
          .tp-col-#{$i} {
-            width: $base * $i;
+            width: col($i)
          }
       }
    }
@@ -134,7 +149,7 @@ $pp-gutter: $pl-gutter;
          $j: $i * 2;
 
          .col-#{$i} {
-            width: $base * $j;
+            width: col($j);
          }
       }
    }
@@ -147,18 +162,18 @@ $pp-gutter: $pl-gutter;
 @include phoneLan {
 
    [class*=col-] {
-      padding: $pl-gutter / 2
+      padding: gutter(p) / 2
    }
 
    .row {
 
       &:not(.stretch) {
-         width: calc(100% - #{$pl-gutter})
+         width: calc(100% - #{gutter(p)})
       }
 
       @for $i from 1 through 12 {
          .pl-col-#{$i} {
-            width: $base * $i;
+            width: col($i);
          }
       }
    }
@@ -182,11 +197,11 @@ $pp-gutter: $pl-gutter;
 
       @for $i from 1 through 12 {
          .pp-col-#{$i} {
-            width: $base * $i;
+            width: col($i);
          }
       }
    }
 
 };
 
-/* Flexr Grid -- Sass Preview end */
+/* Flexr Grid end */

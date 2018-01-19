@@ -103,17 +103,18 @@ p + .primary {
       margin-top: auto;
       margin-bottom: auto;
 
-      &:first-of-type {
+      &:first-child {
          margin-right: auto;
-         margin-left: calc((100% - 1152px) / 2)
+         margin-left: calc((100% - 1222px) / 2)
       }
 
-      &:nth-of-type(1n+2) {
+      &:nth-child(1n+2) {
          margin-left: 30px
       }
 
-      &:last-of-type {
-         margin-right: calc((100% - 1126px) / 2)
+      &:last-child {
+         margin-left: 45px;
+         margin-right: calc((100% - 1196px) / 2)
       }
    }
 
@@ -127,9 +128,7 @@ p + .primary {
       }
    }
 
-   [href="/get-flexr/"] { // Get It
-      margin-right: 15px;
-      margin-left: 15px;
+   a:last-child { // Get It
       color: $blueGrayTwo;
       background: $cyan;
 
@@ -146,7 +145,7 @@ p + .primary {
       background-position: 20% 66.666%
    }
 
-   [href="/"] { // Home
+   a:first-child { // Home
       width: 170px;
 
       svg {
@@ -159,11 +158,11 @@ p + .primary {
    color: $flexrRed
 }
 
-#download #nav [href="/get-flexr/"] {
+#download #nav a:last-child {
    background: $blueGraySeven;
 }
 
-#the-grid #nav [href="/flexr-grid/"]::before, #how-to #nav [href="/use-flexr/"]::before, #download #nav [href="/get-flexr/"]::before {
+#the-grid #nav [href="/flexr-grid/"]::before, #how-to #nav [href="/use-flexr/"]::before, #download #nav a:last-child::before {
    background-position-y: 100%
 }
 
@@ -201,16 +200,44 @@ p + .primary {
 }
 
 
-@media (max-width:940px) {
 
-   html {
-      font-size: 18px
+@media (max-width:1282px) and (orientation:landscape) {
+
+   #nav {
+
+      a:first-child {
+         margin-left: 16px
+      }
+
+      a:last-child {
+         margin-right: 30px
+      }
    }
 
 }
 
 
-@media (max-width:740px) {
+@media (max-width:1032px) and (orientation:portrait) {
+
+   html {
+      font-size: 18px
+   }
+
+   #nav {
+
+      a:first-child {
+         margin-left: 14px
+      }
+
+      a:last-child {
+         margin-right: 24px
+      }
+   }
+
+}
+
+
+@media (max-width:862px) and (orientation:landscape) {
 
    h1 {
       font-size: 1.8rem
@@ -222,19 +249,24 @@ p + .primary {
 
    #nav {
 
-      [href="/"] {
-         width: 94px
+      a:first-child {
+         width: 100px;
+         margin-left: 12px
+      }
+
+      a:last-child {
+         margin-right: 16px
       }
    }
 
-   #nav, header#nav.nav-scroll {
+   #nav, #nav.nav-scroll {
       height: 56px
    }
 
 }
 
 
-@media (max-width:470px) {
+@media (max-width:482px) and (orientation:portrait) {
 
    .primary {
       margin: 50px auto 30px
@@ -255,12 +287,13 @@ p + .primary {
          display: block
       }
 
-      [href="/get-flexr/"] {
+      a:last-child {
          color: $blueGraySeven;
          background: none
       }
 
-      [href="/"] {
+      a:first-child {
+         width: 100px;
 
          svg * {
             fill: $blueGraySeven
@@ -268,20 +301,23 @@ p + .primary {
       }
    }
 
-   #nav nav.row a {
+   #nav, #nav.nav-scroll {
+      height: 56px
+   }
+
+   nav#nav a {
       margin: auto
    }
 
    #nav a.links {
-      margin: 0;
       font-size: 0
    }
 
-   #download #nav [href="/get-flexr/"] {
+   #download #nav a:last-child {
       background: none
    }
 
-   #home #nav [href="/"] svg * {
+   #home #nav a:first-child svg * {
       fill: $flexrRed
    }
 
