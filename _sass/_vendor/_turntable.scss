@@ -1,4 +1,4 @@
-/* Mixin' with Turntable v0.1.13 -- by Daniel Blake */
+/* Mixin' with Turntable v0.2.0 -- by Daniel Blake */
 
 $channel: ( year: 2014, ie: 11 );
 
@@ -1602,7 +1602,7 @@ $ieversion: map-get($channel,ie);
 }
 
 
-@function shades($color, $num) {
+@function value($color, $num) {
    @return if($num > 0, lighten($color, abs($num)), darken($color, abs($num)));
 }
 
