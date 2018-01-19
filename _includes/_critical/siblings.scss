@@ -59,7 +59,6 @@ h2 + p, p + p, .pre + p, dl + p, .pre {
     height: auto;
     padding: 20px 0;
     font-size: 0.8rem;
-    box-sizing: border-box;
     background: $blueGrayFive;
     line-height: 1.1
 }
@@ -83,7 +82,6 @@ textarea, button {
 }
 
 textarea, code, pre {
-   box-sizing: border-box;
    line-height: 1.2;
    color: #DDE;
    background: #42425d;

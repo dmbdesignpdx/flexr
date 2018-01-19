@@ -17,6 +17,10 @@ $blueGraySeven: #EEF;
    width: device-width
 }
 
+*, *::before, *::after {
+   box-sizing: border-box
+}
+
 html {
    background: #2E2E42;
    font: 300 20px Roboto, Helvetica, sans-serif
@@ -26,14 +30,13 @@ body {
    height: 100vh
 }
 
-body, h1, h2, h3, p, ul, pre {
+body, h1, h2, h3, p, ul, pre, figure {
    padding: 0;
    margin: 0
 }
 
-nav, main, section, header, footer, img, svg, textarea, pre, button, nav a, div, .with-icon::before {
-    display: block;
-    position: relative
+img, svg, textarea, pre, button, nav a, div, .with-icon::before {
+    display: block
 }
 
 a, abbr {
@@ -45,7 +48,6 @@ nav, section, header, footer, img, #hero .container {
 }
 
 img, svg {
-   box-sizing: border-box;
    font-size: 0
 }
 
@@ -97,20 +99,21 @@ p + .primary {
    z-index: 999;
    background: $blueGrayTwo;
 
-   nav.row {
-      height: 100%
-   }
-
    a {
       margin-top: auto;
       margin-bottom: auto;
 
       &:first-of-type {
-         margin-right: auto
+         margin-right: auto;
+         margin-left: calc((100% - 1152px) / 2)
       }
 
       &:nth-of-type(1n+2) {
          margin-left: 30px
+      }
+
+      &:last-of-type {
+         margin-right: calc((100% - 1126px) / 2)
       }
    }
 
@@ -167,7 +170,7 @@ p + .primary {
 
 //  JS Classes
 
-header#nav.nav-scroll {
+#nav.nav-scroll {
    box-shadow: 0 2px 5px rgba(0,0,30,0.3);
    height: 80px
 }
