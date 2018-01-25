@@ -12,7 +12,7 @@ sass:
 
 compress_html:
    clippings: all
-   comments: ["<!---","--->"]
+   comments: ["<!--","-->"]
    ignore:
       envs: []
 
