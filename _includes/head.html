@@ -8,6 +8,7 @@
 
 <link rel="canonical" href="{{ site.url }}">
 
+<meta name="creator" content="Daniel Blake">
 
 <meta name="theme-color" content="#2E2E42">
 
@@ -60,6 +61,7 @@
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-80550036-1', 'auto');ga('send', 'pageview');</script>
 
+<meta http-equiv="x-dns-prefetch-control" content="on">
 <link rel="dns-prefetch" href="//fonts.googleapis.com/">
 {%- if page.bodyID == "home" -%}
 <link rel="preload" href="/img/hero-btm.svg" as="image">
@@ -71,12 +73,17 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <script type="application/ld+json">
 {
    "@context":"http://schema.org",
-   "@type":"Product",
+   "@type":"WebSite",
    "additionalType":"http://www.productontology.org/id/CSS_framework",
    "name":"FLexr Grid",
    "description":"Flexr is a CSS responsive grid framework for modern browsers.",
    "url":"https://flexrgrid.com",
-   "logo":"https://flexrgrid.com/img/flexr-og.png",
-   "email":"daniel@danielblake.design"
+   "image":"https://flexrgrid.com/img/flexr-og.png",
+   "creator": {
+		"@type":"Person",
+		"name":"Daniel Blake",
+		"email":"daniel@danielblake.design",
+		"url":"http://danielblake.design"
+	}
 }
 </script>
