@@ -45,16 +45,25 @@
    };
 
    ul {
-      margin-top: 15px
+		margin-top: 15px;
+		list-style: none;
    }
 
    li {
       @extend %left;
       @extend %light;
       @extend %color-seven;
-      list-style: square;
-      margin-left: 1.25em;
-      line-height: 1.6;
+		margin-left: 0.4em;
+		line-height: 1.6;
+
+		&::before {
+			@include size(8px);
+			display: inline-block;
+			content: "";
+			background: $blueGray;
+			margin-right: 0.66em;
+			vertical-align: middle
+		}
 
       &::first-letter {
          text-transform: capitalize;
