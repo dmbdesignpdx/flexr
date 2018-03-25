@@ -24,8 +24,9 @@ exclude:
    - .sass-cache
    - .gitignore
    - .jekyll-metadata
+   - channel.yml
    - node_modules
-   - js
+   - src
    - yarn.lock
    - package.json
    - gulpfile.js

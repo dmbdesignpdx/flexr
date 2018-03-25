@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /host/
+
+sitemap: http://flexrgrid.com/sitemap.xml 

@@ -9,15 +9,15 @@ iife = require('gulp-iife'),
 coffee = require('gulp-coffee');
 
 const proj = {
-   scripts: ['./scripts/*.coffee' ],
-   src: 'flexr.min.js',
+   src: ['./src/*.coffee' ],
+   dest: 'flexr.min.js',
    port: 4000
 }
 
 gulp.task('scripts', () => {
-   return gulp.src(proj.scripts)
+   return gulp.src(proj.src)
    .pipe(plumber())
-   .pipe(concat(proj.src))
+   .pipe(concat(proj.dest))
    .pipe(coffee({bare:true}))
    .pipe(iife({prependSemicolon:false, useStrict:false, params: ["init"], args: ["document.body.id"]}))
    .pipe(babel({presets: ['env']}))
@@ -31,9 +31,9 @@ gulp.task('wait', ['scripts'], done => {
    browserSync.reload();
 });
 
-gulp.task('watch', () => gulp.watch(proj.scripts, ['scripts']));
+gulp.task('watch', () => gulp.watch(proj.src, ['scripts']));
 
-gulp.task('lookout', () => gulp.watch(proj.scripts, ['wait']));
+gulp.task('lookout', () => gulp.watch(proj.src, ['wait']));
 
 gulp.task('sync', () => {
    browserSync.init({
@@ -42,7 +42,7 @@ gulp.task('sync', () => {
       port: proj.port,
       open: false
    });
-   browserSync.watch(['./_site/*', '!./_site/**/*.coffee']).on('change', browserSync.reload);
+   browserSync.watch(['./_site/*']).on('change', browserSync.reload);
 });
 
 gulp.task('serve', shell.task('jekyll serve'));
